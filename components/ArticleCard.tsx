@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 
 // Components
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Card,
   CardContent,
@@ -72,16 +71,13 @@ export function ArticleCard({
   const formattedDate = originalDate.toLocaleDateString();
 
   return (
-    <Link
-      href={`/article/${slug?.current}`}
-      className={`cursor-default ${className}`}
-    >
+    <Link href={`/article/${slug?.current}`} className={`${className}`}>
       <Card
         className={
-          "group duration-150 flex-1 fade shadow-sm hover:shadow-lg hover:backdrop-brightness-150 transition-all ease-in-out"
+          "group duration-150 flex-1 fade shadow-sm hover:shadow-lg hover:backdrop-brightness-110 transition-all ease-in-out"
         }
       >
-        <div className="hover:shadow-dark-box-shadow-card rounded-md">
+        <div className="rounded-md">
           <CardHeader className="flex flex-row justify-between items-center relative">
             <p className="text-xs">{formattedDate}</p>
             <div className="flex justify-center items-center gap-3 text-xs">
@@ -98,13 +94,6 @@ export function ArticleCard({
             </CardDescription>
           </CardContent>
           <CardFooter className="flex flex-col items-start gap-5 md:flex-col md:justify-between">
-            <div className="flex items-center gap-3">
-              <Avatar>
-                <AvatarImage src={author_image} alt={alt} />
-                <AvatarFallback>CN</AvatarFallback>
-              </Avatar>
-              <p className="text-xs">{author}</p>
-            </div>
             <div className="flex flex-wrap gap-2 text-xs">
               {categoryData && categoryData.length > 0
                 ? categoryData.map((category, index) => (
