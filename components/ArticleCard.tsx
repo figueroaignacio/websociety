@@ -80,7 +80,7 @@ export function ArticleCard({
         <div className="rounded-md">
           <CardHeader className="flex flex-row justify-between items-center relative">
             <p className="text-xs">{formattedDate}</p>
-            <div className="flex justify-center items-center gap-3 text-xs">
+            <div className="flex justify-center items-center gap-1 text-xs">
               <p className="opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                 Read More
               </p>
