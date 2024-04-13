@@ -19,7 +19,6 @@ export default function LobbyLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <Blur />
       <body className={`${onest.className}`}>
         {" "}
         <ThemeProvider
@@ -28,6 +27,7 @@ export default function LobbyLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Blur />
           <main className="min-h-screen py-6 m-auto container max-w-6xl">
             <Navbar />
             {children}

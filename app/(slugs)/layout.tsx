@@ -19,7 +19,6 @@ export default function ArticleDetailsLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <Blur />
       <body className={`${onest.className}`}>
         {" "}
         <ThemeProvider
@@ -28,6 +27,7 @@ export default function ArticleDetailsLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Blur />
           <article className="min-h-screen py-6 m-auto container max-w-6xl">
             <div className="flex justify-between items-center">
               <BackButton title="Go Back" />
