@@ -64,9 +64,7 @@ export function MobileMenu() {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger disabled>
-                    Explore
-                  </NavigationMenuTrigger>
+                  <NavigationMenuTrigger>Explore</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="p-4 ">
                       {exploreItems.map((exploreItem, index) => (
