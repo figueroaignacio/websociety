@@ -29,7 +29,7 @@ export default function ArticleDetailsLayout({
         >
           <Blur />
           <article className="min-h-screen py-6 m-auto container max-w-6xl">
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center pt-3">
               <BackButton title="Go Back" />
               <Logo />
             </div>

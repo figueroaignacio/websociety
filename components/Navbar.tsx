@@ -30,11 +30,11 @@ export function Navbar() {
   return (
     <header className="flex items-center justify-between pt-3">
       <div className="flex gap-9 items-center justify-between lg:justify-normal w-screen">
-        <div className="flex items-center justify-between w-full gap-6 lg:hidden relative inset-0">
+        <div className="flex items-center justify-between w-full gap-6 md:hidden relative inset-0">
           <MobileMenu />
           <Logo />
         </div>
-        <nav className="hidden lg:block">
+        <nav className="hidden md:block">
           <ul className="flex flex-col p-2 gap-5 w-screen items-center md:w-full md:flex-row md:min-h-0">
             {navItems.map((navItem, index) => {
               let IconComponent;
@@ -108,7 +108,7 @@ export function Navbar() {
           </ul>
         </nav>
       </div>
-      <div className="hidden lg:block">
+      <div className="hidden md:block">
         <Logo />
       </div>
     </header>
