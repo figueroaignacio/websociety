@@ -23,9 +23,7 @@ export function LatestPostsSection() {
   if (isLoading) {
     return (
       <section className="py-10 flex flex-col gap-6">
-        <h2 className="font-bold text-3xl inline-block bg-gradient-to-r text-transparent bg-clip-text dark:from-gray-400 dark:via-gray-700 dark:to-gray-950 from-gray-900 via-gray-600 to-gray-300 fade">
-          Latest Posts
-        </h2>
+        <h2 className="font-bold text-3xl fade">Latest Posts</h2>
         <div className="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center">
           <SkeletonPostCard className="col-span-2" />
           <SkeletonPostCard />
@@ -51,9 +49,7 @@ export function LatestPostsSection() {
 
   return (
     <section className="py-10 flex flex-col gap-6">
-      <h2 className="font-bold text-3xl inline-block bg-gradient-to-r text-transparent bg-clip-text dark:from-gray-400 dark:via-gray-700 dark:to-gray-950 from-gray-900 via-gray-600 to-gray-300 fade">
-        Latest Posts
-      </h2>
+      <h2 className="font-bold text-3xl fade">Latest Posts</h2>
       <div className="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
         {firstFourPosts.map((post: any, i: number) => (
           <Dialog key={i}>

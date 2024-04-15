@@ -1,5 +1,5 @@
 // Module
-import AllArticlesSection from "@/app/modules/articles-section";
+import AllArticlesSection from "@/components/sections/articles-section";
 
 // Constants
 import { articlesMetadata } from "@/constants/articles";

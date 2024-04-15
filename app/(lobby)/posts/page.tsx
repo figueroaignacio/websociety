@@ -1,5 +1,5 @@
 // Module
-import PostsSection from "@/app/modules/posts-section";
+import PostsSection from "@/components/sections/posts-section";
 
 // Constants
 import { postsMetadata } from "@/constants/posts";

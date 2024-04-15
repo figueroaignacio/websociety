@@ -1,7 +1,7 @@
 // Modules
-import { HomeSection } from "@/app/modules/home-section";
-import { LatestArticlesSection } from "../modules/latest-articles-section";
-import { LatestPostsSection } from "../modules/latest-posts-section";
+import { HomeSection } from "@/components/sections/home-section";
+import { LatestArticlesSection } from "../../components/sections/latest-articles-section";
+import { LatestPostsSection } from "../../components/sections/latest-posts-section";
 
 // Components
 import { Separator } from "@/components/ui/separator";

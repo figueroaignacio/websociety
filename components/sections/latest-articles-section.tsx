@@ -16,9 +16,7 @@ export function LatestArticlesSection() {
   if (isLoading) {
     return (
       <section className="py-10 flex flex-col gap-7">
-        <h2 className="font-bold text-3xl inline-block bg-gradient-to-r text-transparent bg-clip-text dark:from-gray-400 dark:via-gray-700 dark:to-gray-950 from-gray-900 via-gray-600 to-gray-300 fade">
-          Latest Articles
-        </h2>
+        <h2 className="font-bold text-3xl fade">Latest Articles</h2>
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <SkeletonArticleCard />
           <SkeletonArticleCard />
@@ -44,9 +42,7 @@ export function LatestArticlesSection() {
 
   return (
     <section className="py-10 flex flex-col gap-7" id="latest-articles">
-      <h2 className="font-bold text-3xl inline-block bg-gradient-to-r text-transparent bg-clip-text dark:from-gray-400 dark:via-gray-700 dark:to-gray-950 from-gray-900 via-gray-600 to-gray-300 fade">
-        Latest Articles
-      </h2>
+      <h2 className="font-bold text-3xl fade">Latest Articles</h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {firstFourArticles.map((article: ArticleTypes) => (
           <div key={article._id}>
