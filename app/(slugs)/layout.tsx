@@ -1,7 +1,7 @@
 // Components
-import { Logo } from "@/components/";
 import { BackButton } from "@/components/back-button";
 import { Blur } from "@/components/blur";
+import { Logo } from "@/components/trademark";
 
 // Provider
 import { ThemeProvider } from "@/providers/theme-provider/theme-provider";
