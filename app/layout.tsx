@@ -53,7 +53,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${onest.className}`}>
+      <body className={`${onest.className} font-onest`}>
         <NextTopLoader color="rgb(75, 85, 99)" />
         {children}
       </body>

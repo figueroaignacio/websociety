@@ -18,6 +18,9 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        onest: ["var(--onest-font)"],
+      },
       backgroundImage: (theme) => ({
         "radial-gradient-desktop":
           "radial-gradient(ellipse at 50% 50%, rgba(147, 51, 234, 0.1 ), rgba(255, 255, 255, 0))",

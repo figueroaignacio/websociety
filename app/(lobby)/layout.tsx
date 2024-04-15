@@ -19,7 +19,7 @@ export default function LobbyLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${onest.className}`}>
+      <body className={`${onest.className} font-onest`}>
         {" "}
         <ThemeProvider
           attribute="class"
