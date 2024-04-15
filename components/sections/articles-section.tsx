@@ -4,9 +4,9 @@
 import { useState } from "react";
 
 // Components
-import { ArticleCard } from "@/components/ArticleCard";
-import { ArticleSearch } from "@/components/ArticleSearch";
-import { SkeletonAllArticles } from "@/components/Skeletons/SkeletonAllArticles";
+import { ArticleCard } from "@/components/article-card";
+import { ArticleSearch } from "@/components/article-search";
+import { AllArticlesLoader } from "@/components/loaders/all-articles-loader";
 
 // Utils
 import { allArticles } from "@/constants/articles";
@@ -20,7 +20,7 @@ export default function AllArticlesSection() {
   const [searchTerm, setSearchTerm] = useState("");
 
   if (isLoading) {
-    return <SkeletonAllArticles />;
+    return <AllArticlesLoader />;
   }
 
   if (isError) {

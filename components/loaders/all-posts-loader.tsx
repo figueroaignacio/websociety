@@ -1,9 +1,7 @@
 // Components
-import { SkeletonPostCard } from "@/components/Skeletons/SkeletonPostCard";
+import { PostCardLoader } from "@/components/loaders/post-card-loader";
 
-// Next
-
-export function SkeletonAllPosts() {
+export function AllPostsLoader() {
   return (
     <section className="py-10">
       <div className=" flex flex-col gap-5">
@@ -17,13 +15,13 @@ export function SkeletonAllPosts() {
           </p>
         </div>
         <div className="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center pt-10">
-          <SkeletonPostCard />
-          <SkeletonPostCard />
-          <SkeletonPostCard />
-          <SkeletonPostCard className="lg:col-span-2" />
-          <SkeletonPostCard />
-          <SkeletonPostCard />
-          <SkeletonPostCard className="lg:col-span-2" />
+          <PostCardLoader />
+          <PostCardLoader />
+          <PostCardLoader />
+          <PostCardLoader className="lg:col-span-2" />
+          <PostCardLoader />
+          <PostCardLoader />
+          <PostCardLoader className="lg:col-span-2" />
         </div>
       </div>
     </section>

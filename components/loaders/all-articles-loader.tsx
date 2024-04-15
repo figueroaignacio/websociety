@@ -1,8 +1,8 @@
 // Components
-import { ArticleSearch } from "@/components/ArticleSearch";
-import { SkeletonArticleCard } from "@/components/Skeletons/SkeletonArticleCard";
+import { ArticleSearch } from "@/components/article-search";
+import { ArticleCardLoader } from "@/components/loaders/article-card-loader";
 
-export function SkeletonAllArticles() {
+export function AllArticlesLoader() {
   return (
     <div className="flex flex-col gap-2 py-10">
       <div className="flex flex-col gap-3 justify-center py-52 lg:py-56">
@@ -18,10 +18,10 @@ export function SkeletonAllArticles() {
         <ArticleSearch />
       </div>
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <SkeletonArticleCard />
-        <SkeletonArticleCard />
-        <SkeletonArticleCard />
-        <SkeletonArticleCard />
+        <ArticleCardLoader />
+        <ArticleCardLoader />
+        <ArticleCardLoader />
+        <ArticleCardLoader />
       </section>
     </div>
   );

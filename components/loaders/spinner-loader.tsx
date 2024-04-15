@@ -2,7 +2,7 @@ interface SpinnerProps {
   className?: string;
 }
 
-export function Spinner({ className }: SpinnerProps) {
+export function SpinnerLoader({ className }: SpinnerProps) {
   return (
     <div
       className={`flex items-center justify-center min-h-[80vh] space-x-2 ${className}`}

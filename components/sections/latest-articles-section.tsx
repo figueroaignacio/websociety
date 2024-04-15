@@ -1,8 +1,8 @@
 "use client";
 
 // Components
-import { ArticleCard } from "@/components/ArticleCard";
-import { SkeletonArticleCard } from "@/components/Skeletons/SkeletonArticleCard";
+import { ArticleCard } from "@/components/article-card";
+import { ArticleCardLoader } from "@/components/loaders/article-card-loader";
 
 // Utils
 import { useArticles } from "@/hooks/useArticles";
@@ -18,10 +18,10 @@ export function LatestArticlesSection() {
       <section className="py-10 flex flex-col gap-7">
         <h2 className="font-bold text-3xl fade">Latest Articles</h2>
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-          <SkeletonArticleCard />
-          <SkeletonArticleCard />
-          <SkeletonArticleCard />
-          <SkeletonArticleCard />
+          <ArticleCardLoader />
+          <ArticleCardLoader />
+          <ArticleCardLoader />
+          <ArticleCardLoader />
         </section>
       </section>
     );

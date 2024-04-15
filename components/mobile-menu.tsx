@@ -8,8 +8,8 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { LinkTransition } from "./LinkTransition";
-import { ToggleThemeButton } from "./ToggleThemeButton";
+import { LinkTransition } from "./link-transition";
+import { ToggleThemeButton } from "./toggle-theme-button";
 import {
   NavigationMenu,
   NavigationMenuContent,

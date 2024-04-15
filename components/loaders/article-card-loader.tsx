@@ -8,7 +8,7 @@ import {
 } from "../ui/card";
 import { Skeleton } from "../ui/skeleton";
 
-export function SkeletonArticleCard() {
+export function ArticleCardLoader() {
   return (
     <Card className="flex flex-col gap-5 border-[.0625rem] bg-transparent">
       <CardHeader className="flex flex-row justify-between items-center relative">

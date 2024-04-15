@@ -1,8 +1,8 @@
 "use client";
 
 // Components
-import { PostCard } from "@/components/PostCard";
-import { SkeletonAllPosts } from "@/components/Skeletons/SkeletonAllPosts";
+import { AllPostsLoader } from "@/components/loaders/all-posts-loader";
+import { PostCard } from "@/components/post-card";
 import {
   Dialog,
   DialogContent,
@@ -23,7 +23,7 @@ export default function PostsSection() {
   const { isError, isLoading, posts } = usePosts();
 
   if (isLoading) {
-    return <SkeletonAllPosts />;
+    return <AllPostsLoader />;
   }
 
   if (isError) {

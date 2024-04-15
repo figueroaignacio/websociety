@@ -12,7 +12,7 @@ interface SkeletonPostCardProps {
   className?: string;
 }
 
-export function SkeletonPostCard({ className }: SkeletonPostCardProps) {
+export function PostCardLoader({ className }: SkeletonPostCardProps) {
   return (
     <Card className={`flex flex-col border-[.0625rem] ${className}`}>
       <CardHeader className="flex items-end">

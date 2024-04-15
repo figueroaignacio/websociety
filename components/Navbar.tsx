@@ -4,10 +4,10 @@
 import { usePathname } from "next/navigation";
 
 // Components
-import { LinkTransition } from "./LinkTransition";
-import { Logo } from "./Logo";
-import { MobileMenu } from "./MobileMenu";
-import { ToggleThemeButton } from "./ToggleThemeButton";
+import { LinkTransition } from "./link-transition";
+import { MobileMenu } from "./mobile-menu";
+import { ToggleThemeButton } from "./toggle-theme-button";
+import { Logo } from "./trademark";
 import { buttonVariants } from "./ui/button";
 import {
   NavigationMenu,
