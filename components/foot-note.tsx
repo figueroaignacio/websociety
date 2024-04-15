@@ -4,7 +4,7 @@ import { Code2 } from "lucide-react";
 // Constants
 import { footer } from "@/constants/footer";
 
-export function Footer() {
+export function FootNote() {
   return (
     <footer className="flex flex-col gap-3 py-12 md:flex-row md:justify-between md:items-center">
       <div className="flex flex-col gap-2">
