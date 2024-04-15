@@ -13,7 +13,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    "https://macchiato-lake.vercel.app/" ?? "http://localhost:3000"
+    "https://icoded.vercel.app/" ?? "http://localhost:3000"
   ),
   title: {
     default: siteConfig.title,
