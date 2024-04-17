@@ -7,8 +7,8 @@ export const siteConfig = Object.freeze({
   creator: "Ignacio Figueroa",
   description:
     "Welcome where tech meets curiosity. Quick reads on web development, fun facts, history, tips, and more.",
-  ogImage: "https://devhub-delta.vercel.app/og-home.png",
-  url: "https://devhub-delta.vercel.app",
+  ogImage: "https://icoded.vercel.app/og-home.png",
+  url: "https://icoded.vercel.app",
   keywords: [
     "Blog",
     "Developers",
