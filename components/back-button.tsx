@@ -18,10 +18,13 @@ export function BackButton({ title }: GoBackProps) {
   return (
     <Button
       variant={"backButton"}
-      className="flex items-center gap-1"
+      className="items-center flex gap-2 relative group hover:backdrop-brightness-150"
       onClick={() => router.back()}
     >
-      <ArrowLeft />
+      <ArrowLeft
+        className="transition-transform ease-in-out duration-300 transform translate-x-0 group-hover:-translate-x-1"
+        size=".85rem"
+      />
       <p>{title}</p>
     </Button>
   );
