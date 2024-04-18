@@ -34,7 +34,7 @@ export default function AllArticlesSection() {
   return (
     <section className="flex flex-col gap-5">
       <div className="flex flex-col justify-center gap-3 py-52 lg:py-60">
-        <h1 className="font-bold text-5xl lg:text-8xl inline-block bg-gradient-to-r text-transparent bg-clip-text dark:from-gray-400 dark:via-gray-700 dark:to-gray-950 from-gray-900 via-gray-600 to-gray-300">
+        <h1 className="font-bold text-5xl lg:text-8xl opacity-75">
           {allArticles.title}
         </h1>
         <p className="text-xs lg:text-sm opacity-75">
