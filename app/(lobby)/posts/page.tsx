@@ -13,6 +13,22 @@ export const metadata: Metadata = {
   ),
   title: postsMetadata.title,
   description: postsMetadata.description,
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: postsMetadata.url,
+    title: postsMetadata.title,
+    description: postsMetadata.description,
+    siteName: postsMetadata.title,
+    images: [
+      {
+        url: postsMetadata.ogImage,
+        width: 1200,
+        height: 630,
+        alt: postsMetadata.title,
+      },
+    ],
+  },
 };
 
 export default function PostsPage() {
