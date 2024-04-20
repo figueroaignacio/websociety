@@ -6,7 +6,7 @@ import { Logo } from "@/components/trademark";
 import { ThemeProvider } from "@/providers/theme-provider/theme-provider";
 
 // Font
-import { onest } from "@/font/onest";
+import { onest } from "@/font/ubuntu";
 
 // Global styles
 import "@/styles/globals.css";

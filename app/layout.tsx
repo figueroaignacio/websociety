@@ -1,5 +1,5 @@
 // Font
-import { onest } from "@/font/onest";
+import { ubuntu } from "@/font/ubuntu";
 
 // Utils
 import NextTopLoader from "nextjs-toploader";
@@ -53,7 +53,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${onest.className} font-onest`}>
+      <body className={`${ubuntu.className} font-ubuntu`}>
         <NextTopLoader color="rgb(75, 85, 99)" />
         {children}
       </body>

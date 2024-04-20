@@ -19,7 +19,7 @@ const config = {
     },
     extend: {
       fontFamily: {
-        onest: ["var(--onest-font)"],
+        ubuntu: ["var(--ubuntu-font)"],
       },
       backgroundImage: (theme) => ({
         "radial-gradient-desktop":
