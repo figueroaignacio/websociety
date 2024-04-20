@@ -6,7 +6,7 @@ import { Logo } from "@/components/trademark";
 import { ThemeProvider } from "@/providers/theme-provider/theme-provider";
 
 // Font
-import { onest } from "@/font/ubuntu";
+import { ubuntu } from "@/font/ubuntu";
 
 // Global styles
 import "@/styles/globals.css";
@@ -18,7 +18,7 @@ export default function ArticleDetailsLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${onest.className} font-onest`}>
+      <body className={`${ubuntu.className} font-ubuntu`}>
         {" "}
         <ThemeProvider
           attribute="class"
