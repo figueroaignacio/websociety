@@ -23,7 +23,7 @@ const config = {
       },
       backgroundImage: (theme) => ({
         "radial-gradient-desktop":
-          "radial-gradient(ellipse at 50% 50%, rgba(147, 51, 234, 0.1 ), rgba(255, 255, 255, 0))",
+          "radial-gradient(ellipse at 50% 50%, rgba(147, 51, 234, 0.05 ), rgba(255, 255, 255, 0))",
         "radial-gradient-mobile":
           "radial-gradient(ellipse 100% 100% at 2% -20%, rgba(147, 51, 234, 0.2), rgba(255, 255, 255, 0))",
       }),
