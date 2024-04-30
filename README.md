@@ -1,6 +1,6 @@
-# F society
+# Front Society
 
-Welcome to **F society**, your go-to platform for discovering the latest trends, techniques, and tools in the realm of frontend development.
+Welcome to **Front Society**, your go-to platform for discovering the latest trends, techniques, and tools in the realm of frontend development.
 
 ## Technologies Used in this Project
 
