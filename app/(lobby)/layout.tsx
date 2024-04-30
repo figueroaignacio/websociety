@@ -1,5 +1,4 @@
 // Components
-import { CircleBlur } from "@/components/circle-blur";
 import { FootNote } from "@/components/foot-note";
 import { Navbar } from "@/components/nav-bar";
 
@@ -27,9 +26,8 @@ export default function LobbyLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <CircleBlur />
+          <Navbar />
           <main className="min-h-screen py-6 m-auto container max-w-6xl">
-            <Navbar />
             {children}
             <FootNote />
           </main>
