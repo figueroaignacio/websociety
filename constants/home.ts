@@ -1,5 +1,5 @@
 export const home = Object.freeze({
-  title: "Front Society",
+  title: "Discover Front Society",
   description: "Site built by a developer for developers",
 });
 

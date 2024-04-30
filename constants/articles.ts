@@ -1,5 +1,5 @@
 export const allArticles = Object.freeze({
-  title: "Articles",
+  title: "Read articles about coding",
   description:
     "In this section you are going to find articles about tech and coding. Check them!",
   fallbackNoArticlesFound:
