@@ -26,10 +26,7 @@ Welcome to **Front Society**, your go-to platform for discovering the latest tre
 Have questions, suggestions, or just want to say hi? I'd love to hear from you!
 
 - **Email**: [ignaciofigueroadev@gmail.com](mailto:ignaciofigueroadev@gmail.com)
-- **GitHub**: [Ignacio Figueroa](https://github.com/figueroaignacio/)
+- **GitHub**: [figueroaignacio](https://github.com/figueroaignacio/)
+- **LinkedIn**: [Ignacio Figueroa](https://www.linkedin.com/in/ignacio-figueroa-0a1ba0263)
 
 Feel free to reach out to me through any of these channels. I'll get back to you as soon as possible!
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
