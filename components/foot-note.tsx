@@ -5,8 +5,8 @@ import Link from "next/link";
 import { ChevronRight, Code2 } from "lucide-react";
 
 // Constants
+import { navItems } from "@/config/navigation";
 import { footer } from "@/constants/footer";
-import { navItems } from "@/constants/navigation";
 
 export function FootNote() {
   return (

@@ -22,7 +22,7 @@ import {
 import { ArrowRight, HomeIcon, MessageSquare, SheetIcon } from "lucide-react";
 
 // Constants
-import { exploreItems, navItems } from "@/constants/navigation";
+import { exploreItems, navItems } from "@/config/navigation";
 
 export function Navbar() {
   const pathname = usePathname();

@@ -26,7 +26,7 @@ import { ArrowRight, Menu } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 // Constants
-import { exploreItems, navItems } from "@/constants/navigation";
+import { exploreItems, navItems } from "@/config/navigation";
 
 export function MobileMenu() {
   const pathname = usePathname();
