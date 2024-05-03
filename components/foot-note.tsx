@@ -1,8 +1,12 @@
+// Components
+import Link from "next/link";
+
 // Icons
-import { Code2 } from "lucide-react";
+import { ChevronRight, Code2 } from "lucide-react";
 
 // Constants
 import { footer } from "@/constants/footer";
+import { navItems } from "@/constants/navigation";
 
 export function FootNote() {
   return (
@@ -12,14 +16,25 @@ export function FootNote() {
           <Code2 />
           {footer.title}
         </h2>
-        <p className="text-xs">
-          {footer.subtitle} <a href={footer.href}>{footer.author}</a>
+        <p className="text-sm">{footer.subtitle}</p>
+        <ul className="flex flex-col gap-2 py-2">
+          {navItems.map((navItem, index) => (
+            <li key={index} className="flex items-center group">
+              <Link href={navItem.href}>{navItem.title}</Link>
+              <ChevronRight
+                size={".75rem"}
+                className="transition-transform ease-in-out duration-300 transform translate-x-0 group-hover:translate-x-1"
+              />
+            </li>
+          ))}
+        </ul>
+        <p>
+          Developed for fun by{" "}
+          <a href={footer.href} className="border-b-[.0625rem] border-white">
+            {footer.author}
+          </a>
         </p>
-      </div>
-      <div>
-        <p className="text-xs">
-          Using Next.js, Typescript, Tailwind, Shadcn & Sanity 🚀
-        </p>
+        <p className="text-xs">{footer.paragraph}</p>
       </div>
     </footer>
   );
