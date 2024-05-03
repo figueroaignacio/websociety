@@ -19,7 +19,13 @@ import {
 } from "./ui/navigation-menu";
 
 // Icons
-import { ArrowRight, HomeIcon, MessageSquare, SheetIcon } from "lucide-react";
+import {
+  ArrowRight,
+  Github,
+  HomeIcon,
+  MessageSquare,
+  SheetIcon,
+} from "lucide-react";
 
 // Constants
 import { exploreItems, navItems } from "@/config/navigation";
@@ -47,6 +53,9 @@ export function Navbar() {
                   break;
                 case "article":
                   IconComponent = <SheetIcon size=".75rem" />;
+                  break;
+                case "github":
+                  IconComponent = <Github size=".75rem" />;
                   break;
                 default:
                   IconComponent = null;
