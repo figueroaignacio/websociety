@@ -28,8 +28,8 @@ export default function LobbyLayout({
           disableTransitionOnChange
         >
           <CircleBlur />
-          <Navbar />
           <main className="min-h-screen py-6 m-auto container max-w-6xl">
+            <Navbar />
             {children}
             <FootNote />
           </main>

@@ -34,7 +34,7 @@ export function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="flex items-center justify-between py-3 px-6 md:py-4 md:px-16">
+    <header className="flex items-center justify-between">
       <div className="flex gap-9 items-center justify-between lg:justify-normal w-screen">
         <div className="flex items-center justify-between w-full gap-6 md:hidden relative inset-0">
           <MobileMenu />
