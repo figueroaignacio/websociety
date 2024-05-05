@@ -19,7 +19,7 @@ const config = {
     },
     extend: {
       fontFamily: {
-        ubuntu: ["var(--ubuntu-font)"],
+        jost: ["var(--jost-font)"],
       },
       backgroundImage: (theme) => ({
         "radial-gradient-desktop":

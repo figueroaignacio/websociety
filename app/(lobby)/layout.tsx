@@ -7,7 +7,7 @@ import { Navbar } from "@/components/nav-bar";
 import { ThemeProvider } from "@/providers/theme-provider/theme-provider";
 
 // Font
-import { ubuntu } from "@/font/ubuntu";
+import { jost } from "@/font/jost";
 
 // Global styles
 import "../../styles/globals.css";
@@ -19,7 +19,7 @@ export default function LobbyLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${ubuntu.className} font-ubuntu`}>
+      <body className={`${jost.className} font-jost`}>
         {" "}
         <ThemeProvider
           attribute="class"
