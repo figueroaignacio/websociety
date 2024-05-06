@@ -2,13 +2,13 @@
 import { ChangeEvent } from "react";
 
 // Components
+import { Input } from "@/components/ui/input";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { Input } from "./ui/input";
 
 interface ArticleSearchProps {
   onSearch?: (value: string) => void;

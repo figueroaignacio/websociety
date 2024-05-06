@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 // Components
+import { Badge } from "@/components/ui/badge";
 import {
   Card,
   CardContent,
@@ -11,7 +12,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "./ui/badge";
 
 // Icons
 import { ArrowUpRight } from "lucide-react";

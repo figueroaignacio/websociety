@@ -1,5 +1,5 @@
 // Animation
-import "../styles/animations.css";
+import "@/styles/animations.css";
 
 export function CircleBlur() {
   return (

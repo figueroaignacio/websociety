@@ -4,7 +4,7 @@
 import { useRouter } from "next/navigation";
 
 // Components
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 
 // Icons
 import { ArrowLeft } from "lucide-react";

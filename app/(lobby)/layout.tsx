@@ -10,7 +10,7 @@ import { ThemeProvider } from "@/providers/theme-provider/theme-provider";
 import { quicksand } from "@/font/quicksand";
 
 // Global styles
-import "../../styles/globals.css";
+import "@/styles/globals.css";
 
 export default function LobbyLayout({
   children,
