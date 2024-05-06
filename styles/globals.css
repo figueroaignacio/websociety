@@ -64,7 +64,7 @@
   }
 
   .custom-border {
-    @apply border-l-[.0625rem] border-l-violet-500 border-t-[.0625rem] border-t-pink-400;
+    @apply border-l-[.0625rem] border-l-pink-400 border-t-[.0625rem] border-t-pink-400;
   }
 }
 
