@@ -1,5 +1,5 @@
 // Font
-import { jost } from "@/font/jost";
+import { quicksand } from "@/font/quicksand";
 
 // Utils
 import NextTopLoader from "nextjs-toploader";
@@ -53,7 +53,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${jost.className} font-jost`}>
+      <body className={`${quicksand.className} font-quicksand`}>
         <NextTopLoader color="rgb(75, 85, 99)" />
         {children}
       </body>

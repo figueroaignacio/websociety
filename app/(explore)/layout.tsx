@@ -2,7 +2,7 @@
 import { ThemeProvider } from "@/providers/theme-provider/theme-provider";
 
 // Font
-import { jost } from "@/font/jost";
+import { quicksand } from "@/font/quicksand";
 
 // Global styles
 import "../../styles/globals.css";
@@ -14,7 +14,7 @@ export default function LobbyLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${jost.className} font-jost`}>
+      <body className={`${quicksand.className} font-quicksand`}>
         {" "}
         <ThemeProvider
           attribute="class"

@@ -19,7 +19,7 @@ const config = {
     },
     extend: {
       fontFamily: {
-        jost: ["var(--jost-font)"],
+        quicksand: ["var(--quicksand-font)"],
       },
       backgroundImage: (theme) => ({
         "radial-gradient-desktop":
