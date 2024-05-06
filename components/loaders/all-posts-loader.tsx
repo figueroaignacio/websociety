@@ -9,7 +9,9 @@ export function AllPostsLoader() {
     <section className="py-10">
       <div className=" flex flex-col gap-5">
         <div className="flex flex-col gap-3 justify-center py-52 lg:py-56 text-center">
-          <h3 className="font-bold text-5xl lg:text-7xl">{allPosts.title}</h3>
+          <h3 className="font-bold text-5xl lg:text-7xl gradient-text">
+            {allPosts.title}
+          </h3>
           <p className="text-xs lg:text-lg opacity-75">
             {allPosts.description}
           </p>

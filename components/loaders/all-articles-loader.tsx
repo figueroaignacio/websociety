@@ -9,7 +9,9 @@ export function AllArticlesLoader() {
   return (
     <div className="flex flex-col gap-2 py-10">
       <div className="flex flex-col gap-3 justify-center py-52 lg:py-56 text-center">
-        <h3 className="font-bold text-5xl lg:text-7xl">{allArticles.title}</h3>
+        <h3 className="font-bold text-5xl lg:text-7xl gradient-text">
+          {allArticles.title}
+        </h3>
         <p className="text-xs lg:text-lg opacity-75">
           {allArticles.description}
         </p>
