@@ -77,7 +77,7 @@ export function ArticleCard({
           "group duration-150 flex-1 fade shadow-sm hover:shadow-lg hover:backdrop-brightness-110 transition-all ease-in-out"
         }
       >
-        <div className="rounded-md shadow-dark-box-shadow-card">
+        <div className="rounded-md shadow-dark-box-shadow-card custom-border">
           <CardHeader className="flex flex-row justify-between items-center relative">
             <p className="text-xs">{formattedDate}</p>
             <div className="flex justify-center items-center gap-1 text-xs">
