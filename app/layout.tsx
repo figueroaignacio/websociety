@@ -53,7 +53,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${quicksand.className} font-quicksand`}>
+      <body className={`${quicksand.className}`}>
         <NextTopLoader color="rgb(75, 85, 99)" />
         {children}
       </body>

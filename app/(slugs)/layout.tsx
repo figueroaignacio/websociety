@@ -18,7 +18,7 @@ export default function ArticleDetailsLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${quicksand.className} font-quicksand`}>
+      <body className={`${quicksand.className}`}>
         {" "}
         <ThemeProvider
           attribute="class"
