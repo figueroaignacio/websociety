@@ -1,6 +1,6 @@
 // Components
 import { BackButton } from "@/components/BackButton";
-import { Logo } from "@/components/trademark";
+import { Wordmark } from "@/components/Wordmark";
 
 // Provider
 import { ThemeProvider } from "@/providers/theme-provider/theme-provider";
@@ -29,7 +29,7 @@ export default function ArticleDetailsLayout({
           <article className="min-h-screen py-6 m-auto container max-w-6xl">
             <div className="flex justify-between items-center pt-3">
               <BackButton title="Go Back" />
-              <Logo />
+              <Wordmark />
             </div>
             {children}
           </article>
