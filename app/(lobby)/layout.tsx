@@ -7,7 +7,7 @@ import { Navbar } from "@/components/Navbar";
 import { ThemeProvider } from "@/providers/theme-provider/theme-provider";
 
 // Font
-import { quicksand } from "@/font/quicksand";
+import { opensans } from "@/font/opensans";
 
 // Global styles
 import "@/styles/globals.css";
@@ -19,7 +19,7 @@ export default function LobbyLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${quicksand.className}`}>
+      <body className={`${opensans.className}`}>
         {" "}
         <ThemeProvider
           attribute="class"

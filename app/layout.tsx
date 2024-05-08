@@ -1,5 +1,5 @@
 // Font
-import { quicksand } from "@/font/quicksand";
+import { opensans } from "@/font/opensans";
 
 // Utils
 import NextTopLoader from "nextjs-toploader";
@@ -53,7 +53,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${quicksand.className}`}>
+      <body className={`${opensans.className}`}>
         <NextTopLoader color="rgb(75, 85, 99)" />
         {children}
       </body>
