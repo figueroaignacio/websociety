@@ -1,5 +1,5 @@
 export const allPosts = Object.freeze({
-  title: "Read quick posts",
+  title: "quick posts",
   description:
     "In this section you are going to find quick posts as tips and advices",
 });

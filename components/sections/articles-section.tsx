@@ -34,8 +34,9 @@ export default function AllArticlesSection() {
   return (
     <section className="flex flex-col gap-5">
       <div className="flex flex-col justify-center gap-3 py-52 lg:py-60 text-center">
-        <h1 className="font-bold text-5xl lg:text-7xl opacity-75 gradient-text">
-          {allArticles.title}
+        <h1 className="font-bold text-5xl lg:text-7xl">
+          Read <span className="gradient-text">{allArticles.title}</span> about{" "}
+          <span className="gradient-text">coding</span>
         </h1>
         <p className="text-xs lg:text-lg opacity-75">
           {allArticles.description}
