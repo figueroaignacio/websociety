@@ -14,11 +14,6 @@ export const navItems = Object.freeze([
     href: "/articles",
     icon: "article",
   },
-  {
-    title: "Github",
-    href: "https://github.com/figueroaignacio/frontsociety/",
-    icon: "github",
-  },
 ]);
 
 export const exploreItems = Object.freeze([
