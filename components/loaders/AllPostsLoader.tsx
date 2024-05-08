@@ -1,5 +1,5 @@
 // Components
-import { PostCardLoader } from "@/components/loaders/post-card-loader";
+import { PostCardLoader } from "@/components/loaders/PostCardLoader";
 
 // Utils
 import { allPosts } from "@/constants/posts";

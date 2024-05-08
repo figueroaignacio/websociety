@@ -1,7 +1,7 @@
 "use client";
 
 // Components
-import { PostCardLoader } from "@/components/loaders/post-card-loader";
+import { PostCardLoader } from "@/components/loaders/PostCardLoader";
 import { PostCard } from "@/components/PostCard";
 
 // Utils

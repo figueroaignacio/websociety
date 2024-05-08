@@ -1,5 +1,5 @@
 // Components
-import { ArticleCardLoader } from "@/components/loaders/article-card-loader";
+import { ArticleCardLoader } from "@/components/loaders/ArticleCardLoader";
 import { ArticleSearcher } from "../ArticleSearcher";
 
 // Utils

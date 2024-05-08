@@ -6,7 +6,7 @@ import { useState } from "react";
 // Components
 import { ArticleCard } from "@/components/ArticleCard";
 import { ArticleSearcher } from "@/components/ArticleSearcher";
-import { AllArticlesLoader } from "@/components/loaders/all-articles-loader";
+import { AllArticlesLoader } from "@/components/loaders/AllArticlesLoader";
 
 // Utils
 import { allArticles } from "@/constants/articles";

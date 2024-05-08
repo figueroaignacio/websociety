@@ -1,7 +1,7 @@
 "use client";
 
 // Components
-import { SpinnerLoader } from "@/components/loaders/spinner-loader";
+import { SpinnerLoader } from "@/components/loaders/SpinnerLoader";
 import { RichTextComponents } from "@/components/RichTextComponents";
 
 // Utils

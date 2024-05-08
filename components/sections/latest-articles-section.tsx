@@ -2,7 +2,7 @@
 
 // Components
 import { ArticleCard } from "@/components/ArticleCard";
-import { ArticleCardLoader } from "@/components/loaders/article-card-loader";
+import { ArticleCardLoader } from "@/components/loaders/ArticleCardLoader";
 
 // Utils
 import { useArticles } from "@/hooks/useArticles";

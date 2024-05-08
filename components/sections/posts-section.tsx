@@ -1,7 +1,7 @@
 "use client";
 
 // Components
-import { AllPostsLoader } from "@/components/loaders/all-posts-loader";
+import { AllPostsLoader } from "@/components/loaders/AllPostsLoader";
 import { PostCard } from "@/components/PostCard";
 import {
   Dialog,
