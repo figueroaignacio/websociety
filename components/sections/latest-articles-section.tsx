@@ -1,7 +1,7 @@
 "use client";
 
 // Components
-import { ArticleCard } from "@/components/article-card";
+import { ArticleCard } from "@/components/ArticleCard";
 import { ArticleCardLoader } from "@/components/loaders/article-card-loader";
 
 // Utils

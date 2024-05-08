@@ -4,8 +4,8 @@
 import { useState } from "react";
 
 // Components
-import { ArticleCard } from "@/components/article-card";
-import { ArticleSearch } from "@/components/article-search";
+import { ArticleCard } from "@/components/ArticleCard";
+import { ArticleSearcher } from "@/components/ArticleSearcher";
 import { AllArticlesLoader } from "@/components/loaders/all-articles-loader";
 
 // Utils
@@ -42,7 +42,7 @@ export default function AllArticlesSection() {
         </p>
       </div>
       <div className="flex items-center gap-4">
-        <ArticleSearch onSearch={setSearchTerm} />
+        <ArticleSearcher onSearch={setSearchTerm} />
       </div>
       <div
         className="grid grid-cols-1 lg:grid-cols-2 gap-4 py-4 justify-center items-center"

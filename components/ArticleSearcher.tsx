@@ -14,7 +14,7 @@ interface ArticleSearchProps {
   onSearch?: (value: string) => void;
 }
 
-export function ArticleSearch({ onSearch }: ArticleSearchProps) {
+export function ArticleSearcher({ onSearch }: ArticleSearchProps) {
   const handleSearch = (event: ChangeEvent<HTMLInputElement>) => {
     if (onSearch) {
       onSearch(event.target.value);

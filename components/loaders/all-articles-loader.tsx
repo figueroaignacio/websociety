@@ -1,6 +1,6 @@
 // Components
-import { ArticleSearch } from "@/components/article-search";
 import { ArticleCardLoader } from "@/components/loaders/article-card-loader";
+import { ArticleSearcher } from "../ArticleSearcher";
 
 // Utils
 import { allArticles } from "@/constants/articles";
@@ -17,7 +17,7 @@ export function AllArticlesLoader() {
         </p>
       </div>
       <div className="flex">
-        <ArticleSearch />
+        <ArticleSearcher />
       </div>
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <ArticleCardLoader />

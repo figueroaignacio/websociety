@@ -2,7 +2,7 @@
 
 // Components
 import { AllPostsLoader } from "@/components/loaders/all-posts-loader";
-import { PostCard } from "@/components/post-card";
+import { PostCard } from "@/components/PostCard";
 import {
   Dialog,
   DialogContent,

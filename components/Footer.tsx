@@ -8,7 +8,7 @@ import { ChevronRight, Code2 } from "lucide-react";
 import { navItems } from "@/config/navigation";
 import { footer } from "@/constants/footer";
 
-export function FootNote() {
+export function Footer() {
   return (
     <footer className="flex flex-col gap-3 py-12 md:flex-row md:justify-between md:items-center">
       <div className="flex flex-col gap-2">

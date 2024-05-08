@@ -16,8 +16,8 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { LinkTransition } from "./link-transition";
-import { ToggleThemeButton } from "./toggle-theme-button";
+import { LinkWithTransition } from "./LinkWithTransition";
+import { ToggleTheme } from "./ToggleTheme";
 
 // Icons
 import { ArrowRight, Menu } from "lucide-react";
@@ -44,7 +44,7 @@ export function MobileMenu() {
             return (
               <li key={index}>
                 <SheetClose asChild>
-                  <LinkTransition
+                  <LinkWithTransition
                     href={navItem.href}
                     className={`${buttonVariants({
                       variant: "navItem",
@@ -55,7 +55,7 @@ export function MobileMenu() {
                     }`}
                   >
                     {navItem.title}
-                  </LinkTransition>
+                  </LinkWithTransition>
                 </SheetClose>
               </li>
             );
@@ -70,7 +70,7 @@ export function MobileMenu() {
                       {exploreItems.map((exploreItem, index) => (
                         <li className="row-span-3" key={index}>
                           <NavigationMenuLink>
-                            <LinkTransition
+                            <LinkWithTransition
                               href={exploreItem.href}
                               className={`${buttonVariants({
                                 variant: "link",
@@ -81,7 +81,7 @@ export function MobileMenu() {
                                 className="transition-transform ease-in-out duration-300 transform translate-x-0 group-hover:translate-x-1"
                                 size={".75rem"}
                               />
-                            </LinkTransition>
+                            </LinkWithTransition>
                           </NavigationMenuLink>
                         </li>
                       ))}
@@ -92,7 +92,7 @@ export function MobileMenu() {
             </NavigationMenu>
           </li>
           <li>
-            <ToggleThemeButton />
+            <ToggleTheme />
           </li>
         </ul>
       </SheetContent>

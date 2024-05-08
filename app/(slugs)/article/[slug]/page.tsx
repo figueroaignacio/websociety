@@ -2,7 +2,7 @@
 
 // Components
 import { SpinnerLoader } from "@/components/loaders/spinner-loader";
-import { RichTextComponents } from "@/components/rich-text-components";
+import { RichTextComponents } from "@/components/RichTextComponents";
 
 // Utils
 import { useArticlesSlug } from "@/hooks/useArticleSlug";

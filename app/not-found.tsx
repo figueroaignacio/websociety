@@ -1,5 +1,5 @@
 // Components
-import { BackButton } from "@/components/back-button";
+import { BackButton } from "@/components/BackButton";
 
 // Utils
 import { notFound } from "@/constants/errors";

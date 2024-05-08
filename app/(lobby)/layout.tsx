@@ -1,7 +1,7 @@
 // Components
-import { CircleBlur } from "@/components/circle-blur";
-import { FootNote } from "@/components/foot-note";
-import { Navbar } from "@/components/nav-bar";
+import { Blur } from "@/components/Blur";
+import { Footer } from "@/components/Footer";
+import { Navbar } from "@/components/Navbar";
 
 // Providers
 import { ThemeProvider } from "@/providers/theme-provider/theme-provider";
@@ -27,11 +27,11 @@ export default function LobbyLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <CircleBlur />
+          <Blur />
           <Navbar />
           <main className="min-h-screen py-6 m-auto container max-w-6xl">
             {children}
-            <FootNote />
+            <Footer />
           </main>
         </ThemeProvider>
       </body>

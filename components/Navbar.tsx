@@ -4,10 +4,10 @@
 import { usePathname } from "next/navigation";
 
 // Components
-import { LinkTransition } from "./link-transition";
-import { MobileMenu } from "./mobile-menu";
-import { ToggleThemeButton } from "./toggle-theme-button";
-import { Logo } from "./trademark";
+import { LinkWithTransition } from "./LinkWithTransition";
+import { MobileMenu } from "./MobileMenu";
+import { ToggleTheme } from "./ToggleTheme";
+import { Wordmark } from "./Wordmark";
 import { buttonVariants } from "./ui/button";
 import {
   NavigationMenu,
@@ -38,7 +38,7 @@ export function Navbar() {
       <div className="flex gap-9 items-center justify-between lg:justify-normal w-screen">
         <div className="flex items-center justify-between w-full gap-6 md:hidden relative inset-0">
           <MobileMenu />
-          <Logo />
+          <Wordmark />
         </div>
         <nav className="hidden md:block">
           <ul className="flex flex-col p-2 gap-5 w-screen items-center md:w-full md:flex-row md:min-h-0">
@@ -62,7 +62,7 @@ export function Navbar() {
               }
               return (
                 <li key={index}>
-                  <LinkTransition
+                  <LinkWithTransition
                     href={navItem.href}
                     className={`${buttonVariants({
                       variant: "navItem",
@@ -74,7 +74,7 @@ export function Navbar() {
                   >
                     {IconComponent}
                     {navItem.title}
-                  </LinkTransition>
+                  </LinkWithTransition>
                 </li>
               );
             })}
@@ -88,7 +88,7 @@ export function Navbar() {
                         {exploreItems.map((exploreItem, index) => (
                           <li className="row-span-3" key={index}>
                             <NavigationMenuLink>
-                              <LinkTransition
+                              <LinkWithTransition
                                 href={exploreItem.href}
                                 className={`${buttonVariants({
                                   variant: "link",
@@ -99,7 +99,7 @@ export function Navbar() {
                                   className="transition-transform ease-in-out duration-300 transform translate-x-0 group-hover:translate-x-1"
                                   size={".75rem"}
                                 />
-                              </LinkTransition>
+                              </LinkWithTransition>
                             </NavigationMenuLink>
                           </li>
                         ))}
@@ -110,13 +110,13 @@ export function Navbar() {
               </NavigationMenu>
             </li>
             <li>
-              <ToggleThemeButton />
+              <ToggleTheme />
             </li>
           </ul>
         </nav>
       </div>
       <div className="hidden md:block">
-        <Logo />
+        <Wordmark />
       </div>
     </header>
   );

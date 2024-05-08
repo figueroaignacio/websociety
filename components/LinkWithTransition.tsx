@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-export function LinkTransition(props: any) {
+export function LinkWithTransition(props: any) {
   const router = useRouter();
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (!document.startViewTransition) {

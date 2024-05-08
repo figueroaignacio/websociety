@@ -2,7 +2,7 @@
 
 // Components
 import { PostCardLoader } from "@/components/loaders/post-card-loader";
-import { PostCard } from "@/components/post-card";
+import { PostCard } from "@/components/PostCard";
 
 // Utils
 import { usePosts } from "@/hooks/usePosts";
