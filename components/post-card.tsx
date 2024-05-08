@@ -19,7 +19,7 @@ export function PostCard({ title, className, author }: PostCardProps) {
     <Card
       className={`h-full w-full ${className} fade hover:backdrop-brightness-150 transition-all duration-150 ease-in-out`}
     >
-      <div className="rounded-sm h-full flex flex-col justify-between shadow-dark-box-shadow-card custom-border">
+      <div className="rounded-sm h-full flex flex-col justify-between shadow-dark-box-shadow-card">
         <CardHeader className="flex flex-row justify-end items-center">
           <QuoteIcon className="w-4 h-4" />
         </CardHeader>
