@@ -13,7 +13,7 @@ export function HomeSection() {
   return (
     <section className="flex flex-col gap-3 justify-center items-center py-40 text-center">
       <Badge variant={"outline"} className="px-4 text-sm border-violet-600">
-        Hello world!
+        Hello world 🚀
       </Badge>
       <h1 className="font-bold text-5xl lg:text-7xl">
         Discover <span className="gradient-text">{home.title}</span>
