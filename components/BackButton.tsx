@@ -17,8 +17,8 @@ export function BackButton({ title }: GoBackProps) {
   const router = useRouter();
   return (
     <Button
-      variant={"backButton"}
-      className="items-center flex gap-2 relative group hover:backdrop-brightness-150"
+      variant={"navItem"}
+      className="items-center flex gap-2 relative group border-[.0625rem] border-gray/25"
       onClick={() => router.back()}
     >
       <ArrowLeft
