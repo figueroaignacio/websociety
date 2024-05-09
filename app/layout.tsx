@@ -1,3 +1,6 @@
+// Providers
+import { ThemeProvider } from "@/providers/theme-provider/theme-provider";
+
 // Font
 import { opensans } from "@/font/opensans";
 
@@ -55,7 +58,14 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${opensans.className}`}>
         <NextTopLoader color="rgb(75, 85, 99)" />
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
