@@ -9,3 +9,7 @@ export const notFound = Object.freeze({
   notFoundDescription:
     "Sorry but the page you are looking for does not exist, was not created, have been removed, name changed or is temporarily unavailable",
 });
+
+export const inDevelopmentSection = Object.freeze({
+  description: "I'm coding this part of the code, sorry the inconvenience",
+});
