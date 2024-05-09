@@ -33,10 +33,8 @@ export default function PostsSection() {
   return (
     <section>
       <div className="flex flex-col gap-5">
-        <div className="flex flex-col gap-3 py-10">
-          <h1 className="font-bold text-3xl">
-            Read <span className="gradient-text">{allPosts.title}</span>
-          </h1>
+        <div className="flex flex-col gap-3 py-20">
+          <h1 className="font-bold text-3xl">Read {allPosts.title}</h1>
           <p className="text-xs lg:text-lg opacity-75">
             {allPosts.description}
           </p>

@@ -4,14 +4,12 @@ import { LatestArticlesSection } from "@/components/sections/latest-articles-sec
 import { LatestPostsSection } from "@/components/sections/latest-posts-section";
 
 // Components
-import { Separator } from "@/components/ui/separator";
 
 export default function HomePage() {
   return (
-    <section>
+    <section className="flex flex-col gap-12">
       <HomeSection />
       <LatestArticlesSection />
-      <Separator />
       <LatestPostsSection />
     </section>
   );

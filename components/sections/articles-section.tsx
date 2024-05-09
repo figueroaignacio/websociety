@@ -33,10 +33,9 @@ export default function AllArticlesSection() {
 
   return (
     <section className="flex flex-col gap-5">
-      <div className="flex flex-col gap-3 py-10">
+      <div className="flex flex-col gap-3 py-20">
         <h1 className="font-bold text-3xl">
-          Read <span className="gradient-text">{allArticles.title}</span> about{" "}
-          <span className="gradient-text">coding</span>
+          Read {allArticles.title} about coding
         </h1>
         <p className="text-xs lg:text-lg opacity-75">
           {allArticles.description}
@@ -46,7 +45,7 @@ export default function AllArticlesSection() {
         <ArticleSearcher onSearch={setSearchTerm} />
       </div>
       <div
-        className="grid grid-cols-1 lg:grid-cols-2 gap-4 py-4 justify-center items-center"
+        className="grid grid-cols-1 lg:grid-cols-3 gap-4 py-4 justify-center items-center"
         id="all-articles"
       >
         {filteredPosts.length === 0 ? (
