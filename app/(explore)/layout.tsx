@@ -1,11 +1,11 @@
 // Providers
 import { ThemeProvider } from "@/providers/theme-provider/theme-provider";
 
-// Font
-import { opensans } from "@/font/opensans";
-
 // Global styles
 import "@/styles/globals.css";
+
+// Font
+import { roboto } from "@/font/roboto";
 
 export default function LobbyLayout({
   children,
@@ -14,8 +14,7 @@ export default function LobbyLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${opensans.className}`}>
-        {" "}
+      <body className={`${roboto.className}`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

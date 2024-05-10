@@ -1,11 +1,11 @@
-// Font
-import { opensans } from "@/font/opensans";
-
 // Utils
 import NextTopLoader from "nextjs-toploader";
 
 // Global styles
 import "@/styles/globals.css";
+
+// Font
+import { roboto } from "@/font/roboto";
 
 // Metadata
 import { siteConfig } from "@/config/site";
@@ -53,7 +53,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${opensans.className}`}>
+      <body className={`${roboto.className}`}>
         <NextTopLoader color="rgb(75, 85, 99)" />
         {children}
       </body>

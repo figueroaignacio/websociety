@@ -5,11 +5,11 @@ import { Wordmark } from "@/components/Wordmark";
 // Provider
 import { ThemeProvider } from "@/providers/theme-provider/theme-provider";
 
-// Font
-import { opensans } from "@/font/opensans";
-
 // Global styles
 import "@/styles/globals.css";
+
+// Font
+import { roboto } from "@/font/roboto";
 
 export default function ArticleDetailsLayout({
   children,
@@ -18,8 +18,7 @@ export default function ArticleDetailsLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${opensans.className}`}>
-        {" "}
+      <body className={`${roboto.className}`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
