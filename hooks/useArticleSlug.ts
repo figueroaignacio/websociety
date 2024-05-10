@@ -6,7 +6,7 @@ import { client } from "../sanity/lib/client";
 import useSWR from "swr";
 
 // Utils
-import { ARTICLES } from "@/constants/api";
+import { ARTICLES } from "@/config/api";
 
 const fetchArticleData = async (slug: string) => {
   const result = await client.fetch(groq`${ARTICLES.SLUG_QUERY}`, { slug });

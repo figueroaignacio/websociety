@@ -8,7 +8,7 @@ import { BackButton } from "@/components/BackButton";
 import { HelpCircle } from "lucide-react";
 
 // Constants
-import { notFound } from "@/constants/errors";
+import { notFound } from "@/config/errors";
 
 export function NotFoundSection() {
   return (

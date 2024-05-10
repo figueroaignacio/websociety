@@ -1,7 +1,7 @@
 "use client";
 
 // Utils
-import { errors } from "@/constants/errors";
+import { errors } from "@/config/errors";
 
 export default function GlobalError({
   error,

@@ -5,7 +5,7 @@ import { BackButton } from "@/components/BackButton";
 import { Rocket } from "lucide-react";
 
 // Constants
-import { inDevelopmentSection } from "@/constants/errors";
+import { inDevelopmentSection } from "@/config/errors";
 
 export function InDevelopmentSection() {
   return (

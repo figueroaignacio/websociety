@@ -6,7 +6,7 @@ import { client } from "../sanity/lib/client";
 import useSWR from "swr";
 
 // Utils
-import { CATEGORY } from "@/constants/api";
+import { CATEGORY } from "@/config/api";
 
 const fetcher = async (url: string) => {
   const data = await client.fetch(url);
