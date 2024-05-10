@@ -1,4 +1,4 @@
-# Front Society
+# Front Society (Project in Development)
 
 Welcome to **Front Society**, your go-to platform for discovering the latest trends, techniques, and tools in the realm of frontend development.
 
