@@ -43,17 +43,6 @@ export function HomeSection() {
             </div>
           );
         })}
-
-        {/* <div key={index}>
-            <Link
-              href={path.path}
-              className={`${buttonVariants({
-                variant: "navItem",
-              })} flex items-center gap-2 border-[.0625rem] border-gray/25`}
-            >
-              {path.title}
-            </Link>
-          </div> */}
       </div>
     </section>
   );
