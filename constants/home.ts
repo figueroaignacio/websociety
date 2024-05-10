@@ -1,6 +1,17 @@
 export const home = Object.freeze({
   title: "Front Society",
   description: "Site built by a developer for developers",
+  url: [
+    {
+      title: "View Articles",
+      path: "/articles",
+    },
+    {
+      title: "Source",
+      path: "https://github.com/figueroaignacio/frontsociety/",
+      icon: "github",
+    },
+  ],
 });
 
 export const homeMetadata = Object.freeze({

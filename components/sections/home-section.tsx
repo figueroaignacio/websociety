@@ -4,7 +4,7 @@ import { Badge } from "../ui/badge";
 import { buttonVariants } from "../ui/button";
 
 // Icons
-import { ArrowRight, Code } from "lucide-react";
+import { Github } from "lucide-react";
 
 // Constants
 import { home } from "@/constants/home";
@@ -20,24 +20,40 @@ export function HomeSection() {
       </h1>
       <p className="text-sm opacity-70">{home.description}</p>
       <div className="flex gap-2">
-        <Link
-          href={""}
-          className={`${buttonVariants({
-            variant: "navItem",
-          })} flex items-center gap-2 border-[.0625rem] border-gray/25`}
-        >
-          View Articles
-          <ArrowRight size={".75rem"} />
-        </Link>
-        <Link
-          href={""}
-          className={`${buttonVariants({
-            variant: "navItem",
-          })} flex items-center gap-2 border-[.0625rem] border-gray/25`}
-        >
-          Source
-          <Code size={".75rem"} />
-        </Link>
+        {home.url.map((path, index) => {
+          let icon;
+          switch (path.icon) {
+            case "github":
+              icon = <Github size=".75rem" />;
+              break;
+            default:
+              icon = null;
+          }
+          return (
+            <div key={index}>
+              <Link
+                href={path.path}
+                className={`${buttonVariants({
+                  variant: "navItem",
+                })} flex items-center gap-2 border-[.0625rem] border-gray/25`}
+              >
+                {path.title}
+                {icon}
+              </Link>
+            </div>
+          );
+        })}
+
+        {/* <div key={index}>
+            <Link
+              href={path.path}
+              className={`${buttonVariants({
+                variant: "navItem",
+              })} flex items-center gap-2 border-[.0625rem] border-gray/25`}
+            >
+              {path.title}
+            </Link>
+          </div> */}
       </div>
     </section>
   );
