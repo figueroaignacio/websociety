@@ -1,6 +1,6 @@
 // Components
 import { PostCardLoader } from "@/components/Posts/PostCardLoader";
-import { BackdropBlur } from "../Common/BackdropBlur";
+import { BackdropBlur } from "../BackdropBlur";
 
 // Utils
 import { allPosts } from "@/constants/posts";

@@ -45,7 +45,7 @@ export function AllArticlesSection() {
         <ArticleSearcher onSearch={setSearchTerm} />
       </div>
       <div
-        className="grid grid-cols-1 lg:grid-cols-3 gap-4 py-4 justify-center items-center"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-4 justify-center items-center"
         id="all-articles"
       >
         {filteredPosts.length === 0 ? (

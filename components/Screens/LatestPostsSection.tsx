@@ -50,12 +50,12 @@ export function LatestPostsSection() {
   return (
     <section className="py-10 flex flex-col gap-6">
       <h2 className="font-bold text-3xl fade">Latest Posts</h2>
-      <div className="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
+      <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ">
         {firstFourPosts.map((post: any, i: number) => (
           <Dialog key={i}>
             <DialogTrigger
               className={`${
-                i === 0 || i === 3 ? "lg:col-span-2" : ""
+                i === 0 || i === 3 ? "md:col-span-2" : ""
               } h-full w-full`}
             >
               <PostCard title={post.title} author={post.author} />
