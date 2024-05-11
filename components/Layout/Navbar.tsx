@@ -4,9 +4,9 @@
 import { usePathname } from "next/navigation";
 
 // Components
-import { LinkWithTransition } from "../Common/LinkWithTransition";
-import { ToggleTheme } from "../Common/ToggleTheme";
-import { Wordmark } from "../Common/Wordmark";
+import { LinkWithTransition } from "../LinkWithTransition";
+import { ToggleTheme } from "../ToggleTheme";
+import { Wordmark } from "../Wordmark";
 import { buttonVariants } from "../ui/button";
 import {
   NavigationMenu,

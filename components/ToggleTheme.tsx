@@ -8,7 +8,6 @@ import { useTheme } from "next-themes";
 
 // Components
 import { Button } from "@/components/ui/button";
-import { Separator } from "../ui/separator";
 
 import {
   DropdownMenu,
@@ -44,7 +43,6 @@ export function ToggleTheme() {
           <Moon />
           Dark
         </DropdownMenuItem>
-        <Separator />
         <DropdownMenuItem
           onClick={() => setTheme("system")}
           className="flex justify-between"

@@ -1,5 +1,5 @@
 // Components
-import { Blur } from "@/components/Common/Blur";
+import { Blur } from "@/components/Blur";
 import { Footer } from "@/components/Layout/Footer";
 import { Navbar } from "@/components/Layout/Navbar";
 
