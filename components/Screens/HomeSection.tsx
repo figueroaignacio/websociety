@@ -1,8 +1,6 @@
 // Components
 import { Badge } from "@/components/ui/badge";
 
-// Icons
-
 // Constants
 import { home } from "@/constants/home";
 
