@@ -1,6 +1,7 @@
 export const home = Object.freeze({
-  title: "Front Society",
-  description: "Site built by a developer for developers",
+  title: "Front Society, for Frontend devs.",
+  description:
+    "Explore tech articles, collaborate on projects, and join our vibrant community on GitHub.",
   url: [
     {
       title: "View Articles",

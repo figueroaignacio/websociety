@@ -12,8 +12,11 @@ import { home } from "@/constants/home";
 export function HomeSection() {
   return (
     <section className="flex flex-col gap-3 justify-center items-center py-40 text-center">
-      <Badge variant={"outline"} className="px-4 text-sm border-violet-600">
-        Hello world 🚀
+      <Badge
+        variant={"default"}
+        className="px-4 text-sm bg-violet-600 text-white"
+      >
+        Welcome 🚀
       </Badge>
       <h1 className="font-bold text-5xl lg:text-7xl">
         Discover <span className="gradient-text">{home.title}</span>
