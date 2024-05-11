@@ -1,8 +1,8 @@
 "use client";
 
 // Components
-import { AllPostsLoader } from "@/components/loaders/AllPostsLoader";
-import { PostCard } from "@/components/PostCard";
+import { AllPostsLoader } from "@/components/Posts/AllPostsLoader";
+import { PostCard } from "@/components/Posts/PostCard";
 import {
   Dialog,
   DialogContent,
@@ -19,7 +19,7 @@ import { allPosts } from "@/constants/posts";
 import { usePosts } from "@/hooks/usePosts";
 import { PortableText } from "@portabletext/react";
 
-export default function PostsSection() {
+export function PostsSection() {
   const { isError, isLoading, posts } = usePosts();
 
   if (isLoading) {

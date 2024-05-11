@@ -1,8 +1,8 @@
 "use client";
 
 // Components
-import { SpinnerLoader } from "@/components/loaders/SpinnerLoader";
-import { RichTextComponents } from "@/components/RichTextComponents";
+import { RichTextComponents } from "@/components/Common/RichTextComponents";
+import { Spinner } from "@/components/Common/Spinner";
 
 // Utils
 import { useArticlesSlug } from "@/hooks/useArticleSlug";
@@ -17,7 +17,7 @@ export default function ArticlePage({ params }: Props) {
   const { article, isError, isLoading } = useArticlesSlug(slug);
 
   if (isLoading) {
-    return <SpinnerLoader />;
+    return <Spinner />;
   }
 
   if (isError) {

@@ -1,5 +1,5 @@
-// Module
-import AllArticlesSection from "@/components/sections/articles-section";
+// Section
+import { AllArticlesSection } from "@/components/Screens/ArticlesSection";
 
 // Constants
 import { articlesMetadata } from "@/constants/articles";

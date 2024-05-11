@@ -1,9 +1,7 @@
-// Modules
-import { HomeSection } from "@/components/sections/home-section";
-import { LatestArticlesSection } from "@/components/sections/latest-articles-section";
-import { LatestPostsSection } from "@/components/sections/latest-posts-section";
-
-// Components
+// Sections
+import { HomeSection } from "@/components/Screens/HomeSection";
+import { LatestArticlesSection } from "@/components/Screens/LatestArticlesSection";
+import { LatestPostsSection } from "@/components/Screens/LatestPostsSection";
 
 export default function HomePage() {
   return (

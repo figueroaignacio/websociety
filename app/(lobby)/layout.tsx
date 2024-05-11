@@ -1,7 +1,7 @@
 // Components
-import { Blur } from "@/components/Blur";
-import { Footer } from "@/components/Footer";
-import { Navbar } from "@/components/Navbar";
+import { Blur } from "@/components/Common/Blur";
+import { Footer } from "@/components/Layout/Footer";
+import { Navbar } from "@/components/Layout/Navbar";
 
 // Providers
 import { ThemeProvider } from "@/providers/theme-provider/theme-provider";

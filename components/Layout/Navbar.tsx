@@ -4,11 +4,10 @@
 import { usePathname } from "next/navigation";
 
 // Components
-import { LinkWithTransition } from "./LinkWithTransition";
-import { MobileMenu } from "./MobileMenu";
-import { ToggleTheme } from "./ToggleTheme";
-import { Wordmark } from "./Wordmark";
-import { buttonVariants } from "./ui/button";
+import { LinkWithTransition } from "../Common/LinkWithTransition";
+import { ToggleTheme } from "../Common/ToggleTheme";
+import { Wordmark } from "../Common/Wordmark";
+import { buttonVariants } from "../ui/button";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -16,7 +15,8 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "./ui/navigation-menu";
+} from "../ui/navigation-menu";
+import { MobileMenu } from "./MobileMenu";
 
 // Icons
 import {

@@ -1,5 +1,5 @@
 // Components
-import { NotFoundSection } from "@/components/sections/not-found-section";
+import { NotFoundSection } from "@/components/Screens/NotFoundSection";
 
 export default async function NotFound() {
   return <NotFoundSection />;

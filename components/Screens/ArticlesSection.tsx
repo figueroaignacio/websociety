@@ -4,9 +4,9 @@
 import { useState } from "react";
 
 // Components
-import { ArticleCard } from "@/components/ArticleCard";
-import { ArticleSearcher } from "@/components/ArticleSearcher";
-import { AllArticlesLoader } from "@/components/loaders/AllArticlesLoader";
+import { AllArticlesLoader } from "@/components/Articles/AllArticlesLoader";
+import { ArticleCard } from "@/components/Articles/ArticleCard";
+import { ArticleSearcher } from "@/components/Articles/ArticleSearcher";
 
 // Utils
 import { allArticles } from "@/constants/articles";
@@ -15,7 +15,7 @@ import { useArticles } from "@/hooks/useArticles";
 // Types
 import { ArticleTypes } from "@/types/article.types";
 
-export default function AllArticlesSection() {
+export function AllArticlesSection() {
   const { articles, isError, isLoading } = useArticles();
   const [searchTerm, setSearchTerm] = useState("");
 

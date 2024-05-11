@@ -2,7 +2,7 @@
 import { ThemeProvider } from "@/providers/theme-provider/theme-provider";
 
 // Components
-import { BackButton } from "@/components/BackButton";
+import { BackButton } from "@/components/Common/BackButton";
 
 // Icons
 import { HelpCircle } from "lucide-react";

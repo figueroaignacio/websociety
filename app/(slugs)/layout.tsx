@@ -1,6 +1,6 @@
 // Components
-import { BackButton } from "@/components/BackButton";
-import { Wordmark } from "@/components/Wordmark";
+import { BackButton } from "@/components/Common/BackButton";
+import { Wordmark } from "@/components/Common/Wordmark";
 
 // Provider
 import { ThemeProvider } from "@/providers/theme-provider/theme-provider";

@@ -16,8 +16,8 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { LinkWithTransition } from "./LinkWithTransition";
-import { ToggleTheme } from "./ToggleTheme";
+import { LinkWithTransition } from "../Common/LinkWithTransition";
+import { ToggleTheme } from "../Common/ToggleTheme";
 
 // Icons
 import { ArrowRight, Menu } from "lucide-react";

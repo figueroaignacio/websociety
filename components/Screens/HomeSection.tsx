@@ -1,7 +1,7 @@
 // Components
+import { Badge } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
-import { Badge } from "../ui/badge";
-import { buttonVariants } from "../ui/button";
 
 // Icons
 import { Github } from "lucide-react";

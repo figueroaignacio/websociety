@@ -2,10 +2,10 @@ interface SpinnerProps {
   className?: string;
 }
 
-export function SpinnerLoader({ className }: SpinnerProps) {
+export function Spinner({ className }: SpinnerProps) {
   return (
     <div
-      className={`flex items-center justify-center min-h-[80vh] space-x-2 ${className}`}
+      className={`flex items-center justify-center absolute inset-0 min-h-[100vh] backdrop-blur-3xl backdrop-filter space-x-2 ${className}`}
     >
       <svg
         className="h-8 w-8 animate-spin stroke-gray-500"
