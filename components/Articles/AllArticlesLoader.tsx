@@ -1,6 +1,6 @@
 // Components
 import { ArticleCardLoader } from "@/components/Articles/ArticleCardLoader";
-import { BackdropBlur } from "@/components/Common/BackdropBlur";
+import { BackdropBlur } from "@/components/BackdropBlur";
 import { ArticleSearcher } from "./ArticleSearcher";
 
 // Utils
