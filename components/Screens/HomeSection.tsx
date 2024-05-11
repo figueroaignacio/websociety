@@ -1,10 +1,7 @@
 // Components
 import { Badge } from "@/components/ui/badge";
-import { buttonVariants } from "@/components/ui/button";
-import Link from "next/link";
 
 // Icons
-import { Github } from "lucide-react";
 
 // Constants
 import { home } from "@/constants/home";
@@ -16,37 +13,12 @@ export function HomeSection() {
         variant={"default"}
         className="px-4 text-sm bg-violet-600 text-white"
       >
-        Welcome 🚀
+        By a developer, for developers 🚀
       </Badge>
       <h1 className="font-bold text-5xl lg:text-7xl">
         Discover <span className="gradient-text">{home.title}</span>
       </h1>
       <p className="text-sm opacity-70">{home.description}</p>
-      <div className="flex gap-2">
-        {home.url.map((path, index) => {
-          let icon;
-          switch (path.icon) {
-            case "github":
-              icon = <Github size=".75rem" />;
-              break;
-            default:
-              icon = null;
-          }
-          return (
-            <div key={index}>
-              <Link
-                href={path.path}
-                className={`${buttonVariants({
-                  variant: "navItem",
-                })} flex items-center gap-2 border-[.0625rem] border-gray/25`}
-              >
-                {path.title}
-                {icon}
-              </Link>
-            </div>
-          );
-        })}
-      </div>
     </section>
   );
 }
