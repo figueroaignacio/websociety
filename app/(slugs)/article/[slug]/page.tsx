@@ -1,8 +1,8 @@
 "use client";
 
 // Components
-import { RichTextComponents } from "@/components/Common/RichTextComponents";
-import { Spinner } from "@/components/Common/Spinner";
+import { RichTextComponents } from "@/components/RichTextComponents";
+import { Spinner } from "@/components/Spinner";
 
 // Utils
 import { useArticlesSlug } from "@/hooks/useArticleSlug";

@@ -1,5 +1,5 @@
 // Components
-import { BackButton } from "@/components/Common/BackButton";
+import { BackButton } from "@/components/BackButton";
 
 // Icons
 import { Rocket } from "lucide-react";
