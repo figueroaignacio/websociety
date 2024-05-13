@@ -17,7 +17,7 @@ export function BackButton({ title }: GoBackProps) {
   const router = useRouter();
   return (
     <Button
-      variant={"navItem"}
+      variant="navItem"
       className="items-center flex gap-2 relative group border-[.0625rem] border-gray/25"
       onClick={() => router.back()}
     >

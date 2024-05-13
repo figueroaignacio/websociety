@@ -66,7 +66,7 @@ export function MobileMenu() {
                 <NavigationMenuItem>
                   <NavigationMenuTrigger>Explore</NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="p-4 ">
+                    <ul className="p-4">
                       {exploreItems.map((exploreItem, index) => (
                         <li className="row-span-3" key={index}>
                           <NavigationMenuLink>
@@ -79,7 +79,7 @@ export function MobileMenu() {
                               {exploreItem.title}
                               <ArrowRight
                                 className="transition-transform ease-in-out duration-300 transform translate-x-0 group-hover:translate-x-1"
-                                size={".75rem"}
+                                size=".75rem"
                               />
                             </LinkWithTransition>
                           </NavigationMenuLink>

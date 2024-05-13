@@ -8,7 +8,7 @@ export function HomeSection() {
   return (
     <section className="flex flex-col gap-3 justify-center items-center py-40 text-center">
       <Badge
-        variant={"outline"}
+        variant="outline"
         className="px-4 text-sm bg-violet-600 text-white"
       >
         By a developer, for developers 🚀

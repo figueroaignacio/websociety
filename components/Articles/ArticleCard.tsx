@@ -72,11 +72,7 @@ export function ArticleCard({
 
   return (
     <Link href={`/article/${slug?.current}`} className={`${className}`}>
-      <Card
-        className={
-          "group duration-150 flex-1 fade shadow-sm hover:shadow-lg hover:backdrop-brightness-110 transition-all ease-in-out"
-        }
-      >
+      <Card className="group duration-150 flex-1 fade shadow-sm hover:shadow-lg hover:backdrop-brightness-110 transition-all ease-in-out">
         <div className="rounded-md shadow-dark-box-shadow-card">
           <CardHeader className="flex flex-row justify-between items-center relative">
             <p className="text-xs">{formattedDate}</p>

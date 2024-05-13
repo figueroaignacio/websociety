@@ -23,7 +23,7 @@ export function PostCardLoader({ className }: SkeletonPostCardProps) {
           <Skeleton className="h-6 w-full bg-gray-300 dark:bg-gray-700" />
         </CardTitle>
       </CardContent>
-      <CardFooter className="flex  justify-end items-center">
+      <CardFooter className="flex justify-end items-center">
         <div>
           <Skeleton className="h-5 w-20  bg-gray-300 dark:bg-gray-700" />
         </div>

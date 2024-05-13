@@ -18,7 +18,6 @@ export function Features() {
     <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
       {features.map((feature, index) => {
         let icon;
-
         switch (feature.icon) {
           case "book":
             icon = <BookCheck size="1.5rem" />;
