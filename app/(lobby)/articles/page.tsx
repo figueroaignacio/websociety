@@ -1,36 +1,32 @@
-// Section
-import { AllArticlesSection } from "@/components/Screens/ArticlesSection";
+// Components
+import { ArticleCard } from "@/components/Articles/ArticleCard";
 
-// Constants
-import { articlesMetadata } from "@/constants/articles";
+// Content
+import { posts } from "#site/content";
 
-// Metadata
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000"
-  ),
-  title: articlesMetadata.title,
-  description: articlesMetadata.description,
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: articlesMetadata.url,
-    title: articlesMetadata.title,
-    description: articlesMetadata.description,
-    siteName: articlesMetadata.title,
-    images: [
-      {
-        url: articlesMetadata.ogImage,
-        width: 1200,
-        height: 630,
-        alt: articlesMetadata.title,
-      },
-    ],
-  },
-};
-
-export default function AllArticlesPage() {
-  return <AllArticlesSection />;
+export default async function PostsPage() {
+  const displayPosts = posts;
+  return (
+    <div>
+      {displayPosts?.length > 0 ? (
+        <ul>
+          {displayPosts.map((post) => {
+            const { slug, date, description, title } = post;
+            return (
+              <li key={slug}>
+                <ArticleCard
+                  title={title}
+                  publishedAt={date}
+                  description={description}
+                  slug={slug}
+                />
+              </li>
+            );
+          })}
+        </ul>
+      ) : (
+        <p>Nothing to see yet</p>
+      )}{" "}
+    </div>
+  );
 }
