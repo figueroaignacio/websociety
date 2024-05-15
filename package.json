@@ -44,6 +44,7 @@
     "eslint-config-next": "14.0.4",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "velite": "0.1.0-rc.3"
   }
 }
