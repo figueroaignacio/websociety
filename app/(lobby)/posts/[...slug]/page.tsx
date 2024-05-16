@@ -1,5 +1,4 @@
 // Components
-import { Separator } from "@/components/ui/separator";
 
 // Content
 import { posts } from "#site/content";
@@ -33,10 +32,10 @@ export default async function PostPage({ params }: PostPageProps) {
   }
 
   return (
-    <article>
+    <article className="prose dark:prose-invert max-w-full">
       <h1>{post.title}</h1>
       <p>{post.description ? <p>{post.description}</p> : null}</p>
-      <Separator className="my-6" />
+      <hr className="my-6 bg-border" />
     </article>
   );
 }
