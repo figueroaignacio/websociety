@@ -1,5 +1,5 @@
-import { Posts } from "@/components/Screens/Posts"
+import { Posts } from "@/sections/Screens/Posts";
 
 export default function page() {
-  return <Posts />
+  return <Posts />;
 }

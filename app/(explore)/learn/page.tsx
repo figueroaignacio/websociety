@@ -1,5 +1,5 @@
 // Section
-import { InDevelopmentSection } from "@/components/Screens/InDevelopmentSection";
+import { InDevelopmentSection } from "@/sections/InDevelopmentSection";
 
 export default function LearnPage() {
   return <InDevelopmentSection />;

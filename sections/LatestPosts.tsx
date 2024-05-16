@@ -1,7 +1,7 @@
 "use client";
 
 // Components
-import { PostCard } from "../Posts/PostCard";
+import { PostCard } from "@/components/Posts/PostCard";
 
 // Content
 import { posts } from "#site/content";
