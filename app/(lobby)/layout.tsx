@@ -1,5 +1,4 @@
 // Components
-import { Blur } from "@/components/Blur";
 import { Navbar } from "@/components/Layout/Navbar";
 
 // Providers
@@ -25,7 +24,6 @@ export default function LobbyLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Blur />
           <Navbar />
           <main className="min-h-screen py-6 m-auto container max-w-6xl">
             {children}
