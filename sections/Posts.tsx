@@ -27,7 +27,7 @@ export async function Posts() {
                   slug={slug}
                   date={date}
                   title={title}
-                  description={description}
+                  description={description ?? ""}
                 />
               </li>
             );

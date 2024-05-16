@@ -22,7 +22,7 @@ export function LatestPosts() {
                   <PostCard
                     title={title}
                     date={date}
-                    description={description}
+                    description={description ?? ""}
                     slug={slug}
                   />
                 </li>
