@@ -12,7 +12,7 @@ import {
 import { ArrowUpRight, Calendar } from "lucide-react";
 
 // Utils
-import { formatDate } from "@/utils/formatDate";
+import { formatDate } from "@/lib/utils";
 
 // Next
 import Link from "next/link";
