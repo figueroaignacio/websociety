@@ -1,7 +1,7 @@
 // Sections
-import { Features } from "@/app/sections/Features";
-import { Home } from "@/app/sections/Home";
-import { LatestPosts } from "@/app/sections/LatestPosts";
+import { Features } from "@/sections/Features";
+import { Home } from "@/sections/Home";
+import { LatestPosts } from "@/sections/LatestPosts";
 
 export default function HomePage() {
   return (
