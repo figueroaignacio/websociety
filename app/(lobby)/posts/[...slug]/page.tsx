@@ -1,4 +1,10 @@
+// Components
+import { Separator } from "@/components/ui/separator";
+
+// Content
 import { posts } from "#site/content";
+
+// next
 import { notFound } from "next/navigation";
 
 interface PostPageProps {
@@ -29,7 +35,8 @@ export default async function PostPage({ params }: PostPageProps) {
   return (
     <article>
       <h1>{post.title}</h1>
-      <p>{post.description}</p>
+      <p>{post.description ? <p>{post.description}</p> : null}</p>
+      <Separator className="my-6" />
     </article>
   );
 }
