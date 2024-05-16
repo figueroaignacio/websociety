@@ -1,5 +1,5 @@
 // Section
-import { InDevelopmentSection } from "@/components/sections/InDevelopmentSection";
+import { InDevelopmentSection } from "@/app/sections/InDevelopmentSection";
 
 export default function ChallengesPage() {
   return <InDevelopmentSection />;

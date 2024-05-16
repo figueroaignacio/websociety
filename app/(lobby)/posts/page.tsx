@@ -1,4 +1,4 @@
-import { Posts } from "@/components/sections/Posts";
+import { Posts } from "@/app/sections/Posts";
 
 export default function page() {
   return <Posts />;
