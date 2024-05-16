@@ -7,11 +7,6 @@ export const navItems = Object.freeze([
   {
     title: "Posts",
     href: "/posts",
-    icon: "post",
-  },
-  {
-    title: "Articles",
-    href: "/articles",
     icon: "article",
   },
 ]);

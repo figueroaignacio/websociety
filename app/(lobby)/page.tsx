@@ -1,16 +1,14 @@
 // Sections
 import { Features } from "@/components/Screens/Features";
-import { HomeSection } from "@/components/Screens/HomeSection";
-import { LatestArticlesSection } from "@/components/Screens/LatestArticlesSection";
-import { LatestPostsSection } from "@/components/Screens/LatestPostsSection";
+import { Home } from "@/components/Screens/Home";
+import { LatestPosts } from "@/components/Screens/LatestPosts";
 
 export default function HomePage() {
   return (
     <section className="flex flex-col gap-24">
-      <HomeSection />
+      <Home />
       <Features />
-      <LatestArticlesSection />
-      <LatestPostsSection />
+      <LatestPosts />
     </section>
   );
 }
