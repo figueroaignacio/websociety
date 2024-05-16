@@ -3,14 +3,6 @@
 // Components
 import { Button, buttonVariants } from "@/components/ui/button";
 import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
-import {
   Sheet,
   SheetClose,
   SheetContent,
@@ -20,13 +12,13 @@ import { LinkWithTransition } from "../LinkWithTransition";
 import { ToggleTheme } from "../ToggleTheme";
 
 // Icons
-import { ArrowRight, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 
 // Next
 import { usePathname } from "next/navigation";
 
 // Constants
-import { exploreItems, navItems } from "@/config/navigation";
+import { navigationConfig } from "@/config/navigation";
 
 export function MobileMenu() {
   const pathname = usePathname();
@@ -40,7 +32,7 @@ export function MobileMenu() {
       </SheetTrigger>
       <SheetContent side="left">
         <ul className="flex flex-col gap-7 pt-32 py-10 pl-8 items-end md:w-full md:min-h-0 text-2xl">
-          {navItems.map((navItem, index) => {
+          {navigationConfig.map((navItem, index) => {
             return (
               <li key={index}>
                 <SheetClose asChild>
@@ -60,37 +52,6 @@ export function MobileMenu() {
               </li>
             );
           })}
-          <li>
-            <NavigationMenu>
-              <NavigationMenuList>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger>Explore</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="p-4">
-                      {exploreItems.map((exploreItem, index) => (
-                        <li className="row-span-3" key={index}>
-                          <NavigationMenuLink>
-                            <LinkWithTransition
-                              href={exploreItem.href}
-                              className={`${buttonVariants({
-                                variant: "link",
-                              })} flex gap-1 relative group`}
-                            >
-                              {exploreItem.title}
-                              <ArrowRight
-                                className="transition-transform ease-in-out duration-300 transform translate-x-0 group-hover:translate-x-1"
-                                size=".75rem"
-                              />
-                            </LinkWithTransition>
-                          </NavigationMenuLink>
-                        </li>
-                      ))}
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
-          </li>
           <li>
             <ToggleTheme />
           </li>

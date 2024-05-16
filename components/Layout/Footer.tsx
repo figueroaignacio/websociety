@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ChevronRight, Code2 } from "lucide-react";
 
 // Constants
-import { navItems } from "@/config/navigation";
+import { navigationConfig } from "@/config/navigation";
 import { footer } from "@/constants/footer";
 
 export function Footer() {
@@ -18,7 +18,7 @@ export function Footer() {
         </h2>
         <p className="text-sm">{footer.subtitle}</p>
         <ul className="flex flex-col gap-2 py-2">
-          {navItems.map((navItem, index) => (
+          {navigationConfig.map((navItem, index) => (
             <li key={index} className="flex items-center group">
               <Link href={navItem.href}>{navItem.title}</Link>
               <ChevronRight

@@ -8,27 +8,13 @@ import { LinkWithTransition } from "../LinkWithTransition";
 import { ToggleTheme } from "../ToggleTheme";
 import { Wordmark } from "../Wordmark";
 import { buttonVariants } from "../ui/button";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "../ui/navigation-menu";
 import { MobileMenu } from "./MobileMenu";
 
 // Icons
-import {
-  ArrowRight,
-  Github,
-  HomeIcon,
-  MessageSquare,
-  SheetIcon,
-} from "lucide-react";
+import { Code, GraduationCap, HomeIcon, NewspaperIcon } from "lucide-react";
 
 // Constants
-import { exploreItems, navItems } from "@/config/navigation";
+import { navigationConfig } from "@/config/navigation";
 
 export function Navbar() {
   const pathname = usePathname();
@@ -42,20 +28,20 @@ export function Navbar() {
         </div>
         <nav className="hidden md:block">
           <ul className="flex flex-col p-2 gap-5 w-screen items-center md:w-full md:flex-row md:min-h-0">
-            {navItems.map((navItem, index) => {
+            {navigationConfig.map((navItem, index) => {
               let IconComponent;
               switch (navItem.icon) {
                 case "home":
                   IconComponent = <HomeIcon size=".75rem" />;
                   break;
                 case "post":
-                  IconComponent = <MessageSquare size=".75rem" />;
+                  IconComponent = <NewspaperIcon size=".75rem" />;
                   break;
-                case "article":
-                  IconComponent = <SheetIcon size=".75rem" />;
+                case "challenges":
+                  IconComponent = <Code size=".75rem" />;
                   break;
-                case "github":
-                  IconComponent = <Github size=".75rem" />;
+                case "learn":
+                  IconComponent = <GraduationCap size=".75rem" />;
                   break;
                 default:
                   IconComponent = null;
@@ -78,37 +64,6 @@ export function Navbar() {
                 </li>
               );
             })}
-            <li>
-              <NavigationMenu>
-                <NavigationMenuList>
-                  <NavigationMenuItem>
-                    <NavigationMenuTrigger>Explore</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <ul className="p-4">
-                        {exploreItems.map((exploreItem, index) => (
-                          <li className="row-span-3" key={index}>
-                            <NavigationMenuLink>
-                              <LinkWithTransition
-                                href={exploreItem.href}
-                                className={`${buttonVariants({
-                                  variant: "link",
-                                })} flex gap-1 relative group`}
-                              >
-                                {exploreItem.title}
-                                <ArrowRight
-                                  className="transition-transform ease-in-out duration-300 transform translate-x-0 group-hover:translate-x-1"
-                                  size=".75rem"
-                                />
-                              </LinkWithTransition>
-                            </NavigationMenuLink>
-                          </li>
-                        ))}
-                      </ul>
-                    </NavigationMenuContent>
-                  </NavigationMenuItem>
-                </NavigationMenuList>
-              </NavigationMenu>
-            </li>
             <li>
               <ToggleTheme />
             </li>
