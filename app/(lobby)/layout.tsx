@@ -1,6 +1,5 @@
 // Components
 import { Blur } from "@/components/Blur";
-import { Footer } from "@/components/Layout/Footer";
 import { Navbar } from "@/components/Layout/Navbar";
 
 // Providers
@@ -30,7 +29,6 @@ export default function LobbyLayout({
           <Navbar />
           <main className="min-h-screen py-6 m-auto container max-w-6xl">
             {children}
-            <Footer />
           </main>
         </ThemeProvider>
       </body>

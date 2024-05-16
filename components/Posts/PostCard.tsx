@@ -18,11 +18,11 @@ import { formatDate } from "@/lib/utils";
 import Link from "next/link";
 
 interface ArticleCardProps {
-  title?: string;
+  title: string;
   date: string;
-  description?: string;
-  slug?: string;
-  className?: string;
+  description: string;
+  slug: string;
+  className: string;
 }
 
 export function PostCard({
@@ -33,7 +33,7 @@ export function PostCard({
   className,
 }: ArticleCardProps) {
   return (
-    <Link href={`/${slug}`} className={`${className}`}>
+    <Link href={slug} className={`${className}`}>
       <Card className="group duration-150 flex-1 fade shadow-sm hover:shadow-lg hover:backdrop-brightness-110 transition-all ease-in-out">
         <div className="rounded-md shadow-dark-box-shadow-card">
           <CardHeader className="flex flex-row justify-between items-center relative">
