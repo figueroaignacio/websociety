@@ -1,7 +1,7 @@
 export const home = Object.freeze({
-  title: "Front Society, for Frontend Developers",
+  title: "Front Society",
   description:
-    "Explore tech articles, learn about Frontend stuff, and participate on challenges.",
+    "And discover tech posts, learn about Frontend stuff, and participate on challenges.",
 });
 
 export const homeMetadata = Object.freeze({
