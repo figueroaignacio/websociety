@@ -1,7 +1,6 @@
 "use client";
 
 // Components
-import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Sheet,
   SheetClose,
@@ -26,32 +25,29 @@ export function MobileMenu() {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="outline">
+        <button>
           <Menu />
-        </Button>
+        </button>
       </SheetTrigger>
       <SheetContent side="left">
-        <ul className="flex flex-col gap-7 pt-32 py-10 pl-8 items-end md:w-full md:min-h-0 text-2xl">
-          {navigationConfig.map((navItem, index) => {
-            return (
-              <li key={index}>
-                <SheetClose asChild>
-                  <LinkWithTransition
-                    href={navItem.href}
-                    className={`${buttonVariants({
-                      variant: "navItem",
-                    })} flex gap-1 ${
-                      pathname === `${navItem.href}`
-                        ? "dark:bg-gray-600 dark:bg-opacity-30 bg-gray-300 bg-opacity-50"
-                        : ""
-                    }`}
-                  >
-                    {navItem.title}
-                  </LinkWithTransition>
-                </SheetClose>
-              </li>
-            );
-          })}
+        <ul className="flex flex-col gap-12 pt-32 py-10 pl-8 items-end md:w-full md:min-h-0 text-2xl">
+          {navigationConfig.map((navItem, index) => (
+            <li
+              key={index}
+              className="dark:hover:text-white/70 hover:text-black/70"
+            >
+              <LinkWithTransition
+                href={navItem.href}
+                className={`${
+                  pathname === `${navItem.href}`
+                    ? "gradient-text font-bold"
+                    : ""
+                }`}
+              >
+                <SheetClose>{navItem.title}</SheetClose>
+              </LinkWithTransition>
+            </li>
+          ))}
           <li>
             <ToggleTheme />
           </li>
