@@ -32,7 +32,7 @@ export default async function PostPage({ params }: PostPageProps) {
   }
 
   return (
-    <article className="prose dark:prose-invert max-w-full">
+    <article className="prose dark:prose-invert mt-20 max-w-7xl">
       <h1>{post.title}</h1>
       <p>{post.description ? <p>{post.description}</p> : null}</p>
       <hr className="my-6 bg-border" />
