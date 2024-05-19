@@ -22,6 +22,7 @@ const buttonVariants = cva(
           "dark:hover:bg-gray-600 dark:hover:bg-opacity-30 hover:bg-gray-300 hover:bg-opacity-50",
         backButton:
           "dark:bg-gray-600 dark:bg-opacity-30 bg-gray-300 bg-opacity-50",
+        postButton: "bg-purple-700 text-white cursor-pointer",
       },
       size: {
         default: "h-10 px-4 py-2",
