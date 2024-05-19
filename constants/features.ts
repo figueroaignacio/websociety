@@ -1,8 +1,8 @@
 export const features = Object.freeze([
   {
-    title: "Posts and Articles",
+    title: "Posts",
     description:
-      "Explore the latest posts and articles covering frontend development trends, tips, and techniques.",
+      "Explore the latest posts covering frontend development trends, tips, and techniques.",
     icon: "book",
   },
   {
