@@ -15,7 +15,6 @@ export async function Posts() {
         <h1 className="font-bold text-3xl">
           Read {allPosts.title} about coding
         </h1>
-        <p className="text-xs lg:text-lg opacity-75">{allPosts.description}</p>
       </div>
       {displayPosts?.length > 0 ? (
         <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
