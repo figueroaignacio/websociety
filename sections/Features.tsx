@@ -26,7 +26,7 @@ export function Features() {
       {features.map((feature, index) => {
         const icon = iconMap[feature.icon] || null;
         return (
-          <Card className="h-full w-full fade" key={index}>
+          <Card className="h-full w-full shadow-custom-card" key={index}>
             <CardHeader>
               <CardTitle className="flex gap-2">
                 {icon}
