@@ -29,7 +29,7 @@ const config = {
           "radial-gradient(ellipse 100% 100% at 2% -20%, rgba(147, 51, 234, 0.2), rgba(255, 255, 255, 0))",
       }),
       boxShadow: {
-        "dark-box-shadow-card": "5px 5px 0px rgb(147, 51, 234)",
+        "dark-box-shadow-card": "5px 5px 0px rgba(147, 51, 234, 0.5)",
       },
       colors: {
         border: "hsl(var(--border))",

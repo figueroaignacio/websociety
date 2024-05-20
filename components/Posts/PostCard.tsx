@@ -7,16 +7,16 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { buttonVariants } from "../ui/button";
 
 // Icons
-import { Calendar } from "lucide-react";
+import { ArrowRight, Calendar } from "lucide-react";
 
 // Utils
 import { formatDate } from "@/lib/utils";
 
 // Next
 import Link from "next/link";
-import { buttonVariants } from "../ui/button";
 
 interface ArticleCardProps {
   title: string;
@@ -27,8 +27,8 @@ interface ArticleCardProps {
 
 export function PostCard({ title, date, description, slug }: ArticleCardProps) {
   return (
-    <Card className="group duration-150 flex-1 fade shadow-sm">
-      <div className="shadow-dark-box-shadow-card rounded-lg">
+    <Card className="duration-150 flex-1 fade shadow-sm w-full h-full">
+      <div>
         <CardHeader className="flex flex-row justify-between items-center relative">
           <dl className="flex text-xs">
             <dt className="sr-only">Published at</dt>
@@ -49,9 +49,13 @@ export function PostCard({ title, date, description, slug }: ArticleCardProps) {
             href={slug}
             className={`${buttonVariants({
               variant: "postButton",
-            })} w-full bg-purple-700 `}
+            })}`}
           >
             Read More
+            <ArrowRight
+              size={16}
+              className="transition-transform ease-in-out duration-300 transform translate-x-0 group-hover:translate-x-1"
+            />
           </Link>
           {/* <div className="flex flex-wrap gap-2 text-xs">
               {categoryData && categoryData.length > 0
