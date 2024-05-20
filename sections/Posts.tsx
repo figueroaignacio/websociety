@@ -12,7 +12,7 @@ export async function Posts() {
   return (
     <div>
       <div className="flex flex-col gap-3 py-20">
-        <h1 className="font-bold text-3xl">
+        <h1 className="font-bold text-2xl text-center lg:text-4xl">
           Read {allPosts.title} about coding
         </h1>
       </div>
