@@ -1,5 +1,5 @@
 // Components
-import { BackButton } from "@/components/back-button";
+import { MDXContent } from "@/components/mdx/mdx-components";
 
 // Content
 import { posts } from "#site/content";
@@ -33,13 +33,10 @@ export default async function PostPage({ params }: PostPageProps) {
   }
 
   return (
-    <article className="prose dark:prose-invert mt-20 max-w-7xl">
-      <div className="pb-10">
-        <BackButton title="Go back" />
-      </div>
+    <article className="prose dark:prose-invert mt-20 max-w-7xl py-8">
       <h1>{post.title}</h1>
       <p>{post.description ? <p>{post.description}</p> : null}</p>
-      <hr className="my-6 bg-border" />
+      <MDXContent code={post.body} />
     </article>
   );
 }

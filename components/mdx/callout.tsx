@@ -13,13 +13,10 @@ export function Callout({
 }: CalloutProps) {
   return (
     <div
-      className={cn(
-        "my-6 items-start rounded-lg border border-l-4 p-2 w-full dark:max-w-none",
-        {
-          "border-red-900 bg-red-50 dark:prose": type === "danger",
-          "border-yellow-900 bg-yellow-50 dark:prose": type === "warning",
-        }
-      )}
+      className={cn("my-6 items-start p-4 w-full dark:max-w-none rounded-sm", {
+        "bg-red-500 text-white": type === "danger",
+        "bg-yellow-500 text-black": type === "warning",
+      })}
       {...props}
     >
       <div>{children}</div>
