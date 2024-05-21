@@ -7,8 +7,12 @@ import { allPosts } from "@/constants/posts";
 // Content
 import { posts } from "#site/content";
 
+// Utils
+import { sortPosts } from "@/lib/utils";
+
 export async function Posts() {
-  const displayPosts = posts;
+  const sortedPosts = sortPosts(posts.filter((post) => post.published));
+  const displayPosts = sortedPosts;
   return (
     <div>
       <div className="flex flex-col gap-3 py-20">
