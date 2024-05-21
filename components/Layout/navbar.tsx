@@ -12,7 +12,7 @@ import { MobileMenu } from "./mobile-menu";
 // Constants
 import { navigationConfig } from "@/config/navigation";
 
-export function Header() {
+export function Navbar() {
   const pathname = usePathname();
 
   return (
