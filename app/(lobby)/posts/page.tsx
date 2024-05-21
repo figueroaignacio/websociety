@@ -2,7 +2,6 @@
 import { PostCard } from "@/components/posts/post-card";
 
 // Constants
-import { allPosts } from "@/constants/posts";
 
 // Content
 import { posts } from "#site/content";
@@ -11,7 +10,7 @@ import { posts } from "#site/content";
 import { QueryPagination } from "@/components/query-pagination";
 import { sortPosts } from "@/lib/utils";
 
-const POSTS_PER_PAGE = 5;
+const POSTS_PER_PAGE = 6;
 
 interface PostsPageParams {
   searchParams: {
@@ -31,31 +30,31 @@ export default async function PostsPage({ searchParams }: PostsPageParams) {
 
   return (
     <section>
-      <div className="flex flex-col gap-3 py-20">
-        <h1 className="font-bold text-2xl text-center lg:text-4xl">
-          Read {allPosts.title} about coding
-        </h1>
-      </div>
-      {displayPosts?.length > 0 ? (
-        <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-          {displayPosts.map((post) => {
-            const { slug, date, title, description } = post;
-            return (
-              <li key={slug}>
-                <PostCard
-                  slug={slug}
-                  date={date}
-                  title={title}
-                  description={description ?? ""}
-                />
-              </li>
-            );
-          })}
-        </ul>
-      ) : (
-        <p>Nothing to see yet</p>
-      )}
-      <div className="py-10">
+      <div className="flex flex-col gap-12 mt-24">
+        <div className="flex flex-col gap-3">
+          <h1 className="font-bold text-2xl lg:text-4xl">
+            The ramblings of Front Society.
+          </h1>
+        </div>
+        {displayPosts?.length > 0 ? (
+          <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+            {displayPosts.map((post) => {
+              const { slug, date, title, description } = post;
+              return (
+                <li key={slug}>
+                  <PostCard
+                    slug={slug}
+                    date={date}
+                    title={title}
+                    description={description ?? ""}
+                  />
+                </li>
+              );
+            })}
+          </ul>
+        ) : (
+          <p>Nothing to see yet</p>
+        )}
         <QueryPagination totalPages={totalPages} />
       </div>
     </section>
