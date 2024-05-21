@@ -1,4 +1,4 @@
-// Utils
+// Util
 import NextTopLoader from "nextjs-toploader";
 
 // Global styles
@@ -54,7 +54,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${jetbrains.className}`}>
-        <NextTopLoader color="rgb(75, 85, 99)" />
+        <NextTopLoader color="#7c3aed" />
         {children}
       </body>
     </html>
