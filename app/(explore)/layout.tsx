@@ -5,7 +5,7 @@ import { ThemeProvider } from "@/providers/theme-provider/theme-provider";
 import "@/styles/globals.css";
 
 // Font
-import { roboto } from "@/font/roboto";
+import { jetbrains } from "@/font/jetbrains";
 
 export default function LobbyLayout({
   children,
@@ -14,7 +14,7 @@ export default function LobbyLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${roboto.className}`}>
+      <body className={`${jetbrains.className}`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

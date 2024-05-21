@@ -5,7 +5,7 @@ import NextTopLoader from "nextjs-toploader";
 import "@/styles/globals.css";
 
 // Font
-import { roboto } from "@/font/roboto";
+import { jetbrains } from "@/font/jetbrains";
 
 // Metadata
 import { siteConfig } from "@/config/site";
@@ -53,7 +53,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${roboto.className}`}>
+      <body className={`${jetbrains.className}`}>
         <NextTopLoader color="rgb(75, 85, 99)" />
         {children}
       </body>
