@@ -8,6 +8,9 @@ import { posts } from "#site/content";
 // next
 import { notFound } from "next/navigation";
 
+// Styles
+import "@/styles/mdx.css";
+
 interface PostPageProps {
   params: {
     slug: string[];
