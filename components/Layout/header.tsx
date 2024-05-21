@@ -4,15 +4,15 @@
 import { usePathname } from "next/navigation";
 
 // Components
-import { LinkWithTransition } from "../LinkWithTransition";
-import { ToggleTheme } from "../ToggleTheme";
-import { Wordmark } from "../Wordmark";
-import { MobileMenu } from "./MobileMenu";
+import { LinkWithTransition } from "../link-with-transition";
+import { Logo } from "../logo";
+import { ToggleTheme } from "../toggle-theme";
+import { MobileMenu } from "./mobile-menu";
 
 // Constants
 import { navigationConfig } from "@/config/navigation";
 
-export function Navbar() {
+export function Header() {
   const pathname = usePathname();
 
   return (
@@ -47,7 +47,7 @@ export function Navbar() {
         </nav>
       </div>
       <div className="hidden md:block">
-        <Wordmark />
+        <Logo />
       </div>
     </header>
   );

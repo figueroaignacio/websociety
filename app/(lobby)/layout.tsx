@@ -1,5 +1,5 @@
 // Components
-import { Navbar } from "@/components/Layout/Navbar";
+import { Header } from "@/components/layout/header";
 
 // Providers
 import { ThemeProvider } from "@/providers/theme-provider/theme-provider";
@@ -25,7 +25,7 @@ export default function LobbyLayout({
           disableTransitionOnChange
         >
           <main className="min-h-screen py-6 m-auto container max-w-6xl">
-            <Navbar />
+            <Header />
             {children}
           </main>
         </ThemeProvider>

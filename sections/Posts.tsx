@@ -1,5 +1,5 @@
 // Components
-import { PostCard } from "@/components/Posts/PostCard";
+import { PostCard } from "@/components/posts/post-card";
 
 // Constants
 import { allPosts } from "@/constants/posts";
