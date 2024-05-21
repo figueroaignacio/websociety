@@ -1,5 +1,6 @@
 // Components
 import { MDXContent } from "@/components/mdx/mdx-components";
+import { Separator } from "@/components/ui/separator";
 
 // Content
 import { posts } from "#site/content";
@@ -35,7 +36,10 @@ export default async function PostPage({ params }: PostPageProps) {
   return (
     <article className="prose dark:prose-invert mt-20 max-w-7xl py-8">
       <h1>{post.title}</h1>
-      <p>{post.description ? <p>{post.description}</p> : null}</p>
+      <p className="m-0">
+        {post.description ? <p>{post.description}</p> : null}
+      </p>
+      <Separator className="mb-5" />
       <MDXContent code={post.body} />
     </article>
   );
