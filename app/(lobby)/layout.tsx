@@ -1,5 +1,5 @@
 // Components
-import { Navbar } from "@/components/layout/navbar";
+import { Navbar } from "@/components/navbar";
 
 // Providers
 import { ThemeProvider } from "@/providers/theme-provider/theme-provider";
