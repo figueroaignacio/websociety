@@ -6,10 +6,10 @@ Welcome to **Front Society**, your go-to platform for discovering the latest tre
 
 - **Next.js**: React framework for building fast and scalable web applications.
 - **Tailwind CSS**: A low-level utility CSS framework for crafting custom layouts swiftly.
-- **Sanity**: A GraphQL-based content management system (CMS) empowering custom user experiences.
 - **Shadcn**: A versatile tool for designing and managing design systems efficiently.
 - **React**: JavaScript library for constructing interactive user interfaces.
-- **SWR**: Library for seamless client-side data fetching.
+- **MDX**: MDX allows you to use JSX in your markdown content. You can import components, such as interactive charts or alerts, and embed them within your content. This makes writing long-form content with components a blast.
+- **Velite**: Tool for building type-safe data layer, turn Markdown / MDX, YAML, JSON, or other files into app's data layer with Zod schema.
 
 ## Features
 
@@ -19,7 +19,6 @@ Welcome to **Front Society**, your go-to platform for discovering the latest tre
 - **Interactive UI**: Immerse yourself in a seamless and intuitive user experience powered by React and Next.js.
 - **Responsive Design**: Access F society on any device with a fully responsive design optimized for mobile, tablet, and desktop screens.
 - **Customization with Tailwind CSS**: Tailor the look and feel of the website effortlessly using Tailwind CSS utilities.
-- **Fast Data Fetching with SWR**: Utilize SWR to efficiently fetch and manage data on the client-side for improved performance.
 
 ## Contact me!
 
