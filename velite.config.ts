@@ -1,15 +1,15 @@
 // Velite
 import { defineCollection, defineConfig, s } from "velite";
 
+// Rehype
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypePrettyCode from "rehype-pretty-code";
+import rehypeSlug from "rehype-slug";
+
 const computedFields = <T extends { slug: string }>(data: T) => ({
   ...data,
   slugAsParams: data.slug.split("/").slice(1).join("/"),
 });
-
-// Rehype
-import rehypeAutoLinksHeadings from "rehype-autolink-headings";
-import rehypePrettyCode from "rehype-pretty-code";
-import rehypeSlug from "rehype-slug";
 
 const posts = defineCollection({
   name: "Post",
@@ -39,9 +39,9 @@ export default defineConfig({
   mdx: {
     rehypePlugins: [
       rehypeSlug,
-      [rehypePrettyCode, { theme: "github-dark-default" }],
+      [rehypePrettyCode, { theme: "github-dark" }],
       [
-        rehypeAutoLinksHeadings,
+        rehypeAutolinkHeadings,
         {
           behavior: "wrap",
           properties: {

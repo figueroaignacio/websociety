@@ -1,6 +1,6 @@
 // Section
-import { InDevelopmentSection } from "@/sections/InDevelopmentSection";
+import { InDevelopment } from "@/components/in-development";
 
 export default function ChallengesPage() {
-  return <InDevelopmentSection />;
+  return <InDevelopment />;
 }

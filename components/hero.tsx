@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 // Constants
 import { home } from "@/constants/home";
 
-export function Home() {
+export function Hero() {
   return (
     <section className="flex flex-col gap-3 justify-center items-center py-40 text-center">
       <Badge

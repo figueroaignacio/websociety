@@ -7,7 +7,7 @@ import { Rocket } from "lucide-react";
 // Constants
 import { inDevelopmentSection } from "@/config/errors";
 
-export function InDevelopmentSection() {
+export function InDevelopment() {
   return (
     <section className="min-h-[90vh] flex justify-center items-center">
       <div className="flex flex-col justify-center items-center gap-3 text-center border-2 rounded-md p-16 border-dashed">
