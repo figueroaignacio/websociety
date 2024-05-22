@@ -17,4 +17,8 @@ export const siteConfig = Object.freeze({
     "Coding",
     "Web Development",
   ],
+  links: {
+    github: "https://github.com/figueroaignacio",
+    personalSite: "https://ignaciofigueroa.vercel.app/",
+  },
 });

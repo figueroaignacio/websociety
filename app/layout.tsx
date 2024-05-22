@@ -12,9 +12,7 @@ import { siteConfig } from "@/config/site";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    "https://frontsociety.netlify.app/" ?? "http://localhost:3000"
-  ),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? siteConfig.url),
   title: {
     default: siteConfig.title,
     template: `${siteConfig.title} - %s`,
