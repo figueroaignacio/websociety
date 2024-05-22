@@ -21,7 +21,7 @@ export async function GET(req: NextRequest) {
 
     return new ImageResponse(
       (
-        <div tw="flex relative flex-col p-12 w-full h-full items-start text-black bg-white">
+        <div tw="flex relative flex-col p-12 w-full h-full items-start text-black bg-white bg-black text-white">
           <div tw="flex items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
