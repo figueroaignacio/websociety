@@ -25,7 +25,7 @@ export default function LobbyLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="min-h-screen py-6 m-auto container max-w-6xl">
+          <main className="min-h-screen py-6 m-auto container max-w-5xl">
             <Navbar />
             {children}
             <Footer />
