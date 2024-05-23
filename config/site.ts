@@ -7,8 +7,8 @@ export const siteConfig = Object.freeze({
   creator: "Ignacio Figueroa",
   description:
     "Welcome where tech meets curiosity. Quick reads on web development, fun facts, history, tips, and more.",
-  ogImage: "https://front-society.netlify.app/og-home.png",
-  url: "https://front-society.netlify.app/",
+  ogImage: "https://frontsociety.netlify.app/og-home.png",
+  url: "https://frontsociety.netlify.app/",
   keywords: [
     "Blog",
     "Developers",
