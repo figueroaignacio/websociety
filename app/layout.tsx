@@ -25,22 +25,6 @@ export const metadata: Metadata = {
   ],
   creator: siteConfig.creator,
   description: siteConfig.description,
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: siteConfig.url,
-    title: siteConfig.title,
-    description: siteConfig.description,
-    siteName: siteConfig.title,
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: 1200,
-        height: 630,
-        alt: siteConfig.title,
-      },
-    ],
-  },
   keywords: siteConfig.keywords,
 };
 
