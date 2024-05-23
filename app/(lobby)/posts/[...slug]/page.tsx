@@ -12,6 +12,7 @@ import { notFound } from "next/navigation";
 import "@/styles/mdx.css";
 
 // Metadata
+import { BackButton } from "@/components/back-button";
 import { Metadata } from "next";
 
 interface PostPageProps {
@@ -72,7 +73,10 @@ export default async function PostPage({ params }: PostPageProps) {
   }
 
   return (
-    <article className="prose dark:prose-invert mt-20 max-w-7xl py-8">
+    <article className="prose dark:prose-invert mt-5 max-w-7xl py-8">
+      <div className="pb-7">
+        <BackButton title="Go back" />
+      </div>
       <h1>{post.title}</h1>
       <p className="m-0">
         {post.description ? <p>{post.description}</p> : null}

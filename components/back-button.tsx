@@ -1,8 +1,5 @@
 "use client";
 
-// Components
-import { Button } from "@/components/ui/button";
-
 // Next
 import { useRouter } from "next/navigation";
 
@@ -16,9 +13,8 @@ interface GoBackProps {
 export function BackButton({ title }: GoBackProps) {
   const router = useRouter();
   return (
-    <Button
-      variant={"default"}
-      className="items-center flex gap-2 relative group"
+    <button
+      className="items-center flex gap-2 relative group text-primary underline-offset-4 hover:underline"
       onClick={() => router.back()}
     >
       <ArrowLeft
@@ -26,6 +22,6 @@ export function BackButton({ title }: GoBackProps) {
         size=".85rem"
       />
       <p>{title}</p>
-    </Button>
+    </button>
   );
 }

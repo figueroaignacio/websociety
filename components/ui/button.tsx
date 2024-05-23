@@ -20,8 +20,6 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         navItem:
           "dark:hover:bg-gray-600 dark:hover:bg-opacity-30 hover:bg-gray-300 hover:bg-opacity-50",
-        backButton:
-          "dark:bg-gray-600 dark:bg-opacity-30 bg-gray-300 bg-opacity-50",
         postButton:
           "cursor-pointer w-full flex items-center gap-2 group text-xs bg-purple-700 text-white",
       },
