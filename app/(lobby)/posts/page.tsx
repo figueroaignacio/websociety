@@ -1,8 +1,6 @@
 // Components
 import { PostCard } from "@/components/posts/post-card";
 
-// Constants
-
 // Content
 import { posts } from "#site/content";
 
