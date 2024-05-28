@@ -23,10 +23,8 @@ const config = {
         quicksand: ["var(--quicksand-font)"],
       },
       backgroundImage: (theme) => ({
-        "radial-gradient-desktop":
-          "radial-gradient(ellipse at 50% 50%, rgba(147, 51, 234, 0.05 ), rgba(255, 255, 255, 0))",
-        "radial-gradient-mobile":
-          "radial-gradient(ellipse 100% 100% at 2% -20%, rgba(147, 51, 234, 0.2), rgba(255, 255, 255, 0))",
+        "radial-gradient":
+          "radial-gradient(ellipse 100% 100% at 50% -10%,rgba(147, 51, 234, 0.25), rgba(179, 136, 255, 0.1), rgba(255, 255, 255, 0))",
       }),
       boxShadow: {
         "custom-card": "5px 5px 0px rgb(147, 51, 234)",

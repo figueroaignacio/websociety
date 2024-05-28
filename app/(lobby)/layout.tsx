@@ -9,6 +9,7 @@ import { ThemeProvider } from "@/providers/theme-provider/theme-provider";
 import "@/styles/globals.css";
 
 // Font
+import { Gradient } from "@/components/gradient";
 import { onest } from "@/font/onest";
 
 export default function LobbyLayout({
@@ -25,6 +26,7 @@ export default function LobbyLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Gradient />
           <main className="min-h-screen py-6 m-auto container max-w-6xl">
             <Navbar />
             {children}
