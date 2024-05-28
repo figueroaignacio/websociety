@@ -5,7 +5,7 @@ import { ThemeProvider } from "@/providers/theme-provider/theme-provider";
 import "@/styles/globals.css";
 
 // Font
-import { jetbrains } from "@/font/jetbrains";
+import { onest } from "@/font/onest";
 
 export default function LobbyLayout({
   children,
@@ -14,7 +14,7 @@ export default function LobbyLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${jetbrains.className}`}>
+      <body className={`${onest.className}`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

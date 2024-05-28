@@ -5,10 +5,12 @@ import NextTopLoader from "nextjs-toploader";
 import "@/styles/globals.css";
 
 // Font
-import { jetbrains } from "@/font/jetbrains";
+import { onest } from "@/font/onest";
+
+// Config
+import { siteConfig } from "@/config/site";
 
 // Metadata
-import { siteConfig } from "@/config/site";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -35,7 +37,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${jetbrains.className}`}>
+      <body className={`${onest.className}`}>
         <NextTopLoader color="#7c3aed" />
         {children}
       </body>
