@@ -22,7 +22,7 @@ export function Navbar() {
           <MobileMenu />
         </div>
         <nav className="hidden md:block">
-          <ul className="flex flex-col gap-12 w-screen items-center md:w-full md:flex-row md:min-h-0 border-[.0625rem] py-1 px-6 rounded-full">
+          <ul className="flex flex-col gap-12 w-screen items-center md:w-full md:flex-row md:min-h-0 py-1">
             {navigationConfig.map((navItem, index) => (
               <li
                 key={index}
