@@ -40,7 +40,9 @@ export function PostCard({ title, date, description, slug }: ArticleCardProps) {
           </dl>
         </CardHeader>
         <CardContent className="flex flex-col gap-5">
-          <CardTitle className="text-pretty text-lg">{title}</CardTitle>
+          <CardTitle className="text-pretty text-lg line-clamp-1">
+            {title}
+          </CardTitle>
           <CardDescription className="leading-10 text-pretty text-sm line-clamp-1">
             {description}
           </CardDescription>
