@@ -21,7 +21,7 @@ export default function Icon() {
           alignItems: "center",
           justifyContent: "center",
           color: "white",
-          borderRadius: "50px",
+          borderRadius: "5px",
         }}
       >
         FS
