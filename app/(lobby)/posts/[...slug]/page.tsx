@@ -1,5 +1,6 @@
 // Components
 import { MDXContent } from "@/components/mdx/mdx-components";
+import { Tag } from "@/components/tag";
 import { Separator } from "@/components/ui/separator";
 
 // Content
@@ -78,6 +79,11 @@ export default async function PostPage({ params }: PostPageProps) {
         <BackButton title="Go back" />
       </div>
       <h1>{post.title}</h1>
+      <div className="flex gap-2 mb-2">
+        {post.tags?.map((tag) => (
+          <Tag tag={tag} key={tag} />
+        ))}
+      </div>
       <p className="m-0">
         {post.description ? <p>{post.description}</p> : null}
       </p>

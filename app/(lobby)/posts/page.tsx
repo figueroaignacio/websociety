@@ -37,14 +37,14 @@ export default async function PostsPage({ searchParams }: PostsPageParams) {
         {displayPosts?.length > 0 ? (
           <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
             {displayPosts.map((post) => {
-              const { slug, date, title, description } = post;
               return (
-                <li key={slug}>
+                <li key={post.slug}>
                   <PostCard
-                    slug={slug}
-                    date={date}
-                    title={title}
-                    description={description ?? ""}
+                    slug={post.slug}
+                    date={post.date}
+                    title={post.title}
+                    description={post.description ?? ""}
+                    tags={post.tags}
                   />
                 </li>
               );

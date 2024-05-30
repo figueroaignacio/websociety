@@ -7,7 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "../ui/badge";
+import { Tag } from "../tag";
 import { buttonVariants } from "../ui/button";
 
 // Icons
@@ -24,9 +24,16 @@ interface ArticleCardProps {
   date: string;
   description: string;
   slug: string;
+  tags?: string[];
 }
 
-export function PostCard({ title, date, description, slug }: ArticleCardProps) {
+export function PostCard({
+  title,
+  date,
+  description,
+  slug,
+  tags,
+}: ArticleCardProps) {
   return (
     <Card className="shadow-sm w-full h-full">
       <CardHeader className="flex flex-row justify-between items-center relative">
@@ -48,9 +55,9 @@ export function PostCard({ title, date, description, slug }: ArticleCardProps) {
       </CardContent>
       <CardFooter className="flex flex-col items-start gap-5">
         <div className="flex flex-wrap gap-2 text-xs">
-          <Badge variant="chip">Test</Badge>
-          <Badge variant="chip">Test</Badge>
-          <Badge variant="chip">Test</Badge>
+          {tags?.map((tag) => (
+            <Tag tag={tag} key={tag} />
+          ))}
         </div>
         <Link
           href={slug}
