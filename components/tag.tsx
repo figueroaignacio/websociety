@@ -16,7 +16,7 @@ export function Tag({ tag, count, current }: TagProps) {
     <Link
       className={badgeVariants({
         variant: current ? "default" : "chip",
-        className: "no-underline rounded-md",
+        className: "no-underline rounded-md hover:brightness-150 duration-100",
       })}
       href={`/tags/${slug(tag)}`}
     >
