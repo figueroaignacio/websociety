@@ -1,5 +1,5 @@
 // Components
-import Link from "next/link";
+import { LinkWithTransition } from "./link-with-transition";
 import { badgeVariants } from "./ui/badge";
 
 // Utils
@@ -13,7 +13,7 @@ interface TagProps {
 
 export function Tag({ tag, count, current }: TagProps) {
   return (
-    <Link
+    <LinkWithTransition
       className={badgeVariants({
         variant: current ? "default" : "chip",
         className: "no-underline rounded-md hover:brightness-150 duration-100",
@@ -21,6 +21,6 @@ export function Tag({ tag, count, current }: TagProps) {
       href={`/tags/${slug(tag)}`}
     >
       {tag} {count ? `(${count})` : null}
-    </Link>
+    </LinkWithTransition>
   );
 }

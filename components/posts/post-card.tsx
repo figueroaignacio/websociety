@@ -60,7 +60,7 @@ export function PostCard({
           ))}
         </div>
         <Link
-          href={slug}
+          href={"/" + slug}
           className={`${buttonVariants({
             variant: "postButton",
           })} flex z-10`}

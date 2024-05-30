@@ -18,8 +18,8 @@ export default function LobbyLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${onest.className}`}>
+    <html lang="en" suppressHydrationWarning className="scroll-pt-[3.5rem]">
+      <body className={`${onest.className} antialiased min-h-screen`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -27,11 +27,11 @@ export default function LobbyLayout({
           disableTransitionOnChange
         >
           <Gradient />
-          <main className="min-h-screen py-6 m-auto container max-w-6xl">
+          <div className="min-h-dvh flex flex-col py-6 m-auto container max-w-6xl">
             <Navbar />
-            {children}
+            <main className="flex-1">{children}</main>
             <Footer />
-          </main>
+          </div>
         </ThemeProvider>
       </body>
     </html>
