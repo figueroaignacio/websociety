@@ -1,8 +1,8 @@
 // Components
-import Link from "next/link";
+import { LinkWithTransition } from "./link-with-transition";
 
 // Icons
-import { ChevronRight, Code2 } from "lucide-react";
+import { Code2 } from "lucide-react";
 
 // Constants
 import { navigationConfig } from "@/config/navigation";
@@ -19,12 +19,10 @@ export function Footer() {
         <p className="text-sm">{footer.subtitle}</p>
         <ul className="flex flex-col gap-2 py-2">
           {navigationConfig.map((navItem, index) => (
-            <li key={index} className="flex items-center group">
-              <Link href={navItem.href}>{navItem.title}</Link>
-              <ChevronRight
-                size={".75rem"}
-                className="transition-transform ease-in-out duration-300 transform translate-x-0 group-hover:translate-x-1"
-              />
+            <li key={index} className="flex items-center">
+              <LinkWithTransition href={navItem.href}>
+                {navItem.title}
+              </LinkWithTransition>
             </li>
           ))}
         </ul>
