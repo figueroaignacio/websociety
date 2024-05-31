@@ -15,4 +15,8 @@ export const navigationConfig: { title: string; href: string }[] = [
     title: "Challenges",
     href: "/challenges",
   },
+  {
+    title: "About",
+    href: "/about",
+  },
 ];
