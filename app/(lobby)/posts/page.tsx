@@ -1,13 +1,19 @@
+"use client";
+
+// React
+import { useState } from "react";
+
 // Components
 import { PostCard } from "@/components/posts/post-card";
+import { QueryPagination } from "@/components/query-pagination";
 import { Tag } from "@/components/tag";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 // Content
 import { posts } from "#site/content";
 
 // Utils
-import { QueryPagination } from "@/components/query-pagination";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { PostsSearcher } from "@/components/posts/post-searcher";
 import { getAllTags, sortPosts, sortTagsByCount } from "@/lib/utils";
 
 const POSTS_PER_PAGE = 6;
@@ -18,18 +24,28 @@ interface PostsPageParams {
   };
 }
 
-export default async function PostsPage({ searchParams }: PostsPageParams) {
+export default function PostsPage({ searchParams }: PostsPageParams) {
+  const [searchTerm, setSearchTerm] = useState("");
   const currentPage = Number(searchParams?.page) || 1;
   const sortedPosts = sortPosts(posts.filter((post) => post.published));
   const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
 
-  const displayPosts = sortedPosts.slice(
+  // Filter posts based on search term
+  const filteredPosts = sortedPosts.filter((post) =>
+    post.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const displayPosts = filteredPosts.slice(
     POSTS_PER_PAGE * (currentPage - 1),
     POSTS_PER_PAGE * currentPage
   );
 
   const tags = getAllTags(posts);
   const sortedTags = sortTagsByCount(tags);
+
+  const handleSearch = (value: string) => {
+    setSearchTerm(value);
+  };
 
   return (
     <section>
@@ -51,7 +67,8 @@ export default async function PostsPage({ searchParams }: PostsPageParams) {
             </Card>
           </div>
         </div>
-        {displayPosts?.length > 0 ? (
+        <PostsSearcher onSearch={handleSearch} />
+        {displayPosts.length > 0 ? (
           <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
             {displayPosts.map((post) => {
               return (
@@ -68,7 +85,9 @@ export default async function PostsPage({ searchParams }: PostsPageParams) {
             })}
           </ul>
         ) : (
-          <p>Nothing to see yet</p>
+          <section className="py-36 text-center">
+            <p className="text-xl">Nothing to see, try with another word</p>
+          </section>
         )}
         <QueryPagination totalPages={totalPages} />
       </div>
