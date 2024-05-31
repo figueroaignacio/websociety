@@ -1,14 +1,14 @@
 export const siteConfig = Object.freeze({
-  title: "Front Society",
+  title: "Frontend Society",
   author: {
     name: "Ignacio Figueroa",
-    url: "https://github.com/ignaciofigueroadev",
+    url: "https://github.com/figueroaignacio",
   },
   creator: "Ignacio Figueroa",
   description:
     "Welcome where tech meets curiosity. Quick reads on web development, fun facts, history, tips, and more.",
-  ogImage: "https://frontsociety.netlify.app/og-home.png",
-  url: "https://frontsociety.netlify.app/",
+  ogImage: "https://frontendsociety.netlify.app/og-home.png",
+  url: "https://frontendsociety.netlify.app/",
   keywords: [
     "Blog",
     "Developers",
