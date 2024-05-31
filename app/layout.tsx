@@ -1,4 +1,5 @@
 // Util
+import { ThemeProvider } from "@/providers/theme-provider/theme-provider";
 import NextTopLoader from "nextjs-toploader";
 
 // Global styles
@@ -39,7 +40,14 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${onest.className}`}>
         <NextTopLoader color="#7c3aed" />
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
