@@ -7,7 +7,6 @@ import { ChangeEvent } from "react";
 import { Input } from "@/components/ui/input";
 
 // Icons
-import { Search } from "lucide-react";
 
 interface PostsSearchProps {
   onSearch?: (value: string) => void;
@@ -22,7 +21,6 @@ export function PostsSearcher({ onSearch }: PostsSearchProps) {
 
   return (
     <div className="py-4 flex items-center gap-3">
-      <Search />
       <Input
         placeholder="Search..."
         type="search"
