@@ -1,7 +1,9 @@
 // Components
 import { PostCard } from "@/components/posts/post-card";
 import { Tag } from "@/components/tag";
+import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Link from "next/link";
 
 // Content
 import { posts } from "#site/content";
@@ -11,6 +13,7 @@ import { getAllTags, getPostsByTagSlug, sortTagsByCount } from "@/lib/utils";
 import { slug } from "github-slugger";
 
 // Metadata
+import { ArrowLeft } from "lucide-react";
 import { Metadata } from "next";
 
 interface TagPageProps {
@@ -50,6 +53,18 @@ export default function TagPage({ params }: TagPageProps) {
         <div className="flex flex-col gap-3">
           <h1 className="font-bold text-2xl lg:text-4xl">{title}</h1>
           <div className="mt-10">
+            <Link
+              className={`${buttonVariants({
+                variant: "link",
+              })} mb-10 items-center flex gap-2 relative group text-primary underline-offset-4 hover:underline"`}
+              href={"/posts"}
+            >
+              <ArrowLeft
+                className="transition-transform ease-in-out duration-300 transform translate-x-0 group-hover:-translate-x-1"
+                size=".85rem"
+              />
+              Back to all posts
+            </Link>
             <Card>
               <CardHeader>
                 <CardTitle>Tags</CardTitle>
