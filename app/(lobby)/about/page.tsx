@@ -13,7 +13,8 @@ export default function AboutPage() {
   return (
     <section className="flex flex-col gap-12 mt-24">
       <h1 className="font-bold text-2xl lg:text-4xl">
-        About this project. Front Society.
+        About this project.{" "}
+        <span className="gradient-text">Front Society.</span>
       </h1>
       <p>
         Welcome to a dedicated platform for developers of all levels seeking to
