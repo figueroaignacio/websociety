@@ -6,8 +6,6 @@ import { ChangeEvent } from "react";
 // Components
 import { Input } from "@/components/ui/input";
 
-// Icons
-
 interface PostsSearchProps {
   onSearch?: (value: string) => void;
 }
