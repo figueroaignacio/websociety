@@ -6,16 +6,19 @@ import { PostCard } from "@/components/posts/post-card";
 // Content
 import { posts } from "#site/content";
 
+// Utils
+import { sortPosts } from "@/lib/utils";
+
 export function LatestPosts() {
-  const displayPosts = posts;
+  const latestPosts = sortPosts(posts).slice(0, 4);
 
   return (
     <section className="py-10 flex flex-col gap-7">
       <h2 className="font-bold text-3xl fade">Latest Articles</h2>
       <div>
-        {displayPosts?.length > 0 ? (
-          <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-            {displayPosts.map((post) => {
+        {latestPosts?.length > 0 ? (
+          <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2">
+            {latestPosts.map((post) => {
               return (
                 <li key={post.slug}>
                   <PostCard
