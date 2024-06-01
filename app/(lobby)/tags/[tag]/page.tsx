@@ -37,7 +37,7 @@ export async function generateMetadata({
 }: TagPageProps): Promise<Metadata> {
   const { tag } = params;
   return {
-    title: capitalize(tag),
+    title: `Category: ${capitalize(tag)}`,
     description: `Posts on the topic of ${tag}`,
   };
 }
