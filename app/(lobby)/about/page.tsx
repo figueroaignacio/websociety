@@ -9,6 +9,14 @@ import {
 // Contanst
 import { about } from "@/constants/about";
 
+// Metadata
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About",
+  description: "About Frontend Society project.",
+};
+
 export default function AboutPage() {
   return (
     <section className="flex flex-col gap-12 mt-24">
