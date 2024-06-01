@@ -16,7 +16,7 @@ import { posts } from "#site/content";
 import { PostsSearcher } from "@/components/posts/post-searcher";
 import { getAllTags, sortPosts, sortTagsByCount } from "@/lib/utils";
 
-const POSTS_PER_PAGE = 6;
+const POSTS_PER_PAGE = 4;
 
 interface PostsPageParams {
   searchParams: {
@@ -30,7 +30,6 @@ export default function PostsPage({ searchParams }: PostsPageParams) {
   const sortedPosts = sortPosts(posts.filter((post) => post.published));
   const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
 
-  // Filter posts based on search term
   const filteredPosts = sortedPosts.filter((post) =>
     post.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -69,7 +68,7 @@ export default function PostsPage({ searchParams }: PostsPageParams) {
         </div>
         <PostsSearcher onSearch={handleSearch} />
         {displayPosts.length > 0 ? (
-          <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+          <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2 ">
             {displayPosts.map((post) => {
               return (
                 <li key={post.slug}>
