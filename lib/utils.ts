@@ -53,3 +53,6 @@ export function getPostsByTagSlug(posts: Post[], tag: string) {
     return slugifiedTags?.includes(tag);
   });
 }
+
+export const capitalize = (s: string) =>
+  s.charAt(0).toUpperCase() + s.slice(1).split("-").join(" ") || "";
