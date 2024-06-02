@@ -104,7 +104,7 @@ export default function TagPage({ params }: TagPageProps) {
                     date={post.date}
                     title={post.title}
                     description={post.description ?? ""}
-                    tags={post.tags}
+                    categories={post.tags}
                   />
                 </li>
               );

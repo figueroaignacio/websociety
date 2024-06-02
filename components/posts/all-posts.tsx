@@ -5,6 +5,7 @@ import { useState } from "react";
 
 // Components
 import { PostCard } from "@/components/posts/post-card";
+import { PostsSearcher } from "@/components/posts/post-searcher";
 import { QueryPagination } from "@/components/query-pagination";
 import { Tag } from "@/components/tag";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -13,8 +14,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { posts } from "#site/content";
 
 // Utils
-import { PostsSearcher } from "@/components/posts/post-searcher";
-import { getAllTags, sortPosts, sortTagsByCount } from "@/lib/utils";
+import { getAllCategories } from "@/utils/getAllCategories";
+import { sortCategoriesByCount } from "@/utils/sortCategoriesByCount";
+import { sortPosts } from "@/utils/sortPosts";
 
 const POSTS_PER_PAGE = 4;
 
@@ -39,8 +41,8 @@ export default function AllPosts({ searchParams }: PostsPageParams) {
     POSTS_PER_PAGE * currentPage
   );
 
-  const tags = getAllTags(posts);
-  const sortedTags = sortTagsByCount(tags);
+  const tags = getAllCategories(posts);
+  const sortedTags = sortCategoriesByCount(tags);
 
   const handleSearch = (value: string) => {
     setSearchTerm(value);
@@ -77,7 +79,7 @@ export default function AllPosts({ searchParams }: PostsPageParams) {
                     date={post.date}
                     title={post.title}
                     description={post.description ?? ""}
-                    tags={post.tags}
+                    categories={post.categories}
                   />
                 </li>
               );

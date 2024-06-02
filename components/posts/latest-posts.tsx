@@ -7,7 +7,7 @@ import { PostCard } from "@/components/posts/post-card";
 import { posts } from "#site/content";
 
 // Utils
-import { sortPosts } from "@/lib/utils";
+import { sortPosts } from "@/utils/sortPosts";
 
 export function LatestPosts() {
   const latestPosts = sortPosts(posts).slice(0, 4);
@@ -26,7 +26,7 @@ export function LatestPosts() {
                     date={post.date}
                     description={post.description ?? ""}
                     slug={post.slug}
-                    tags={post.tags}
+                    categories={post.categories}
                   />
                 </li>
               );
