@@ -80,7 +80,7 @@ export default async function PostPage({ params }: PostPageProps) {
       </div>
       <h1>{post.title}</h1>
       <div className="flex gap-2 mb-2">
-        {post.tags?.map((tag) => (
+        {post.categories?.map((tag) => (
           <Tag tag={tag} key={tag} />
         ))}
       </div>

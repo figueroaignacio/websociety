@@ -18,7 +18,7 @@ export function Tag({ tag, count, current }: TagProps) {
         variant: current ? "default" : "chip",
         className: "no-underline rounded-md duration-100",
       })}
-      href={`/tags/${slug(tag)}`}
+      href={`/categories/${slug(tag)}`}
     >
       {tag} {count ? `(${count})` : null}
     </LinkWithTransition>

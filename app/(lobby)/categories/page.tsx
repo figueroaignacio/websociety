@@ -9,16 +9,17 @@ import { posts } from "#site/content";
 import { Metadata } from "next";
 
 // Utils
-import { getAllTags, sortTagsByCount } from "@/lib/utils";
+import { getAllCategories } from "@/utils/getAllCategories";
+import { sortCategoriesByCount } from "@/utils/sortCategoriesByCount";
 
 export const metadata: Metadata = {
-  title: "Tags",
+  title: "Categories",
   description: "Topic I've written about",
 };
 
-export default async function TagsPage() {
-  const tags = getAllTags(posts);
-  const sortedPosts = sortTagsByCount(tags);
+export default async function CategoriesPage() {
+  const tags = getAllCategories(posts);
+  const sortedPosts = sortCategoriesByCount(tags);
 
   return (
     <section className="flex flex-col gap-12 mt-24">

@@ -13,12 +13,10 @@ import {
 import { posts } from "#site/content";
 
 // Utils
-import {
-  capitalize,
-  getAllTags,
-  getPostsByTagSlug,
-  sortTagsByCount,
-} from "@/lib/utils";
+import { capitalize } from "@/utils/capitalize";
+import { getAllCategories } from "@/utils/getAllCategories";
+import { getPostsByCategorySlug } from "@/utils/getPostsByCategorySlug";
+import { sortCategoriesByCount } from "@/utils/sortCategoriesByCount";
 import { slug } from "github-slugger";
 
 // Metadata
@@ -28,34 +26,34 @@ import Link from "next/link";
 
 interface TagPageProps {
   params: {
-    tag: string;
+    category: string;
   };
 }
 
 export async function generateMetadata({
   params,
 }: TagPageProps): Promise<Metadata> {
-  const { tag } = params;
+  const { category } = params;
   return {
-    title: `Category: ${capitalize(tag)}`,
-    description: `Posts on the topic of ${tag}`,
+    title: `Category: ${capitalize(category)}`,
+    description: `Posts on the topic of ${category}`,
   };
 }
 
 export const generateStaticParams = () => {
-  const tags = getAllTags(posts);
+  const tags = getAllCategories(posts);
   const paths = Object.keys(tags).map((tag) => ({ tag: slug(tag) }));
   return paths;
 };
 
 export default function TagPage({ params }: TagPageProps) {
-  const { tag } = params;
-  const title = capitalize(tag);
+  const { category } = params;
+  const title = capitalize(category);
 
-  const allPosts = getPostsByTagSlug(posts, tag);
+  const allPosts = getPostsByCategorySlug(posts, category);
   const displayPosts = allPosts.filter((post) => post.published);
-  const tags = getAllTags(posts);
-  const sortedTags = sortTagsByCount(tags);
+  const tags = getAllCategories(posts);
+  const sortedTags = sortCategoriesByCount(tags);
 
   return (
     <section className="mt-24">
@@ -64,7 +62,7 @@ export default function TagPage({ params }: TagPageProps) {
         <div className="mt-10">
           <Card>
             <CardHeader className="flex">
-              <CardTitle>Tags</CardTitle>
+              <CardTitle>Categories</CardTitle>
             </CardHeader>
             <CardContent className="flex flex-col gap-3">
               <CardDescription>
@@ -77,7 +75,7 @@ export default function TagPage({ params }: TagPageProps) {
                     tag={t}
                     key={t}
                     count={tags[t]}
-                    current={slug(t) === tag}
+                    current={slug(t) === category}
                   />
                 ))}
               </div>
@@ -104,7 +102,7 @@ export default function TagPage({ params }: TagPageProps) {
                     date={post.date}
                     title={post.title}
                     description={post.description ?? ""}
-                    categories={post.tags}
+                    categories={post.categories}
                   />
                 </li>
               );
