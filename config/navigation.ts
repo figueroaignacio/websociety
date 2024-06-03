@@ -9,7 +9,7 @@ export const navigationConfig: { title: string; href: string }[] = [
   },
   {
     title: "Learn",
-    href: "/learn",
+    href: "/paths",
   },
   {
     title: "Challenges",
