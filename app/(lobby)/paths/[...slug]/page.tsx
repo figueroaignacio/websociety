@@ -26,15 +26,15 @@ async function getPostFromParams(params: PostPageProps["params"]) {
 export async function generateMetadata({
   params,
 }: PostPageProps): Promise<Metadata> {
-  const post = await getPostFromParams(params);
+  const path = await getPostFromParams(params);
 
-  if (!post) {
+  if (!path) {
     return {};
   }
 
   return {
-    title: post.title,
-    description: post.description,
+    title: `Learn ${path.title}`,
+    description: path.description,
   };
 }
 
