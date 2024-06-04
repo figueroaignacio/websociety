@@ -2,37 +2,46 @@
 import { LinkWithTransition } from "./link-with-transition";
 
 // Icons
-import { Code2 } from "lucide-react";
+import { Copyright } from "lucide-react";
 
 // Constants
 import { navigationConfig } from "@/config/navigation";
-import { footer } from "@/constants/footer";
+import { Separator } from "./ui/separator";
 
 export function Footer() {
   return (
-    <footer className="flex flex-col gap-3 py-12 md:flex-row md:justify-between md:items-center">
-      <div className="flex flex-col gap-2">
-        <h2 className="font-bold text-3xl text-pretty flex items-center gap-2">
-          <Code2 />
-          {footer.title}
-        </h2>
-        <p className="text-sm">{footer.subtitle}</p>
-        <ul className="flex flex-col gap-2 py-2">
-          {navigationConfig.map((navItem, index) => (
-            <li key={index} className="flex items-center">
-              <LinkWithTransition href={navItem.href}>
-                {navItem.title}
-              </LinkWithTransition>
-            </li>
-          ))}
-        </ul>
-        <p>
-          Developed for fun by{" "}
-          <a href={footer.href} className="border-b-[.0625rem] border-white">
-            {footer.author}
-          </a>
-        </p>
-        <p className="text-xs">{footer.paragraph}</p>
+    <footer className="py-12 md:py-16 lg:py-20">
+      <Separator />
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12 justify-center py-12">
+        <div>
+          <h4 className="text-lg font-semibold mb-4">Frontend Society</h4>
+          <nav>
+            <ul className="flex flex-col gap-2 py-2">
+              {navigationConfig.map((navItem, index) => (
+                <li key={index} className="flex items-center">
+                  <LinkWithTransition href={navItem.href}>
+                    {navItem.title}
+                  </LinkWithTransition>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+        <div>
+          <h4 className="text-lg font-semibold mb-4">About</h4>
+          <p className="text-gray-600">
+            Frontend Society is a thriving community of frontend developers who
+            come together to share knowledge, collaborate, and grow their
+            skills. We are passionate about building beautiful and user-friendly
+            web experiences.
+          </p>
+        </div>
+      </div>
+      <div className="mt-8 md:mt-12 text-center text-gray-400 text-sm">
+        <div className="flex items-center justify-center space-x-2">
+          <Copyright className="h-4 w-4" />
+          <span>2024 Frontend Society. All rights reserved.</span>
+        </div>
       </div>
     </footer>
   );
