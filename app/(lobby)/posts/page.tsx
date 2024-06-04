@@ -12,6 +12,14 @@ import { getAllCategories } from "@/utils/getAllCategories";
 import { sortCategoriesByCount } from "@/utils/sortCategoriesByCount";
 import { sortPosts } from "@/utils/sortPosts";
 
+// Metadata
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Posts",
+  description: "Read posts about web development and learn coding stuff.",
+};
+
 const POSTS_PER_PAGE = 4;
 
 interface BlogPageProps {
