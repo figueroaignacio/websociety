@@ -29,7 +29,7 @@ export function Footer() {
         </div>
         <div>
           <h4 className="text-lg font-semibold mb-4">About</h4>
-          <p className="text-gray-600">
+          <p className="text-muted-foreground">
             Frontend Society is a thriving community of frontend developers who
             come together to share knowledge, collaborate, and grow their
             skills. We are passionate about building beautiful and user-friendly
@@ -37,7 +37,7 @@ export function Footer() {
           </p>
         </div>
       </div>
-      <div className="mt-8 md:mt-12 text-center text-gray-400 text-sm">
+      <div className="mt-8 md:mt-12 text-center text-muted-foreground text-sm">
         <div className="flex items-center justify-center space-x-2">
           <Copyright className="h-4 w-4" />
           <span>2024 Frontend Society. All rights reserved.</span>
