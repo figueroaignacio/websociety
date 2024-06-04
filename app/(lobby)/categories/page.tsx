@@ -23,7 +23,7 @@ export default async function CategoriesPage() {
 
   return (
     <section className="flex flex-col gap-12 mt-24">
-      <h1 className="font-bold text-2xl lg:text-4xl">Tags</h1>
+      <h1 className="font-bold text-2xl lg:text-4xl">Categories</h1>
       <Separator />
       <div className="flex flex-wrap gap-2">
         {sortedPosts.map((tag) => (

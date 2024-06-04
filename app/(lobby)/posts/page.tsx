@@ -43,7 +43,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
           <div className="mt-10">
             <Card>
               <CardHeader>
-                <CardTitle>Tags</CardTitle>
+                <CardTitle>Categories</CardTitle>
               </CardHeader>
               <CardContent className="flex flex-wrap gap-2">
                 {sortedTags.map((tag) => (
