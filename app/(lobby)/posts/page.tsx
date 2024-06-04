@@ -1,9 +1,13 @@
-import { posts } from "#site/content";
+// Components
 import { PostCard } from "@/components/posts/post-card";
 import { QueryPagination } from "@/components/query-pagination";
 import { Tag } from "@/components/tag";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
+// Content
+import { posts } from "#site/content";
+
+// Utils
 import { getAllCategories } from "@/utils/getAllCategories";
 import { sortCategoriesByCount } from "@/utils/sortCategoriesByCount";
 import { sortPosts } from "@/utils/sortPosts";
