@@ -1,12 +1,12 @@
 // Components
 import { LinkWithTransition } from "./link-with-transition";
+import { Separator } from "./ui/separator";
 
 // Icons
 import { Copyright } from "lucide-react";
 
-// Constants
+// Config
 import { navigationConfig } from "@/config/navigation";
-import { Separator } from "./ui/separator";
 
 export function Footer() {
   return (
