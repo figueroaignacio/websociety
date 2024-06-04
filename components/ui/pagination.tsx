@@ -4,6 +4,8 @@ import * as React from "react";
 import { ButtonProps, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
+import { LinkWithTransition } from "../link-with-transition";
+
 const Pagination = ({ className, ...props }: React.ComponentProps<"nav">) => (
   <nav
     role="navigation"
@@ -45,7 +47,7 @@ const PaginationLink = ({
   size = "icon",
   ...props
 }: PaginationLinkProps) => (
-  <a
+  <LinkWithTransition
     aria-current={isActive ? "page" : undefined}
     className={cn(
       buttonVariants({
