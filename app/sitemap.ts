@@ -1,30 +1,18 @@
-import { MetadataRoute } from "next";
+import { posts as allPosts } from "#site/content";
+import type { MetadataRoute } from "next";
+
+import { siteConfig } from "@/config/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: "https://frontendsociety.netlify.app",
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 1,
-    },
-    {
-      url: "https://frontendsociety.netlify.app/posts",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://frontendsociety.netlify.app/paths",
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.5,
-    },
-    {
-      url: "https://frontendsociety.netlify.app/challenges",
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.3,
-    },
-  ];
+  const posts = allPosts.map((post) => ({
+    url: `${siteConfig.url}/posts/${post.slug}`,
+    lastModified: post.date,
+    changeFrequency: "monthly",
+  })) satisfies MetadataRoute.Sitemap;
+  const routes = ["", "/posts", "/paths", "/challenges"].map((route) => ({
+    url: `${siteConfig.url}${route}`,
+    lastModified: new Date().toISOString(),
+    changeFrequency: "monthly",
+  })) satisfies MetadataRoute.Sitemap;
+  return [...routes, ...posts];
 }
