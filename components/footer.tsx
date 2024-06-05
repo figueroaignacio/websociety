@@ -5,6 +5,9 @@ import { Separator } from "./ui/separator";
 // Icons
 import { Copyright } from "lucide-react";
 
+// Constants
+import { footer } from "@/constants/footer";
+
 // Config
 import { navigationConfig } from "@/config/navigation";
 
@@ -14,7 +17,10 @@ export function Footer() {
       <Separator />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12 justify-center py-12">
         <div>
-          <h4 className="text-lg font-semibold mb-4">Frontend Society</h4>
+          <div>
+            <h4 className="text-lg font-semibold">{footer.title}</h4>
+            <p className="text-muted-foreground">{footer.subtitle}</p>
+          </div>
           <nav>
             <ul className="flex flex-col gap-2 py-2">
               {navigationConfig.map((navItem, index) => (
@@ -29,18 +35,13 @@ export function Footer() {
         </div>
         <div>
           <h4 className="text-lg font-semibold mb-4">About</h4>
-          <p className="text-muted-foreground">
-            Frontend Society is a thriving community of frontend developers who
-            come together to share knowledge, collaborate, and grow their
-            skills. We are passionate about building beautiful and user-friendly
-            web experiences.
-          </p>
+          <p className="text-muted-foreground">{footer.paragraph}</p>
         </div>
       </div>
       <div className="mt-8 md:mt-12 text-center text-muted-foreground text-sm">
         <div className="flex items-center justify-center space-x-2">
           <Copyright className="h-4 w-4" />
-          <span>2024 Frontend Society. All rights reserved.</span>
+          <span>{footer.copyright}</span>
         </div>
       </div>
     </footer>

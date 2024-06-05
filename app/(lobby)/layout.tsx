@@ -1,12 +1,12 @@
 // Components
 import { Footer } from "@/components/footer";
+import { Gradient } from "@/components/gradient";
 import { Navbar } from "@/components/navbar";
 
 // Global styles
 import "@/styles/globals.css";
 
 // Font
-import { Gradient } from "@/components/gradient";
 import { onest } from "@/font/onest";
 
 export default function LobbyLayout({

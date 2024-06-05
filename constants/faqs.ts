@@ -1,4 +1,4 @@
-export const about = Object.freeze([
+export const faqs = Object.freeze([
   {
     value: "item-1",
     title: "What is this?",

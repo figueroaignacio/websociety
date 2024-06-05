@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/accordion";
 
 // Contanst
-import { about } from "@/constants/about";
+import { faqs } from "@/constants/faqs";
 
 export function FAQS() {
   return (
@@ -18,7 +18,7 @@ export function FAQS() {
         collapsible
         className="w-full flex flex-col gap-5"
       >
-        {about.map((item) => (
+        {faqs.map((item) => (
           <AccordionItem value={item.value} key={item.value}>
             <AccordionTrigger>{item.title}</AccordionTrigger>
             <AccordionContent>{item.content}</AccordionContent>

@@ -8,7 +8,7 @@ export const navigationConfig: { title: string; href: string }[] = [
     href: "/posts",
   },
   {
-    title: "Learn",
+    title: "Learn Paths",
     href: "/paths",
   },
   {

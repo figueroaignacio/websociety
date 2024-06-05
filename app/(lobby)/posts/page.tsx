@@ -12,12 +12,15 @@ import { getAllCategories } from "@/utils/getAllCategories";
 import { sortCategoriesByCount } from "@/utils/sortCategoriesByCount";
 import { sortPosts } from "@/utils/sortPosts";
 
+// Constants / Config
+import { allPosts, postsConfig } from "@/constants/posts";
+
 // Metadata
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Posts",
-  description: "Read posts about web development and learn coding stuff.",
+  title: postsConfig.title,
+  description: postsConfig.description,
 };
 
 const POSTS_PER_PAGE = 4;
@@ -45,9 +48,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
     <section>
       <div className="flex flex-col gap-12 mt-24">
         <div className="flex flex-col gap-3">
-          <h1 className="font-bold text-2xl lg:text-4xl">
-            The ramblings of Front Society.
-          </h1>
+          <h1 className="font-bold text-2xl lg:text-4xl">{allPosts.title}</h1>
           <div className="mt-10">
             <Card>
               <CardHeader>
@@ -79,7 +80,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
           </ul>
         ) : (
           <section className="py-36 text-center">
-            <p className="text-xl">Nothing to see, try with another word</p>
+            <p className="text-xl">{allPosts.fallback}</p>
           </section>
         )}
         <QueryPagination totalPages={totalPages} />

@@ -1,15 +1,13 @@
 export const allPosts = Object.freeze({
-  title: "Posts",
+  title: "The ramblings of Frontend Society",
   description:
     "In this section you are going to find articles about tech and coding. Check them!",
-  fallbackNoArticlesFound:
-    "No articles found. Please try a different search term.",
+  fallback: "Nothing to see.",
 });
 
 export const postsConfig = Object.freeze({
   url: "https://icoded.vercel.app/articles",
-  title: "Articles",
-  description:
-    "In this section you are going to find articles about tech and coding. Check them!",
+  title: "Posts",
+  description: "Read posts about web development and learn coding stuff.",
   ogImage: "https://icoded.vercel.app/og-articles.png",
 });

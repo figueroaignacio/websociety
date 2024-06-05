@@ -11,7 +11,7 @@ export function Hero() {
         variant="outline"
         className="px-4 text-sm bg-violet-600 text-white"
       >
-        By a developer, for developers 🚀
+        {home.badge}
       </Badge>
       <h1 className="font-bold text-4xl lg:text-7xl">
         Welcome to <span className="gradient-text">{home.title}</span>
