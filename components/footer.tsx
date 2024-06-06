@@ -1,9 +1,10 @@
 // Components
+import Link from "next/link";
 import { LinkWithTransition } from "./link-with-transition";
 import { Separator } from "./ui/separator";
 
 // Icons
-import { Copyright } from "lucide-react";
+import { Copyright, Github, RssIcon } from "lucide-react";
 
 // Constants
 import { footer } from "@/constants/footer";
@@ -42,6 +43,17 @@ export function Footer() {
         <div className="flex items-center justify-center space-x-2">
           <Copyright className="h-4 w-4" />
           <span>{footer.copyright}</span>
+        </div>
+        <div className="flex justify-center my-3 gap-3">
+          <Link href="/sitemap.xml" target="_blank">
+            <RssIcon />
+          </Link>
+          <Link
+            href="https://github.com/figueroaignacio/frontendsociety"
+            target="_blank"
+          >
+            <Github />
+          </Link>
         </div>
       </div>
     </footer>
