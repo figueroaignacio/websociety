@@ -1,4 +1,6 @@
-export const faqs = Object.freeze([
+import { Faqs } from "@/types/types";
+
+export const faqs: Faqs[] = [
   {
     value: "item-1",
     title: "What is this?",
@@ -28,4 +30,4 @@ export const faqs = Object.freeze([
     content:
       "My name is Ignacio Figueroa, I'm from Argentina and I'm a frontend development enthusiast who loves to share what I learn through my constant learning.",
   },
-]);
+];

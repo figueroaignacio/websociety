@@ -1,4 +1,6 @@
-export const navigationConfig: { title: string; href: string }[] = [
+import { Navigation } from "@/types/types";
+
+export const navigationConfig: Navigation[] = [
   {
     title: "Home",
     href: "/",

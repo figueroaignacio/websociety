@@ -1,4 +1,6 @@
-export const features = Object.freeze([
+import { Features } from "@/types/types";
+
+export const features: Features[] = [
   {
     title: "Posts",
     description:
@@ -17,4 +19,4 @@ export const features = Object.freeze([
       "Take on frontend coding challenges to sharpen your skills, solve problems, and showcase your expertise.",
     icon: "code",
   },
-]);
+];
