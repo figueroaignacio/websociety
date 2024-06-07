@@ -1,30 +1,30 @@
 // Components
-import { LearnPathCard } from "@/components/paths/learn-path-card";
+import { GuideCard } from "@/components/guides/guide-card";
 
 // Content
-import { paths } from "#site/content";
+import { guides } from "#site/content";
 
 // Constants / Config
-import { learnPaths, learnPathsConfig } from "@/constants/learn-paths";
+import { guides as g, guidesConfig } from "@/constants/guides";
 
 // Metadata
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: learnPathsConfig.title,
-  description: learnPathsConfig.description,
+  title: guidesConfig.title,
+  description: guidesConfig.description,
 };
 
 export default function LearnPage() {
   return (
     <section className="flex flex-col gap-12 mt-24">
-      <h1 className="font-bold text-2xl lg:text-4xl">{learnPaths.title}</h1>
-      {paths.length > 0 ? (
+      <h1 className="font-bold text-2xl lg:text-4xl">{g.title}</h1>
+      {guides.length > 0 ? (
         <ul className="grid gap-4 grid-cols-1 ">
-          {paths.map((path) => {
+          {guides.map((path) => {
             return (
               <li key={path.slug}>
-                <LearnPathCard
+                <GuideCard
                   slug={path.slug}
                   title={path.title}
                   description={path.description ?? ""}
@@ -35,7 +35,7 @@ export default function LearnPage() {
         </ul>
       ) : (
         <section className="py-36 text-center">
-          <p className="text-xl">{learnPaths.fallback}</p>
+          <p className="text-xl">{g.fallback}</p>
         </section>
       )}
     </section>

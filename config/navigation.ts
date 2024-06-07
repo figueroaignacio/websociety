@@ -10,8 +10,8 @@ export const navigationConfig: Navigation[] = [
     href: "/posts",
   },
   {
-    title: "Learn Paths",
-    href: "/paths",
+    title: "Guides",
+    href: "/guides",
   },
   {
     title: "Challenges",

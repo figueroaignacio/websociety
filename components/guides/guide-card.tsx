@@ -8,17 +8,13 @@ import {
   CardTitle,
 } from "../ui/card";
 
-interface LearnPathCardProps {
+interface GuideCardProps {
   title: string;
   description: string;
   slug: string;
 }
 
-export function LearnPathCard({
-  description,
-  title,
-  slug,
-}: LearnPathCardProps) {
+export function GuideCard({ description, title, slug }: GuideCardProps) {
   return (
     <Link href={"/" + slug}>
       <Card className="hover:cursor-pointer dark:hover:brightness-150 hover:shadow-custom-card duration-150 h-full">

@@ -6,7 +6,7 @@ import { MDXContent } from "@/components/mdx/mdx-components";
 import { notFound } from "next/navigation";
 
 // Content
-import { paths } from "#site/content";
+import { guides } from "#site/content";
 
 // Metadata
 import { Metadata } from "next";
@@ -19,35 +19,35 @@ interface PostPageProps {
 
 async function getPostFromParams(params: PostPageProps["params"]) {
   const slug = params?.slug.join("/");
-  const post = paths.find((path) => path.slugAsParams === slug);
+  const post = guides.find((guide) => guide.slugAsParams === slug);
   return post;
 }
 
 export async function generateMetadata({
   params,
 }: PostPageProps): Promise<Metadata> {
-  const path = await getPostFromParams(params);
+  const guide = await getPostFromParams(params);
 
-  if (!path) {
+  if (!guide) {
     return {};
   }
 
   return {
-    title: `Learn ${path.title}`,
-    description: path.description,
+    title: `Learn ${guide.title}`,
+    description: guide.description,
   };
 }
 
 export async function generateStaticParams(): Promise<
   PostPageProps["params"][]
 > {
-  return paths.map((path) => ({ slug: path.slugAsParams.split("/") }));
+  return guides.map((guide) => ({ slug: guide.slugAsParams.split("/") }));
 }
 
-export default async function PathPage({ params }: PostPageProps) {
-  const path = await getPostFromParams(params);
+export default async function GuidePage({ params }: PostPageProps) {
+  const guides = await getPostFromParams(params);
 
-  if (!path || !path.published) {
+  if (!guides || !guides.published) {
     notFound();
   }
 
@@ -56,11 +56,11 @@ export default async function PathPage({ params }: PostPageProps) {
       <div className="pb-7">
         <BackButton title="Go back" />
       </div>
-      <h1>{path.title}</h1>
+      <h1>{guides.title}</h1>
       <p className="m-0">
-        {path.description ? <p>{path.description}</p> : null}
+        {guides.description ? <p>{guides.description}</p> : null}
       </p>
-      <MDXContent code={path.body} />
+      <MDXContent code={guides.body} />
     </article>
   );
 }
