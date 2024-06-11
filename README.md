@@ -1,6 +1,6 @@
-# Front Society (Project in Development)
+# Frontend Society (Project in Development)
 
-Welcome to **Front Society**, your go-to platform for discovering the latest trends, techniques, and tools in the realm of frontend development.
+Welcome to **Frontend Society**, your go-to platform for discovering the latest trends, techniques, and tools in the realm of frontend development.
 
 ## Technologies Used in this Project
 
@@ -13,8 +13,8 @@ Welcome to **Front Society**, your go-to platform for discovering the latest tre
 
 ## Features
 
-- **Article and Post Repository**: Dive into a vast collection of articles and posts covering diverse topics in web development.
-- **Roadmaps**: Navigate comprehensive guides that outline learning paths for various aspects of web development.
+- **Posts Repository**: Dive into a vast collection of articles and posts covering diverse topics in web development.
+- **Guides**: Navigate comprehensive guides that outline learning paths for various aspects of web development.
 - **Challenges**: Put your skills to the test with stimulating exercises and projects designed to elevate your coding proficiency.
 - **Interactive UI**: Immerse yourself in a seamless and intuitive user experience powered by React and Next.js.
 - **Responsive Design**: Access F society on any device with a fully responsive design optimized for mobile, tablet, and desktop screens.
