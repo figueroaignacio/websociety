@@ -32,9 +32,9 @@ export function Navbar() {
                   href={navItem.href}
                   className={`${
                     pathname === `${navItem.href}`
-                      ? "gradient-text font-bold"
-                      : ""
-                  }`}
+                      ? "gradient-text"
+                      : "text-muted-foreground"
+                  } hover:gradient-text`}
                 >
                   {navItem.title}
                 </LinkWithTransition>

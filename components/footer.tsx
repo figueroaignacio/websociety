@@ -26,7 +26,10 @@ export function Footer() {
             <ul className="flex flex-col gap-2 py-2">
               {navigationConfig.map((navItem, index) => (
                 <li key={index} className="flex items-center">
-                  <LinkWithTransition href={navItem.href}>
+                  <LinkWithTransition
+                    href={navItem.href}
+                    className="text-muted-foreground hover:gradient-text"
+                  >
                     {navItem.title}
                   </LinkWithTransition>
                 </li>
