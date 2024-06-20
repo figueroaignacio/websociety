@@ -3,7 +3,7 @@ export function Loader() {
     <div className="backdrop-filter backdrop-blur-md min-h-screen w-full">
       <div className="grid min-h-[75vh] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
         <svg
-          className="text-gray-300 animate-spin"
+          className="text-purple-600 animate-spin"
           viewBox="0 0 64 64"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -23,7 +23,7 @@ export function Loader() {
             stroke-width="5"
             stroke-linecap="round"
             stroke-linejoin="round"
-            className="text-gray-900"
+            className="text-gray-300"
           ></path>
         </svg>
       </div>
