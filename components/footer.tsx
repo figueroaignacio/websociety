@@ -1,7 +1,6 @@
 // Components
 import Link from "next/link";
 import { LinkWithTransition } from "./link-with-transition";
-import { Separator } from "./ui/separator";
 
 // Icons
 import { Copyright, Github, RssIcon } from "lucide-react";
@@ -15,7 +14,6 @@ import { navigationConfig } from "@/config/navigation";
 export function Footer() {
   return (
     <footer className="py-12 md:py-16 lg:py-20">
-      <Separator />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12 justify-center py-12">
         <div>
           <div>
