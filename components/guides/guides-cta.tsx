@@ -12,9 +12,12 @@ import {
 // Icons
 import { ArrowRight } from "lucide-react";
 
+// Animations
+import "@/styles/animations.css";
+
 export function GuideCta() {
   return (
-    <Card className="shadow-custom-card flex items-center justify-between py-12 flex-wrap">
+    <Card className="shadow-custom-card flex items-center justify-between py-12 flex-wrap fade">
       <CardHeader>
         <CardTitle>Looking to Enhance Your Skills?</CardTitle>
         <CardDescription>

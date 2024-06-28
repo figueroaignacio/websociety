@@ -9,18 +9,21 @@ import { posts } from "#site/content";
 // Utils
 import { sortPosts } from "@/utils/sortPosts";
 
+// Animations
+import "@/styles/animations.css";
+
 export function LatestPosts() {
   const latestPosts = sortPosts(posts).slice(0, 4);
 
   return (
     <section className="py-10 flex flex-col gap-7">
-      <h2 className="font-bold text-3xl fade">Latest Posts</h2>
+      <h2 className="font-bold text-3xl">Latest Posts</h2>
       <div>
         {latestPosts?.length > 0 ? (
           <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2">
             {latestPosts.map((post) => {
               return (
-                <li key={post.slug}>
+                <li key={post.slug} className="fade">
                   <PostCard
                     title={post.title}
                     date={post.date}
