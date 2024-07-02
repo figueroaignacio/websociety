@@ -1,7 +1,7 @@
 // Components
-import { Footer } from "@/components/footer";
-import { Gradient } from "@/components/gradient";
-import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/layout/footer";
+import { Gradient } from "@/components/layout/gradient";
+import { Navbar } from "@/components/layout/navbar";
 
 // Global styles
 import "@/styles/globals.css";

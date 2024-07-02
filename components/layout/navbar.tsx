@@ -4,10 +4,10 @@
 import { usePathname } from "next/navigation";
 
 // Components
-import { LinkWithTransition } from "./link-with-transition";
-import { Logo } from "./logo";
-import { MobileMenu } from "./mobile-menu";
-import { ToggleTheme } from "./toggle-theme";
+import { LinkWithTransition } from "../link-with-transition";
+import { Logo } from "../logo";
+import { MobileMenu } from "../mobile-menu";
+import { ToggleTheme } from "../toggle-theme";
 
 // Constants
 import { navigationConfig } from "@/config/navigation";

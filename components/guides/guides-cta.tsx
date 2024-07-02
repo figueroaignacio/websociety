@@ -49,7 +49,7 @@ export function GuideCta() {
         alt="Cta coding"
         width={0}
         height={0}
-        className="bg-cover rounded-md"
+        className="bg-cover rounded-md py-3"
       />
     </Card>
   );

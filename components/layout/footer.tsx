@@ -1,6 +1,6 @@
 // Components
 import Link from "next/link";
-import { LinkWithTransition } from "./link-with-transition";
+import { LinkWithTransition } from "../link-with-transition";
 
 // Icons
 import { Copyright, Github, RssIcon } from "lucide-react";
