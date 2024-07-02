@@ -18,7 +18,7 @@ export function Footer() {
         <div>
           <div>
             <h4 className="text-lg font-semibold">{footer.title}</h4>
-            <p className="text-muted-foreground">{footer.subtitle}</p>
+            <p>{footer.subtitle}</p>
           </div>
           <nav>
             <ul className="flex flex-col gap-2 py-2">
@@ -26,7 +26,7 @@ export function Footer() {
                 <li key={index} className="flex items-center">
                   <LinkWithTransition
                     href={navItem.href}
-                    className="text-muted-foreground hover:gradient-text"
+                    className="hover:gradient-text"
                   >
                     {navItem.title}
                   </LinkWithTransition>
@@ -40,20 +40,20 @@ export function Footer() {
           <p className="text-muted-foreground">{footer.paragraph}</p>
         </div>
       </div>
-      <div className="mt-8 md:mt-12 text-center text-muted-foreground text-sm">
+      <div className="mt-8 md:mt-12 text-center text-sm">
         <div className="flex items-center justify-center space-x-2">
-          <Copyright className="h-4 w-4" />
-          <span>{footer.copyright}</span>
+          <Copyright className="h-4 w-4 text-muted-foreground" />
+          <span className="text-muted-foreground">{footer.copyright}</span>
         </div>
         <div className="flex justify-center my-3 gap-3">
           <Link href="/sitemap.xml" target="_blank">
-            <RssIcon />
+            <RssIcon className="text-muted-foreground" />
           </Link>
           <Link
             href="https://github.com/figueroaignacio/frontendsociety"
             target="_blank"
           >
-            <Github />
+            <Github className="text-muted-foreground" />
           </Link>
         </div>
       </div>
