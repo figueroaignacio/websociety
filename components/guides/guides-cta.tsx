@@ -44,7 +44,6 @@ export function GuideCta() {
           </Link>
         </div>
       </CardHeader>
-
       <Image
         src={theme === "dark" ? GuidesCtaDark : GuidesCtaLight}
         alt="Cta coding"
