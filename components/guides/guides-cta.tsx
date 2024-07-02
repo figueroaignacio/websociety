@@ -21,7 +21,7 @@ export function GuideCta() {
   const { theme } = useTheme();
 
   return (
-    <Card className="shadow-custom-card flex flex-col md:flex-row md:items-center pt-8 fade">
+    <Card className="shadow-custom-card flex flex-col md:flex-row md:items-center fade">
       <CardHeader className="gap-4">
         <div>
           <CardTitle>Looking to Enhance Your Skills?</CardTitle>
