@@ -7,13 +7,7 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import { buttonVariants } from "../ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "../ui/card";
+import { Card, CardDescription, CardHeader, CardTitle } from "../ui/card";
 
 // Icons - Images
 import GuidesCtaDark from "@/assets/images/guides-cta-code-dark.svg";
@@ -50,15 +44,14 @@ export function GuideCta() {
           </Link>
         </div>
       </CardHeader>
-      <CardContent>
-        <Image
-          src={theme === "dark" ? GuidesCtaDark : GuidesCtaLight}
-          alt="Cta coding"
-          width={0}
-          height={0}
-          className="bg-cover rounded-md"
-        />
-      </CardContent>
+
+      <Image
+        src={theme === "dark" ? GuidesCtaDark : GuidesCtaLight}
+        alt="Cta coding"
+        width={0}
+        height={0}
+        className="bg-cover rounded-md"
+      />
     </Card>
   );
 }
