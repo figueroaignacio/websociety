@@ -4,6 +4,7 @@ import { Features } from "@/components/features";
 import { GuideCta } from "@/components/guides/guides-cta";
 import { Hero } from "@/components/hero";
 import { LatestPosts } from "@/components/posts/latest-posts";
+import { PostsCta } from "@/components/posts/posts-cta";
 
 export default function HomePage() {
   return (
@@ -11,6 +12,7 @@ export default function HomePage() {
       <Hero />
       <Features />
       <LatestPosts />
+      <PostsCta />
       <GuideCta />
       <FAQS />
     </section>
