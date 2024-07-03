@@ -26,7 +26,7 @@ export function GuideCta() {
         <div>
           <CardTitle>Looking to Enhance Your Skills?</CardTitle>
           <CardDescription>
-            Explore our guides and start learning today.
+            Explore all the guides and start learning today.
           </CardDescription>
         </div>
         <div>
