@@ -1,6 +1,11 @@
-import { guides } from "#site/content";
-import { sortGuides } from "@/utils/sortGuides";
+// Components
 import { GuideCard } from "./guide-card";
+
+// Content
+import { guides } from "#site/content";
+
+// Utils
+import { sortGuides } from "@/utils/sortGuides";
 
 export function LatestGuides() {
   const latestGuides = sortGuides(guides).slice(0, 4);
