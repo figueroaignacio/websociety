@@ -15,14 +15,9 @@ export function LatestGuides() {
       <h2 className="text-2xl font-bold mb-4">Latest Guides</h2>
       <div>
         {latestGuides?.length > 0 ? (
-          <ul className="grid gap-4 grid-cols-2 auto-rows-fr">
+          <ul className="grid gap-4 grid-cols-1 md:grid-cols-2 auto-rows-fr">
             {latestGuides.map((guide, index) => (
-              <li
-                key={guide.slug}
-                className={`fade shadow-lg rounded-lg overflow-hidden ${
-                  index === 0 ? "col-span-1" : "col-span-1"
-                }`}
-              >
+              <li key={guide.slug}>
                 <GuideCard
                   title={guide.title}
                   description={guide.description ?? ""}
