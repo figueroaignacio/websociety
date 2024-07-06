@@ -7,6 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { LinkWithTransition } from "../link-with-transition";
 import { Tag } from "../tag";
 import { buttonVariants } from "../ui/button";
 
@@ -15,9 +16,6 @@ import { ArrowRight, Calendar } from "lucide-react";
 
 // Utils
 import { formatDate } from "@/utils/formatDate";
-
-// Next
-import Link from "next/link";
 
 interface ArticleCardProps {
   title: string;
@@ -59,7 +57,7 @@ export function PostCard({
             <Tag tag={tag} key={tag} />
           ))}
         </div>
-        <Link
+        <LinkWithTransition
           href={"/" + slug}
           className={`${buttonVariants({
             variant: "postButton",
@@ -70,7 +68,7 @@ export function PostCard({
             size={16}
             className="transition-transform ease-in-out duration-300 transform translate-x-0 group-hover:translate-x-1"
           />
-        </Link>
+        </LinkWithTransition>
       </CardFooter>
     </Card>
   );
