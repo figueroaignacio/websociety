@@ -3,8 +3,9 @@ import * as React from "react";
 
 import { ButtonProps, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-
-import { LinkWithTransition } from "../link-with-transition";
+import Link from "next/link";
+import { UrlObject } from "url";
+type Url = string | UrlObject;
 
 const Pagination = ({ className, ...props }: React.ComponentProps<"nav">) => (
   <nav
@@ -38,6 +39,7 @@ PaginationItem.displayName = "PaginationItem";
 
 type PaginationLinkProps = {
   isActive?: boolean;
+  href: Url;
 } & Pick<ButtonProps, "size"> &
   React.ComponentProps<"a">;
 
@@ -47,7 +49,7 @@ const PaginationLink = ({
   size = "icon",
   ...props
 }: PaginationLinkProps) => (
-  <LinkWithTransition
+  <Link
     aria-current={isActive ? "page" : undefined}
     className={cn(
       buttonVariants({
