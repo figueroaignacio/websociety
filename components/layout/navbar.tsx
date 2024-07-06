@@ -16,7 +16,7 @@ export function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="flex items-center justify-between sticky z-20 top-0 left-0 backdrop-filter backdrop-blur-sm py-4 px-3 lg:px-0">
+    <header className="flex items-center justify-between sticky z-20 top-0 left-0 py-4 px-3 lg:px-0 backdrop-blur-sm max-w-7xl mx-auto">
       <div className="flex gap-9 items-center justify-between lg:justify-normal w-screen">
         <div className="flex items-center w-full md:hidden relative inset-0">
           <MobileMenu />

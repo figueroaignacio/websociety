@@ -24,12 +24,12 @@ export function MobileMenu() {
 
   return (
     <Sheet>
-      <SheetTrigger asChild>
+      <SheetTrigger asChild className="px-6 py-1">
         <button>
           <Menu />
         </button>
       </SheetTrigger>
-      <SheetContent side="left" className="">
+      <SheetContent side="left">
         <ul className="flex flex-col gap-12 pt-32 py-10 pl-8 items-end md:w-full md:min-h-0 text-2xl">
           {navigationConfig.map((navItem, index) => (
             <li

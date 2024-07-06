@@ -63,9 +63,19 @@
   }
 }
 
+body {
+  transition-property: opacity, transform, filter, background;
+  transition-timing-function: ease-in-out;
+  transition-duration: 500ms;
+}
+
 @layer components {
   .gradient-text {
     @apply bg-gradient-to-r from-violet-500 via-purple-500 to-pink-500 text-transparent bg-clip-text;
+  }
+
+  .page-transition {
+    @apply opacity-0 blur-3xl translate-y-10;
   }
 }
 
@@ -85,3 +95,10 @@
   -ms-border-radius: 0.375rem;
   -o-border-radius: 0.375rem;
 }
+
+/* .page-transition {
+  opacity: 0;
+  background: purple;
+  transform: translateY(40px);
+  filter: blur(12px);
+} */
