@@ -9,5 +9,5 @@ export const notFound = Object.freeze({
 });
 
 export const inDevelopmentSection = Object.freeze({
-  description: "I'm still coding this part of the code!",
+  description: "I'm still coding this part of the code.",
 });
