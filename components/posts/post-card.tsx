@@ -60,7 +60,7 @@ export function PostCard({
         <LinkWithTransition
           href={"/" + slug}
           className={`${buttonVariants({
-            variant: "postButton",
+            variant: "purple",
           })} flex z-10`}
         >
           Read More

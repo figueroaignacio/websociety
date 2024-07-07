@@ -5,7 +5,7 @@ import { useTheme } from "next-themes";
 
 // Components
 import Image from "next/image";
-import Link from "next/link";
+import { LinkWithTransition } from "../link-with-transition";
 import { buttonVariants } from "../ui/button";
 import { Card, CardDescription, CardHeader, CardTitle } from "../ui/card";
 
@@ -30,10 +30,10 @@ export function GuideCta() {
           </CardDescription>
         </div>
         <div>
-          <Link
+          <LinkWithTransition
             href="/guides"
             className={`${buttonVariants({
-              variant: "outline",
+              variant: "purple",
             })} flex items-center gap-3 group`}
           >
             Get Started
@@ -41,7 +41,7 @@ export function GuideCta() {
               size={".85rem"}
               className="transition-transform ease-in-out duration-300 transform translate-x-0 group-hover:translate-x-1"
             />
-          </Link>
+          </LinkWithTransition>
         </div>
       </CardHeader>
       <Image
