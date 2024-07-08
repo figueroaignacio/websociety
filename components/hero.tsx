@@ -17,10 +17,10 @@ export function Hero() {
   const { theme } = useTheme();
 
   return (
-    <section className="pt-32">
-      <div className="flex items-center gap-3">
-        <div className="flex flex-col gap-3 text-center md:text-left">
-          <h1 className="font-bold text-6xl">
+    <section className="pt-24">
+      <div className="flex items-center">
+        <div className="flex flex-col text-center gap-5 md:text-left">
+          <h1 className="font-bold text-6xl lg:text-8xl">
             Welcome to <span className="gradient-text">{home.title}</span>
           </h1>
           <p className="text-sm opacity-70">{home.description}</p>
@@ -29,8 +29,8 @@ export function Hero() {
           <Image
             src={theme === "dark" ? HeroCodeImageDark : HeroCodeImageLight}
             alt="Home hero code"
-            width={0}
-            height={0}
+            width={824}
+            height={824}
             className="hidden md:block"
           />
         </div>
