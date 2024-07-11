@@ -5,16 +5,16 @@ interface FadeUpProps {
   children: React.ReactNode;
   delay?: number;
   duration?: number;
-  ease?: string | number[]; // Allow for both preset and custom easing
-  yOffset?: number; // Allow custom offset for the Y-axis
+  ease?: string | number[];
+  yOffset?: number;
 }
 
 export function FadeUp({
   children,
   delay = 0,
   duration = 0.6,
-  ease = "easeOut", // Default easing
-  yOffset = 20, // Default Y offset
+  ease = "easeOut",
+  yOffset = 20,
 }: FadeUpProps) {
   return (
     <motion.div
