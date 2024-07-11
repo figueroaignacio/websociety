@@ -63,19 +63,9 @@
   }
 }
 
-body {
-  transition-property: opacity, transform, filter, background;
-  transition-timing-function: ease-in-out;
-  transition-duration: 500ms;
-}
-
 @layer components {
   .gradient-text {
     @apply bg-gradient-to-r from-violet-500 via-purple-500 to-pink-500 text-transparent bg-clip-text;
-  }
-
-  .page-transition {
-    @apply opacity-0 blur-3xl translate-y-10;
   }
 }
 
@@ -96,9 +86,48 @@ body {
   -o-border-radius: 0.375rem;
 }
 
-/* .page-transition {
-  opacity: 0;
-  background: purple;
-  transform: translateY(40px);
-  filter: blur(12px);
-} */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slide-from-right {
+  from {
+    transform: translateX(50px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-to-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50px);
+  }
+}
+
+::view-transition-old(root) {
+  animation: 150ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+    350ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+}
+
+::view-transition-new(root) {
+  animation: 250ms cubic-bezier(0, 0, 0.2, 1) 150ms both fade-in,
+    350ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
+}
