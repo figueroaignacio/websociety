@@ -2,6 +2,7 @@
 
 // Components
 import Image from "next/image";
+import { FadeUp } from "./framer/fade-up";
 
 // Images - Icons
 import HeroCodeImageDark from "@/assets/images/home-hero-dark.svg";
@@ -12,7 +13,6 @@ import { useTheme } from "next-themes";
 // Constants
 import { home } from "@/constants/home";
 import { ArrowDown } from "lucide-react";
-import { FadeUp } from "./framer/fade-up";
 
 export function Hero() {
   const { theme } = useTheme();
@@ -33,13 +33,15 @@ export function Hero() {
           <ArrowDown className="border-[1px] border-border w-8 h-8 rounded-full p-1 animate-bounce" />
         </div>
         <div>
-          <Image
-            src={theme === "dark" ? HeroCodeImageDark : HeroCodeImageLight}
-            alt="Home hero code"
-            width={0}
-            height={0}
-            className="block md:hidden"
-          />
+          <FadeUp>
+            <Image
+              src={theme === "dark" ? HeroCodeImageDark : HeroCodeImageLight}
+              alt="Home hero code"
+              width={0}
+              height={0}
+              className="block md:hidden"
+            />
+          </FadeUp>
         </div>
       </section>
     </FadeUp>
