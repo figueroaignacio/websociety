@@ -3,18 +3,27 @@ import { motion } from "framer-motion";
 
 interface FadeUpProps {
   children: React.ReactNode;
-  delay?: 0;
+  delay?: number;
+  duration?: number;
+  ease?: string | number[]; // Allow for both preset and custom easing
+  yOffset?: number; // Allow custom offset for the Y-axis
 }
 
-export function FadeUp({ children, delay }: FadeUpProps) {
+export function FadeUp({
+  children,
+  delay = 0,
+  duration = 0.6,
+  ease = "easeOut", // Default easing
+  yOffset = 20, // Default Y offset
+}: FadeUpProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: yOffset }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
-        duration: 0.5,
+        duration: duration,
         delay: delay,
-        ease: "easeOut",
+        ease: ease,
       }}
     >
       {children}
