@@ -6,7 +6,7 @@ interface FadeUpProps {
   delay?: 0;
 }
 
-export const FadeUp = ({ children, delay }: FadeUpProps) => {
+export function FadeUp({ children, delay }: FadeUpProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -20,4 +20,4 @@ export const FadeUp = ({ children, delay }: FadeUpProps) => {
       {children}
     </motion.div>
   );
-};
+}
