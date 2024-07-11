@@ -38,7 +38,7 @@ export function PostsCta() {
         </div>
         <div>
           <LinkWithTransition
-            href="/guides"
+            href="/posts"
             className={`${buttonVariants({
               variant: "purple",
             })} flex items-center gap-3 group`}
