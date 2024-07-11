@@ -24,7 +24,7 @@ const config = {
       },
       backgroundImage: (theme) => ({
         "radial-gradient":
-          "radial-gradient(ellipse 100% 50% at 50% -10%,rgba(147, 51, 234, 0.3), rgba(179, 136, 255, 0.1), rgba(255, 255, 255, 0))",
+          "radial-gradient(ellipse 100% 100% at 50% -10%,rgba(147, 51, 234, 0.3), rgba(179, 136, 255, 0.1), rgba(255, 255, 255, 0))",
       }),
       boxShadow: {
         "custom-card": "5px 5px 0px rgb(147, 51, 234)",
