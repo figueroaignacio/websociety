@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 interface LinkWithTransitionProps {
   children: React.ReactNode;
-  className: string;
+  className?: string;
   href: string;
 }
 
