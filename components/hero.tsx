@@ -18,32 +18,41 @@ export function Hero() {
   const { theme } = useTheme();
 
   return (
-    <FadeUp>
-      <section className="py-28 md:py-44">
-        <div className="flex items-center">
-          <div className="flex flex-col text-center gap-5 ">
+    <section className="py-28 md:py-44">
+      <div className="flex items-center justify-center">
+        <div className="flex flex-col text-center">
+          <FadeUp delay={0.4}>
+            <span className="font-bold text-6xl lg:text-8xl">Welcome to</span>
+          </FadeUp>
+          <FadeUp delay={0.5}>
             <h1 className="font-bold text-6xl lg:text-8xl">
-              Welcome to <span className="gradient-text">{home.title}</span>
+              <span className="gradient-text">{home.title}</span>
             </h1>
+          </FadeUp>
+          <FadeUp delay={0.6}>
             <p className="text-sm opacity-70">{home.description}</p>
-          </div>
-        </div>
-        <div className="w-full flex py-10 flex-col items-center gap-2 text-muted-foreground">
-          <span>Scroll down</span>
-          <ArrowDown className="border-[1px] border-border w-8 h-8 rounded-full p-1 animate-bounce" />
-        </div>
-        <div>
-          <FadeUp>
-            <Image
-              src={theme === "dark" ? HeroCodeImageDark : HeroCodeImageLight}
-              alt="Home hero code"
-              width={0}
-              height={0}
-              className="block md:hidden"
-            />
           </FadeUp>
         </div>
-      </section>
-    </FadeUp>
+      </div>
+      <FadeUp delay={0.7}>
+        <div className="w-full flex py-10 flex-col items-center gap-2 text-muted-foreground">
+          <span>Scroll down</span>
+          <FadeUp delay={0.8}>
+            <ArrowDown className="border-[1px] border-border w-8 h-8 rounded-full p-1 animate-bounce" />
+          </FadeUp>
+        </div>
+      </FadeUp>
+      <div>
+        <FadeUp delay={0.6}>
+          <Image
+            src={theme === "dark" ? HeroCodeImageDark : HeroCodeImageLight}
+            alt="Home hero code"
+            width={0}
+            height={0}
+            className="block md:hidden"
+          />
+        </FadeUp>
+      </div>
+    </section>
   );
 }
