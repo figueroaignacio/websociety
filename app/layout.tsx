@@ -1,5 +1,5 @@
 // Util
-import { ThemeProvider } from "@/providers/theme-provider/theme-provider";
+import { ThemeProvider } from "@/providers/theme-provider";
 import NextTopLoader from "nextjs-toploader";
 
 // Global styles
