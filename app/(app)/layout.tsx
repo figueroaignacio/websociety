@@ -19,7 +19,7 @@ export default function LobbyLayout({
       <body className={`${onest.className} antialiased min-h-screen`}>
         <Gradient />
         <Navbar />
-        <div className="min-h-dvh flex flex-col py-6 m-auto container max-w-5xl">
+        <div className="min-h-dvh flex flex-col m-auto container max-w-7xl">
           <main className="flex-1">{children}</main>
           <Footer />
         </div>

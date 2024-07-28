@@ -9,14 +9,16 @@ import { PostsCta } from "@/components/posts/posts-cta";
 
 export default function HomePage() {
   return (
-    <section className="flex flex-col gap-24">
+    <section>
       <Hero />
-      <Features />
-      <LatestPosts />
-      <PostsCta />
-      <LatestGuides />
-      <GuideCta />
-      <FAQS />
+      <div className="max-w-5xl mx-auto flex flex-col gap-24 mt-24">
+        <Features />
+        <LatestPosts />
+        <PostsCta />
+        <LatestGuides />
+        <GuideCta />
+        <FAQS />
+      </div>
     </section>
   );
 }
