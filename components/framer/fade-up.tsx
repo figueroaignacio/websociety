@@ -22,7 +22,7 @@ export function FadeUp({
       animate={{ opacity: 1, y: 0 }}
       transition={{
         duration: duration,
-        delay: 0,
+        delay: delay,
         ease: ease,
       }}
     >
