@@ -23,7 +23,7 @@ export function LatestPosts() {
           <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2">
             {latestPosts.map((post) => {
               return (
-                <li key={post.slug} className="fade">
+                <li key={post.slug}>
                   <PostCard
                     title={post.title}
                     date={post.date}

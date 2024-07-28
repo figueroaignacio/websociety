@@ -11,7 +11,7 @@ import "@/styles/animations.css";
 
 export function PostsCta() {
   return (
-    <Card className="shadow-custom-card fade py-12">
+    <Card className="shadow-custom-card py-12">
       <CardHeader className="gap-4">
         <div className="flex justify-between flex-wrap gap-3">
           <div>

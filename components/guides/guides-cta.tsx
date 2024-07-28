@@ -21,7 +21,7 @@ export function GuideCta() {
   const { theme } = useTheme();
 
   return (
-    <Card className="shadow-custom-card flex flex-col md:flex-row md:items-center fade">
+    <Card className="shadow-custom-card flex flex-col md:flex-row md:items-center">
       <CardHeader className="gap-4">
         <div>
           <CardTitle>Looking to Enhance Your Skills?</CardTitle>
@@ -44,13 +44,15 @@ export function GuideCta() {
           </LinkWithTransition>
         </div>
       </CardHeader>
-      <Image
-        src={theme === "dark" ? GuidesCtaDark : GuidesCtaLight}
-        alt="Cta coding"
-        width={0}
-        height={0}
-        className="bg-cover rounded-md py-3"
-      />
+      <div>
+        <Image
+          src={theme === "dark" ? GuidesCtaDark : GuidesCtaLight}
+          alt="Cta coding"
+          width={0}
+          height={0}
+          className="bg-cover"
+        />
+      </div>
     </Card>
   );
 }
