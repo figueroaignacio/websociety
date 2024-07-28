@@ -1,5 +1,8 @@
 "use client";
 
+// Hooks
+import { useTheme } from "next-themes";
+
 // Components
 import Image from "next/image";
 import { FadeUp } from "./framer/fade-up";
@@ -8,12 +11,10 @@ import { HeroBg } from "./layout/hero-bg";
 // Images - Icons
 import HeroCodeImageDark from "@/assets/images/home-hero-dark.svg";
 import HeroCodeImageLight from "@/assets/images/home-hero-light.svg";
-
-import { useTheme } from "next-themes";
+import { ArrowDown } from "lucide-react";
 
 // Constants
 import { home } from "@/constants/home";
-import { ArrowDown } from "lucide-react";
 
 export function Hero() {
   const { theme } = useTheme();
