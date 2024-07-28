@@ -47,12 +47,13 @@ export function Hero() {
         </FadeUp>
         <div>
           <FadeUp delay={0.6}>
-            <div className="block md:hidden border-[1px]">
+            <div className="block md:hidden border-[1px] rounded-lg border-purple-400/10 p-6">
               <Image
                 src={theme === "dark" ? HeroCodeImageDark : HeroCodeImageLight}
                 alt="Home hero code"
                 width={0}
                 height={0}
+                className="border-[1px] rounded-md bg-card"
               />
             </div>
           </FadeUp>
