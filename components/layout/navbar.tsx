@@ -34,7 +34,7 @@ export function Navbar() {
                     pathname === `${navItem.href}`
                       ? "gradient-text"
                       : "text-muted-foreground"
-                  } hover:gradient-text`}
+                  } hover:gradient-text text-sm font-semibold`}
                 >
                   {navItem.title}
                 </LinkWithTransition>
