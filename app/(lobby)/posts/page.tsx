@@ -16,6 +16,11 @@ import { sortPosts } from "@/utils/sortPosts";
 import { allPosts, postsConfig } from "@/constants/posts";
 
 // Metadata
+import { FramerDiv, FramerH1, FramerSection } from "@/components/framer";
+import {
+  FADE_DOWN_ANIMATION_VARIANTS,
+  FADE_LEFT_ANIMATION_VARIANTS,
+} from "@/constants/animations";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -45,11 +50,28 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
   const sortedTags = sortCategoriesByCount(tags);
 
   return (
-    <section>
+    <FramerSection
+      initial="hidden"
+      animate="show"
+      viewport={{ once: true }}
+      variants={{
+        hidden: {},
+        show: {
+          transition: {
+            staggerChildren: 0.15,
+          },
+        },
+      }}
+    >
       <div className="flex flex-col gap-12 mt-24">
         <div className="flex flex-col gap-3">
-          <h1 className="font-bold text-2xl lg:text-4xl">{allPosts.title}</h1>
-          <div className="mt-10">
+          <FramerH1
+            variants={FADE_LEFT_ANIMATION_VARIANTS}
+            className="font-bold text-2xl lg:text-4xl"
+          >
+            {allPosts.title}
+          </FramerH1>
+          <FramerDiv variants={FADE_DOWN_ANIMATION_VARIANTS} className="mt-10">
             <Card>
               <CardHeader>
                 <CardTitle>Categories</CardTitle>
@@ -60,31 +82,33 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
                 ))}
               </CardContent>
             </Card>
-          </div>
+          </FramerDiv>
         </div>
-        {displayPosts.length > 0 ? (
-          <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2 ">
-            {displayPosts.map((post) => {
-              return (
-                <li key={post.slug}>
-                  <PostCard
-                    slug={post.slug}
-                    date={post.date}
-                    title={post.title}
-                    description={post.description ?? ""}
-                    categories={post.categories}
-                  />
-                </li>
-              );
-            })}
-          </ul>
-        ) : (
-          <section className="py-36 text-center">
-            <p className="text-xl">{allPosts.fallback}</p>
-          </section>
-        )}
+        <FramerDiv variants={FADE_DOWN_ANIMATION_VARIANTS}>
+          {displayPosts.length > 0 ? (
+            <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2">
+              {displayPosts.map((post) => {
+                return (
+                  <li key={post.slug}>
+                    <PostCard
+                      slug={post.slug}
+                      date={post.date}
+                      title={post.title}
+                      description={post.description ?? ""}
+                      categories={post.categories}
+                    />
+                  </li>
+                );
+              })}
+            </ul>
+          ) : (
+            <section className="py-36 text-center">
+              <p className="text-xl">{allPosts.fallback}</p>
+            </section>
+          )}
+        </FramerDiv>
         <QueryPagination totalPages={totalPages} />
       </div>
-    </section>
+    </FramerSection>
   );
 }

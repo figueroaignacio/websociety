@@ -1,4 +1,5 @@
 // Components
+import { FramerWrapper } from "@/components/framer";
 import { Footer } from "@/components/layout/footer";
 import { Gradient } from "@/components/layout/gradient";
 import { Navbar } from "@/components/layout/navbar";
@@ -20,7 +21,9 @@ export default function LobbyLayout({
         <Gradient />
         <Navbar />
         <div className="min-h-dvh flex flex-col m-auto container max-w-7xl">
-          <main className="flex-1">{children}</main>
+          <main>
+            <FramerWrapper>{children}</FramerWrapper>
+          </main>
           <Footer />
         </div>
       </body>
