@@ -5,10 +5,12 @@ import {
   Sheet,
   SheetClose,
   SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { LinkWithTransition } from "./link-with-transition";
-import { ToggleTheme } from "./toggle-theme";
 
 // Icons
 import { Menu } from "lucide-react";
@@ -29,8 +31,16 @@ export function MobileMenu() {
           <Menu />
         </button>
       </SheetTrigger>
-      <SheetContent side="left">
-        <ul className="flex flex-col gap-12 pt-32 py-10 pl-8 items-end md:w-full md:min-h-0 text-2xl">
+      <SheetContent side="bottom">
+        <ul className="flex flex-col gap-12 pt-20 py-10 pl-8 items-end md:w-full md:min-h-0 text-2xl">
+          <li>
+            <LinkWithTransition
+              href="/"
+              className={`${pathname === "/" ? "gradient-text font-bold" : ""}`}
+            >
+              <SheetClose>Home</SheetClose>
+            </LinkWithTransition>
+          </li>
           {navigationConfig.map((navItem, index) => (
             <li
               key={index}
@@ -48,10 +58,11 @@ export function MobileMenu() {
               </LinkWithTransition>
             </li>
           ))}
-          <li>
-            <ToggleTheme />
-          </li>
         </ul>
+        <SheetFooter>
+          <SheetTitle>Frontend Society.</SheetTitle>
+          <SheetDescription>By a developer, for developers.</SheetDescription>
+        </SheetFooter>
       </SheetContent>
     </Sheet>
   );
