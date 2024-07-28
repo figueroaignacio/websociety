@@ -53,7 +53,7 @@ export function Hero() {
                 alt="Home hero code"
                 width={0}
                 height={0}
-                className="border-[1px] rounded-md bg-card border-dashed"
+                className="border-[1px] rounded-md bg-card"
               />
             </div>
           </FadeUp>
