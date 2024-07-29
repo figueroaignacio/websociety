@@ -26,7 +26,7 @@ export function MobileMenu() {
 
   return (
     <Sheet>
-      <SheetTrigger asChild className="px-6 py-1">
+      <SheetTrigger asChild>
         <button>
           <Menu />
         </button>
