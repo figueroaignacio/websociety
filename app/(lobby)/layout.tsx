@@ -20,7 +20,7 @@ export default function LobbyLayout({
       <body className={`${onest.className} antialiased min-h-screen`}>
         <Gradient />
         <Navbar />
-        <div className="min-h-dvh flex flex-col m-auto container max-w-7xl">
+        <div className="min-h-dvh flex flex-col m-auto container max-w-5xl">
           <main>
             <FramerWrapper>{children}</FramerWrapper>
           </main>

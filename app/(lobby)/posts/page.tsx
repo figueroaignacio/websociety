@@ -58,7 +58,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         hidden: {},
         show: {
           transition: {
-            staggerChildren: 0.15,
+            staggerChildren: 0.25,
           },
         },
       }}

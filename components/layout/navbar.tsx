@@ -46,9 +46,7 @@ export function Navbar() {
           </ul>
         </nav>
       </div>
-      <div className="">
-        <ToggleTheme />
-      </div>
+      <ToggleTheme />
     </header>
   );
 }

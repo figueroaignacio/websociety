@@ -1,10 +1,10 @@
 // Next
-import Link from "next/link";
+import { LinkWithTransition } from "./link-with-transition";
 
 export function Logo() {
   return (
-    <Link href="/">
+    <LinkWithTransition href="/">
       <h2 className="font-bold text-2xl">FS</h2>
-    </Link>
+    </LinkWithTransition>
   );
 }
