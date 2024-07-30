@@ -17,7 +17,7 @@ export default function LobbyLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning className="scroll-pt-[3.5rem]">
-      <body className={`${onest.className} antialiased min-h-screen`}>
+      <body className={`${onest.className}`}>
         <Gradient />
         <Navbar />
         <div className="min-h-dvh flex flex-col m-auto container max-w-5xl">
