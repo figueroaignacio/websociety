@@ -8,7 +8,7 @@ import { guides } from "#site/content";
 import { guides as g, guidesConfig } from "@/constants/guides";
 
 // Metadata
-import { FramerDiv, FramerH1, FramerSection } from "@/components/framer";
+import { FramerH1, FramerLi, FramerSection } from "@/components/framer";
 import {
   FADE_DOWN_ANIMATION_VARIANTS,
   FADE_LEFT_ANIMATION_VARIANTS,
@@ -46,18 +46,17 @@ export default function LearnPage() {
         <ul className="grid gap-4 grid-cols-1 md:grid-cols-2">
           {guides.map((path) => {
             return (
-              <li key={path.slug}>
-                <FramerDiv
-                  variants={FADE_LEFT_ANIMATION_VARIANTS}
-                  className="h-full"
-                >
-                  <GuideCard
-                    slug={path.slug}
-                    title={path.title}
-                    description={path.description ?? ""}
-                  />
-                </FramerDiv>
-              </li>
+              <FramerLi
+                variants={FADE_LEFT_ANIMATION_VARIANTS}
+                className="h-full"
+                key={path.slug}
+              >
+                <GuideCard
+                  slug={path.slug}
+                  title={path.title}
+                  description={path.description ?? ""}
+                />
+              </FramerLi>
             );
           })}
         </ul>

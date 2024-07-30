@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function ChallengesPage() {
   return (
     <FramerSection
-      className="min-h-[90vh] flex justify-center items-center"
+      className="min-h-[90dvh] flex justify-center items-center"
       initial="hidden"
       animate="show"
       viewport={{ once: true }}
