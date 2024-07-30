@@ -20,12 +20,10 @@ export default function LobbyLayout({
       <body className={`${onest.className}`}>
         <Gradient />
         <Navbar />
-        <div className="min-h-dvh flex flex-col m-auto container max-w-5xl">
-          <main>
-            <FramerWrapper>{children}</FramerWrapper>
-          </main>
-          <Footer />
-        </div>
+        <main className="container">
+          <FramerWrapper>{children}</FramerWrapper>
+        </main>
+        <Footer />
       </body>
     </html>
   );

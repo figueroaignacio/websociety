@@ -17,7 +17,7 @@ export function Navbar() {
 
   return (
     <header className="flex items-center justify-between sticky z-20 top-0 left-0 py-2 px-5 md:px-10 lg:px-16 backdrop-blur-sm mx-auto border-b-[.0625rem]">
-      <div className="flex gap-9 items-center  w-screen">
+      <div className="flex gap-9 items-center w-screen">
         <div className="flex items-center w-full md:hidden relative inset-0">
           <MobileMenu />
         </div>

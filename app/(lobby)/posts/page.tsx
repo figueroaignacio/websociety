@@ -63,7 +63,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         },
       }}
     >
-      <div className="flex flex-col gap-12 mt-24">
+      <div className="flex flex-col gap-12 mt-24 max-w-5xl mx-auto">
         <div className="flex flex-col gap-3">
           <FramerH1
             variants={FADE_LEFT_ANIMATION_VARIANTS}

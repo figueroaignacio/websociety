@@ -12,7 +12,7 @@ import { navigationConfig } from "@/config/navigation";
 
 export function Footer() {
   return (
-    <footer className="py-12 md:py-16 lg:py-20">
+    <footer className="py-12 md:py-16 lg:py-20 px-4 lg:px-0 max-w-5xl mx-auto">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12 justify-center py-12">
         <div>
           <div>

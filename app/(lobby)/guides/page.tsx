@@ -34,7 +34,7 @@ export default function LearnPage() {
           },
         },
       }}
-      className="flex flex-col gap-12 mt-24"
+      className="flex flex-col gap-12 mt-24 max-w-5xl mx-auto"
     >
       <FramerH1
         variants={FADE_DOWN_ANIMATION_VARIANTS}
