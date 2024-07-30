@@ -22,11 +22,16 @@ const iconMap: { [key: string]: JSX.Element } = {
 
 export function Features() {
   return (
-    <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+    <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
       {features.map((feature, index) => {
         const icon = iconMap[feature.icon] || null;
         return (
-          <Card className="h-full w-full shadow-custom-card" key={index}>
+          <Card
+            className={`h-full w-full shadow-custom-card ${
+              index === 2 ? "md:col-span-2 lg:col-span-1" : ""
+            }`}
+            key={index}
+          >
             <CardHeader>
               <CardTitle className="flex gap-2">
                 {icon}
