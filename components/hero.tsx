@@ -2,6 +2,7 @@
 
 // Hooks
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 // Components
 import Image from "next/image";
@@ -17,7 +18,12 @@ import { ArrowDown } from "lucide-react";
 import { home } from "@/constants/home";
 
 export function Hero() {
-  const { theme } = useTheme();
+  const { theme, resolvedTheme } = useTheme();
+  const [isThemeResolved, setIsThemeResolved] = useState(false);
+
+  useEffect(() => {
+    setIsThemeResolved(true);
+  }, [resolvedTheme]);
 
   return (
     <section className="relative">
@@ -49,13 +55,18 @@ export function Hero() {
         <div>
           <FadeUp delay={0.8}>
             <div className="flex justify-center border-[1px] rounded-lg border-[#f5f5f510/5] border-x dark:border-purple-400/10 border-dashed p-6">
-              <Image
-                src={theme === "dark" ? HeroCodeImageDark : HeroCodeImageLight}
-                alt="Home hero code"
-                width={0}
-                height={0}
-                className="border-[1px] rounded-md bg-card"
-              />
+              {isThemeResolved && (
+                <Image
+                  src={
+                    theme === "dark" ? HeroCodeImageDark : HeroCodeImageLight
+                  }
+                  alt="Home hero code"
+                  width={0}
+                  height={0}
+                  className="border-[1px] rounded-md bg-card"
+                  priority
+                />
+              )}
             </div>
           </FadeUp>
         </div>
