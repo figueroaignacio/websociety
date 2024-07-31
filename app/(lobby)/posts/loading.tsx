@@ -9,14 +9,14 @@ import {
 } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 
-export default function Loading() {
+export default function LoadingPosts() {
   return (
     <section>
       <div className="flex flex-col gap-12 mt-24 max-w-5xl mx-auto">
         <div className="flex flex-col gap-3">
-          <Skeleton className="w-52 lg:w-96 h-4" />
+          <Skeleton className="w-52 lg:w-96 h-6" />
           <div className="mt-10">
-            <Card>
+            <Card className="bg-transparent">
               <CardHeader>
                 <CardTitle>
                   <Skeleton className="w-1/3 h-4" />
@@ -37,7 +37,7 @@ export default function Loading() {
           <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2">
             {Array.from({ length: 4 }).map((_, index) => (
               <li key={index}>
-                <Card>
+                <Card className="bg-transparent">
                   <CardHeader>
                     <CardTitle>
                       <Skeleton className="w-48 h-4" />
