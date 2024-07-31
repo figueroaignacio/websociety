@@ -16,7 +16,7 @@ export default function LoadingPosts() {
         <div className="flex flex-col gap-3">
           <Skeleton className="w-52 lg:w-96 h-6" />
           <div className="mt-10">
-            <Card className="bg-transparent">
+            <Card>
               <CardHeader>
                 <CardTitle>
                   <Skeleton className="w-1/3 h-4" />
@@ -37,7 +37,7 @@ export default function LoadingPosts() {
           <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2">
             {Array.from({ length: 4 }).map((_, index) => (
               <li key={index}>
-                <Card className="bg-transparent">
+                <Card>
                   <CardHeader>
                     <CardTitle>
                       <Skeleton className="w-48 h-4" />

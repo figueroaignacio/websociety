@@ -15,7 +15,7 @@ export default function LoadingGuides() {
       <ul className="grid gap-4 grid-cols-1 md:grid-cols-2">
         {Array.from({ length: 6 }).map((_, index) => (
           <li className="h-full" key={index}>
-            <Card className="bg-transparent">
+            <Card>
               <CardHeader>
                 <CardTitle>
                   <Skeleton className="w-32 h-4" />
@@ -24,7 +24,7 @@ export default function LoadingGuides() {
               <CardContent>
                 <CardDescription className="gap-2 flex flex-col">
                   {Array.from({ length: 2 }).map((_, index) => (
-                    <Skeleton className="w-64 h-3" key={index} />
+                    <Skeleton className="w-full h-3" key={index} />
                   ))}
                 </CardDescription>
               </CardContent>
