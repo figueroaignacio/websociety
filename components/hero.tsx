@@ -6,7 +6,13 @@ import { useEffect, useState } from "react";
 
 // Components
 import Image from "next/image";
-import { FadeUp } from "./framer/fade-up";
+import {
+  FramerDiv,
+  FramerH1,
+  FramerParagraph,
+  FramerSection,
+  FramerSpan,
+} from "./framer";
 import { HeroBg } from "./layout/hero-bg";
 
 // Images - Icons
@@ -15,6 +21,7 @@ import HeroCodeImageLight from "@/assets/images/home-hero-light.svg";
 import { ArrowDown } from "lucide-react";
 
 // Constants
+import { FADE_UP_ANIMATION_VARIANTS } from "@/constants/animations";
 import { home } from "@/constants/home";
 
 export function Hero() {
@@ -26,51 +33,69 @@ export function Hero() {
   }, [resolvedTheme]);
 
   return (
-    <section className="relative">
+    <FramerSection
+      initial="hidden"
+      animate="show"
+      viewport={{ once: true }}
+      variants={{
+        hidden: {},
+        show: {
+          transition: {
+            staggerChildren: 0.15,
+          },
+        },
+      }}
+      className="relative"
+    >
       <HeroBg />
       <div className="py-28 md:py-44">
         <div className="flex items-center justify-center">
           <div className="flex flex-col text-center">
-            <FadeUp delay={0.4}>
-              <span className="font-bold text-6xl lg:text-8xl">Welcome to</span>
-            </FadeUp>
-            <FadeUp delay={0.5}>
-              <h1 className="font-bold text-6xl lg:text-8xl">
-                <span className="gradient-text">{home.title}</span>
-              </h1>
-            </FadeUp>
-            <FadeUp delay={0.6}>
-              <p className="text-sm opacity-70">{home.description}</p>
-            </FadeUp>
+            <FramerSpan
+              variants={FADE_UP_ANIMATION_VARIANTS}
+              className="font-bold text-6xl lg:text-8xl"
+            >
+              Welcome to
+            </FramerSpan>
+            <FramerH1
+              variants={FADE_UP_ANIMATION_VARIANTS}
+              className="font-bold text-6xl lg:text-8xl"
+            >
+              <span className="gradient-text">{home.title}</span>
+            </FramerH1>
+            <FramerParagraph
+              variants={FADE_UP_ANIMATION_VARIANTS}
+              className="text-sm opacity-70"
+            >
+              {home.description}
+            </FramerParagraph>
           </div>
         </div>
-        <FadeUp delay={0.7}>
-          <div className="w-full flex py-10 flex-col items-center gap-2 text-muted-foreground">
-            <span>Scroll down</span>
-            <FadeUp delay={0.8}>
-              <ArrowDown className="border-[1px] border-border w-8 h-8 rounded-full p-1 animate-bounce" />
-            </FadeUp>
-          </div>
-        </FadeUp>
-        <div>
-          <FadeUp delay={0.8}>
-            <div className="flex justify-center border-[1px] rounded-lg border-[#f5f5f510/5] border-x dark:border-purple-400/10 border-dashed p-6">
-              {isThemeResolved && (
-                <Image
-                  src={
-                    theme === "dark" ? HeroCodeImageDark : HeroCodeImageLight
-                  }
-                  alt="Home hero code"
-                  width={0}
-                  height={0}
-                  className="border-[1px] rounded-md bg-card"
-                  priority
-                />
-              )}
-            </div>
-          </FadeUp>
-        </div>
+        <FramerDiv
+          variants={FADE_UP_ANIMATION_VARIANTS}
+          className="w-full flex py-10 flex-col items-center gap-2 text-muted-foreground"
+        >
+          <span>Scroll down</span>
+          <FramerDiv variants={FADE_UP_ANIMATION_VARIANTS}>
+            <ArrowDown className="border-[1px] border-border w-8 h-8 rounded-full p-1 animate-bounce" />
+          </FramerDiv>
+        </FramerDiv>
+        <FramerDiv
+          variants={FADE_UP_ANIMATION_VARIANTS}
+          className="flex justify-center border-[1px] rounded-lg border-[#f5f5f510/5] border-x dark:border-purple-400/10 border-dashed p-6"
+        >
+          {isThemeResolved && (
+            <Image
+              src={theme === "dark" ? HeroCodeImageDark : HeroCodeImageLight}
+              alt="Home hero code"
+              width={0}
+              height={0}
+              className="border-[1px] rounded-md bg-card"
+              priority
+            />
+          )}
+        </FramerDiv>
       </div>
-    </section>
+    </FramerSection>
   );
 }
