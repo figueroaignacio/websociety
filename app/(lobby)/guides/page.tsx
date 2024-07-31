@@ -1,18 +1,18 @@
 // Components
+import { FramerH1, FramerLi, FramerSection } from "@/components/framer";
 import { GuideCard } from "@/components/guides/guide-card";
 
 // Content
 import { guides } from "#site/content";
 
 // Constants / Config
-import { guides as g, guidesConfig } from "@/constants/guides";
-
-// Metadata
-import { FramerH1, FramerLi, FramerSection } from "@/components/framer";
 import {
   FADE_DOWN_ANIMATION_VARIANTS,
   FADE_LEFT_ANIMATION_VARIANTS,
 } from "@/constants/animations";
+import { guides as g, guidesConfig } from "@/constants/guides";
+
+// Metadata
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

@@ -1,4 +1,10 @@
 // Components
+import {
+  FramerDiv,
+  FramerH1,
+  FramerLi,
+  FramerSection,
+} from "@/components/framer";
 import { PostCard } from "@/components/posts/post-card";
 import { QueryPagination } from "@/components/query-pagination";
 import { Tag } from "@/components/tag";
@@ -13,19 +19,13 @@ import { sortCategoriesByCount } from "@/utils/sortCategoriesByCount";
 import { sortPosts } from "@/utils/sortPosts";
 
 // Constants / Config
-import { allPosts, postsConfig } from "@/constants/posts";
-
-// Metadata
-import {
-  FramerDiv,
-  FramerH1,
-  FramerLi,
-  FramerSection,
-} from "@/components/framer";
 import {
   FADE_DOWN_ANIMATION_VARIANTS,
   FADE_LEFT_ANIMATION_VARIANTS,
 } from "@/constants/animations";
+import { allPosts, postsConfig } from "@/constants/posts";
+
+// Metadata
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
