@@ -16,7 +16,12 @@ import { sortPosts } from "@/utils/sortPosts";
 import { allPosts, postsConfig } from "@/constants/posts";
 
 // Metadata
-import { FramerDiv, FramerH1, FramerSection } from "@/components/framer";
+import {
+  FramerDiv,
+  FramerH1,
+  FramerLi,
+  FramerSection,
+} from "@/components/framer";
 import {
   FADE_DOWN_ANIMATION_VARIANTS,
   FADE_LEFT_ANIMATION_VARIANTS,
@@ -36,7 +41,7 @@ interface BlogPageProps {
   };
 }
 
-export default async function BlogPage({ searchParams }: BlogPageProps) {
+export default async function PostsPage({ searchParams }: BlogPageProps) {
   const currentPage = Number(searchParams?.page) || 1;
   const sortedPosts = sortPosts(posts.filter((post) => post.published));
   const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
@@ -84,12 +89,15 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
             </Card>
           </FramerDiv>
         </div>
-        <FramerDiv variants={FADE_DOWN_ANIMATION_VARIANTS}>
+        <div>
           {displayPosts.length > 0 ? (
             <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2">
               {displayPosts.map((post) => {
                 return (
-                  <li key={post.slug}>
+                  <FramerLi
+                    variants={FADE_DOWN_ANIMATION_VARIANTS}
+                    key={post.slug}
+                  >
                     <PostCard
                       slug={post.slug}
                       date={post.date}
@@ -97,7 +105,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
                       description={post.description ?? ""}
                       categories={post.categories}
                     />
-                  </li>
+                  </FramerLi>
                 );
               })}
             </ul>
@@ -106,7 +114,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
               <p className="text-xl">{allPosts.fallback}</p>
             </section>
           )}
-        </FramerDiv>
+        </div>
         <QueryPagination totalPages={totalPages} />
       </div>
     </FramerSection>
