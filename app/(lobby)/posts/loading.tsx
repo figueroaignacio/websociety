@@ -14,7 +14,7 @@ export default function LoadingPosts() {
     <section>
       <div className="flex flex-col gap-12 mt-24 max-w-5xl mx-auto">
         <div className="flex flex-col gap-3">
-          <Skeleton className="w-52 lg:w-96 h-6" />
+          <Skeleton className="w-52 lg:w-96 h-6 mx-auto" />
           <div className="mt-10">
             <Card>
               <CardHeader>
