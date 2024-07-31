@@ -56,7 +56,7 @@ export default function TagPage({ params }: TagPageProps) {
   const sortedTags = sortCategoriesByCount(tags);
 
   return (
-    <section className="mt-24">
+    <section className="mt-24 max-w-5xl mx-auto">
       <div className="flex flex-col gap-3">
         <h1 className="font-bold text-2xl lg:text-4xl text-center">{title}</h1>
         <div className="mt-10">

@@ -22,7 +22,7 @@ export default async function CategoriesPage() {
   const sortedPosts = sortCategoriesByCount(tags);
 
   return (
-    <section className="flex flex-col gap-12 mt-24">
+    <section className="flex flex-col gap-12 mt-24 max-w-5xl mx-auto">
       <h1 className="font-bold text-2xl lg:text-4xl">Categories</h1>
       <Separator />
       <div className="flex flex-wrap gap-2">

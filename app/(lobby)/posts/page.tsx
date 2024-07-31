@@ -19,10 +19,7 @@ import { sortCategoriesByCount } from "@/utils/sortCategoriesByCount";
 import { sortPosts } from "@/utils/sortPosts";
 
 // Constants / Config
-import {
-  FADE_DOWN_ANIMATION_VARIANTS,
-  FADE_LEFT_ANIMATION_VARIANTS,
-} from "@/constants/animations";
+import { FADE_DOWN_ANIMATION_VARIANTS } from "@/constants/animations";
 import { allPosts, postsConfig } from "@/constants/posts";
 
 // Metadata
@@ -71,8 +68,8 @@ export default async function PostsPage({ searchParams }: BlogPageProps) {
       <div className="flex flex-col gap-12 mt-24 max-w-5xl mx-auto">
         <div className="flex flex-col gap-3">
           <FramerH1
-            variants={FADE_LEFT_ANIMATION_VARIANTS}
-            className="font-bold text-2xl lg:text-4xl"
+            variants={FADE_DOWN_ANIMATION_VARIANTS}
+            className="font-bold text-2xl lg:text-4xl text-center"
           >
             {allPosts.title}
           </FramerH1>
