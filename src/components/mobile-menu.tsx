@@ -26,7 +26,7 @@ export function MobileMenu() {
 
   return (
     <Sheet>
-      <SheetTrigger asChild>
+      <SheetTrigger asChild className="md:hidden">
         <button>
           <Menu />
         </button>
