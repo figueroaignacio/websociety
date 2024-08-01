@@ -1,5 +1,5 @@
 // Config
-import { siteConfig } from "@/config/site";
+import { siteConfig } from "@/src/config/site";
 
 import { MetadataRoute } from "next";
 

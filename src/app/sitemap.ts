@@ -1,7 +1,7 @@
 import { posts as allPosts } from "#site/content";
 import type { MetadataRoute } from "next";
 
-import { siteConfig } from "@/config/site";
+import { siteConfig } from "@/src/config/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = allPosts.map((post) => ({
