@@ -36,23 +36,24 @@ export function MobileMenu() {
           <li>
             <LinkWithTransition
               href="/"
-              className={`${pathname === "/" ? "gradient-text font-bold" : ""}`}
+              className={`${
+                pathname === "/"
+                  ? "font-bold text-black dark:text-white border-b-[1px] border-black transition-all duration-500 dark:border-white"
+                  : "text-muted-foreground"
+              }`}
             >
               <SheetClose>Home</SheetClose>
             </LinkWithTransition>
           </li>
           {navigationConfig.map((navItem, index) => (
-            <li
-              key={index}
-              className="dark:hover:text-white/70 hover:text-black/70"
-            >
+            <li key={index}>
               <LinkWithTransition
                 href={navItem.href}
                 className={`${
                   pathname === `${navItem.href}`
-                    ? "gradient-text font-bold"
+                    ? "font-bold text-black dark:text-white border-b-[1px] border-black transition-all duration-500 dark:border-white"
                     : ""
-                }`}
+                } text-muted-foreground hover:text-black dark:hover:text-white`}
               >
                 <SheetClose>{navItem.title}</SheetClose>
               </LinkWithTransition>

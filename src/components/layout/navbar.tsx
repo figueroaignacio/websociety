@@ -22,17 +22,14 @@ export function Navbar() {
         <nav className="hidden md:block">
           <ul className="flex gap-12 items-center">
             {navigationConfig.map((navItem, index) => (
-              <li
-                key={index}
-                className="dark:hover:text-white/70 hover:text-black/70"
-              >
+              <li key={index}>
                 <LinkWithTransition
                   href={navItem.href}
                   className={`${
                     pathname === `${navItem.href}`
-                      ? "gradient-text"
-                      : "text-muted-foreground"
-                  } hover:gradient-text text-sm font-semibold`}
+                      ? "font-bold text-black dark:text-white border-b-[1px] border-black transition-all duration-500 dark:border-white"
+                      : ""
+                  } text-base text-muted-foreground hover:text-black dark:hover:text-white font-medium`}
                 >
                   {navItem.title}
                 </LinkWithTransition>
