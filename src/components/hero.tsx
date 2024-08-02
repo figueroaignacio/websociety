@@ -90,7 +90,7 @@ export function Hero() {
               alt="Home hero code"
               width={0}
               height={0}
-              className="border-[1px] rounded-md bg-card"
+              className="rounded-md bg-card"
               priority
             />
           )}

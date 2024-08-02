@@ -27,9 +27,9 @@
   }
 
   .dark {
-    --background: 240 10% 3.9%;
+    --background: 240, 20%, 5%;
     --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
+    --card: 240, 20%, 7%;
     --card-foreground: 0 0% 98%;
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
@@ -43,7 +43,7 @@
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
+    --border: 240, 20%, 26%;
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
   }
@@ -65,7 +65,7 @@
 
 @layer components {
   .gradient-text {
-    @apply bg-gradient-to-r from-violet-500 via-purple-500 to-pink-500 text-transparent bg-clip-text;
+    @apply bg-gradient-to-r from-violet-500 via-purple-500 to-blue-500 text-transparent bg-clip-text;
   }
 }
 
