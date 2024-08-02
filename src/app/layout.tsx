@@ -40,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${onest.className}`}>
-        <NextTopLoader color="#7c3aed" />
+        <NextTopLoader color="#7c3aed" showSpinner={false} />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
