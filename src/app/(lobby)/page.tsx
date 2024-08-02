@@ -1,23 +1,43 @@
 // Sections
-import { FAQS } from "@/components/faqs";
-import { Features } from "@/components/features";
-import { GuideCta } from "@/components/guides/guides-cta";
-import { LatestGuides } from "@/components/guides/latest-guides";
-import { Hero } from "@/components/hero";
-import { LatestPosts } from "@/components/posts/latest-posts";
-import { PostsCta } from "@/components/posts/posts-cta";
 
 export default function HomePage() {
   return (
-    <section>
-      <Hero />
-      <div className="max-w-5xl mx-auto flex flex-col gap-24 mt-24">
-        <Features />
-        <LatestPosts />
-        <PostsCta />
-        <LatestGuides />
-        <GuideCta />
-        <FAQS />
+    <section style={{ width: 1200, height: 630 }}>
+      <div
+        style={{
+          fontWeight: "bold",
+          background: "#09090b",
+          color: "white",
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: 5,
+          position: "relative",
+        }}
+      >
+        <svg
+          width="124"
+          height="124"
+          viewBox="0 0 34 34"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="34" height="34" rx="6" fill="#6B21A8" />
+          <path
+            d="M6 11C6 9.34315 7.34315 8 9 8V8C10.6569 8 12 9.34315 12 11V23C12 24.6569 10.6569 26 9 26V26C7.34315 26 6 24.6569 6 23V11Z"
+            fill="#F5F5F5"
+          />
+          <rect x="13" y="8" width="15" height="5" rx="2.5" fill="#F5F5F5" />
+          <rect x="13" y="14" width="10" height="5" rx="2.5" fill="#F5F5F5" />
+          <circle cx="27.5" cy="24.5" r="1.5" fill="#F5F5F5" />
+        </svg>
+        <div style={{ textAlign: "center" }}>Frontend Society</div>
+        <div style={{ textAlign: "center" }}>
+          By a developer, for developers.
+        </div>
       </div>
     </section>
   );

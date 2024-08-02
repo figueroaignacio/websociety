@@ -18,7 +18,7 @@ export default async function Image() {
       <div
         style={{
           fontWeight: "bold",
-          background: "black",
+          background: "#09090b",
           color: "white",
           width: "100%",
           height: "100%",
@@ -28,7 +28,25 @@ export default async function Image() {
           justifyContent: "center",
         }}
       >
-        <div style={{ fontSize: 64 }}>Discover Front Society</div>
+        <div>
+          <svg
+            width="34"
+            height="34"
+            viewBox="0 0 34 34"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect width="34" height="34" rx="6" fill="#6B21A8" />
+            <path
+              d="M6 11C6 9.34315 7.34315 8 9 8V8C10.6569 8 12 9.34315 12 11V23C12 24.6569 10.6569 26 9 26V26C7.34315 26 6 24.6569 6 23V11Z"
+              fill="#F5F5F5"
+            />
+            <rect x="13" y="8" width="15" height="5" rx="2.5" fill="#F5F5F5" />
+            <rect x="13" y="14" width="10" height="5" rx="2.5" fill="#F5F5F5" />
+            <circle cx="27.5" cy="24.5" r="1.5" fill="#F5F5F5" />
+          </svg>
+          <div>Frontend Society</div>
+        </div>
       </div>
     ),
     {
