@@ -25,8 +25,8 @@ export async function GET(req: NextRequest) {
         <div tw="flex relative flex-col p-12 w-full h-full items-start bg-[#09090b] text-white">
           <div tw="flex items-center">
             <svg
-              width="34"
-              height="34"
+              width="124"
+              height="124"
               viewBox="0 0 34 34"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +59,7 @@ export async function GET(req: NextRequest) {
           <div tw="flex flex-col flex-1 py-10">
             <div tw="flex text-xl uppercase font-bold tracking-tight">POST</div>
             <div tw="flex text-[80px] font-bold text-[50px]">{heading}</div>
-            <div>Description of the post</div>
+            <div>{description}</div>
           </div>
           <div tw="flex items-center w-full justify-between">
             <div tw="flex text-xl">{siteConfig.url}</div>
