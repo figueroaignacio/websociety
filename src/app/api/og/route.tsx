@@ -22,7 +22,7 @@ export async function GET(req: NextRequest) {
 
     return new ImageResponse(
       (
-        <div tw="flex relative flex-col p-12 w-full h-full items-start bg-[#09090b] text-white">
+        <div tw="flex relative flex-col p-12 w-full h-full items-start bg-[#09090b] text-[#f5f5f5]">
           <div tw="flex items-center">
             <svg
               width="124"
@@ -54,15 +54,17 @@ export async function GET(req: NextRequest) {
               />
               <circle cx="27.5" cy="24.5" r="1.5" fill="#F5F5F5" />
             </svg>
-            <p tw="ml-2 font-bold text-2xl">Frontend Society</p>
+            <p tw="ml-2 font-bold text-2xl text-[#f5f5f5]">Frontend Society</p>
           </div>
           <div tw="flex flex-col flex-1 py-10">
-            <div tw="flex text-xl uppercase font-bold tracking-tight">POST</div>
+            <div tw="flex text-xl uppercase font-bold tracking-tight text-[#f5f5f5]">
+              POST
+            </div>
             <div tw="flex text-[80px] font-bold text-[50px]">{heading}</div>
-            <div>{description}</div>
+            <div tw="text-[#f5f5f5]">{description}</div>
           </div>
           <div tw="flex items-center w-full justify-between">
-            <div tw="flex text-xl">{siteConfig.url}</div>
+            <div tw="flex text-xl text-[#f5f5f5]">{siteConfig.url}</div>
             <div tw="flex items-center text-xl">
               <div tw="flex ml-2">{siteConfig.links.github}</div>
             </div>
