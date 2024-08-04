@@ -30,7 +30,7 @@ const config = {
         "custom-card": "5px 5px 0px rgb(147, 51, 234)",
       },
       colors: {
-        border: "hsl(var(--border))",
+        border: "hsla(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
