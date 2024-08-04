@@ -4,13 +4,13 @@
 import { usePathname } from "next/navigation";
 
 // Components
-import { navigationConfig } from "@/config/navigation";
 import { LinkWithTransition } from "../link-with-transition";
 import { Logo } from "../logo";
 import { MobileMenu } from "../mobile-menu";
 import { ToggleTheme } from "../toggle-theme";
 
-// Constants
+// Config
+import { navigationConfig } from "@/config/navigation";
 
 export function Navbar() {
   const pathname = usePathname();
