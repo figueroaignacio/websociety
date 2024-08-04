@@ -33,7 +33,7 @@ export function PostCard({
   categories,
 }: ArticleCardProps) {
   return (
-    <Card className="shadow-sm w-full h-full">
+    <Card className="shadow-sm">
       <CardHeader className="flex flex-row justify-between items-center relative">
         <dl className="flex text-xs">
           <dt className="sr-only">Published at</dt>
@@ -47,7 +47,7 @@ export function PostCard({
         <CardTitle className="text-pretty text-lg line-clamp-1">
           {title}
         </CardTitle>
-        <CardDescription className="leading-10 text-pretty text-sm line-clamp-1">
+        <CardDescription className="leading-10 text-pretty text-sm">
           {description}
         </CardDescription>
       </CardContent>

@@ -1,12 +1,17 @@
 // Components
 import { LinkWithTransition } from "../link-with-transition";
+import { Button } from "../ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from "../ui/card";
+
+// Icons
+import { ArrowRight } from "lucide-react";
 
 interface GuideCardProps {
   title: string;
@@ -16,15 +21,24 @@ interface GuideCardProps {
 
 export function GuideCard({ description, title, slug }: GuideCardProps) {
   return (
-    <LinkWithTransition href={"/" + slug}>
-      <Card className="hover:cursor-pointer dark:hover:brightness-150 hover:shadow-custom-card duration-150 h-full">
-        <CardHeader>
-          <CardTitle>{title}</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <CardDescription>{description}</CardDescription>
-        </CardContent>
-      </Card>
-    </LinkWithTransition>
+    <Card>
+      <CardHeader>
+        <CardTitle>{title}</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <CardDescription>{description}</CardDescription>
+      </CardContent>
+      <CardFooter>
+        <LinkWithTransition href={"/" + slug} className="w-full">
+          <Button variant={"purple"}>
+            Learn more
+            <ArrowRight
+              size={16}
+              className="transition-transform ease-in-out duration-300 transform translate-x-0 group-hover:translate-x-1"
+            />
+          </Button>
+        </LinkWithTransition>
+      </CardFooter>
+    </Card>
   );
 }
