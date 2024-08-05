@@ -53,7 +53,7 @@ const PaginationLink = ({
     aria-current={isActive ? "page" : undefined}
     className={cn(
       buttonVariants({
-        variant: isActive ? "purple" : "navItem",
+        variant: isActive ? "purple" : "ghost",
         size,
       }),
       className
