@@ -1,5 +1,4 @@
 // Components
-import { ArrowRight } from "lucide-react";
 import { LinkWithTransition } from "../link-with-transition";
 import { buttonVariants } from "../ui/button";
 import {
@@ -11,6 +10,7 @@ import {
 } from "../ui/card";
 
 // Icons - Images
+import { ArrowRight } from "lucide-react";
 
 // Animations
 import "@/styles/animations.css";
