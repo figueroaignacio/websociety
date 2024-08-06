@@ -27,7 +27,7 @@ const config = {
           "radial-gradient(ellipse 70% 50% at 50% -10%,rgba(147, 51, 234, 0.3), rgba(179, 136, 255, 0.1), rgba(255, 255, 255, 0))",
       }),
       boxShadow: {
-        "custom-card": "5px 5px 0px rgb(147, 51, 234)",
+        "custom-card": "12px 12px 0px rgb(126, 34, 206)",
       },
       colors: {
         border: "hsla(var(--border))",
