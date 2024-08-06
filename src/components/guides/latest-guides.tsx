@@ -12,7 +12,7 @@ export function LatestGuides() {
 
   return (
     <section className="py-8">
-      <h2 className="text-2xl font-bold mb-4">Latest Guides</h2>
+      <h2 className="text-3xl font-bold mb-4">Latest Guides</h2>
       <div>
         {latestGuides?.length > 0 ? (
           <ul className="grid gap-4 grid-cols-1 md:grid-cols-2 auto-rows-fr">
