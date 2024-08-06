@@ -57,7 +57,7 @@ export function GuideCta() {
             alt="Cta coding"
             width={0}
             height={0}
-            className="bg-cover"
+            className="bg-cover rounded-md"
           />
         )}
       </div>
