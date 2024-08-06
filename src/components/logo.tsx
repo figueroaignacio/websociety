@@ -20,7 +20,6 @@ export function Logo() {
         <rect x="13" y="14" width="10" height="5" rx="2.5" fill="#F5F5F5" />
         <circle cx="27.5" cy="24.5" r="1.5" fill="#F5F5F5" />
       </svg>
-      <span className="text-xs">/</span>
       <span className="text-xs">Frontend Society.</span>
     </LinkWithTransition>
   );
