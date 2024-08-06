@@ -28,12 +28,12 @@ export function PostsCta() {
           Discover and Read more articles about web development.
         </CardDescription>
       </CardHeader>
-      <CardFooter className="w-96 mx-auto">
+      <CardFooter>
         <LinkWithTransition
           href="/posts"
           className={`${buttonVariants({
             variant: "default",
-          })} flex items-center gap-3`}
+          })} flex items-center gap-3 relative`}
         >
           Explore
           <ArrowRight
