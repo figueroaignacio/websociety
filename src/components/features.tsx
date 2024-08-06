@@ -27,7 +27,7 @@ export function Features() {
         const icon = iconMap[feature.icon] || null;
         return (
           <Card
-            className={`h-full w-full shadow-custom-card ${
+            className={`h-full w-full shadow-custom-card place-content-center ${
               index === 2 ? "md:col-span-2 lg:col-span-1" : ""
             }`}
             key={index}
