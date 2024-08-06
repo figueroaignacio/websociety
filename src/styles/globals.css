@@ -56,10 +56,9 @@
   body {
     @apply bg-background text-foreground;
   }
-  h1,
-  h2,
-  h3 {
-    @apply text-[#09090b] dark:text-[#f5f5f5];
+
+  button {
+    @apply cursor-default;
   }
 }
 

@@ -10,7 +10,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "cursor-pointer w-full flex items-center gap-2 group text-xs bg-purple-700 text-white",
+          "w-full flex items-center gap-2 group text-xs bg-purple-700 text-white",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
