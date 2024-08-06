@@ -1,6 +1,6 @@
 // Components
 import { LinkWithTransition } from "../link-with-transition";
-import { Button } from "../ui/button";
+import { buttonVariants } from "../ui/button";
 import {
   Card,
   CardContent,
@@ -29,14 +29,15 @@ export function GuideCard({ description, title, slug }: GuideCardProps) {
         <CardDescription>{description}</CardDescription>
       </CardContent>
       <CardFooter>
-        <LinkWithTransition href={"/" + slug} className="w-full">
-          <Button variant={"purple"}>
-            Learn more
-            <ArrowRight
-              size={16}
-              className="transition-transform ease-in-out duration-300 transform translate-x-0 group-hover:translate-x-1"
-            />
-          </Button>
+        <LinkWithTransition
+          href={"/" + slug}
+          className={`w-full ${buttonVariants({ variant: "default" })}`}
+        >
+          Learn more
+          <ArrowRight
+            size={16}
+            className="transition-transform ease-in-out duration-300 transform translate-x-0 group-hover:translate-x-1"
+          />
         </LinkWithTransition>
       </CardFooter>
     </Card>

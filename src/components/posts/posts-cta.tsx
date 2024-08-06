@@ -24,7 +24,7 @@ export function PostsCta() {
             <LinkWithTransition
               href="/posts"
               className={`${buttonVariants({
-                variant: "purple",
+                variant: "default",
               })} flex items-center gap-3 group`}
             >
               Explore

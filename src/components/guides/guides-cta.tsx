@@ -39,7 +39,7 @@ export function GuideCta() {
           <LinkWithTransition
             href="/guides"
             className={`${buttonVariants({
-              variant: "purple",
+              variant: "default",
             })} flex items-center gap-3 group`}
           >
             Get Started

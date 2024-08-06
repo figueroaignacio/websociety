@@ -9,13 +9,13 @@ import {
 } from "@/components/ui/card";
 import { LinkWithTransition } from "../link-with-transition";
 import { Tag } from "../tag";
-import { buttonVariants } from "../ui/button";
 
 // Icons
 import { ArrowRight, Calendar } from "lucide-react";
 
 // Utils
 import { formatDate } from "@/utils/formatDate";
+import { buttonVariants } from "../ui/button";
 
 interface ArticleCardProps {
   title: string;
@@ -59,9 +59,7 @@ export function PostCard({
         </div>
         <LinkWithTransition
           href={"/" + slug}
-          className={`${buttonVariants({
-            variant: "purple",
-          })} flex z-10`}
+          className={`flex z-10 ${buttonVariants({ variant: "default" })}`}
         >
           Read More
           <ArrowRight
