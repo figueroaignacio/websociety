@@ -25,7 +25,7 @@ export function Footer() {
                 <li key={index} className="flex items-center">
                   <LinkWithTransition
                     href={navItem.href}
-                    className="hover:gradient-text"
+                    className="text-base text-muted-foreground hover:text-black dark:hover:text-white font-medium"
                   >
                     {navItem.title}
                   </LinkWithTransition>
