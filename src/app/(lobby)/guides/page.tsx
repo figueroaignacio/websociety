@@ -3,7 +3,7 @@ import { FramerH1, FramerLi, FramerSection } from "@/components/framer";
 import { GuideCard } from "@/components/guides/guide-card";
 
 // Content
-import { guides } from "@site/content";
+import { guides } from "site/content";
 
 // Constants / Config
 import {

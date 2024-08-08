@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/card";
 
 // Content
-import { posts } from "@site/content";
+import { posts } from "site/content";
 
 // Utils
 import { capitalize } from "@/utils/capitalize";
