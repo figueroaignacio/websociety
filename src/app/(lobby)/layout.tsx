@@ -7,9 +7,6 @@ import { Navbar } from "@/components/layout/navbar";
 // Global styles
 import "@/styles/globals.css";
 
-// Font
-import { onest } from "@/font/onest";
-
 export default function LobbyLayout({
   children,
 }: {
@@ -17,7 +14,7 @@ export default function LobbyLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning className="scroll-pt-[3.5rem]">
-      <body className={`${onest.className}`}>
+      <body>
         <Gradient />
         <Navbar />
         <main className="container">

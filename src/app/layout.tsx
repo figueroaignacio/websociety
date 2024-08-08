@@ -9,9 +9,6 @@ import NextTopLoader from "nextjs-toploader";
 // Global styles
 import "@/styles/globals.css";
 
-// Font
-import { onest } from "@/font/onest";
-
 // Config
 import { siteConfig } from "@/config/site";
 
@@ -46,7 +43,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 
   return (
     <html suppressHydrationWarning lang={locale}>
-      <body className={`${onest.className}`}>
+      <body>
         <NextTopLoader color="#7c3aed" showSpinner={false} />
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider
