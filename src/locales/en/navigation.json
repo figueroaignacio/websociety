@@ -1,0 +1,16 @@
+{
+  "navigation": [
+    {
+      "title": "Posts",
+      "href": "/posts"
+    },
+    {
+      "title": "Guides",
+      "href": "/guides"
+    },
+    {
+      "title": "Challenges",
+      "href": "/challenges"
+    }
+  ]
+}
