@@ -44,37 +44,6 @@ export function Navbar() {
         <LocaleSwitcher />
         <MobileMenu />
       </div>
-
-      {/* <div className="w-full flex gap-7 justify-end">
-      </div> */}
-      {/* <div className="flex gap-9 items-center w-screen">
-        <div className="flex items-center w-full md:hidden relative inset-0">
-          <MobileMenu />
-        </div>
-        <Logo />
-        <nav className="hidden md:block">
-          <ul className="flex flex-col gap-12 w-screen items-center md:w-full md:flex-row md:min-h-0 py-1">
-            {navigationConfig.map((navItem, index) => (
-              <li
-                key={index}
-                className="dark:hover:text-white/70 hover:text-black/70"
-              >
-                <LinkWithTransition
-                  href={navItem.href}
-                  className={`${
-                    pathname === `${navItem.href}`
-                      ? "gradient-text"
-                      : "text-muted-foreground"
-                  } hover:gradient-text text-sm font-semibold`}
-                >
-                  {navItem.title}
-                </LinkWithTransition>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div> */}
-      {/* <ToggleTheme /> */}
     </header>
   );
 }
