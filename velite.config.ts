@@ -29,7 +29,7 @@ const posts = defineCollection({
 
 const guides = defineCollection({
   name: "Guides",
-  pattern: "../guides/**/*.mdx",
+  pattern: "./guides/**/*.mdx",
   schema: s
     .object({
       slug: s.path(),
