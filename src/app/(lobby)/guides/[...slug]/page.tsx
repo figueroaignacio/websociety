@@ -6,7 +6,7 @@ import { MDXContent } from "@/components/mdx/mdx-components";
 import { notFound } from "next/navigation";
 
 // Content
-import { guides } from "#site/content";
+import { guides } from "@site/content";
 
 // Metadata
 import { Metadata } from "next";

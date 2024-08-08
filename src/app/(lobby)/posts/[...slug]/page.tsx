@@ -4,7 +4,7 @@ import { Tag } from "@/components/tag";
 import { Separator } from "@/components/ui/separator";
 
 // Content
-import { posts } from "#site/content";
+import { posts } from "@site/content";
 
 // next
 import { notFound } from "next/navigation";
