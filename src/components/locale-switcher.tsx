@@ -1,5 +1,5 @@
 import { useLocale, useTranslations } from "next-intl";
-import LocaleSwitcherSelect from "./language-switcher-select";
+import LocaleSwitcherSelect from "./locale-switcher-select";
 
 export default function LocaleSwitcher() {
   const t = useTranslations("languageSwitcher");

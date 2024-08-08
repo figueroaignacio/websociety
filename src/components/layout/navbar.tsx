@@ -11,7 +11,7 @@ import { ToggleTheme } from "../toggle-theme";
 
 // Config
 import { navigationConfig } from "@/config/navigation";
-import LocaleSwitcher from "../language-switcher";
+import LocaleSwitcher from "../locale-switcher";
 
 export function Navbar() {
   const pathname = usePathname();
