@@ -1,3 +1,6 @@
+// Hooks
+import { useTranslations } from "next-intl";
+
 // Components
 import {
   Card,
@@ -6,9 +9,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-
-// Constants
-import { features } from "@/constants/features";
 
 // Icons
 import { BookCheck, Code, GraduationCap } from "lucide-react";
@@ -21,9 +21,12 @@ const iconMap: { [key: string]: JSX.Element } = {
 };
 
 export function Features() {
+  const t = useTranslations();
+  const features = t.raw("features");
+
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-      {features.map((feature, index) => {
+      {features.map((feature: any, index: number) => {
         const icon = iconMap[feature.icon] || null;
         return (
           <Card

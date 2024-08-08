@@ -1,0 +1,16 @@
+{
+  "features": [
+    {
+      "title": "Publicaciones",
+      "description": "Descubre las publicaciones más recientes que cubren las últimas tendencias, consejos y técnicas en desarrollo frontend."
+    },
+    {
+      "title": "Aprende",
+      "description": "Sumérgete en recursos educativos diseñados para desarrolladores frontend, abarcando desde temas para principiantes hasta avanzados."
+    },
+    {
+      "title": "Desafíos",
+      "description": "Enfrenta desafíos de codificación frontend para afinar tus habilidades, resolver problemas y demostrar tu conocimiento."
+    }
+  ]
+}

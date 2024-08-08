@@ -1,0 +1,16 @@
+{
+  "features": [
+    {
+      "title": "Posts",
+      "description": "Explore the latest posts covering frontend development trends, tips, and techniques."
+    },
+    {
+      "title": "Learn",
+      "description": "Delve into educational resources tailored for frontend developers, ranging from beginner to advanced topics."
+    },
+    {
+      "title": "Challenges",
+      "description": "Take on frontend coding challenges to sharpen your skills, solve problems, and showcase your expertise."
+    }
+  ]
+}
