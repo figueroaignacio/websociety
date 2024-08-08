@@ -1,9 +1,11 @@
 import { getRequestConfig } from "next-intl/server";
 import { getUserLocale } from "./services/locale";
 
+const moduleItems = ["hero", "features", "navigation", "localeSwitcher"];
+
 export default getRequestConfig(async () => {
   const locale = await getUserLocale();
-  const modules = ["hero", "features", "navigation", "languageSwitcher"];
+  const modules = moduleItems;
   const messages = {};
 
   try {
