@@ -42,7 +42,8 @@ export default function LocaleSwitcherSelect({
           isPending && "pointer-events-none opacity-60"
         )}
       >
-        <LanguagesIcon />
+        <LanguagesIcon className="text-muted-foreground" size={16} />
+        <span className="text-xs text-muted-foreground">{label}</span>
       </SelectTrigger>
       <SelectContent align="end" position="popper">
         {items.map((item) => (
