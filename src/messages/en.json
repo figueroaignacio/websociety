@@ -3,5 +3,10 @@
     "subHeading": "Welcome to",
     "title": "Frontend Society",
     "description": "Discover tech posts, learn about Frontend stuff, and participate on challenges."
+  },
+  "languageSwitcher": {
+    "es": "Spanish",
+    "en": "English",
+    "label": "Language"
   }
 }

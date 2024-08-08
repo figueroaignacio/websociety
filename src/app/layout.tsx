@@ -3,7 +3,7 @@ import { ThemeProvider } from "@/providers/theme-provider";
 import { NextIntlClientProvider } from "next-intl";
 
 // Utils
-import { getMessages } from "next-intl/server";
+import { getLocale, getMessages } from "next-intl/server";
 import NextTopLoader from "nextjs-toploader";
 
 // Global styles
@@ -38,20 +38,17 @@ export const metadata: Metadata = {
 
 interface RootLayoutProps {
   children: React.ReactNode;
-  params: { locale: string };
 }
 
-export default async function RootLayout({
-  children,
-  params: { locale },
-}: RootLayoutProps) {
-  const locales = await getMessages();
+export default async function RootLayout({ children }: RootLayoutProps) {
+  const locale = await getLocale();
+  const messages = await getMessages();
 
   return (
     <html suppressHydrationWarning lang={locale}>
       <body className={`${onest.className}`}>
         <NextTopLoader color="#7c3aed" showSpinner={false} />
-        <NextIntlClientProvider messages={locales}>
+        <NextIntlClientProvider messages={messages}>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"

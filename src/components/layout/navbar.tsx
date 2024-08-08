@@ -11,6 +11,7 @@ import { ToggleTheme } from "../toggle-theme";
 
 // Config
 import { navigationConfig } from "@/config/navigation";
+import LocaleSwitcher from "../language-switcher";
 
 export function Navbar() {
   const pathname = usePathname();
@@ -40,6 +41,7 @@ export function Navbar() {
       </div>
       <div className="flex gap-5 items-center">
         <ToggleTheme />
+        <LocaleSwitcher />
         <MobileMenu />
       </div>
 
