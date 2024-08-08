@@ -6,6 +6,9 @@ import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 import NextTopLoader from "nextjs-toploader";
 
+// Font
+import "@fontsource-variable/onest";
+
 // Global styles
 import "@/styles/globals.css";
 
