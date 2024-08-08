@@ -3,7 +3,7 @@ import { getUserLocale } from "./services/locale";
 
 export default getRequestConfig(async () => {
   const locale = await getUserLocale();
-  const modules = ["hero", "features", "navigation"];
+  const modules = ["hero", "features", "navigation", "languageSwitcher"];
   const messages = {};
 
   try {
