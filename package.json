@@ -22,6 +22,7 @@
     "github-slugger": "^2.0.0",
     "lucide-react": "^0.307.0",
     "next": "14.0.4",
+    "next-intl": "^3.17.2",
     "next-themes": "^0.2.1",
     "nextjs-toploader": "^1.6.12",
     "react": "^18.3.1",

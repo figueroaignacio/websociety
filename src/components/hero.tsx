@@ -1,6 +1,7 @@
 "use client";
 
 // Hooks
+import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
@@ -22,11 +23,12 @@ import { ArrowDown } from "lucide-react";
 
 // Constants
 import { FADE_UP_ANIMATION_VARIANTS } from "@/constants/animations";
-import { home } from "@/constants/home";
 
 export function Hero() {
   const { theme, resolvedTheme } = useTheme();
   const [isThemeResolved, setIsThemeResolved] = useState(false);
+
+  const t = useTranslations("hero");
 
   useEffect(() => {
     setIsThemeResolved(true);
@@ -55,19 +57,19 @@ export function Hero() {
               variants={FADE_UP_ANIMATION_VARIANTS}
               className="font-bold text-6xl lg:text-8xl"
             >
-              Welcome to
+              {t("subHeading")}
             </FramerSpan>
             <FramerH1
               variants={FADE_UP_ANIMATION_VARIANTS}
               className="font-bold text-6xl lg:text-8xl"
             >
-              <span className="gradient-text">{home.title}</span>
+              <span className="gradient-text">{t("title")}</span>
             </FramerH1>
             <FramerParagraph
               variants={FADE_UP_ANIMATION_VARIANTS}
               className="text-sm opacity-70"
             >
-              {home.description}
+              {t("description")}
             </FramerParagraph>
           </div>
         </div>

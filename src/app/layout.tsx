@@ -1,5 +1,9 @@
-// Util
+// Providers
 import { ThemeProvider } from "@/providers/theme-provider";
+import { NextIntlClientProvider } from "next-intl";
+
+// Utils
+import { getMessages } from "next-intl/server";
 import NextTopLoader from "nextjs-toploader";
 
 // Global styles
@@ -32,23 +36,31 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/icon.tsx" }],
 };
 
-export default function RootLayout({
-  children,
-}: {
+interface RootLayoutProps {
   children: React.ReactNode;
-}) {
+  params: { locale: string };
+}
+
+export default async function RootLayout({
+  children,
+  params: { locale },
+}: RootLayoutProps) {
+  const locales = await getMessages();
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html suppressHydrationWarning lang={locale}>
       <body className={`${onest.className}`}>
         <NextTopLoader color="#7c3aed" showSpinner={false} />
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        <NextIntlClientProvider messages={locales}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );
