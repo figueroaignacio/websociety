@@ -22,7 +22,7 @@ const config = {
       fontFamily: {
         quicksand: ["var(--quicksand-font)"],
       },
-      backgroundImage: (theme) => ({
+      backgroundImage: () => ({
         "radial-gradient":
           "radial-gradient(ellipse 70% 50% at 50% -10%,rgba(147, 51, 234, 0.3), rgba(179, 136, 255, 0.1), rgba(255, 255, 255, 0))",
       }),
