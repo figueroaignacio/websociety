@@ -6,15 +6,15 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 // Components
-import Image from "next/image";
 import {
   FramerDiv,
   FramerH1,
   FramerParagraph,
   FramerSection,
   FramerSpan,
-} from "./framer";
-import { HeroBg } from "./layout/hero-bg";
+} from "@/components/framer";
+import { HeroBg } from "@/components/layout/hero-bg";
+import Image from "next/image";
 
 // Images - Icons
 import HeroCodeImageDark from "@/assets/images/home-hero-dark.svg";

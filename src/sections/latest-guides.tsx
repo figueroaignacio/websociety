@@ -1,5 +1,5 @@
 // Components
-import { GuideCard } from "./guide-card";
+import { GuideCard } from "@/components/guides/guide-card";
 
 // Content
 import { guides } from "#site/content";
