@@ -40,7 +40,7 @@ export function LocaleSwitcherSelect({ children, defaultValue, label }: Props) {
         <p className="sr-only">{label}</p>
         {defaultValue.toUpperCase()}
       </SelectTrigger>
-      <SelectContent>{children}</SelectContent>
+      <SelectContent className="text-end">{children}</SelectContent>
     </Select>
   );
 }

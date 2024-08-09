@@ -6,9 +6,8 @@ import { usePathname } from "next/navigation";
 
 // Components
 import { LinkWithTransition } from "../link-with-transition";
-import { LocaleSwitcher } from "../locale-switcher";
 import { Logo } from "../logo";
-import { ToggleTheme } from "../toggle-theme";
+import { Settings } from "../settings";
 import { MobileMenu } from "./mobile-menu";
 
 export function Navbar() {
@@ -17,7 +16,7 @@ export function Navbar() {
   const navigation = t.raw("navigation");
 
   return (
-    <header className="flex items-center justify-between gap-12 sticky z-20 top-0 left-0 py-2 px-5 md:px-10 lg:px-16 backdrop-blur-sm mx-auto border-b-[.0625rem]">
+    <header className="flex items-center justify-between gap-12 sticky z-50 top-0 left-0 py-2 px-5 md:px-10 lg:px-16 backdrop-blur-sm mx-auto border-b-[.0625rem]">
       <div className="flex items-center gap-12">
         <Logo />
         <nav className="hidden md:block">
@@ -40,8 +39,7 @@ export function Navbar() {
         </nav>
       </div>
       <div className="flex gap-5 items-center">
-        <ToggleTheme />
-        <LocaleSwitcher />
+        <Settings />
         <MobileMenu />
       </div>
     </header>
