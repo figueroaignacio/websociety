@@ -1,5 +1,8 @@
 "use client";
 
+// Hooks
+import { useTranslations } from "next-intl";
+
 // Components
 import { PostCard } from "@/components/posts/post-card";
 
@@ -13,11 +16,12 @@ import { sortPosts } from "@/utils/sortPosts";
 import "@/styles/animations.css";
 
 export function LatestPosts() {
+  const t = useTranslations("latestPosts");
   const latestPosts = sortPosts(posts).slice(0, 4);
 
   return (
     <section className="py-10 flex flex-col gap-7">
-      <h2 className="font-bold text-3xl">Latest Posts</h2>
+      <h2 className="font-bold text-3xl">{t("title")}</h2>
       <div>
         {latestPosts?.length > 0 ? (
           <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2">

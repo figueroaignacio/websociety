@@ -1,3 +1,6 @@
+// Hooks
+import { useTranslations } from "next-intl";
+
 // Components
 import { GuideCard } from "@/components/guides/guide-card";
 
@@ -8,11 +11,12 @@ import { guides } from "#site/content";
 import { sortGuides } from "@/utils/sortGuides";
 
 export function LatestGuides() {
+  const t = useTranslations("latestGuides");
   const latestGuides = sortGuides(guides).slice(0, 4);
 
   return (
     <section className="py-8">
-      <h2 className="text-3xl font-bold mb-4">Latest Guides</h2>
+      <h2 className="text-3xl font-bold mb-4">{t("title")}</h2>
       <div>
         {latestGuides?.length > 0 ? (
           <ul className="grid gap-4 grid-cols-1 md:grid-cols-2 auto-rows-fr">

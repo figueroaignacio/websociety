@@ -1,5 +1,8 @@
 {
   "posts": {
     "title": "The ramblings of Frontend Society"
+  },
+  "latestPosts": {
+    "title": "Latest Posts"
   }
 }

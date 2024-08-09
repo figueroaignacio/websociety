@@ -1,5 +1,8 @@
 {
   "guides": {
     "title": "Guides by Frontend Society"
+  },
+  "latestGuides": {
+    "title": "Latest Guides"
   }
 }

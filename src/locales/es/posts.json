@@ -1,5 +1,8 @@
 {
   "posts": {
     "title": "Las divagaciones de Frontend Society"
+  },
+  "latestPosts": {
+    "title": "Publicaciones Recientes"
   }
 }
