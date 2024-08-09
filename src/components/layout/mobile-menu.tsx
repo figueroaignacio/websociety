@@ -1,5 +1,9 @@
 "use client";
 
+// Hooks
+import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
+
 // Components
 import {
   Sheet,
@@ -15,14 +19,17 @@ import { LinkWithTransition } from "../link-with-transition";
 // Icons
 import { Menu } from "lucide-react";
 
-// Next
-import { usePathname } from "next/navigation";
-
 // Constants
-import { navigationConfig } from "@/config/navigation";
+
+// Utils
+import { getCurrentLocale } from "@/utils/getCurrentLocale";
 
 export function MobileMenu() {
+  const t = useTranslations();
+  const navigation = t.raw("navigation");
   const pathname = usePathname();
+
+  const currentLocale = getCurrentLocale(pathname);
 
   return (
     <Sheet>
@@ -37,22 +44,22 @@ export function MobileMenu() {
             <LinkWithTransition
               href="/"
               className={`${
-                pathname === "/"
-                  ? "font-bold text-black dark:text-white border-b-[1px] border-black transition-all duration-500 dark:border-white"
+                pathname === `/${currentLocale}/`
+                  ? "font-semibold text-black dark:text-white border-b-[1px] border-black transition-all duration-500 dark:border-white"
                   : "text-muted-foreground"
-              }`}
+              } text-muted-foreground hover:text-black dark:hover:text-white`}
             >
-              <SheetClose>Home</SheetClose>
+              <SheetClose>{t("navigationHome.title")}</SheetClose>
             </LinkWithTransition>
           </li>
-          {navigationConfig.map((navItem, index) => (
+          {navigation.map((navItem: any, index: number) => (
             <li key={index}>
               <LinkWithTransition
                 href={navItem.href}
                 className={`${
-                  pathname === `${navItem.href}`
-                    ? "font-bold text-black dark:text-white border-b-[1px] border-black transition-all duration-500 dark:border-white"
-                    : ""
+                  pathname === `/${currentLocale}${navItem.href}/`
+                    ? "font-semibold text-black dark:text-white border-b-[1px] border-black transition-all duration-500 dark:border-white"
+                    : "text-muted-foreground"
                 } text-muted-foreground hover:text-black dark:hover:text-white`}
               >
                 <SheetClose>{navItem.title}</SheetClose>

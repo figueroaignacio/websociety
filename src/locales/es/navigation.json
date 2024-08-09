@@ -12,5 +12,8 @@
       "title": "Desafíos",
       "href": "/challenges"
     }
-  ]
+  ],
+  "navigationHome": {
+    "title": "Inicio"
+  }
 }

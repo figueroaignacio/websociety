@@ -12,5 +12,8 @@
       "title": "Challenges",
       "href": "/challenges"
     }
-  ]
+  ],
+  "navigationHome": {
+    "title": "Home"
+  }
 }
