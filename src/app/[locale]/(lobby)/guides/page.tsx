@@ -1,3 +1,6 @@
+// Hooks
+import { useTranslations } from "next-intl";
+
 // Components
 import { FramerH1, FramerLi, FramerSection } from "@/components/framer";
 import { GuideCard } from "@/components/guides/guide-card";
@@ -21,6 +24,8 @@ export const metadata: Metadata = {
 };
 
 export default function LearnPage() {
+  const t = useTranslations("guides");
+
   return (
     <FramerSection
       initial="hidden"
@@ -40,7 +45,7 @@ export default function LearnPage() {
         variants={FADE_DOWN_ANIMATION_VARIANTS}
         className="font-bold text-2xl lg:text-4xl text-center"
       >
-        {g.title}
+        {t("title")}
       </FramerH1>
       {guides.length > 0 ? (
         <ul className="grid gap-4 grid-cols-1 md:grid-cols-2">

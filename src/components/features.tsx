@@ -1,5 +1,4 @@
 // Hooks
-import { useTranslations } from "next-intl";
 
 // Components
 import {
@@ -20,9 +19,10 @@ const iconMap: { [key: string]: JSX.Element } = {
   code: <Code size="1.5rem" />,
 };
 
+import { features } from "@/constants/features";
 export function Features() {
-  const t = useTranslations();
-  const features = t.raw("features");
+  // const t = useTranslations();
+  // const features = t.raw("features");
 
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">

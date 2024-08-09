@@ -1,9 +1,4 @@
-// Providers
-import { ThemeProvider } from "@/providers/theme-provider";
-import { NextIntlClientProvider } from "next-intl";
-
 // Utils
-import { getLocale, getMessages } from "next-intl/server";
 import NextTopLoader from "nextjs-toploader";
 
 // Font
@@ -40,24 +35,12 @@ interface RootLayoutProps {
   children: React.ReactNode;
 }
 
-export default async function RootLayout({ children }: RootLayoutProps) {
-  const locale = await getLocale();
-  const messages = await getMessages();
-
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html suppressHydrationWarning lang={locale}>
+    <html suppressHydrationWarning>
       <body>
         <NextTopLoader color="#7c3aed" showSpinner={false} />
-        <NextIntlClientProvider messages={messages}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
-        </NextIntlClientProvider>
+        {children}
       </body>
     </html>
   );

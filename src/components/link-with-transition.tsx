@@ -1,35 +1,28 @@
 "use client";
 
-// Next
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import type { pathnames } from "@/config";
+import { Link } from "@/navigation";
+import clsx from "clsx";
+import { useSelectedLayoutSegment } from "next/navigation";
+import { ComponentProps } from "react";
 
-interface LinkWithTransitionProps {
-  children: React.ReactNode;
-  className?: string;
-  href: string;
-}
-
-export function LinkWithTransition({
-  children,
-  className,
+export function LinkWithTransition<Pathname extends keyof typeof pathnames>({
   href,
-}: LinkWithTransitionProps) {
-  const router = useRouter();
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (!document.startViewTransition) {
-      return;
-    } else {
-      e.preventDefault();
-      document.startViewTransition(() => {
-        router.push(href);
-      });
-    }
-  };
+  ...rest
+}: ComponentProps<typeof Link<Pathname>>) {
+  const selectedLayoutSegment = useSelectedLayoutSegment();
+  const pathname = selectedLayoutSegment ? `/${selectedLayoutSegment}` : "/";
+  const isActive = pathname === href;
 
   return (
-    <Link onClick={handleClick} href={href} className={className}>
-      {children}
-    </Link>
+    <Link
+      aria-current={isActive ? "page" : undefined}
+      className={clsx(
+        "inline-block px-2 py-3 transition-colors",
+        isActive ? "text-white" : "text-gray-400 hover:text-gray-200"
+      )}
+      href={href}
+      {...rest}
+    />
   );
 }

@@ -1,3 +1,6 @@
+// Hooks
+import { useTranslations } from "next-intl";
+
 // Components
 import {
   FramerDiv,
@@ -38,7 +41,9 @@ interface BlogPageProps {
   };
 }
 
-export default async function PostsPage({ searchParams }: BlogPageProps) {
+export default function PostsPage({ searchParams }: BlogPageProps) {
+  const t = useTranslations("posts");
+
   const currentPage = Number(searchParams?.page) || 1;
   const sortedPosts = sortPosts(posts.filter((post) => post.published));
   const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
@@ -71,7 +76,7 @@ export default async function PostsPage({ searchParams }: BlogPageProps) {
             variants={FADE_DOWN_ANIMATION_VARIANTS}
             className="font-bold text-2xl lg:text-4xl text-center"
           >
-            {allPosts.title}
+            {t("title")}
           </FramerH1>
           <FramerDiv variants={FADE_DOWN_ANIMATION_VARIANTS} className="mt-10">
             <Card>

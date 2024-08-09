@@ -1,61 +1,46 @@
 "use client";
 
 // Hooks
+import { usePathname, useRouter } from "@/navigation";
 import { useTransition } from "react";
 
 // Components
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-} from "@/components/ui/select";
-
-// Config
-import { setUserLocale } from "@/services/locale";
-import { Locale } from "../config";
-
-// Utils
-import clsx from "clsx";
+import { Select, SelectContent, SelectTrigger } from "@/components/ui/select";
 
 // Icons
-import { LanguagesIcon } from "lucide-react";
+import { Languages } from "lucide-react";
 
 type Props = {
-  defaultValue: string;
-  items: Array<{ value: string; label: string }>;
+  children: React.ReactNode;
+  defaultValue: Locale;
   label: string;
 };
 
-export function LocaleSwitcherSelect({ defaultValue, items, label }: Props) {
-  const [isPending, startTransition] = useTransition();
+type Locale = "en" | "es";
 
-  function onChange(value: string) {
-    const locale = value as Locale;
+export function LocaleSwitcherSelect({ children, defaultValue, label }: Props) {
+  const router = useRouter();
+  const [isPending, startTransition] = useTransition();
+  const pathname = usePathname();
+
+  function onSelectChange(value: Locale) {
     startTransition(() => {
-      setUserLocale(locale);
+      router.replace({ pathname }, { locale: value });
     });
   }
 
   return (
-    <Select defaultValue={defaultValue} onValueChange={onChange}>
-      <SelectTrigger
-        aria-label={label}
-        className={clsx(
-          "rounded-sm p-2 transition-colors hover:bg-slate-200",
-          isPending && "pointer-events-none opacity-60"
-        )}
-      >
-        <LanguagesIcon className="text-muted-foreground" size={16} />
-        <span className="text-xs text-muted-foreground">{label}</span>
+    <Select
+      defaultValue={defaultValue}
+      onValueChange={onSelectChange}
+      disabled={isPending}
+    >
+      <SelectTrigger>
+        <Languages size={16} />
+        <p className="sr-only">{label}</p>
+        {defaultValue.toUpperCase()}
       </SelectTrigger>
-      <SelectContent align="end" position="popper">
-        {items.map((item) => (
-          <SelectItem key={item.value} value={item.value}>
-            <span>{item.label}</span>
-          </SelectItem>
-        ))}
-      </SelectContent>
+      <SelectContent>{children}</SelectContent>
     </Select>
   );
 }
