@@ -1,16 +1,24 @@
 "use client";
 
+// Hooks
+import { useTransition } from "react";
+
+// Components
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
 } from "@/components/ui/select";
+
+// Config
 import { setUserLocale } from "@/services/locale";
-import { useTransition } from "react";
 import { Locale } from "../config";
 
+// Utils
 import clsx from "clsx";
+
+// Icons
 import { LanguagesIcon } from "lucide-react";
 
 type Props = {
@@ -19,11 +27,7 @@ type Props = {
   label: string;
 };
 
-export default function LocaleSwitcherSelect({
-  defaultValue,
-  items,
-  label,
-}: Props) {
+export function LocaleSwitcherSelect({ defaultValue, items, label }: Props) {
   const [isPending, startTransition] = useTransition();
 
   function onChange(value: string) {

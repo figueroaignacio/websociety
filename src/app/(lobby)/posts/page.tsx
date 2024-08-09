@@ -14,9 +14,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { posts } from "#site/content";
 
 // Utils
-import { getAllCategories } from "../../../utils/getAllCategories";
-import { sortCategoriesByCount } from "../../../utils/sortCategoriesByCount";
-import { sortPosts } from "../../../utils/sortPosts";
+import { getAllCategories } from "@/utils/getAllCategories";
+import { sortCategoriesByCount } from "@/utils/sortCategoriesByCount";
+import { sortPosts } from "@/utils/sortPosts";
 
 // Constants / Config
 import { FADE_DOWN_ANIMATION_VARIANTS } from "@/constants/animations";

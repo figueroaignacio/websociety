@@ -1,7 +1,10 @@
+// Hooks
 import { useLocale, useTranslations } from "next-intl";
-import LocaleSwitcherSelect from "./locale-switcher-select";
 
-export default function LocaleSwitcher() {
+// Components
+import { LocaleSwitcherSelect } from "./locale-switcher-select";
+
+export function LocaleSwitcher() {
   const t = useTranslations("localeSwitcher");
   const locale = useLocale();
 

@@ -9,8 +9,8 @@ import { posts } from "#site/content";
 import { Metadata } from "next";
 
 // Utils
-import { getAllCategories } from "../../../utils/getAllCategories";
-import { sortCategoriesByCount } from "../../../utils/sortCategoriesByCount";
+import { getAllCategories } from "../../../src/utils/getAllCategories";
+import { sortCategoriesByCount } from "../../../src/utils/sortCategoriesByCount";
 
 export const metadata: Metadata = {
   title: "Categories",

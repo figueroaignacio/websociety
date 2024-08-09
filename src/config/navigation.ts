@@ -1,4 +1,4 @@
-import { Navigation } from "../../types/types";
+import { Navigation } from "../types/types";
 
 export const navigationConfig: Navigation[] = [
   {
