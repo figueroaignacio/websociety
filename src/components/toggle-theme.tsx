@@ -1,10 +1,9 @@
 "use client";
 
-// React
-import { useState } from "react";
-
-// Utils
+// Hooks
+import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
+import { useState } from "react";
 
 // Components
 import {
@@ -16,6 +15,9 @@ import {
 type ThemeOption = "light" | "dark" | "system";
 
 export function ToggleTheme() {
+  const t = useTranslations();
+  const themes = t.raw("themes");
+
   const { theme, setTheme } = useTheme();
   const [selectedTheme, setSelectedTheme] = useState<ThemeOption>(
     (theme as ThemeOption) || "system"
@@ -32,25 +34,16 @@ export function ToggleTheme() {
       value={selectedTheme}
       onValueChange={handleThemeChange}
     >
-      <DropdownMenuLabel>Select Theme</DropdownMenuLabel>
-      <DropdownMenuRadioItem
-        value="light"
-        className="flex justify-between items-center"
-      >
-        Light
-      </DropdownMenuRadioItem>
-      <DropdownMenuRadioItem
-        value="dark"
-        className="flex justify-between items-center"
-      >
-        Dark
-      </DropdownMenuRadioItem>
-      <DropdownMenuRadioItem
-        value="system"
-        className="flex justify-between items-center"
-      >
-        System
-      </DropdownMenuRadioItem>
+      <DropdownMenuLabel>{t("selectTheme.title")}</DropdownMenuLabel>
+      {themes.map((theme: any) => (
+        <DropdownMenuRadioItem
+          key={theme.value}
+          value={theme.value}
+          className="flex justify-between items-center"
+        >
+          {theme.label}
+        </DropdownMenuRadioItem>
+      ))}
     </DropdownMenuRadioGroup>
   );
 }

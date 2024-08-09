@@ -1,0 +1,22 @@
+{
+  "settings": {
+    "title": "Configuración"
+  },
+  "selectTheme": {
+    "title": "Seleccionar Tema"
+  },
+  "themes": [
+    {
+      "label": "Claro",
+      "value": "light"
+    },
+    {
+      "label": "Oscuro",
+      "value": "dark"
+    },
+    {
+      "label": "Sistema",
+      "value": "system"
+    }
+  ]
+}

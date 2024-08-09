@@ -1,3 +1,6 @@
+// Hooks
+import { useTranslations } from "next-intl";
+
 // Components
 import {
   DropdownMenu,
@@ -15,6 +18,7 @@ import { Button } from "./ui/button";
 import { Settings2 } from "lucide-react";
 
 export function Settings() {
+  const t = useTranslations();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -23,11 +27,11 @@ export function Settings() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-60 mr-7">
-        <DropdownMenuLabel>Settings</DropdownMenuLabel>
+        <DropdownMenuLabel>{t("settings.title")}</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <ToggleTheme />
         <DropdownMenuSeparator />
-        <DropdownMenuLabel>Select Language</DropdownMenuLabel>
+        <DropdownMenuLabel>{t("localeSwitcher.label")}</DropdownMenuLabel>
         <DropdownMenuItem>
           <LocaleSwitcher />
         </DropdownMenuItem>

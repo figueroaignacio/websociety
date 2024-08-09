@@ -13,6 +13,7 @@ export default getRequestConfig(async ({ locale }) => {
     "localeSwitcher",
     "navigation",
     "guides",
+    "settings",
   ];
   const messages = {};
 
