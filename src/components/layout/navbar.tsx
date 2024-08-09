@@ -8,8 +8,8 @@ import { usePathname } from "next/navigation";
 import { LinkWithTransition } from "../link-with-transition";
 import { LocaleSwitcher } from "../locale-switcher";
 import { Logo } from "../logo";
-import { MobileMenu } from "../mobile-menu";
 import { ToggleTheme } from "../toggle-theme";
+import { MobileMenu } from "./mobile-menu";
 
 export function Navbar() {
   const pathname = usePathname();

@@ -10,7 +10,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { LinkWithTransition } from "./link-with-transition";
+import { LinkWithTransition } from "../link-with-transition";
 
 // Icons
 import { Menu } from "lucide-react";
