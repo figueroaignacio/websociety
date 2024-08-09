@@ -1,4 +1,4 @@
-import { Post } from "#site/content";
+import { Post } from "##site/content";
 
 export function getAllCategories(posts: Post[]) {
   const tags: Record<string, number> = {};

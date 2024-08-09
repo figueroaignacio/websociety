@@ -1,4 +1,4 @@
-import { posts as allPosts } from "#site/content";
+import { posts as allPosts } from "##site/content";
 import type { MetadataRoute } from "next";
 
 import { siteConfig } from "@/config/site";

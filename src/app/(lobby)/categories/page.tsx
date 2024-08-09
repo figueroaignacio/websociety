@@ -3,7 +3,7 @@ import { Tag } from "@/components/tag";
 import { Separator } from "@/components/ui/separator";
 
 // Posts
-import { posts } from "site/content";
+import { posts } from "#site/content";
 
 // Metadata
 import { Metadata } from "next";

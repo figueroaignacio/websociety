@@ -4,7 +4,7 @@
 import { PostCard } from "@/components/posts/post-card";
 
 // Content
-import { posts } from "site/content";
+import { posts } from "#site/content";
 
 // Utils
 import { sortPosts } from "@/utils/sortPosts";

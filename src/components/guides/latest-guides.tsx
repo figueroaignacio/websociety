@@ -2,7 +2,7 @@
 import { GuideCard } from "./guide-card";
 
 // Content
-import { guides } from "site/content";
+import { guides } from "#site/content";
 
 // Utils
 import { sortGuides } from "@/utils/sortGuides";
