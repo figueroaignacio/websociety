@@ -1,6 +1,6 @@
 // Providers
-import { ThemeProvider } from "@/providers/theme-provider";
 import { NextIntlClientProvider } from "next-intl";
+import { ThemeProvider } from "../providers/theme-provider";
 
 // Utils
 import { getLocale, getMessages } from "next-intl/server";

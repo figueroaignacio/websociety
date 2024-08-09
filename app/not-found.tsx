@@ -1,5 +1,5 @@
 // Provider
-import { ThemeProvider } from "@/providers/theme-provider";
+import { ThemeProvider } from "../providers/theme-provider";
 
 // Components
 import { BackButton } from "@/components/back-button";

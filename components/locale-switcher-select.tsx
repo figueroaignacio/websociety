@@ -6,9 +6,9 @@ import {
   SelectItem,
   SelectTrigger,
 } from "@/components/ui/select";
-import { Locale } from "@/config";
 import { setUserLocale } from "@/services/locale";
 import { useTransition } from "react";
+import { Locale } from "../config";
 
 import clsx from "clsx";
 import { LanguagesIcon } from "lucide-react";

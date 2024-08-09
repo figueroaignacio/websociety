@@ -1,5 +1,5 @@
+import { getUserLocale } from "@/services/locale";
 import { getRequestConfig } from "next-intl/server";
-import { getUserLocale } from "./services/locale";
 
 const moduleItems = ["hero", "features", "navigation", "localeSwitcher"];
 
