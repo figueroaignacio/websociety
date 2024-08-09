@@ -12,17 +12,17 @@ import { ToggleTheme } from "./toggle-theme";
 import { Button } from "./ui/button";
 
 // Icons
-import { MoreVertical } from "lucide-react";
+import { Settings2 } from "lucide-react";
 
 export function Settings() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="icon">
-          <MoreVertical size={16} />
+          <Settings2 size={16} />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-40">
+      <DropdownMenuContent className="w-60 mr-7">
         <DropdownMenuLabel>Settings</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <ToggleTheme />
