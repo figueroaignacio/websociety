@@ -43,7 +43,7 @@ const guides = defineCollection({
 });
 
 export default defineConfig({
-  root: "./src/content",
+  root: "./content",
   output: {
     data: ".velite",
     assets: "public/static",
