@@ -12,6 +12,7 @@ export default getRequestConfig(async ({ locale }) => {
     "features",
     "localeSwitcher",
     "navigation",
+    "guides",
   ];
   const messages = {};
 
