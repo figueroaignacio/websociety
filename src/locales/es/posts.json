@@ -4,5 +4,10 @@
   },
   "latestPosts": {
     "title": "Publicaciones Recientes"
+  },
+  "postsCta": {
+    "title": "Te interesa conocer más artículos?",
+    "description": "Mirá y descubrí mas artículos de Frontend Society.",
+    "link": "Explorar"
   }
 }

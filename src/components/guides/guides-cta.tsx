@@ -1,6 +1,7 @@
 "use client";
 
 // Hooks
+import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
@@ -19,6 +20,7 @@ import { ArrowRight } from "lucide-react";
 import "@/styles/animations.css";
 
 export function GuideCta() {
+  const t = useTranslations("guidesCta");
   const { theme, resolvedTheme } = useTheme();
   const [isThemeResolved, setIsThemeResolved] = useState(false);
 
@@ -29,11 +31,9 @@ export function GuideCta() {
   return (
     <Card className="shadow-custom-card flex flex-col md:flex-row md:items-center">
       <CardHeader className="gap-4">
-        <div>
-          <CardTitle>Looking to Enhance Your Skills?</CardTitle>
-          <CardDescription>
-            Explore all the guides and start learning today.
-          </CardDescription>
+        <div className="flex flex-col gap-3">
+          <CardTitle>{t("title")}</CardTitle>
+          <CardDescription>{t("description")}</CardDescription>
         </div>
         <div>
           <LinkWithTransition
@@ -42,7 +42,7 @@ export function GuideCta() {
               variant: "default",
             })} flex items-center gap-3 group`}
           >
-            Get Started
+            {t("link")}
             <ArrowRight
               size={".85rem"}
               className="transition-transform ease-in-out duration-300 transform translate-x-0 group-hover:translate-x-1"

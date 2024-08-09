@@ -1,3 +1,6 @@
+// Hooks
+import { useTranslations } from "next-intl";
+
 // Components
 import { LinkWithTransition } from "../link-with-transition";
 import { buttonVariants } from "../ui/button";
@@ -10,6 +13,8 @@ import { ArrowRight } from "lucide-react";
 import "@/styles/animations.css";
 
 export function PostsCta() {
+  const t = useTranslations("postsCta");
+
   return (
     <Card className="relative z-20">
       <div className="w-full h-full absolute -z-10 flex flex-row justify-between left-0 py-12 right-0">
@@ -19,11 +24,9 @@ export function PostsCta() {
       <div className="py-12">
         <CardHeader className="gap-4">
           <div className="flex justify-between flex-wrap gap-3">
-            <div>
-              <CardTitle>Do you want to explore more articles?</CardTitle>
-              <CardDescription>
-                Read articles about web development.
-              </CardDescription>
+            <div className="flex flex-col gap-3">
+              <CardTitle>{t("title")}</CardTitle>
+              <CardDescription>{t("description")}</CardDescription>
             </div>
             <div>
               <LinkWithTransition
@@ -32,7 +35,7 @@ export function PostsCta() {
                   variant: "default",
                 })} flex items-center gap-3 group`}
               >
-                Explore
+                {t("link")}
                 <ArrowRight
                   size={".85rem"}
                   className="transition-transform ease-in-out duration-300 transform translate-x-0 group-hover:translate-x-1"

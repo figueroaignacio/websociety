@@ -4,5 +4,10 @@
   },
   "latestGuides": {
     "title": "Latest Guides"
+  },
+  "guidesCta": {
+    "title": "Looking to Enhance Your Skills?",
+    "description": "Explore all the guides and start learning today.",
+    "link": "Get Started"
   }
 }

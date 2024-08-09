@@ -4,5 +4,10 @@
   },
   "latestPosts": {
     "title": "Latest Posts"
+  },
+  "postsCta": {
+    "title": "Do you want to explore more posts?",
+    "description": "Discover all the articles about web development by Frontend Society.",
+    "link": "Explore"
   }
 }
