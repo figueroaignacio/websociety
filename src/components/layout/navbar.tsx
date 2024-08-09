@@ -1,6 +1,7 @@
 "use client";
 
 // Hooks
+import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 
 // Components
@@ -10,11 +11,10 @@ import { Logo } from "../logo";
 import { MobileMenu } from "../mobile-menu";
 import { ToggleTheme } from "../toggle-theme";
 
-// Config
-import { navigationConfig } from "@/config/navigation";
-
 export function Navbar() {
   const pathname = usePathname();
+  const t = useTranslations();
+  const navigation = t.raw("navigation");
 
   return (
     <header className="flex items-center justify-between gap-12 sticky z-20 top-0 left-0 py-2 px-5 md:px-10 lg:px-16 backdrop-blur-sm mx-auto border-b-[.0625rem]">
@@ -22,7 +22,7 @@ export function Navbar() {
         <Logo />
         <nav className="hidden md:block">
           <ul className="flex gap-12 items-center">
-            {navigationConfig.map((navItem: any, index: number) => (
+            {navigation.map((navItem: any, index: number) => (
               <li key={index}>
                 <LinkWithTransition
                   href={navItem.href}
