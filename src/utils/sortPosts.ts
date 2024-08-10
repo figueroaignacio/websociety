@@ -1,4 +1,4 @@
-import { Post } from "##site/content";
+import { Post } from "#site/content";
 
 export function sortPosts(posts: Post[]) {
   return posts.sort((a, b) => {
