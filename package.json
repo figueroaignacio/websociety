@@ -29,6 +29,7 @@
     "nextjs-toploader": "^1.6.12",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "shiki": "^1.12.1",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7"
   },
