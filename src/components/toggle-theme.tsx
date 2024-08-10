@@ -7,10 +7,13 @@ import { useState } from "react";
 
 // Components
 import {
+  DropdownMenuGroup,
   DropdownMenuLabel,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
 } from "@/components/ui/dropdown-menu";
+
+import { Palette } from "lucide-react";
 
 type ThemeOption = "light" | "dark" | "system";
 
@@ -34,7 +37,10 @@ export function ToggleTheme() {
       value={selectedTheme}
       onValueChange={handleThemeChange}
     >
-      <DropdownMenuLabel>{t("selectTheme.title")}</DropdownMenuLabel>
+      <DropdownMenuGroup className="flex items-center">
+        <Palette size={16} className="ml-2 text-muted-foreground" />
+        <DropdownMenuLabel>{t("selectTheme.title")}</DropdownMenuLabel>
+      </DropdownMenuGroup>
       {themes.map((theme: any) => (
         <DropdownMenuRadioItem
           key={theme.value}

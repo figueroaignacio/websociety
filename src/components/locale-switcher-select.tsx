@@ -8,7 +8,6 @@ import { useTransition } from "react";
 import { Select, SelectContent, SelectTrigger } from "@/components/ui/select";
 
 // Icons
-import { Languages } from "lucide-react";
 
 type Props = {
   children: React.ReactNode;
@@ -36,9 +35,8 @@ export function LocaleSwitcherSelect({ children, defaultValue, label }: Props) {
       disabled={isPending}
     >
       <SelectTrigger>
-        <Languages size={16} />
         <p className="sr-only">{label}</p>
-        {defaultValue.toUpperCase()}
+        <div className="text-center w-full">{defaultValue.toUpperCase()}</div>
       </SelectTrigger>
       <SelectContent className="text-end">{children}</SelectContent>
     </Select>

@@ -55,13 +55,13 @@ export function Hero() {
           <div className="flex flex-col text-center">
             <FramerSpan
               variants={FADE_UP_ANIMATION_VARIANTS}
-              className="font-bold text-6xl lg:text-8xl"
+              className="font-bold text-5xl lg:text-8xl"
             >
               {t("subHeading")}
             </FramerSpan>
             <FramerH1
               variants={FADE_UP_ANIMATION_VARIANTS}
-              className="font-bold text-6xl lg:text-8xl"
+              className="font-bold text-5xl lg:text-8xl"
             >
               <span className="gradient-text">{t("title")}</span>
             </FramerH1>
