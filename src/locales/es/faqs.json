@@ -1,0 +1,24 @@
+{
+  "faqs": [
+    {
+      "value": "item-1",
+      "title": "¿De que trata Frontend Society?",
+      "content": "Frontend Society es un sitio para desarrolladores web quiénes quieren mejorar sus habilidades y mantenerse actualizado con las últimas novedades del desarrollo web"
+    },
+    {
+      "value": "item-2",
+      "title": "¿Necesito pagar para acceder al contenido?",
+      "content": "No es necesario pagar para poder acceder al contenido del sitio."
+    },
+    {
+      "value": "item-3",
+      "title": "¿Puedo sugerir temas para futuros artículos?",
+      "content": "Absolutamente sí."
+    },
+    {
+      "value": "item-4",
+      "title": "¿Quién es el desarrollador detrás de Frontend Society?",
+      "content": "Mi nombre es Ignacio Figueroa, soy de Argentina y me dedico al desarrollo web enfócandome específicamente en el desarrollo frontend y me encanta compartir lo que aprendo durante mi aprendizaje"
+    }
+  ]
+}
