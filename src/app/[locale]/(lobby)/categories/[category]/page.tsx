@@ -13,11 +13,11 @@ import {
 import { posts } from "#site/content";
 
 // Utils
+import { capitalize } from "@/utils/capitalize";
+import { getAllCategories } from "@/utils/getAllCategories";
+import { getPostsByCategorySlug } from "@/utils/getPostsByCategorySlug";
+import { sortCategoriesByCount } from "@/utils/sortCategoriesByCount";
 import { slug } from "github-slugger";
-import { capitalize } from "../../../../src/utils/capitalize";
-import { getAllCategories } from "../../../../src/utils/getAllCategories";
-import { getPostsByCategorySlug } from "../../../../src/utils/getPostsByCategorySlug";
-import { sortCategoriesByCount } from "../../../../src/utils/sortCategoriesByCount";
 
 // Metadata
 import { ArrowLeft } from "lucide-react";
