@@ -45,9 +45,9 @@ export function MobileMenu() {
               href="/"
               className={`${
                 pathname === `/${currentLocale}/`
-                  ? "font-semibold text-black dark:text-white border-b-[1px] border-black transition-all duration-500 dark:border-white"
+                  ? "font-semibold text-inherit border-b-[2px] border-muted-foreground"
                   : "text-muted-foreground"
-              } text-muted-foreground hover:text-black dark:hover:text-white`}
+              } text-muted-foreground hover:text-foreground font-medium `}
             >
               <SheetClose>{t("navigationHome.title")}</SheetClose>
             </LinkWithTransition>
@@ -58,9 +58,9 @@ export function MobileMenu() {
                 href={navItem.href}
                 className={`${
                   pathname === `/${currentLocale}${navItem.href}/`
-                    ? "font-semibold text-black dark:text-white border-b-[1px] border-black transition-all duration-500 dark:border-white"
+                    ? "font-semibold text-inherit border-b-[2px] border-muted-foreground"
                     : "text-muted-foreground"
-                } text-muted-foreground hover:text-black dark:hover:text-white`}
+                } text-muted-foreground hover:text-foreground font-medium `}
               >
                 <SheetClose>{navItem.title}</SheetClose>
               </LinkWithTransition>
