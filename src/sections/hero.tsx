@@ -22,6 +22,7 @@ import HeroCodeImageLight from "@/assets/images/home-hero-light.svg";
 import { ArrowDown } from "lucide-react";
 
 // Constants
+import { Badge } from "@/components/ui/badge";
 import { FADE_UP_ANIMATION_VARIANTS } from "@/constants/animations";
 
 export function Hero() {
@@ -53,6 +54,9 @@ export function Hero() {
       <div className="py-28 md:py-44">
         <div className="flex items-center justify-center">
           <div className="flex flex-col text-center">
+            <div>
+              <Badge>Indev Version</Badge>
+            </div>
             <FramerSpan
               variants={FADE_UP_ANIMATION_VARIANTS}
               className="font-bold text-5xl lg:text-8xl"
