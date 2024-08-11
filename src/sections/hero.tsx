@@ -14,6 +14,7 @@ import {
   FramerSpan,
 } from "@/components/framer";
 import { HeroBg } from "@/components/layout/hero-bg";
+import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 
 // Images - Icons
@@ -22,7 +23,6 @@ import HeroCodeImageLight from "@/assets/images/home-hero-light.svg";
 import { ArrowDown } from "lucide-react";
 
 // Constants
-import { Badge } from "@/components/ui/badge";
 import { FADE_UP_ANIMATION_VARIANTS } from "@/constants/animations";
 
 export function Hero() {
