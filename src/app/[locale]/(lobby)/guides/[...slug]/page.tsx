@@ -2,7 +2,7 @@
 import { BackButton } from "@/components/back-button";
 import { MDXContent } from "@/components/mdx/mdx-components";
 
-// Next
+// Utils
 import { notFound } from "next/navigation";
 
 // Content

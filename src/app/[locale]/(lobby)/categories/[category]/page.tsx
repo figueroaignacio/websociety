@@ -8,6 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Link } from "@/navigation";
 
 // Content
 import { posts } from "#site/content";
@@ -22,7 +23,6 @@ import { slug } from "github-slugger";
 // Metadata
 import { ArrowLeft } from "lucide-react";
 import { Metadata } from "next";
-import Link from "next/link";
 
 interface TagPageProps {
   params: {

@@ -1,9 +1,16 @@
+// Components
 import { BackButton } from "@/components/back-button";
 import { FramerDiv, FramerSection } from "@/components/framer/index";
 import { HeroBg } from "@/components/layout/hero-bg";
+
+// Icons
+import { Rocket } from "lucide-react";
+
+// Config - Constants
 import { inDevelopmentSection } from "@/config/errors";
 import { FADE_DOWN_ANIMATION_VARIANTS } from "@/constants/animations";
-import { Rocket } from "lucide-react";
+
+// Metadata
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

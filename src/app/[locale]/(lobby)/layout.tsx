@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/footer";
 import { Gradient } from "@/components/layout/gradient";
 import { Navbar } from "@/components/layout/navbar";
 
-// Global styles
+// Styles
 import "@/styles/globals.css";
 
 interface LobbyLayoutProps {

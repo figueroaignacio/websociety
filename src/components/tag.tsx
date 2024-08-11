@@ -1,9 +1,9 @@
 // Components
 import Link from "next/link";
-import { badgeVariants } from "./ui/badge";
 
 // Utils
 import { slug } from "github-slugger";
+import { badgeVariants } from "./ui/badge";
 
 interface TagProps {
   tag: string;

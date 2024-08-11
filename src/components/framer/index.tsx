@@ -1,7 +1,10 @@
 "use client";
 
-import { LazyMotion, domAnimation, m } from "framer-motion";
+// React
 import React from "react";
+
+// Framer Motion
+import { LazyMotion, domAnimation, m } from "framer-motion";
 
 export const FramerDiv = m.div;
 export const FramerSection = m.section;

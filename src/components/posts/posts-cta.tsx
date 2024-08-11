@@ -9,9 +9,6 @@ import { Card, CardDescription, CardHeader, CardTitle } from "../ui/card";
 // Icons - Images
 import { ArrowRight } from "lucide-react";
 
-// Animations
-import "@/styles/animations.css";
-
 export function PostsCta() {
   const t = useTranslations("postsCta");
 

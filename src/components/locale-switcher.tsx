@@ -1,7 +1,12 @@
-import { SelectItem } from "@/components/ui/select";
-import { locales } from "@/config";
+// Hooks
 import { useLocale, useTranslations } from "next-intl";
+
+// Components
+import { SelectItem } from "@/components/ui/select";
 import { LocaleSwitcherSelect } from "./locale-switcher-select";
+
+// Config
+import { locales } from "@/config";
 
 export function LocaleSwitcher() {
   const t = useTranslations("localeSwitcher");

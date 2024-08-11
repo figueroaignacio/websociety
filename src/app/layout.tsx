@@ -4,7 +4,7 @@ import NextTopLoader from "nextjs-toploader";
 // Font
 import "@fontsource-variable/onest";
 
-// Global styles
+// Styles
 import "@/styles/globals.css";
 
 // Config

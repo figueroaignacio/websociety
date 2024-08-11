@@ -1,6 +1,9 @@
 "use client";
 
+// Hooks
 import { usePathname, useSearchParams } from "next/navigation";
+
+// Componentes
 import {
   Pagination,
   PaginationContent,

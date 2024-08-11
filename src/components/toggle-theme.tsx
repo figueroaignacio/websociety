@@ -13,6 +13,7 @@ import {
   DropdownMenuRadioItem,
 } from "@/components/ui/dropdown-menu";
 
+// Icons
 import { Palette } from "lucide-react";
 
 type ThemeOption = "light" | "dark" | "system";

@@ -6,7 +6,7 @@ import { Separator } from "@/components/ui/separator";
 // Content
 import { posts } from "#site/content";
 
-// next
+// Utils
 import { notFound } from "next/navigation";
 
 // Styles

@@ -7,8 +7,6 @@ import { useTransition } from "react";
 // Components
 import { Select, SelectContent, SelectTrigger } from "@/components/ui/select";
 
-// Icons
-
 type Props = {
   children: React.ReactNode;
   defaultValue: Locale;

@@ -16,9 +16,6 @@ import GuidesCtaDark from "@/assets/images/guides-cta-code-dark.svg";
 import GuidesCtaLight from "@/assets/images/guides-cta-code-light.svg";
 import { ArrowRight } from "lucide-react";
 
-// Animations
-import "@/styles/animations.css";
-
 export function GuideCta() {
   const t = useTranslations("guidesCta");
   const { theme, resolvedTheme } = useTheme();

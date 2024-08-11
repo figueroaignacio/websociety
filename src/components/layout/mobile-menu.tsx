@@ -19,8 +19,6 @@ import { LinkWithTransition } from "../link-with-transition";
 // Icons
 import { Menu } from "lucide-react";
 
-// Constants
-
 // Utils
 import { getCurrentLocale } from "@/utils/getCurrentLocale";
 
