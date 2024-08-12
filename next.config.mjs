@@ -13,7 +13,10 @@ if (!process.env.VELITE_STARTED && (isDev || isBuild)) {
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
-  trailingSlash: true,
+  experimental: {
+    runtime: "edge", // Si estás usando el runtime de Edge
+  },
+  trailingSlash: false,
 };
 
 export default withNextIntl(nextConfig);
