@@ -54,9 +54,9 @@ export function Hero() {
       <div className="py-28 md:py-44">
         <div className="flex items-center justify-center">
           <div className="flex flex-col text-center">
-            <div>
+            <FramerDiv variants={FADE_UP_ANIMATION_VARIANTS}>
               <Badge>Indev Version</Badge>
-            </div>
+            </FramerDiv>
             <FramerSpan
               variants={FADE_UP_ANIMATION_VARIANTS}
               className="font-bold text-5xl lg:text-8xl"
