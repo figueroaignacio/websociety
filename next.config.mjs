@@ -14,7 +14,7 @@ if (!process.env.VELITE_STARTED && (isDev || isBuild)) {
  */
 const nextConfig = {
   experimental: {
-    runtime: "edge", // Si estás usando el runtime de Edge
+    runtime: "edge",
   },
   trailingSlash: false,
 };
