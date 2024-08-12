@@ -6,8 +6,14 @@ export default createMiddleware({
   locales,
   localePrefix,
   pathnames,
+  localeDetection: true,
 });
 
 export const config = {
-  matcher: ["/", "/(en|es)/:path*", "/((?!_next|_vercel|.*\\..*).*)"],
+  matcher: [
+    "/",
+    "/(en|es)/:path*",
+    "/(en|es)/posts/:slug*",
+    "/((?!_next|_vercel|.*\\..*).*)",
+  ],
 };
