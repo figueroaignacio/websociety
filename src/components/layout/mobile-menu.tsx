@@ -42,7 +42,7 @@ export function MobileMenu() {
             <LinkWithTransition
               href="/"
               className={`${
-                pathname === `/${currentLocale}/`
+                pathname === `/${currentLocale}`
                   ? "font-semibold text-inherit border-b-[2px] border-muted-foreground"
                   : "text-muted-foreground"
               } text-muted-foreground hover:text-foreground font-medium `}
@@ -55,7 +55,7 @@ export function MobileMenu() {
               <LinkWithTransition
                 href={navItem.href}
                 className={`${
-                  pathname === `/${currentLocale}${navItem.href}/`
+                  pathname === `/${currentLocale}${navItem.href}`
                     ? "font-semibold text-inherit border-b-[2px] border-muted-foreground"
                     : "text-muted-foreground"
                 } text-muted-foreground hover:text-foreground font-medium `}
