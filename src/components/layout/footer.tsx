@@ -2,7 +2,7 @@
 import { LinkWithTransition } from "../link-with-transition";
 
 // Icons
-import { Copyright, Github, Mail, RssIcon } from "lucide-react";
+import { Copyright, Github, Mail } from "lucide-react";
 
 // Constants
 import { footer } from "@/constants/footer";
@@ -45,9 +45,9 @@ export function Footer() {
           <span className="text-muted-foreground">{footer.copyright}</span>
         </div>
         <div className="flex justify-center my-3 gap-3">
-          <a href="/sitemap.xml" target="_blank">
+          {/* <a href="/sitemap.xml" target="_blank">
             <RssIcon className="text-muted-foreground" />
-          </a>
+          </a> */}
           <a
             href="https://github.com/figueroaignacio/frontendsociety"
             target="_blank"
