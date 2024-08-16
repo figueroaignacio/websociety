@@ -36,33 +36,38 @@ async function getPostFromParams(params: PostPageProps["params"]) {
 export async function generateMetadata({
   params,
 }: PostPageProps): Promise<Metadata> {
-  const post = await getPostFromParams(params);
+  try {
+    const post = await getPostFromParams(params);
 
-  if (!post) {
-    return {};
-  }
+    if (!post) {
+      return {};
+    }
 
-  const ogSearchParams = new URLSearchParams();
-  ogSearchParams.set("title", post.title);
+    const ogSearchParams = new URLSearchParams();
+    ogSearchParams.set("title", post.title);
 
-  return {
-    title: post.title,
-    description: post.description,
-    openGraph: {
+    return {
       title: post.title,
       description: post.description,
-      type: "article",
-      url: post.slug,
-      images: [
-        {
-          url: `/api/og?${ogSearchParams.toString()}`,
-          width: 1200,
-          height: 630,
-          alt: post.title,
-        },
-      ],
-    },
-  };
+      openGraph: {
+        title: post.title,
+        description: post.description,
+        type: "article",
+        url: post.slug,
+        images: [
+          {
+            url: `/api/og?${ogSearchParams.toString()}`,
+            width: 1200,
+            height: 630,
+            alt: post.title,
+          },
+        ],
+      },
+    };
+  } catch (error) {
+    console.error("Error generating metadata:", error);
+    return {};
+  }
 }
 
 export async function generateStaticParams(): Promise<
