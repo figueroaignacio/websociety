@@ -1,5 +1,5 @@
 // Hooks
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 // Components
 import { GuideCard } from "@/components/guides/guide-card";
@@ -12,7 +12,10 @@ import { sortGuides } from "@/utils/sortGuides";
 
 export function LatestGuides() {
   const t = useTranslations("latestGuides");
-  const latestGuides = sortGuides(guides).slice(0, 4);
+  const locale = useLocale();
+  const latestGuides = sortGuides(guides)
+    .filter((guide) => guide.locale === locale)
+    .slice(0, 4);
 
   return (
     <section className="py-8">

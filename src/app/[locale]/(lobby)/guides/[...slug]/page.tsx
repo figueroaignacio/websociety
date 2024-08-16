@@ -52,7 +52,7 @@ export default async function GuidePage({ params }: PostPageProps) {
   }
 
   return (
-    <article className="prose dark:prose-invert mt-5 max-w-5xl mx-auto py-8">
+    <article className="prose dark:prose-invert mt-5 max-w-3xl mx-auto py-8">
       <div className="pb-7">
         <BackButton title="Go back" />
       </div>

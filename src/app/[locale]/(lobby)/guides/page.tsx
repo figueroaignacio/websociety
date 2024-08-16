@@ -1,5 +1,5 @@
 // Hooks
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 // Components
 import { FramerH1, FramerLi, FramerSection } from "@/components/framer";
@@ -25,6 +25,9 @@ export const metadata: Metadata = {
 
 export default function LearnPage() {
   const t = useTranslations("guides");
+  const locale = useLocale();
+
+  const filteredGuides = guides.filter((guide) => guide.locale === locale);
 
   return (
     <FramerSection
@@ -47,19 +50,19 @@ export default function LearnPage() {
       >
         {t("title")}
       </FramerH1>
-      {guides.length > 0 ? (
+      {filteredGuides.length > 0 ? (
         <ul className="grid gap-4 grid-cols-1 md:grid-cols-2">
-          {guides.map((path) => {
+          {filteredGuides.map((guide) => {
             return (
               <FramerLi
                 variants={FADE_LEFT_ANIMATION_VARIANTS}
                 className="h-full"
-                key={path.slug}
+                key={guide.slug}
               >
                 <GuideCard
-                  slug={path.slug}
-                  title={path.title}
-                  description={path.description ?? ""}
+                  slug={guide.slug}
+                  title={guide.title}
+                  description={guide.description ?? ""}
                 />
               </FramerLi>
             );

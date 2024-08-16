@@ -38,6 +38,7 @@ const guides = defineCollection({
       description: s.string().max(999).optional(),
       published: s.boolean().default(true),
       date: s.isodate(),
+      locale: s.string(),
       body: s.mdx(),
     })
     .transform(computedFields),
