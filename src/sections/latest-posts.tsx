@@ -1,7 +1,7 @@
 "use client";
 
 // Hooks
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 // Components
 import { PostCard } from "@/components/posts/post-card";
@@ -17,7 +17,10 @@ import "@/styles/animations.css";
 
 export function LatestPosts() {
   const t = useTranslations("latestPosts");
-  const latestPosts = sortPosts(posts).slice(0, 4);
+  const locale = useLocale();
+  const latestPosts = sortPosts(posts)
+    .filter((post) => post.locale === locale)
+    .slice(0, 4);
 
   return (
     <section className="py-10 flex flex-col gap-7">
@@ -41,7 +44,7 @@ export function LatestPosts() {
           </ul>
         ) : (
           <p>Nothing to see yet</p>
-        )}{" "}
+        )}
       </div>
     </section>
   );

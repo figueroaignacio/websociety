@@ -47,7 +47,7 @@ export function PostCard({
         <CardTitle className="text-pretty text-lg line-clamp-1">
           {title}
         </CardTitle>
-        <CardDescription className="leading-10 text-pretty text-sm">
+        <CardDescription className="leading-10 text-pretty text-sm line-clamp-2">
           {description}
         </CardDescription>
       </CardContent>

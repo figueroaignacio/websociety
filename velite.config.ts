@@ -20,6 +20,7 @@ const posts = defineCollection({
       title: s.string().max(99),
       description: s.string().max(999).optional(),
       date: s.isodate(),
+      locale: s.string(),
       published: s.boolean().default(true),
       categories: s.array(s.string()).optional(),
       body: s.mdx(),

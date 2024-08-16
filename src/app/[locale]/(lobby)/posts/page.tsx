@@ -1,5 +1,5 @@
 // Hooks
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 // Components
 import {
@@ -43,9 +43,13 @@ interface BlogPageProps {
 
 export default function PostsPage({ searchParams }: BlogPageProps) {
   const t = useTranslations("posts");
+  const locale = useLocale();
 
   const currentPage = Number(searchParams?.page) || 1;
-  const sortedPosts = sortPosts(posts.filter((post) => post.published));
+  const filteredPosts = posts.filter(
+    (post) => post.published && post.locale === locale
+  );
+  const sortedPosts = sortPosts(filteredPosts);
   const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
 
   const displayPosts = sortedPosts.slice(
@@ -53,7 +57,7 @@ export default function PostsPage({ searchParams }: BlogPageProps) {
     POSTS_PER_PAGE * currentPage
   );
 
-  const tags = getAllCategories(posts);
+  const tags = getAllCategories(filteredPosts);
   const sortedTags = sortCategoriesByCount(tags);
 
   return (
