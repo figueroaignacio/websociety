@@ -2,16 +2,9 @@
 import { useLocale, useTranslations } from "next-intl";
 
 // Components
-import {
-  FramerDiv,
-  FramerH1,
-  FramerLi,
-  FramerSection,
-} from "@/components/framer";
+import { FramerH1, FramerLi, FramerSection } from "@/components/framer";
 import { PostCard } from "@/components/posts/post-card";
 import { QueryPagination } from "@/components/query-pagination";
-import { Tag } from "@/components/tag";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 // Content
 import { posts } from "#site/content";
@@ -82,18 +75,6 @@ export default function PostsPage({ searchParams }: BlogPageProps) {
           >
             {t("title")}
           </FramerH1>
-          <FramerDiv variants={FADE_DOWN_ANIMATION_VARIANTS} className="mt-10">
-            <Card>
-              <CardHeader>
-                <CardTitle>Categories</CardTitle>
-              </CardHeader>
-              <CardContent className="flex flex-wrap gap-2">
-                {sortedTags.map((tag) => (
-                  <Tag tag={tag} key={tag} count={tags[tag]} />
-                ))}
-              </CardContent>
-            </Card>
-          </FramerDiv>
         </div>
         <div>
           {displayPosts.length > 0 ? (

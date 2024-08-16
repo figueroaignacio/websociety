@@ -15,23 +15,6 @@ export default function LoadingPosts() {
       <div className="flex flex-col gap-12 mt-24 max-w-5xl mx-auto">
         <div className="flex flex-col gap-3">
           <Skeleton className="w-52 lg:w-96 h-6 mx-auto" />
-          <div className="mt-10">
-            <Card className="border-none">
-              <CardHeader>
-                <CardTitle>
-                  <Skeleton className="w-1/3 h-4" />
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="flex flex-wrap gap-2">
-                {Array.from({ length: 21 }).map((_, index) => (
-                  <Skeleton
-                    className={`h-6 ${index % 3 === 1 ? "w-20" : "w-12"}`}
-                    key={index}
-                  />
-                ))}
-              </CardContent>
-            </Card>
-          </div>
         </div>
         <div>
           <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2">
