@@ -23,9 +23,14 @@ interface PostPageProps {
 }
 
 async function getPostFromParams(params: PostPageProps["params"]) {
-  const slug = params?.slug.join("/");
-  const post = posts.find((post) => post.slugAsParams === slug);
-  return post;
+  try {
+    const slug = params?.slug.join("/");
+    const post = posts.find((post) => post.slugAsParams === slug);
+    return post;
+  } catch (error) {
+    console.error("Error getting post from params:", error);
+    return null; // Or handle the error as needed
+  }
 }
 
 export async function generateMetadata({
