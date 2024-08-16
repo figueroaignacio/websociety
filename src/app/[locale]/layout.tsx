@@ -1,6 +1,3 @@
-// next-intl
-import { unstable_setRequestLocale } from "next-intl/server";
-
 // Providers
 import { ThemeProvider } from "@/providers/theme-provider";
 import { NextIntlClientProvider } from "next-intl";
@@ -21,7 +18,6 @@ export default async function LocaleLayout({
   params: { locale: string };
 }) {
   const messages = await getMessages();
-  unstable_setRequestLocale(locale);
 
   return (
     <html lang={locale}>
