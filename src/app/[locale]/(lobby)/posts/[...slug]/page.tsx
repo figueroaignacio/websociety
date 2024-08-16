@@ -29,7 +29,7 @@ async function getPostFromParams(params: PostPageProps["params"]) {
     return post;
   } catch (error) {
     console.error("Error getting post from params:", error);
-    return null; // Or handle the error as needed
+    return null;
   }
 }
 
@@ -54,14 +54,14 @@ export async function generateMetadata({
         description: post.description,
         type: "article",
         url: post.slug,
-        images: [
-          {
-            url: `/api/og?${ogSearchParams.toString()}`,
-            width: 1200,
-            height: 630,
-            alt: post.title,
-          },
-        ],
+        // images: [
+        //   {
+        //     url: `/api/og?${ogSearchParams.toString()}`,
+        //     width: 1200,
+        //     height: 630,
+        //     alt: post.title,
+        //   },
+        // ],
       },
     };
   } catch (error) {
