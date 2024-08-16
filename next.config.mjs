@@ -14,6 +14,19 @@ if (!process.env.VELITE_STARTED && (isDev || isBuild)) {
  */
 const nextConfig = {
   trailingSlash: false,
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          {
+            key: "Permissions-Policy",
+            value: "join-ad-interest-group=()",
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default withNextIntl(nextConfig);
