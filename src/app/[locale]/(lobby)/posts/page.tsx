@@ -1,3 +1,5 @@
+import { unstable_setRequestLocale } from "next-intl/server";
+
 // Hooks
 import { useLocale, useTranslations } from "next-intl";
 
@@ -28,19 +30,26 @@ export const metadata: Metadata = {
 
 const POSTS_PER_PAGE = 4;
 
-interface BlogPageProps {
+interface PostsPageProps {
   searchParams: {
     page?: string;
   };
+  params: {
+    locale: string;
+  };
 }
 
-export default function PostsPage({ searchParams }: BlogPageProps) {
+export default function PostsPage({
+  searchParams,
+  params: { locale },
+}: PostsPageProps) {
+  unstable_setRequestLocale(locale);
   const t = useTranslations("posts");
-  const locale = useLocale();
+  const lang = useLocale();
 
   const currentPage = Number(searchParams?.page) || 1;
   const filteredPosts = posts.filter(
-    (post) => post.published && post.locale === locale
+    (post) => post.published && post.locale === lang
   );
   const sortedPosts = sortPosts(filteredPosts);
   const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);

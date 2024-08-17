@@ -1,3 +1,5 @@
+import { unstable_setRequestLocale } from "next-intl/server";
+
 // Sections
 import { FAQS } from "@/sections/faqs";
 import { Features } from "@/sections/features";
@@ -9,7 +11,13 @@ import { LatestPosts } from "@/sections/latest-posts";
 import { GuideCta } from "@/components/guides/guides-cta";
 import { PostsCta } from "@/components/posts/posts-cta";
 
-export default function HomePage() {
+interface HomePageProps {
+  params: { locale: string };
+}
+
+export default function HomePage({ params: { locale } }: HomePageProps) {
+  unstable_setRequestLocale(locale);
+
   return (
     <section>
       <Hero />

@@ -16,7 +16,7 @@ if (!process.env.VELITE_STARTED && (isDev || isBuild)) {
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
-  trailingSlash: true,
+  trailingSlash: false,
 };
 
 export default withNextIntl(nextConfig);

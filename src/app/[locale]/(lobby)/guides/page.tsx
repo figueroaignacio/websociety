@@ -1,3 +1,5 @@
+import { unstable_setRequestLocale } from "next-intl/server";
+
 // Hooks
 import { useLocale, useTranslations } from "next-intl";
 
@@ -23,11 +25,16 @@ export const metadata: Metadata = {
   description: guidesConfig.description,
 };
 
-export default function LearnPage() {
-  const t = useTranslations("guides");
-  const locale = useLocale();
+interface LearnPageProps {
+  params: { locale: string };
+}
 
-  const filteredGuides = guides.filter((guide) => guide.locale === locale);
+export default function LearnPage({ params: { locale } }: LearnPageProps) {
+  unstable_setRequestLocale(locale);
+  const t = useTranslations("guides");
+  const lang = useLocale();
+
+  const filteredGuides = guides.filter((guide) => guide.locale === lang);
 
   return (
     <FramerSection
