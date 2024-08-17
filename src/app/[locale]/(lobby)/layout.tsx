@@ -28,11 +28,13 @@ export default async function LobbyLayout({
     <html suppressHydrationWarning className="scroll-pt-[3.5rem]">
       <body>
         <Gradient />
-        <Navbar />
-        <main className="container">
-          <FramerWrapper>{children}</FramerWrapper>
-        </main>
-        <Footer />
+        <div className="min-h-[100dvh] grid grid-rows-[auto_1fr_auto] mx-auto">
+          <Navbar />
+          <main className="container">
+            <FramerWrapper>{children}</FramerWrapper>
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
