@@ -24,6 +24,9 @@ export async function generateMetadata({ params: { locale } }: MetadataParams) {
   const t = await getTranslations({ locale, namespace: "siteConfig" });
 
   return {
+    metadataBase: new URL(
+      process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000"
+    ),
     title: {
       default: t("title"),
       template: `%s - ${t("title")} `,
