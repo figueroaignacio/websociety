@@ -1,5 +1,3 @@
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
-
 // Hooks
 import { useLocale, useTranslations } from "next-intl";
 
@@ -15,6 +13,7 @@ import { posts } from "#site/content";
 import { getAllCategories } from "@/utils/getAllCategories";
 import { sortCategoriesByCount } from "@/utils/sortCategoriesByCount";
 import { sortPosts } from "@/utils/sortPosts";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 // Constants / Config
 import { FADE_DOWN_ANIMATION_VARIANTS } from "@/constants/animations";
