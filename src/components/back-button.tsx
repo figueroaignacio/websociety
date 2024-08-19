@@ -10,6 +10,7 @@ import { ArrowLeft } from "lucide-react";
 export function BackButton() {
   const router = useRouter();
   const t = useTranslations();
+
   return (
     <button
       className="items-center flex gap-2 relative group text-primary underline-offset-4 hover:underline"
