@@ -25,18 +25,18 @@ export async function generateMetadata({ params: { locale } }: MetadataParams) {
 
   return {
     title: {
-      default: `${t("title")}`,
+      default: t("title"),
       template: `%s - ${t("title")} `,
     },
-    description: `${t("description")}`,
+    description: t("description"),
     authors: [
       {
-        name: `${t("author.name")}`,
-        url: `${t("author.url")}`,
+        name: t("author.name"),
+        url: "author.url",
       },
     ],
-    creator: `${t("creator")}`,
-    keywords: `${t("keywords")}`,
+    creator: t("creator"),
+    keywords: t("keywords"),
   };
 }
 
