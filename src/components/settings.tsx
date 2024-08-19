@@ -13,10 +13,18 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { LocaleSwitcher } from "./locale-switcher";
 import { ToggleTheme } from "./toggle-theme";
-import { Button } from "./ui/button";
+import { Button, buttonVariants } from "./ui/button";
 
 // Icons
-import { Languages, Settings2, SettingsIcon } from "lucide-react";
+import {
+  Bug,
+  GithubIcon,
+  HelpCircle,
+  Languages,
+  Mail,
+  Settings2,
+  SettingsIcon,
+} from "lucide-react";
 
 export function Settings() {
   const t = useTranslations();
@@ -42,6 +50,47 @@ export function Settings() {
         </DropdownMenuGroup>
         <DropdownMenuItem>
           <LocaleSwitcher />
+        </DropdownMenuItem>
+        <DropdownMenuSeparator />
+        <DropdownMenuGroup className="flex items-center">
+          <HelpCircle size={16} className="ml-2 text-muted-foreground" />
+          <DropdownMenuLabel>{t("support.title")}</DropdownMenuLabel>
+        </DropdownMenuGroup>
+        <DropdownMenuItem>
+          <a
+            href="https://github.com/figueroaignacio/frontendsociety/issues"
+            className={`${buttonVariants({
+              variant: "outline",
+            })} flex justify-between`}
+            target="_blank"
+          >
+            {t("support.reportBug.title")}
+            <Bug size={16} />
+          </a>
+        </DropdownMenuItem>
+        <DropdownMenuItem>
+          <a
+            href="mailto:ignaciofigueroadev@gmail.com"
+            className={`${buttonVariants({
+              variant: "outline",
+            })} flex justify-between`}
+            target="_blank"
+          >
+            {t("support.developerContact.title")}
+            <Mail size={16} />
+          </a>
+        </DropdownMenuItem>
+        <DropdownMenuItem>
+          <a
+            href="https://github.com/figueroaignacio/frontendsociety"
+            className={`${buttonVariants({
+              variant: "outline",
+            })} flex justify-between`}
+            target="_blank"
+          >
+            {t("support.sourceCode.title")}
+            <GithubIcon size={16} />
+          </a>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

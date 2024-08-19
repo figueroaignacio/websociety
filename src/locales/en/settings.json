@@ -18,5 +18,17 @@
       "label": "System",
       "value": "system"
     }
-  ]
+  ],
+  "support": {
+    "title": "Support",
+    "reportBug": {
+      "title": "Report Bug"
+    },
+    "developerContact": {
+      "title": "Developer Contact"
+    },
+    "sourceCode": {
+      "title": "Source Code"
+    }
+  }
 }
