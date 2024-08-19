@@ -6,7 +6,7 @@ export const siteConfig = Object.freeze({
   },
   creator: "Ignacio Figueroa",
   description:
-    "Welcome where tech meets curiosity. Quick reads on web development, fun facts, history, tips, and more.",
+    "Welcome where tech meets curiosity. Quick reads on web development, follow complete and cool guides about web technologies, and participate on challenges.",
   ogImage: "https://frontendsociety.netlify.app/og-home.png",
   url: "https://frontendsociety.netlify.app",
   keywords: [

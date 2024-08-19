@@ -1,12 +1,15 @@
 import { unstable_setRequestLocale } from "next-intl/server";
 
+// Components
+import NextTopLoader from "nextjs-toploader";
+
 // Providers
 import { ThemeProvider } from "@/providers/theme-provider";
 import { NextIntlClientProvider } from "next-intl";
 
 // Utils
 import { locales } from "@/config";
-import { getMessages } from "next-intl/server";
+import { getMessages, getTranslations } from "next-intl/server";
 
 // Font
 import "@fontsource-variable/onest";
@@ -15,27 +18,27 @@ import "@fontsource-variable/onest";
 import "@/styles/globals.css";
 
 // Metadata
-import { siteConfig } from "@/config/site";
-import { Metadata } from "next";
-import NextTopLoader from "nextjs-toploader";
+import { MetadataParams } from "@/types/types";
 
-export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? siteConfig.url),
-  title: {
-    default: siteConfig.title,
-    template: `%s - ${siteConfig.title} `,
-  },
-  authors: [
-    {
-      name: siteConfig.author.name,
-      url: siteConfig.author.url,
+export async function generateMetadata({ params: { locale } }: MetadataParams) {
+  const t = await getTranslations({ locale, namespace: "siteConfig" });
+
+  return {
+    title: {
+      default: `${t("title")}`,
+      template: `%s - ${t("title")} `,
     },
-  ],
-  creator: siteConfig.creator,
-  description: siteConfig.description,
-  keywords: siteConfig.keywords,
-  icons: [{ rel: "icon", url: "/icon.tsx" }],
-};
+    description: `${t("description")}`,
+    authors: [
+      {
+        name: `${t("author.name")}`,
+        url: `${t("author.url")}`,
+      },
+    ],
+    creator: `${t("creator")}`,
+    keywords: `${t("keywords")}`,
+  };
+}
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));

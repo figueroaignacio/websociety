@@ -1,0 +1,20 @@
+{
+  "siteConfig": {
+    "title": "Frontend Society",
+    "description": "Welcome where tech meets curiosity. Quick reads on web development, follow complete and cool guides about web technologies, and participate on challenges.",
+    "creator": "Ignacio Figueroa | Web developer",
+    "author": {
+      "name": "Ignacio Figueroa",
+      "url": "https://github.com/figueroaignacio"
+    },
+    "url": "https://frontendsociety.netlify.app/en",
+    "keywords": [
+      "Blog",
+      "Developers",
+      "Devs",
+      "Programming",
+      "Coding",
+      "Web Development"
+    ]
+  }
+}

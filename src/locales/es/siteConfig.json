@@ -1,0 +1,20 @@
+{
+  "siteConfig": {
+    "title": "Frontend Society",
+    "description": "Bienvenido al lugar donde la tecnología se encuentra con la curiosidad. Lecturas rápidas sobre desarrollo web, sigue guías completas y geniales sobre tecnologías web, y participa en desafíos.",
+    "creator": "Ignacio Figueroa | Desarrollador web",
+    "author": {
+      "name": "Ignacio Figueroa",
+      "url": "https://github.com/figueroaignacio"
+    },
+    "url": "https://frontendsociety.netlify.app/en",
+    "keywords": [
+      "Blog",
+      "Desarrolladores",
+      "Devs",
+      "Programación",
+      "Codificación",
+      "Desarrollo Web"
+    ]
+  }
+}

@@ -16,6 +16,7 @@ export default getRequestConfig(async ({ locale }) => {
     "settings",
     "faqs",
     "footer",
+    "siteConfig",
   ];
   const messages = {};
 
