@@ -54,7 +54,7 @@ export default async function GuidePage({ params }: PostPageProps) {
   return (
     <article className="prose dark:prose-invert mt-5 max-w-3xl mx-auto py-8">
       <div className="pb-7">
-        <BackButton title="Go back" />
+        <BackButton />
       </div>
       <h1>{guides.title}</h1>
       <p className="m-0">

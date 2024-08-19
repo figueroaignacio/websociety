@@ -1,17 +1,15 @@
 "use client";
 
-// Next
+// Hooks
+import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 
 // Icons
 import { ArrowLeft } from "lucide-react";
 
-interface GoBackProps {
-  title: string;
-}
-
-export function BackButton({ title }: GoBackProps) {
+export function BackButton() {
   const router = useRouter();
+  const t = useTranslations();
   return (
     <button
       className="items-center flex gap-2 relative group text-primary underline-offset-4 hover:underline"
@@ -21,7 +19,7 @@ export function BackButton({ title }: GoBackProps) {
         className="transition-transform ease-in-out duration-300 transform translate-x-0 group-hover:-translate-x-1"
         size=".85rem"
       />
-      <p>{title}</p>
+      <span>{t("backButton.label")}</span>
     </button>
   );
 }

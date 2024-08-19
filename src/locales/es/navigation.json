@@ -15,5 +15,8 @@
   ],
   "navigationHome": {
     "title": "Inicio"
+  },
+  "backButton": {
+    "label": "Volver"
   }
 }
