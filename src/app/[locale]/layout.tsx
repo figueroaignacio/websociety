@@ -35,7 +35,7 @@ export async function generateMetadata({ params: { locale } }: MetadataParams) {
     authors: [
       {
         name: t("author.name"),
-        url: "author.url",
+        url: t("author.url"),
       },
     ],
     creator: t("creator"),
