@@ -1,13 +1,14 @@
+import { useTranslations } from "next-intl";
+
 // Next
 import { ImageResponse } from "next/og";
 import { NextRequest } from "next/server";
 
-// Config
-import { siteConfig } from "@/config/site";
-
 export const runtime = "edge";
 
 export async function GET(req: NextRequest) {
+  const t = useTranslations();
+
   try {
     const { searchParams } = req.nextUrl;
     const title = searchParams.get("title");
@@ -54,7 +55,7 @@ export async function GET(req: NextRequest) {
               />
               <circle cx="27.5" cy="24.5" r="1.5" fill="#F5F5F5" />
             </svg>
-            <p tw="ml-2 font-bold text-2xl text-[#f5f5f5]">Frontend Society</p>
+            <p tw="ml-2 font-bold text-2xl text-[#f5f5f5]">{title}</p>
           </div>
           <div tw="flex flex-col flex-1 py-10">
             <div tw="flex text-xl uppercase font-bold tracking-tight text-[#f5f5f5]">
@@ -64,9 +65,11 @@ export async function GET(req: NextRequest) {
             <div tw="text-[#f5f5f5]">{description}</div>
           </div>
           <div tw="flex items-center w-full justify-between">
-            <div tw="flex text-xl text-[#f5f5f5]">{siteConfig.url}</div>
+            <div tw="flex text-xl text-[#f5f5f5]">{t("siteConfig.url")}</div>
             <div tw="flex items-center text-xl">
-              <div tw="flex ml-2">{siteConfig.links.github}</div>
+              <div tw="flex ml-2">
+                https://github.com/figueroaignacio/frontendsociety
+              </div>
             </div>
           </div>
         </div>
