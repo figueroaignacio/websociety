@@ -13,7 +13,7 @@ import {
   FADE_DOWN_ANIMATION_VARIANTS,
   FADE_LEFT_ANIMATION_VARIANTS,
 } from "@/constants/animations";
-import { guides as g } from "@/constants/guides";
+// import { guides as g } from "@/constants/guides";
 
 // Utils
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
@@ -89,7 +89,7 @@ export default function LearnPage({ params: { locale } }: LearnPageProps) {
         </ul>
       ) : (
         <section className="py-36 text-center">
-          <p className="text-xl">{g.fallback}</p>
+          <p className="text-xl">xd</p>
         </section>
       )}
     </FramerSection>

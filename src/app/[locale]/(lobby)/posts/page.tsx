@@ -18,7 +18,6 @@ import { sortPosts } from "@/utils/sortPosts";
 
 // Constants / Config
 import { FADE_DOWN_ANIMATION_VARIANTS } from "@/constants/animations";
-import { allPosts } from "@/constants/posts";
 
 // Metadata
 import { MetadataParams } from "@/types/types";
@@ -118,7 +117,7 @@ export default function PostsPage({
             </ul>
           ) : (
             <section className="py-36 text-center">
-              <p className="text-xl">{allPosts.fallback}</p>
+              <p className="text-xl">xd</p>
             </section>
           )}
         </div>
