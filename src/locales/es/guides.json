@@ -1,6 +1,7 @@
 {
   "guides": {
-    "title": "Guías de Frontend Society"
+    "title": "Guías de Frontend Society",
+    "button": "Empezar"
   },
   "latestGuides": {
     "title": "Guías Recientes"

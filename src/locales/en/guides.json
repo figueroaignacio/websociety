@@ -1,6 +1,7 @@
 {
   "guides": {
-    "title": "Guides by Frontend Society"
+    "title": "Guides by Frontend Society",
+    "button": "Learn More"
   },
   "latestGuides": {
     "title": "Latest Guides"

@@ -1,3 +1,6 @@
+// Hooks
+import { useTranslations } from "next-intl";
+
 // Components
 import { LinkWithTransition } from "../link-with-transition";
 import { buttonVariants } from "../ui/button";
@@ -20,6 +23,8 @@ interface GuideCardProps {
 }
 
 export function GuideCard({ description, title, slug }: GuideCardProps) {
+  const t = useTranslations("guides");
+
   return (
     <Card>
       <CardHeader>
@@ -33,7 +38,7 @@ export function GuideCard({ description, title, slug }: GuideCardProps) {
           href={"/" + slug}
           className={`w-full ${buttonVariants({ variant: "default" })}`}
         >
-          Learn more
+          {t("button")}
           <ArrowRight
             size={16}
             className="transition-transform ease-in-out duration-300 transform translate-x-0 group-hover:translate-x-1"
