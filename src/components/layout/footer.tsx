@@ -7,8 +7,6 @@ import { LinkWithTransition } from "../link-with-transition";
 // Icons
 import { Copyright } from "lucide-react";
 
-// Config
-
 export function Footer() {
   const t = useTranslations();
   const navigation = t.raw("navigation");
