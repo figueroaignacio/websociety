@@ -1,3 +1,6 @@
+// Hooks
+import { useLocale, useTranslations } from "next-intl";
+
 // Components
 import {
   Card,
@@ -32,6 +35,9 @@ export function PostCard({
   slug,
   categories,
 }: ArticleCardProps) {
+  const t = useTranslations("posts");
+  const locale = useLocale();
+
   return (
     <Card className="shadow-sm">
       <CardHeader className="flex flex-row justify-between items-center relative">
@@ -39,7 +45,7 @@ export function PostCard({
           <dt className="sr-only">Published at</dt>
           <dd className="flex items-center gap-2">
             <Calendar size={12} />
-            <time dateTime={date}>{formatDate(date)}</time>
+            <time dateTime={date}>{formatDate(date, locale)}</time>
           </dd>
         </dl>
       </CardHeader>
@@ -61,7 +67,7 @@ export function PostCard({
           href={"/" + slug}
           className={`flex z-10 ${buttonVariants({ variant: "default" })}`}
         >
-          Read More
+          {t("button")}
           <ArrowRight
             size={16}
             className="transition-transform ease-in-out duration-300 transform translate-x-0 group-hover:translate-x-1"

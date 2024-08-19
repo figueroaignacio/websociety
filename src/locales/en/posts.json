@@ -1,6 +1,7 @@
 {
   "posts": {
-    "title": "The ramblings of Frontend Society"
+    "title": "The ramblings of Frontend Society",
+    "button": "Read More"
   },
   "latestPosts": {
     "title": "Latest Posts"
