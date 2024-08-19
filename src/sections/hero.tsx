@@ -59,7 +59,7 @@ export function Hero() {
             </FramerDiv>
             <FramerSpan
               variants={FADE_UP_ANIMATION_VARIANTS}
-              className="font-bold text-5xl lg:text-8xl"
+              className="font-semibold text-muted-foreground text-5xl lg:text-8xl"
             >
               {t("subHeading")}
             </FramerSpan>

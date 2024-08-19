@@ -33,7 +33,7 @@ export function Navbar() {
                     href={`${navItem.href}`}
                     className={`${
                       pathname === `/${currentLocale}${navItem.href}`
-                        ? "font-semibold text-inherit border-b-[2px] border-muted-foreground"
+                        ? "font-semibold dark:text-white border-b-[2px] dark:border-white text-foreground border-b-foreground"
                         : "text-muted-foreground"
                     } text-muted-foreground hover:text-foreground font-medium`}
                   >

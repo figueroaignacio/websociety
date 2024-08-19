@@ -65,7 +65,7 @@ export default function LearnPage({ params: { locale } }: LearnPageProps) {
     >
       <FramerH1
         variants={FADE_DOWN_ANIMATION_VARIANTS}
-        className="font-bold text-2xl lg:text-4xl text-center"
+        className="font-bold text-2xl lg:text-4xl text-center text-muted-foreground"
       >
         {t("title")}
       </FramerH1>
