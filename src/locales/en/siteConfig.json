@@ -9,5 +9,25 @@
     },
     "url": "https://frontendsociety.netlify.app/en",
     "keywords": "Blog, Web Development, Frontend, Backend, JavaScript, React, CSS, HTML, TypeScript, Next.js, Responsive Design, UI/UX, Web Performance, SEO, API, Node.js, Programming, Coding, Web Design, Web Accessibility"
+  },
+  "postsConfig": {
+    "url": "https://frontendsociety.netlify.app/en/posts",
+    "title": "Posts",
+    "description": "Discover articles on web development, coding tips, and the latest trends. Perfect for all skill levels.",
+    "creator": "Ignacio Figueroa | Web developer",
+    "author": {
+      "name": "Ignacio Figueroa",
+      "url": "https://github.com/figueroaignacio"
+    }
+  },
+  "guidesConfig": {
+    "url": "https://frontendsociety.netlify.app/en/guides",
+    "title": "Guides",
+    "description": "Access detailed guides on web development, coding methodologies, and current industry trends. Suitable for professionals and learners at all levels.",
+    "creator": "Ignacio Figueroa | Web developer",
+    "author": {
+      "name": "Ignacio Figueroa",
+      "url": "https://github.com/figueroaignacio"
+    }
   }
 }

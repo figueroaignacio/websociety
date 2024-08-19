@@ -1,4 +1,4 @@
-import { unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 // Hooks
 import { useLocale, useTranslations } from "next-intl";
@@ -18,15 +18,20 @@ import { sortPosts } from "@/utils/sortPosts";
 
 // Constants / Config
 import { FADE_DOWN_ANIMATION_VARIANTS } from "@/constants/animations";
-import { allPosts, postsConfig } from "@/constants/posts";
+import { allPosts } from "@/constants/posts";
 
 // Metadata
-import { Metadata } from "next";
+import { MetadataParams } from "@/types/types";
 
-export const metadata: Metadata = {
-  title: postsConfig.title,
-  description: postsConfig.description,
-};
+export async function generateMetadata({ params: { locale } }: MetadataParams) {
+  const t = await getTranslations({ locale, namespace: "postsConfig" });
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    creator: t("creator"),
+  };
+}
 
 const POSTS_PER_PAGE = 4;
 

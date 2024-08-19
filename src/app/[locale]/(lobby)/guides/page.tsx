@@ -1,5 +1,3 @@
-import { unstable_setRequestLocale } from "next-intl/server";
-
 // Hooks
 import { useLocale, useTranslations } from "next-intl";
 
@@ -15,15 +13,29 @@ import {
   FADE_DOWN_ANIMATION_VARIANTS,
   FADE_LEFT_ANIMATION_VARIANTS,
 } from "@/constants/animations";
-import { guides as g, guidesConfig } from "@/constants/guides";
+import { guides as g } from "@/constants/guides";
+
+// Utils
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 // Metadata
-import { Metadata } from "next";
+import { MetadataParams } from "@/types/types";
 
-export const metadata: Metadata = {
-  title: guidesConfig.title,
-  description: guidesConfig.description,
-};
+export async function generateMetadata({ params: { locale } }: MetadataParams) {
+  const t = await getTranslations({ locale, namespace: "guidesConfig" });
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    authors: [
+      {
+        name: t("author.name"),
+        url: t("author.url"),
+      },
+    ],
+    creator: t("creator"),
+  };
+}
 
 interface LearnPageProps {
   params: { locale: string };
