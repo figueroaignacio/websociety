@@ -1,4 +1,4 @@
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 // Next
 import { ImageResponse } from "next/og";
@@ -7,7 +7,7 @@ import { NextRequest } from "next/server";
 export const runtime = "edge";
 
 export async function GET(req: NextRequest) {
-  const t = useTranslations();
+  const t = await getTranslations("siteConfig");
 
   try {
     const { searchParams } = req.nextUrl;
@@ -65,7 +65,7 @@ export async function GET(req: NextRequest) {
             <div tw="text-[#f5f5f5]">{description}</div>
           </div>
           <div tw="flex items-center w-full justify-between">
-            <div tw="flex text-xl text-[#f5f5f5]">{t("siteConfig.url")}</div>
+            <div tw="flex text-xl text-[#f5f5f5]">{t("url")}</div>
             <div tw="flex items-center text-xl">
               <div tw="flex ml-2">
                 https://github.com/figueroaignacio/frontendsociety

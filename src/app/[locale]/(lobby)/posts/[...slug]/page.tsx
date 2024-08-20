@@ -1,3 +1,6 @@
+// Hooks
+import { getRequestConfig } from "next-intl/server";
+
 // Components
 import { MDXContent } from "@/components/mdx/mdx-components";
 import { Tag } from "@/components/tag";
@@ -19,6 +22,7 @@ import { Metadata } from "next";
 interface PostPageProps {
   params: {
     slug: string[];
+    locale?: string;
   };
 }
 
@@ -36,15 +40,15 @@ async function getPostFromParams(params: PostPageProps["params"]) {
 export async function generateMetadata({
   params,
 }: PostPageProps): Promise<Metadata> {
+  const { slug, locale = "en" } = params;
+
   try {
-    const post = await getPostFromParams(params);
+    const post = await getPostFromParams({ slug, locale });
+    if (!post) return {};
 
-    if (!post) {
-      return {};
-    }
+    const config = await getRequestConfig(() => ({ locale }))({ locale });
 
-    const ogSearchParams = new URLSearchParams();
-    ogSearchParams.set("title", post.title);
+    const ogSearchParams = new URLSearchParams({ title: post.title });
 
     return {
       title: post.title,
@@ -56,7 +60,7 @@ export async function generateMetadata({
         url: post.slug,
         images: [
           {
-            url: `/api/og?${ogSearchParams.toString()}`,
+            url: `${locale}/api/og?${ogSearchParams.toString()}`,
             width: 1200,
             height: 630,
             alt: post.title,
