@@ -54,14 +54,14 @@ export async function generateMetadata({
         description: post.description,
         type: "article",
         url: post.slug,
-        // images: [
-        //   {
-        //     url: `/api/og?${ogSearchParams.toString()}`,
-        //     width: 1200,
-        //     height: 630,
-        //     alt: post.title,
-        //   },
-        // ],
+        images: [
+          {
+            url: `/api/og?${ogSearchParams.toString()}`,
+            width: 1200,
+            height: 630,
+            alt: post.title,
+          },
+        ],
       },
     };
   } catch (error) {
