@@ -27,7 +27,7 @@ export default function NotFound() {
           <div>
             <p className="opacity-75">{notFound.notFoundDescription}</p>
           </div>
-          <BackButton title="Go Back" />
+          <BackButton />
         </div>
       </section>
     </ThemeProvider>

@@ -46,7 +46,7 @@ export default function ChallengesPage() {
         <div>
           <p className="opacity-75">{inDevelopmentSection.description}</p>
         </div>
-        <BackButton title="Go Back" />
+        <BackButton />
       </FramerDiv>
     </FramerSection>
   );

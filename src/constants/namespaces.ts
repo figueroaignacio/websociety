@@ -9,4 +9,5 @@ export const namespaces: string[] = [
   "faqs",
   "footer",
   "siteConfig",
+  "challenges",
 ];
