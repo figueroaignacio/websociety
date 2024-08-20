@@ -30,7 +30,6 @@ export async function generateMetadata({ params: { locale } }: MetadataParams) {
 
   return {
     metadataBase: new URL(baseUrl ?? "http://localhost:3000"),
-
     title: {
       default: t("title"),
       template: `%s - ${t("title")} `,
