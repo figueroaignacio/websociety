@@ -1,5 +1,5 @@
 // Hooks
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 // Next
 import { ImageResponse } from "next/og";
@@ -17,7 +17,7 @@ export const size = {
 export const contentType = "image/png";
 
 export default async function Image() {
-  const t = useTranslations("posts");
+  const t = await getTranslations("postsConfig");
 
   return new ImageResponse(
     (
@@ -54,7 +54,14 @@ export default async function Image() {
         </svg>
         <div style={{ textAlign: "center" }}>Frontend Society</div>
         <div style={{ textAlign: "center" }}>{t("title")}</div>
-        <div style={{ textAlign: "center" }}>{t("description")}</div>
+        <div
+          style={{
+            textAlign: "center",
+            fontSize: ".75rem",
+          }}
+        >
+          {t("description")}
+        </div>
       </div>
     ),
     {
