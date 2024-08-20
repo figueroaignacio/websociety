@@ -23,10 +23,14 @@ import { MetadataParams } from "@/types/types";
 export async function generateMetadata({ params: { locale } }: MetadataParams) {
   const t = await getTranslations({ locale, namespace: "siteConfig" });
 
+  const baseUrl =
+    locale === "es"
+      ? process.env.NEXT_PUBLIC_APP_URL_ES
+      : process.env.NEXT_PUBLIC_APP_URL_EN;
+
   return {
-    metadataBase: new URL(
-      process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000"
-    ),
+    metadataBase: new URL(baseUrl ?? "http://localhost:3000"),
+
     title: {
       default: t("title"),
       template: `%s - ${t("title")} `,
