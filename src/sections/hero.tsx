@@ -11,7 +11,6 @@ import {
   FramerH1,
   FramerParagraph,
   FramerSection,
-  FramerSpan,
 } from "@/components/framer";
 import { HeroBg } from "@/components/layout/hero-bg";
 import Image from "next/image";
@@ -56,17 +55,10 @@ export function Hero() {
             <div className="border-b border-t border-dashed py-8">
               <FramerH1
                 variants={FADE_UP_ANIMATION_VARIANTS}
-                className="font-extrabold text-4xl lg:text-7xl text-accent-foreground"
+                className="font-extrabold text-4xl lg:text-7xl gradient-text"
               >
                 {t("title")}
               </FramerH1>
-              <FramerSpan
-                variants={FADE_UP_ANIMATION_VARIANTS}
-                className="font-extrabold text-4xl lg:text-7xl "
-              >
-                <div className="gradient-text">{t("subHeading")}</div>
-              </FramerSpan>
-
               <FramerParagraph
                 variants={FADE_UP_ANIMATION_VARIANTS}
                 className="text-sm lg:text-lg text-muted-foreground px-0 lg:px-80"
