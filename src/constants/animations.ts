@@ -15,7 +15,7 @@ export const FADE_UP_ANIMATION_VARIANTS = {
     transition: {
       type: "tween",
       duration: 0.6,
-      ease: "easeInOut",
+      ease: [0.42, 0, 0.58, 1],
       staggerChildren: 0.2,
     },
   },

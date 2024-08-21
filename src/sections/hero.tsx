@@ -14,7 +14,6 @@ import {
   FramerSpan,
 } from "@/components/framer";
 import { HeroBg } from "@/components/layout/hero-bg";
-import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 
 // Images - Icons
@@ -51,30 +50,30 @@ export function Hero() {
       className="relative"
     >
       <HeroBg />
-      <div className="py-28 md:py-44">
+      <div className="py-28 md:py-32">
         <div className="flex items-center justify-center">
           <div className="flex flex-col text-center">
-            <FramerDiv variants={FADE_UP_ANIMATION_VARIANTS}>
-              <Badge>Indev Version</Badge>
-            </FramerDiv>
-            <FramerSpan
-              variants={FADE_UP_ANIMATION_VARIANTS}
-              className="font-semibold text-muted-foreground text-5xl lg:text-8xl"
-            >
-              {t("subHeading")}
-            </FramerSpan>
-            <FramerH1
-              variants={FADE_UP_ANIMATION_VARIANTS}
-              className="font-bold text-5xl lg:text-8xl"
-            >
-              <span className="gradient-text">{t("title")}</span>
-            </FramerH1>
-            <FramerParagraph
-              variants={FADE_UP_ANIMATION_VARIANTS}
-              className="text-sm opacity-70"
-            >
-              {t("description")}
-            </FramerParagraph>
+            <div className="border-b border-t border-dashed py-8">
+              <FramerH1
+                variants={FADE_UP_ANIMATION_VARIANTS}
+                className="font-extrabold text-4xl lg:text-7xl text-accent-foreground"
+              >
+                {t("title")}
+              </FramerH1>
+              <FramerSpan
+                variants={FADE_UP_ANIMATION_VARIANTS}
+                className="font-extrabold text-4xl lg:text-7xl "
+              >
+                <div className="gradient-text">{t("subHeading")}</div>
+              </FramerSpan>
+
+              <FramerParagraph
+                variants={FADE_UP_ANIMATION_VARIANTS}
+                className="text-sm lg:text-lg text-muted-foreground px-0 lg:px-80"
+              >
+                {t("description")}
+              </FramerParagraph>
+            </div>
           </div>
         </div>
         <FramerDiv
@@ -88,7 +87,7 @@ export function Hero() {
         </FramerDiv>
         <FramerDiv
           variants={FADE_UP_ANIMATION_VARIANTS}
-          className="flex justify-center border-[1px] rounded-lg border-[#f5f5f510/5] border-x dark:border-purple-400/10 border-dashed p-6"
+          className="flex justify-center"
         >
           {isThemeResolved && (
             <Image
