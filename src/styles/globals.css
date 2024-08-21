@@ -65,7 +65,7 @@
 
 @layer components {
   .gradient-text {
-    @apply bg-gradient-to-r from-violet-500 via-purple-500 to-pink-500 text-transparent bg-clip-text;
+    @apply bg-gradient-to-r from-gray-500 via-purple-500 to-gray-500 text-transparent bg-clip-text;
   }
 }
 
