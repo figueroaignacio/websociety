@@ -65,7 +65,19 @@
 
 @layer components {
   .gradient-text {
-    @apply bg-gradient-to-r from-gray-500 via-purple-500 to-gray-500 text-transparent bg-clip-text;
+    @apply bg-gradient-to-r from-slate-500 via-purple-500 to-slate-500 text-transparent bg-clip-text relative;
+  }
+
+  .animate-rotate-shadow {
+    @apply animate-[rotate-shadow_5s_linear_infinite];
+  }
+  @keyframes rotate-shadow {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 }
 
