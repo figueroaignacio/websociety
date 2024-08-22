@@ -26,22 +26,28 @@ export function GuideCard({ description, title, slug }: GuideCardProps) {
   const t = useTranslations("guides");
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>{title}</CardTitle>
+    <Card className="transition-shadow duration-300 overflow-hidden relative p-6">
+      <CardHeader className="bg-popover text-center rounded-md">
+        <CardTitle className="text-2xl font-bold py-12 gradient-text">
+          {title}
+        </CardTitle>
       </CardHeader>
-      <CardContent>
-        <CardDescription>{description}</CardDescription>
+      <CardContent className="p-6">
+        <CardDescription className="text-gray-700 dark:text-gray-300 text-center">
+          {description}
+        </CardDescription>
       </CardContent>
-      <CardFooter>
+      <CardFooter className="px-6 flex justify-center">
         <LinkWithTransition
           href={"/" + slug}
-          className={`w-full ${buttonVariants({ variant: "default" })}`}
+          className={`flex items-center ${buttonVariants({
+            variant: "default",
+          })} group`}
         >
           {t("button")}
           <ArrowRight
-            size={16}
-            className="transition-transform ease-in-out duration-300 transform translate-x-0 group-hover:translate-x-1"
+            size={18}
+            className="ml-2 transition-transform duration-300 transform group-hover:translate-x-2"
           />
         </LinkWithTransition>
       </CardFooter>
