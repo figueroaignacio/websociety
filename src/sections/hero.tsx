@@ -52,7 +52,7 @@ export function Hero() {
       <div className="py-28 md:py-32">
         <div className="flex items-center justify-center">
           <div className="flex flex-col text-center">
-            <div className="border-b border-t border-dashed py-8 px-20">
+            <div className="border-b border-t border-dashed py-8">
               <FramerH1
                 variants={FADE_UP_ANIMATION_VARIANTS}
                 className="font-extrabold text-4xl lg:text-7xl gradient-text"
