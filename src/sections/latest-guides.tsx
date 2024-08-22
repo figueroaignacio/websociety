@@ -22,7 +22,7 @@ export function LatestGuides() {
       <h2 className="text-3xl font-bold mb-4">{t("title")}</h2>
       <div>
         {latestGuides?.length > 0 ? (
-          <ul className="grid gap-4 grid-cols-1 md:grid-cols-2 auto-rows-fr">
+          <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2 auto-rows-fr">
             {latestGuides.map((guide, index) => (
               <li key={guide.slug}>
                 <GuideCard
