@@ -21,7 +21,7 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
   return (
     <section>
       <Hero />
-      <div className="max-w-5xl mx-auto flex flex-col gap-24 mt-24">
+      <div className="max-w-4xl mx-auto flex flex-col gap-24 mt-24">
         <Features />
         <LatestPosts />
         <PostsCta />

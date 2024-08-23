@@ -85,7 +85,7 @@ export default function PostsPage({
         },
       }}
     >
-      <div className="flex flex-col gap-12 mt-24 max-w-5xl mx-auto">
+      <div className="flex flex-col gap-12 mt-24 max-w-4xl mx-auto">
         <div className="flex flex-col gap-3">
           <FramerH1
             variants={FADE_DOWN_ANIMATION_VARIANTS}
