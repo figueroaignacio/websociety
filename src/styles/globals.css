@@ -65,7 +65,7 @@
 
 @layer components {
   .gradient-text {
-    @apply bg-gradient-to-r from-slate-500 via-purple-500 to-slate-500 text-transparent bg-clip-text relative;
+    @apply bg-gradient-to-r from-purple-700 via-purple-500 to-purple-400 text-transparent bg-clip-text relative;
   }
 
   .animate-rotate-shadow {
