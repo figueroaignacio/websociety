@@ -2,17 +2,17 @@
   "features": [
     {
       "title": "Lee Publicaciones",
-      "description": "Descubre las publicaciones más recientes que cubren las últimas tendencias, consejos y técnicas en desarrollo frontend.",
+      "description": "Descubre las publicaciones más recientes que cubren las últimas tendencias, consejos y técnicas en desarrollo web.",
       "icon": "book"
     },
     {
       "title": "Aprende sobre Desarrollo Web",
-      "description": "Sumérgete en recursos educativos diseñados para desarrolladores frontend, abarcando desde temas para principiantes hasta avanzados.",
+      "description": "Sumérgete en recursos educativos diseñados para desarrolladores web, abarcando desde temas para principiantes hasta avanzados.",
       "icon": "learn"
     },
     {
       "title": "Completa Desafíos (Próximamente)",
-      "description": "Enfrenta desafíos de codificación frontend para afinar tus habilidades, resolver problemas y demostrar tu conocimiento.",
+      "description": "Enfrenta desafíos de desarrollo web para afinar tus habilidades, resolver problemas y demostrar tu conocimiento.",
       "icon": "code"
     }
   ]
