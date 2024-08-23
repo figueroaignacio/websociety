@@ -35,8 +35,8 @@ export function Features() {
             }`}
             key={index}
           >
-            <CardHeader className="bg-gradient-to-r from-purple-600 via-purple-500 to-violet-600 py-12 text-white rounded-t-2xl">
-              <CardTitle className="flex flex-col justify-center items-center text-center gap-2">
+            <CardHeader className="py-12 gradient-background rounded-t-2xl">
+              <CardTitle className="flex flex-col justify-center items-center text-center gap-2 text-xs md:text-lg">
                 {icon}
                 {feature.title}
               </CardTitle>

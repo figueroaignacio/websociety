@@ -61,6 +61,17 @@
   button {
     @apply cursor-default;
   }
+
+  ::-webkit-scrollbar {
+    @apply w-[0.325rem];
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-400 dark:bg-gray-500 rounded-md;
+  }
 }
 
 @layer components {
@@ -68,32 +79,7 @@
     @apply bg-gradient-to-r from-purple-700 via-purple-500 to-purple-400 text-transparent bg-clip-text relative;
   }
 
-  .animate-rotate-shadow {
-    @apply animate-[rotate-shadow_5s_linear_infinite];
+  .gradient-background {
+    @apply bg-gradient-to-r from-purple-600 via-purple-500 to-violet-600 dark:from-purple-700 dark:via-purple-700 dark:to-violet-700 text-white;
   }
-  @keyframes rotate-shadow {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-}
-
-::-webkit-scrollbar {
-  width: 0.325rem;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #717793;
-  border-radius: 0.375rem;
-  -webkit-border-radius: 0.375rem;
-  -moz-border-radius: 0.375rem;
-  -ms-border-radius: 0.375rem;
-  -o-border-radius: 0.375rem;
 }
