@@ -1,3 +1,6 @@
+// Hooks
+import { useTranslations } from "next-intl";
+
 // Components
 import { BackButton } from "@/components/back-button";
 import { FramerDiv, FramerSection } from "@/components/framer/index";
@@ -7,7 +10,6 @@ import { HeroBg } from "@/components/layout/hero-bg";
 import { Rocket } from "lucide-react";
 
 // Config - Constants
-import { inDevelopmentSection } from "@/config/errors";
 import { FADE_DOWN_ANIMATION_VARIANTS } from "@/constants/animations";
 
 // Metadata
@@ -20,9 +22,11 @@ export const metadata: Metadata = {
 };
 
 export default function ChallengesPage() {
+  const t = useTranslations("challenges");
+
   return (
     <FramerSection
-      className="min-h-[90dvh] flex justify-center items-center"
+      className="flex justify-center items-center min-h-[100dvh]"
       initial="hidden"
       animate="show"
       viewport={{ once: true }}
@@ -36,18 +40,20 @@ export default function ChallengesPage() {
       }}
     >
       <HeroBg />
-      <FramerDiv
-        variants={FADE_DOWN_ANIMATION_VARIANTS}
-        className="flex flex-col justify-center items-center bg-card gap-3 text-center border-2 rounded-md p-16 border-dashed"
-      >
-        <div className="border-2 rounded-full p-3">
-          <Rocket size="1.5rem" />
-        </div>
-        <div>
-          <p className="opacity-75">{inDevelopmentSection.description}</p>
-        </div>
-        <BackButton />
-      </FramerDiv>
+      <div className="border-t border-b border-dashed py-12 max-w-2xl">
+        <FramerDiv
+          variants={FADE_DOWN_ANIMATION_VARIANTS}
+          className="flex flex-col justify-center items-center bg-card gap-3 text-center rounded-md p-16"
+        >
+          <div className="border-2 rounded-full p-3">
+            <Rocket size="1.5rem" />
+          </div>
+          <div>
+            <p className="opacity-75">{t("fallback")}</p>
+          </div>
+          <BackButton />
+        </FramerDiv>
+      </div>
     </FramerSection>
   );
 }
