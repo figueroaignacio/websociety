@@ -11,13 +11,13 @@ import {
 } from "@/components/ui/card";
 
 // Icons
-import { BookCheck, Code, GraduationCap } from "lucide-react";
+import { BookCheck, Code2, GraduationCap } from "lucide-react";
 
 // Icons mapping object
 const iconMap: { [key: string]: JSX.Element } = {
-  book: <BookCheck size="5rem" />,
-  learn: <GraduationCap size="5rem" />,
-  code: <Code size="5rem" />,
+  book: <BookCheck size="3rem" />,
+  learn: <GraduationCap size="3rem" />,
+  code: <Code2 size="3rem" />,
 };
 
 export function Features() {
@@ -30,20 +30,20 @@ export function Features() {
         const icon = iconMap[feature.icon] || null;
         return (
           <Card
-            className={`h-full w-full place-content-center py-12 rounded-2xl ${
+            className={`h-full w-full rounded-2xl ${
               index === 2 ? "sm:col-span-2" : ""
             }`}
             key={index}
           >
-            <CardHeader>
-              <CardTitle className="flex flex-col justify-center items-center gap-2">
+            <CardHeader className="bg-gradient-to-r from-purple-600 via-purple-500 to-violet-600 py-12 text-white rounded-t-2xl">
+              <CardTitle className="flex flex-col justify-center items-center text-center gap-2">
                 {icon}
                 {feature.title}
               </CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="py-12 flex h-full">
               <CardDescription
-                className={`h-full w-full  text-center max-w-xl mx-auto ${
+                className={`h-full w-full text-center text-base max-w-xl mx-auto ${
                   index === 2 ? "sm:col-span-2" : ""
                 }`}
               >
