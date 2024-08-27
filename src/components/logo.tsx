@@ -5,22 +5,30 @@ export function Logo() {
   return (
     <LinkWithTransition href="/" className="flex items-center gap-2">
       <svg
-        width="40"
-        height="40"
-        viewBox="0 0 34 34"
-        fill="none"
+        width="34"
+        height="34"
+        viewBox="0 0 200 200"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <rect width="34" height="34" rx="6" fill="#6B21A8" />
-        <path
-          d="M6 11C6 9.34315 7.34315 8 9 8V8C10.6569 8 12 9.34315 12 11V23C12 24.6569 10.6569 26 9 26V26C7.34315 26 6 24.6569 6 23V11Z"
-          fill="#F5F5F5"
+        <rect
+          width="200"
+          height="200"
+          fill="#6b21a8"
+          rx="34" // Aquí se define el radio de redondeo de las esquinas
         />
-        <rect x="13" y="8" width="15" height="5" rx="2.5" fill="#F5F5F5" />
-        <rect x="13" y="14" width="10" height="5" rx="2.5" fill="#F5F5F5" />
-        <circle cx="27.5" cy="24.5" r="1.5" fill="#F5F5F5" />
+        <g
+          fill="none"
+          stroke="#ffffff"
+          stroke-width="16"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M50 100 L75 75 L50 50" />
+          <path d="M150 100 L125 125 L150 150" />
+          <path d="M75 150 L125 50" />
+        </g>
       </svg>
-      <p className="text-xs">Frontend Society.</p>
+      <p className="text-xs">Web society</p>
     </LinkWithTransition>
   );
 }
