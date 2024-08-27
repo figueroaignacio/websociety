@@ -1,5 +1,3 @@
-import { unstable_setRequestLocale } from "next-intl/server";
-
 // Components
 import NextTopLoader from "nextjs-toploader";
 
@@ -9,7 +7,11 @@ import { NextIntlClientProvider } from "next-intl";
 
 // Utils
 import { locales } from "@/config";
-import { getMessages, getTranslations } from "next-intl/server";
+import {
+  getMessages,
+  getTranslations,
+  unstable_setRequestLocale,
+} from "next-intl/server";
 
 // Font
 import "@fontsource-variable/onest";
