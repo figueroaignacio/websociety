@@ -12,7 +12,11 @@ import { Rocket } from "lucide-react";
 // Config - Constants
 import { FADE_DOWN_ANIMATION_VARIANTS } from "@/constants/animations";
 
+// Utils
+import { unstable_setRequestLocale } from "next-intl/server";
+
 // Metadata
+import { MetadataParams } from "@/types/types";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -21,7 +25,8 @@ export const metadata: Metadata = {
     "Explore and participate on cool challenges to improve your skills and show them in you GitHub.",
 };
 
-export default function ChallengesPage() {
+export default function ChallengesPage({ params: { locale } }: MetadataParams) {
+  unstable_setRequestLocale(locale);
   const t = useTranslations("challenges");
 
   return (
