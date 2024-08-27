@@ -1,6 +1,6 @@
-# Web Society (Project in Development)
+# Web society (Project in Development)
 
-Welcome to **Web Society**, your go-to platform for discovering the latest trends, techniques, and tools in the realm of frontend development.
+Welcome to **Web society**, your go-to platform for discovering the latest trends, techniques, and tools in the realm of frontend development.
 
 ## Technologies Used in this Project
 

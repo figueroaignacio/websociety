@@ -1,6 +1,6 @@
 {
   "posts": {
-    "title": "The ramblings of Web Society",
+    "title": "The ramblings of Web society",
     "button": "Read More"
   },
   "latestPosts": {
@@ -8,7 +8,7 @@
   },
   "postsCta": {
     "title": "Do you want to explore more posts?",
-    "description": "Discover all the articles about web development by Web Society.",
+    "description": "Discover all the articles about web development by Web society.",
     "link": "Explore"
   }
 }

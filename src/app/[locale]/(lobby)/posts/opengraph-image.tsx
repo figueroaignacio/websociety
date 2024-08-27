@@ -52,7 +52,7 @@ export default async function Image() {
           <rect x="13" y="14" width="10" height="5" rx="2.5" fill="#F5F5F5" />
           <circle cx="27.5" cy="24.5" r="1.5" fill="#F5F5F5" />
         </svg>
-        <div style={{ textAlign: "center" }}>Web Society</div>
+        <div style={{ textAlign: "center" }}>Web society</div>
         <div style={{ textAlign: "center" }}>{t("title")}</div>
         <div
           style={{

@@ -66,7 +66,7 @@ export function MobileMenu() {
           ))}
         </ul>
         <SheetFooter>
-          <SheetTitle>Web Society.</SheetTitle>
+          <SheetTitle>Web society.</SheetTitle>
           <SheetDescription>By a developer, for developers.</SheetDescription>
         </SheetFooter>
       </SheetContent>
