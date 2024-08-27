@@ -43,9 +43,9 @@ export function MobileMenu() {
               href="/"
               className={`${
                 pathname === `/${currentLocale}`
-                  ? "font-semibold text-inherit border-b-[2px] border-muted-foreground"
+                  ? "text-foreground"
                   : "text-muted-foreground"
-              } text-muted-foreground hover:text-foreground font-medium `}
+              }  hover:text-foreground font-medium text-2xl`}
             >
               <SheetClose>{t("navigationHome.title")}</SheetClose>
             </LinkWithTransition>
@@ -56,9 +56,9 @@ export function MobileMenu() {
                 href={navItem.href}
                 className={`${
                   pathname === `/${currentLocale}${navItem.href}`
-                    ? "font-semibold text-inherit border-b-[2px] border-muted-foreground"
+                    ? "text-foreground"
                     : "text-muted-foreground"
-                } text-muted-foreground hover:text-foreground font-medium `}
+                }  hover:text-foreground font-medium text-2xl`}
               >
                 <SheetClose>{navItem.title}</SheetClose>
               </LinkWithTransition>
