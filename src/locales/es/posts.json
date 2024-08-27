@@ -1,6 +1,6 @@
 {
   "posts": {
-    "title": "Las divagaciones de Frontend Society",
+    "title": "Las divagaciones de Web Society",
     "button": "Leer más"
   },
   "latestPosts": {
@@ -8,7 +8,7 @@
   },
   "postsCta": {
     "title": "Te interesa conocer más artículos?",
-    "description": "Mirá y descubrí mas artículos de Frontend Society.",
+    "description": "Mirá y descubrí mas artículos de Web Society.",
     "link": "Explorar"
   }
 }

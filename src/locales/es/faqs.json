@@ -2,8 +2,8 @@
   "faqs": [
     {
       "value": "item-1",
-      "title": "¿De que trata Frontend Society?",
-      "content": "Frontend Society es un sitio para desarrolladores web quiénes quieren mejorar sus habilidades y mantenerse actualizado con las últimas novedades del desarrollo web"
+      "title": "¿De que trata Web Society?",
+      "content": "Web Society es un sitio para desarrolladores web quiénes quieren mejorar sus habilidades y mantenerse actualizado con las últimas novedades del desarrollo web"
     },
     {
       "value": "item-2",
@@ -17,7 +17,7 @@
     },
     {
       "value": "item-4",
-      "title": "¿Quién es el desarrollador detrás de Frontend Society?",
+      "title": "¿Quién es el desarrollador detrás de Web Society?",
       "content": "Mi nombre es Ignacio Figueroa, soy de Argentina y me dedico al desarrollo web enfócandome específicamente en el desarrollo frontend y me encanta compartir lo que aprendo durante mi aprendizaje"
     }
   ]

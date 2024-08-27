@@ -1,6 +1,6 @@
 {
   "posts": {
-    "title": "The ramblings of Frontend Society",
+    "title": "The ramblings of Web Society",
     "button": "Read More"
   },
   "latestPosts": {
@@ -8,7 +8,7 @@
   },
   "postsCta": {
     "title": "Do you want to explore more posts?",
-    "description": "Discover all the articles about web development by Frontend Society.",
+    "description": "Discover all the articles about web development by Web Society.",
     "link": "Explore"
   }
 }

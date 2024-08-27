@@ -2,8 +2,8 @@
   "faqs": [
     {
       "value": "item-1",
-      "title": "What is Frontend Society about?",
-      "content": "Frontend Society is a site for web developers who wants to improve their skills and keep up-to-date about the latest web news."
+      "title": "What is Web Society about?",
+      "content": "Web Society is a site for web developers who wants to improve their skills and keep up-to-date about the latest web news."
     },
     {
       "value": "item-2",
@@ -12,12 +12,12 @@
     },
     {
       "value": "item-3",
-      "title": "Can I suggest topics for future articles?",
+      "title": "Can I suggest topics for future posts?",
       "content": "Absolutely yes."
     },
     {
       "value": "item-4",
-      "title": "Who is the developer behind Frontend Society?",
+      "title": "Who is the developer behind Web Society?",
       "content": "My name is Ignacio Figueroa, I'm from Argentina and I'm a frontend development enthusiast who loves to share what I learn through my constant learning."
     }
   ]
