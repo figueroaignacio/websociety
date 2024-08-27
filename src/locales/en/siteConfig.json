@@ -29,5 +29,15 @@
       "name": "Ignacio Figueroa",
       "url": "https://github.com/figueroaignacio"
     }
+  },
+  "challengesConfig": {
+    "url": "https://frontendsociety.netlify.app/en/challenges",
+    "title": "Challenges",
+    "description": "Interactive challenges to enhance your web development skills. Take on the challenge and learn as you solve problems.",
+    "creator": "Ignacio Figueroa | Web developer",
+    "author": {
+      "name": "Ignacio Figueroa",
+      "url": "https://github.com/figueroaignacio"
+    }
   }
 }

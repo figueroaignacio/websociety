@@ -13,17 +13,19 @@ import { Rocket } from "lucide-react";
 import { FADE_DOWN_ANIMATION_VARIANTS } from "@/constants/animations";
 
 // Utils
-import { unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 // Metadata
 import { MetadataParams } from "@/types/types";
-import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Challenges",
-  description:
-    "Explore and participate on cool challenges to improve your skills and show them in you GitHub.",
-};
+export async function generateMetadata({ params: { locale } }: MetadataParams) {
+  const t = await getTranslations({ locale, namespace: "challengesConfig" });
+
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
 
 export default function ChallengesPage({ params: { locale } }: MetadataParams) {
   unstable_setRequestLocale(locale);
