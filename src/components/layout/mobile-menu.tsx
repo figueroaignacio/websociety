@@ -37,7 +37,7 @@ export function MobileMenu() {
         </button>
       </SheetTrigger>
       <SheetContent side="bottom">
-        <ul className="flex flex-col gap-12 pt-20 py-10 pl-8 items-end md:w-full md:min-h-0 text-2xl">
+        <ul className="flex flex-col gap-6 pt-20 py-10 pl-8 items-end md:w-full md:min-h-0 text-2xl">
           <li>
             <LinkWithTransition
               href="/"
@@ -45,7 +45,7 @@ export function MobileMenu() {
                 pathname === `/${currentLocale}`
                   ? "text-foreground"
                   : "text-muted-foreground"
-              }  hover:text-foreground font-medium text-2xl`}
+              }  hover:text-foreground font-medium`}
             >
               <SheetClose>{t("navigationHome.title")}</SheetClose>
             </LinkWithTransition>
@@ -58,7 +58,7 @@ export function MobileMenu() {
                   pathname === `/${currentLocale}${navItem.href}`
                     ? "text-foreground"
                     : "text-muted-foreground"
-                }  hover:text-foreground font-medium text-2xl`}
+                }  hover:text-foreground font-medium`}
               >
                 <SheetClose>{navItem.title}</SheetClose>
               </LinkWithTransition>
