@@ -13,7 +13,6 @@ import {
   FADE_DOWN_ANIMATION_VARIANTS,
   FADE_LEFT_ANIMATION_VARIANTS,
 } from "@/constants/animations";
-// import { guides as g } from "@/constants/guides";
 
 // Utils
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
