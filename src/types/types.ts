@@ -3,3 +3,5 @@ export type MetadataParams = {
     locale: string;
   };
 };
+
+export type Locale = "es" | "en";

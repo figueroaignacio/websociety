@@ -16,11 +16,12 @@ import {
 // Config
 import { locales } from "@/config/config";
 
+// Types
+import { Locale } from "@/types/types";
+
 type Props = {
   label?: string;
 };
-
-type Locale = "es" | "en";
 
 export function LocaleSwitcher({ label }: Props) {
   const router = useRouter();
