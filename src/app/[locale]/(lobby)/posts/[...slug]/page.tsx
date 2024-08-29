@@ -1,5 +1,3 @@
-// Hooks
-
 // Components
 import { MDXContent } from "@/components/mdx/mdx-components";
 import { Tag } from "@/components/tag";
