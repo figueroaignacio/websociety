@@ -3,7 +3,6 @@ import { unstable_setRequestLocale } from "next-intl/server";
 // Components
 import { FramerWrapper } from "@/components/framer";
 import { Footer } from "@/components/layout/footer";
-import { Gradient } from "@/components/layout/gradient";
 import { Navbar } from "@/components/layout/navbar";
 
 // Styles
@@ -27,7 +26,6 @@ export default async function LobbyLayout({
   return (
     <html suppressHydrationWarning className="scroll-pt-[3.5rem]">
       <body>
-        <Gradient />
         <div className="min-h-[100dvh] grid grid-rows-[auto_1fr_auto] mx-auto">
           <Navbar />
           <main className="container">
