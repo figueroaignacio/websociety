@@ -10,18 +10,13 @@ export function Logo() {
         viewBox="0 0 200 200"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <rect
-          width="200"
-          height="200"
-          fill="#6b21a8"
-          rx="34" // Aquí se define el radio de redondeo de las esquinas
-        />
+        <rect width="200" height="200" fill="#6b21a8" rx="34" />
         <g
           fill="none"
           stroke="#ffffff"
-          stroke-width="16"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="16"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         >
           <path d="M50 100 L75 75 L50 50" />
           <path d="M150 100 L125 125 L150 150" />

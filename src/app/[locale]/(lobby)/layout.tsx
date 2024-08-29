@@ -18,7 +18,8 @@ interface LobbyLayoutProps {
   children: React.ReactNode;
   params: { locale: string };
 }
-export default async function LobbyLayout({
+
+export default function LobbyLayout({
   children,
   params: { locale },
 }: LobbyLayoutProps) {

@@ -10,8 +10,6 @@ import { QueryPagination } from "@/components/query-pagination";
 import { posts } from "#site/content";
 
 // Utils
-import { getAllCategories } from "@/utils/getAllCategories";
-import { sortCategoriesByCount } from "@/utils/sortCategoriesByCount";
 import { sortPosts } from "@/utils/sortPosts";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
@@ -67,9 +65,6 @@ export default function PostsPage({
     POSTS_PER_PAGE * (currentPage - 1),
     POSTS_PER_PAGE * currentPage
   );
-
-  const tags = getAllCategories(filteredPosts);
-  const sortedTags = sortCategoriesByCount(tags);
 
   return (
     <FramerSection

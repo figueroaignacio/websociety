@@ -54,7 +54,7 @@ interface LocaleLayoutProps {
   params: { locale: string };
 }
 
-export default async function LocaleLayout({
+export default async function RootLayout({
   children,
   params: { locale },
 }: LocaleLayoutProps) {

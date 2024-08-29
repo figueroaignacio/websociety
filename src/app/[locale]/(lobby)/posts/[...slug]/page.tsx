@@ -1,5 +1,4 @@
 // Hooks
-import { getRequestConfig } from "next-intl/server";
 
 // Components
 import { MDXContent } from "@/components/mdx/mdx-components";
@@ -45,8 +44,6 @@ export async function generateMetadata({
   try {
     const post = await getPostFromParams({ slug, locale });
     if (!post) return {};
-
-    const config = await getRequestConfig(() => ({ locale }))({ locale });
 
     const ogSearchParams = new URLSearchParams({ title: post.title });
 
