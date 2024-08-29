@@ -48,9 +48,7 @@ export function Settings() {
           <Languages size={16} className="ml-2 text-muted-foreground" />
           <DropdownMenuLabel>{t("localeSwitcher.label")}</DropdownMenuLabel>
         </DropdownMenuGroup>
-        <DropdownMenuItem>
-          <LocaleSwitcher />
-        </DropdownMenuItem>
+        <LocaleSwitcher />
         <DropdownMenuSeparator />
         <DropdownMenuGroup className="flex items-center">
           <HelpCircle size={16} className="ml-2 text-muted-foreground" />
