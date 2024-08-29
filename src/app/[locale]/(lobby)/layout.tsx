@@ -9,7 +9,7 @@ import { Navbar } from "@/components/layout/navbar";
 // Styles
 import "@/styles/globals.css";
 
-import { locales } from "@/config";
+import { locales } from "@/config/config";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));

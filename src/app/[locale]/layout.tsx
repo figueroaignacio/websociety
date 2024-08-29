@@ -6,7 +6,7 @@ import { ThemeProvider } from "@/providers/theme-provider";
 import { NextIntlClientProvider } from "next-intl";
 
 // Utils
-import { locales } from "@/config";
+import { locales } from "@/config/config";
 import {
   getMessages,
   getTranslations,

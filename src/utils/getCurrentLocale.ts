@@ -1,5 +1,5 @@
 // Config
-import { locales } from "@/config";
+import { locales } from "@/config/config";
 
 export function getCurrentLocale(pathname: string): string {
   return (

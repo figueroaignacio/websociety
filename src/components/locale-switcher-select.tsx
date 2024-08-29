@@ -1,7 +1,7 @@
 "use client";
 
 // Hooks
-import { usePathname, useRouter } from "@/navigation";
+import { usePathname, useRouter } from "@/config/navigation";
 import { useTransition } from "react";
 
 // Components

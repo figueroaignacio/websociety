@@ -6,7 +6,7 @@ import { SelectItem } from "@/components/ui/select";
 import { LocaleSwitcherSelect } from "./locale-switcher-select";
 
 // Config
-import { locales } from "@/config";
+import { locales } from "@/config/config";
 
 export function LocaleSwitcher() {
   const t = useTranslations("localeSwitcher");
