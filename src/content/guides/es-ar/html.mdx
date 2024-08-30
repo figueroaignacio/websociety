@@ -1,8 +1,117 @@
 ---
-title: Guía Completa de HTML
-description: Esta guía cubre los fundamentos de HTML, proporcionándote el conocimiento necesario para estructurar tu sitio web de manera eficiente y efectiva.
+title: Guía Básica de HTML
+description: Esta guía cubre los fundamentos de HTML, proporcionándote el conocimiento para estructurar tu sitio web de manera eficiente y efectiva.
 date: 2024-03-03
 locale: es
 ---
 
 # ¿Qué es HTML?
+
+HTML, o Lenguaje de Marcado de Hipertexto (HyperText Markup Language), es el lenguaje estándar utilizado para crear y diseñar páginas web. Proporciona la estructura básica para los documentos web y te permite organizar el contenido en elementos como encabezados, párrafos, enlaces e imágenes. Entender HTML es esencial para construir y estructurar sitios web de manera efectiva.
+
+## Estructura Básica
+
+### Estructura de un Documento HTML
+
+Un documento HTML está compuesto por varios elementos organizados en una jerarquía. La estructura básica incluye:
+
+- **`<!DOCTYPE html>`:** Declara el tipo de documento y la versión de HTML.
+- **`<html>`:** El elemento raíz que contiene todo el contenido en la página web.
+- **`<head>`:** Contiene la meta-información sobre el documento, como el título y los enlaces a hojas de estilo.
+- **`<body>`:** Contiene el contenido de la página web, incluyendo texto, imágenes y otros elementos.
+
+**Ejemplo:**
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mi Página Web</title>
+  </head>
+  <body>
+    <h1>Bienvenido a Mi Sitio Web</h1>
+    <p>Esta es una página HTML simple.</p>
+  </body>
+</html>
+```
+
+## Elementos Clave
+
+### Encabezados
+
+Los encabezados se utilizan para definir la estructura y jerarquía del contenido. HTML proporciona seis niveles de encabezados, de `<h1>` a `<h6>`, donde `<h1>` es el nivel más alto y `<h6>` es el más bajo.
+
+**Ejemplo:**
+
+```html
+<h1>Encabezado Principal</h1>
+<h2>Subencabezado</h2>
+<h3>Sub-subencabezado</h3>
+```
+
+### Párrafos
+
+Los párrafos se utilizan para agrupar y separar bloques de texto. Usa el elemento `<p>` para crear párrafos.
+
+**Ejemplo:**
+
+```html
+<p>Este es un párrafo de texto.</p>
+```
+
+### Enlaces
+
+Los enlaces se utilizan para navegar a otras páginas web o recursos. El elemento `<a>` se usa para crear hipervínculos. El atributo href especifica la URL del enlace
+
+**Ejemplo:**
+
+```html
+<a href="https://www.example.com">Visitar Ejemplo</a>
+```
+
+### Imágenes
+
+Las imágenes se pueden incrustar en una página web utilizando el elemento `<img>`. El atributo src especifica la ruta al archivo de imagen, y el atributo alt proporciona un texto alternativo para la imagen.
+
+**Ejemplo:**
+
+```html
+<img src="imagen.jpg" alt="Descripción de la imagen" />
+```
+
+### Listas
+
+Las listas se utilizan para agrupar elementos relacionados. HTML soporta listas ordenadas `<ol>` y listas desordenadas `<ul>`. Los elementos de lista se definen con el elemento `<li>`.
+
+**Ejemplo:**
+
+```html
+<ul>
+  <li>Elemento 1</li>
+  <li>Elemento 2</li>
+  <li>Elemento 3</li>
+</ul>
+
+<ol>
+  <li>Primer elemento</li>
+  <li>Segundo elemento</li>
+  <li>Tercer elemento</li>
+</ol>
+```
+
+### Atributos
+
+Los atributos proporcionan información adicional sobre los elementos HTML. Se especifican dentro de la etiqueta de apertura de un elemento y suelen estar en pares nombre-valor.
+
+**Ejemplo:**
+
+```html
+<a href="https://www.example.com" target="_blank">Abrir en una nueva pestaña</a>
+```
+
+- `href`: Especifica la URL para el enlace.
+- `target`: Define dónde abrir el enlace (por ejemplo, \_blank para una nueva pestaña).
+
+## Conclusión
+
+HTML es la base del desarrollo web, permitiéndote estructurar y formatear contenido en la web. Al entender los elementos y atributos básicos, puedes crear páginas web bien organizadas y efectivas. A medida que avances, puedes explorar características adicionales e integraciones con CSS y JavaScript para mejorar tus sitios web.

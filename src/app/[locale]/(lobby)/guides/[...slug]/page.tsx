@@ -1,6 +1,8 @@
 // Components
 import { BackButton } from "@/components/back-button";
 import { MDXContent } from "@/components/mdx/mdx-components";
+import { Toc } from "@/components/toc";
+import { Separator } from "@/components/ui/separator";
 
 // Utils
 import { notFound } from "next/navigation";
@@ -33,7 +35,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: `Learn ${guide.title}`,
+    title: `${guide.title}`,
     description: guide.description,
   };
 }
@@ -52,15 +54,22 @@ export default async function GuidePage({ params }: PostPageProps) {
   }
 
   return (
-    <article className="prose dark:prose-invert mt-5 max-w-3xl mx-auto py-8">
-      <div className="pb-7">
-        <BackButton />
+    <article className=" mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 pt-12">
+      <div className="lg:col-span-3"></div>
+      <div className="lg:col-span-6 prose dark:prose-invert">
+        <div className="pb-7">
+          <BackButton />
+        </div>
+        <h1>{guides.title}</h1>
+        <p className="m-0">
+          {guides.description ? <p>{guides.description}</p> : null}
+        </p>
+        <Separator className="mb-5" />
+        <MDXContent code={guides.body} />
       </div>
-      <h1>{guides.title}</h1>
-      <p className="m-0">
-        {guides.description ? <p>{guides.description}</p> : null}
-      </p>
-      <MDXContent code={guides.body} />
+      <aside className="lg:col-span-3">
+        <Toc />
+      </aside>
     </article>
   );
 }
