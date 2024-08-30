@@ -99,7 +99,7 @@ export default async function PostPage({ params }: PostPageProps) {
         <Separator className="mb-5" />
         <MDXContent code={post.body} />
       </div>
-      <aside className="lg:col-span-3 lg:sticky lg:top-20">
+      <aside className="lg:col-span-3">
         <Toc />
       </aside>
     </article>
