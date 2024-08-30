@@ -11,9 +11,6 @@ import { posts } from "#site/content";
 // Utils
 import { notFound } from "next/navigation";
 
-// Styles
-import "@/styles/mdx.css";
-
 // Metadata
 import { Metadata } from "next";
 
