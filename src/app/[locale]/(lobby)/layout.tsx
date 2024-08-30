@@ -25,8 +25,8 @@ export default function LobbyLayout({
 }: LobbyLayoutProps) {
   unstable_setRequestLocale(locale);
   return (
-    <html suppressHydrationWarning>
-      <body className="scroll-pt-[3.5rem]">
+    <html suppressHydrationWarning className="scroll-pt-[5rem]">
+      <body>
         <div className="min-h-[100dvh] grid grid-rows-[auto_1fr_auto] mx-auto">
           <Navbar />
           <main className="container">

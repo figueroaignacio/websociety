@@ -14,6 +14,7 @@ import "@/styles/mdx.css";
 
 // Metadata
 import { BackButton } from "@/components/back-button";
+import { Toc } from "@/components/toc";
 import { Metadata } from "next";
 
 interface PostPageProps {
@@ -74,7 +75,6 @@ export async function generateStaticParams(): Promise<
 > {
   return posts.map((post) => ({ slug: post.slugAsParams.split("/") }));
 }
-
 export default async function PostPage({ params }: PostPageProps) {
   const post = await getPostFromParams(params);
 
@@ -83,38 +83,42 @@ export default async function PostPage({ params }: PostPageProps) {
   }
 
   return (
-    <article className="prose dark:prose-invert mt-5 max-w-3xl mx-auto py-8">
-      <div className="pb-7">
-        <BackButton />
+    <article className=" mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 pt-12">
+      <div className="lg:col-span-3"></div>
+      <div className="lg:col-span-6 prose dark:prose-invert">
+        <div className="pb-7">
+          <BackButton />
+        </div>
+        <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
+        <div className="flex gap-2 mb-2">
+          {post.categories?.map((tag) => (
+            <Tag tag={tag} key={tag} />
+          ))}
+        </div>
+        <p className="mb-4">{post.description}</p>
+        <Separator className="mb-5" />
+        <MDXContent code={post.body} />
       </div>
-      <h1>{post.title}</h1>
-      <div className="flex gap-2 mb-2">
-        {post.categories?.map((tag) => (
-          <Tag tag={tag} key={tag} />
-        ))}
-      </div>
-      <p className="m-0">
-        {post.description ? <p>{post.description}</p> : null}
-      </p>
-      <Separator className="mb-5" />
-      <MDXContent code={post.body} />
+      <aside className="lg:col-span-3 lg:sticky lg:top-20">
+        <Toc />
+      </aside>
     </article>
   );
 }
 
 /*     			
-     `    ``               `
-      ``  _ `      `       ``
-     `   |_| `  `` ``    `  `
-    ``  -___-_` `   ` --------------
-  ``   /      )      | Sometimes I have no idea what I'm doing, but I enjoy it. |`
- `____/| (0) (0)_()  |/-------------  `
-/|   | |   ^____)      ``      ``
-||   |_|    \_//     Uɔ````   `` ``
-||    || |    |    ========`  ``  ``
-||    || |    |      ||     ``   `
-||     \\_\   |\     ||   ```    `
-=========||====||    ||  ``       `
-  || ||   \Ɔ || \Ɔ   ||   ``    ``
-  || ||      ||      ||  `     ``
-*/
+      `    ``               `
+        ``  _ `      `       ``
+      `   |_| `  `` ``    `  `
+      ``  -___-_` `   ` --------------
+    ``   /      )      | Sometimes I have no idea what I'm doing, but I enjoy it. |`
+  `____/| (0) (0)_()  |/-------------  `
+  /|   | |   ^____)      ``      ``
+  ||   |_|    \_//     Uɔ````   `` ``
+  ||    || |    |    ========`  ``  ``
+  ||    || |    |      ||     ``   `
+  ||     \\_\   |\     ||   ```    `
+  =========||====||    ||  ``       `
+    || ||   \Ɔ || \Ɔ   ||   ``    ``
+    || ||      ||      ||  `     ``
+  */
