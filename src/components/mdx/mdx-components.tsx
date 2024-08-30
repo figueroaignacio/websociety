@@ -134,6 +134,9 @@ const components = {
       {...props}
     />
   ),
+  code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
+    <code className={cn("px-4 py-2 text-left", className)} {...props} />
+  ),
 };
 
 interface MdxProps {
