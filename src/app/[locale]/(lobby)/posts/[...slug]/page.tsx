@@ -1,6 +1,8 @@
 // Components
+import { BackButton } from "@/components/back-button";
 import { MDXContent } from "@/components/mdx/mdx-components";
 import { Tag } from "@/components/tag";
+import { Toc } from "@/components/toc";
 import { Separator } from "@/components/ui/separator";
 
 // Content
@@ -13,8 +15,6 @@ import { notFound } from "next/navigation";
 import "@/styles/mdx.css";
 
 // Metadata
-import { BackButton } from "@/components/back-button";
-import { Toc } from "@/components/toc";
 import { Metadata } from "next";
 
 interface PostPageProps {
