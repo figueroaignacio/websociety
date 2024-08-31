@@ -54,7 +54,7 @@ export function Toc() {
   }, []);
 
   return (
-    <nav className="sticky top-0 left-0 h-auto rounded-lg mx-auto overflow-y-auto p-4 hidden lg:block">
+    <nav className="sticky top-32 h-[calc(100vh-121px)] left-0 rounded-lg mx-auto overflow-y-auto p-4 hidden lg:block">
       <p className="font-semibold text-lg my-2">{t("title")}</p>
       <ul className="list-none flex flex-col gap-2">
         {headings.map((heading) => (
