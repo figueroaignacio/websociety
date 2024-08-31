@@ -57,18 +57,22 @@ export default async function GuidePage({ params }: PostPageProps) {
   }
 
   return (
-    <article className=" mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 pt-12">
+    <article className="mx-auto lg:grid grid-cols-1 lg:grid-cols-12 gap-8 pt-12">
       <div className="lg:col-span-3"></div>
-      <div className="lg:col-span-6 prose dark:prose-invert">
+      <div className="lg:col-span-6">
         <div className="pb-7">
           <BackButton />
         </div>
-        <h1>{guides.title}</h1>
-        <p className="m-0">
-          {guides.description ? <p>{guides.description}</p> : null}
-        </p>
-        <Separator className="mb-5" />
-        <MDXContent code={guides.body} />
+        <div className="flex flex-col gap-2 py-16 bg-purple-800 text-center px-12 rounded-md text-white">
+          <h1 className="text-3xl font-bold">{guides.title}</h1>
+          <p className="text-sm">
+            {guides.description ? <p>{guides.description}</p> : null}
+          </p>
+        </div>
+        <Separator className="my-10" />
+        <div>
+          <MDXContent code={guides.body} />
+        </div>
       </div>
       <aside className="lg:col-span-3">
         <Toc />

@@ -5,8 +5,6 @@ code[data-line-numbers] {
 code[data-line-numbers] > [data-line]::before {
   counter-increment: line;
   content: counter(line);
-
-  /* Other styling */
   display: inline-block;
   width: 0.75rem;
   margin-right: 2rem;

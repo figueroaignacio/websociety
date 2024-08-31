@@ -63,7 +63,7 @@
   }
 
   ::-webkit-scrollbar {
-    @apply w-[0.325rem];
+    @apply w-[0.3rem];
   }
 
   ::-webkit-scrollbar-track {
