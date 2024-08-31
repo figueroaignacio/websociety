@@ -1,6 +1,5 @@
 "use client";
 
-// Hooks
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 
@@ -14,9 +13,10 @@ export function Toc() {
   const t = useTranslations("toc");
 
   const [headings, setHeadings] = useState<Heading[]>([]);
+  const [activeId, setActiveId] = useState<string>("");
 
   useEffect(() => {
-    const elements = Array.from(document.querySelectorAll("h2, h3")).map(
+    const headingElements = Array.from(document.querySelectorAll("h2, h3")).map(
       (heading) => ({
         id: heading.id,
         text: heading.textContent,
@@ -24,7 +24,33 @@ export function Toc() {
       })
     );
 
-    setHeadings(elements as Heading[]);
+    setHeadings(headingElements as Heading[]);
+
+    const handleScroll = () => {
+      const offset = 80;
+      const topHeading = headingElements.find((heading) => {
+        const element = document.getElementById(heading.id);
+        if (element) {
+          const { top } = element.getBoundingClientRect();
+          return top >= offset && top <= window.innerHeight / 2 + offset;
+        }
+        return false;
+      });
+
+      if (topHeading) {
+        setActiveId(topHeading.id);
+      } else if (window.scrollY === 0) {
+        setActiveId(headingElements[0]?.id || "");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
@@ -35,11 +61,14 @@ export function Toc() {
           <li
             key={heading.id}
             style={{ marginLeft: heading.level === 3 ? "1rem" : "0" }}
-            className="mb-1"
           >
             <a
               href={`#${heading.id}`}
-              className="no-underline hover:underline text-sm transition-all duration-150 hover:text-foreground text-muted-foreground"
+              className={`hover:underline hover:text-foreground text-sm transition-colors duration-150 ${
+                activeId === heading.id
+                  ? "underline text-foreground"
+                  : "text-muted-foreground"
+              }`}
             >
               {heading.text}
             </a>
