@@ -80,19 +80,21 @@ export default async function PostPage({ params }: PostPageProps) {
   }
 
   return (
-    <article className=" mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 pt-12">
+    <article className="mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 pt-12">
       <div className="lg:col-span-3"></div>
-      <div className="lg:col-span-6 prose dark:prose-invert">
+      <div className="lg:col-span-6">
         <div className="pb-7">
           <BackButton />
         </div>
-        <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
-        <div className="flex gap-2 mb-2">
-          {post.categories?.map((tag) => (
-            <Tag tag={tag} key={tag} />
-          ))}
+        <div className="flex flex-col gap-2">
+          <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
+          <div className="flex gap-2 mb-2">
+            {post.categories?.map((tag) => (
+              <Tag tag={tag} key={tag} />
+            ))}
+          </div>
+          <p className="mb-4">{post.description}</p>
         </div>
-        <p className="mb-4">{post.description}</p>
         <Separator className="mb-5" />
         <MDXContent code={post.body} />
       </div>

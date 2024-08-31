@@ -42,10 +42,7 @@ const components = {
   ),
   p: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
     <p
-      className={cn(
-        "leading-7 [&:not(:first-child)]:my-2  text-muted-foreground",
-        className
-      )}
+      className={cn("leading-7 [&:not(:first-child)]:my-2", className)}
       {...props}
     />
   ),

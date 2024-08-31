@@ -70,9 +70,7 @@ export default async function GuidePage({ params }: PostPageProps) {
           </p>
         </div>
         <Separator className="my-10" />
-        <div>
-          <MDXContent code={guides.body} />
-        </div>
+        <MDXContent code={guides.body} />
       </div>
       <aside className="lg:col-span-3">
         <Toc />
