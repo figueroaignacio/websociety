@@ -12,6 +12,7 @@ import { posts } from "#site/content";
 import { notFound } from "next/navigation";
 
 // Metadata
+import { RelatedPosts } from "@/components/posts/related-posts";
 import { Metadata } from "next";
 
 interface PostPageProps {
@@ -25,7 +26,13 @@ async function getPostFromParams(params: PostPageProps["params"]) {
   try {
     const slug = params?.slug.join("/");
     const post = posts.find((post) => post.slugAsParams === slug);
-    return post;
+    if (post) {
+      return {
+        ...post,
+        categories: post.categories || [],
+      };
+    }
+    return null;
   } catch (error) {
     console.error("Error getting post from params:", error);
     return null;
@@ -80,10 +87,14 @@ export default async function PostPage({ params }: PostPageProps) {
   }
 
   return (
-    <article className="mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 pt-6 lg:pt-12">
-      <div className="lg:col-span-3"></div>
+    <article className="mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 relative top-12">
+      <aside className="hidden lg:block lg:col-span-3">
+        <RelatedPosts
+          currentPost={{ slug: post.slug, categories: post.categories }}
+        />
+      </aside>
       <div className="lg:col-span-6">
-        <div className="pb-7">
+        <div className="pb-4">
           <BackButton />
         </div>
         <div className="flex flex-col gap-2">
@@ -101,6 +112,11 @@ export default async function PostPage({ params }: PostPageProps) {
       <aside className="lg:col-span-3">
         <Toc />
       </aside>
+      <div className="block lg:hidden mt-8">
+        <RelatedPosts
+          currentPost={{ slug: post.slug, categories: post.categories }}
+        />
+      </div>
     </article>
   );
 }

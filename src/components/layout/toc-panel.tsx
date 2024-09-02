@@ -1,6 +1,6 @@
-// components/TocDesktop.tsx
 "use client";
 
+// Hooks
 import { useTranslations } from "next-intl";
 
 interface Heading {
@@ -18,8 +18,8 @@ export function TocPanel({ headings, activeId }: TocPanelProps) {
   const t = useTranslations("toc");
 
   return (
-    <nav className="sticky top-32 h-[calc(100vh-121px)] left-0 rounded-lg mx-auto overflow-y-auto p-4 hidden lg:block">
-      <p className="font-semibold text-lg my-2">{t("title")}</p>
+    <nav className="sticky top-16 h-[calc(100vh-121px)] left-0 rounded-lg mx-auto overflow-y-auto px-4 hidden lg:block">
+      <p className="font-semibold text-lg">{t("title")}</p>
       <ul className="list-none flex flex-col gap-2">
         {headings.map((heading) => (
           <li
