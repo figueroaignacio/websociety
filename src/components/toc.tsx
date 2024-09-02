@@ -1,7 +1,13 @@
+// components/Toc.tsx
 "use client";
 
+// Hooks
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
+
+// Components
+import { MobileTocPanel } from "./layout/mobile-toc-panel";
+import { TocPanel } from "./layout/toc-panel";
 
 interface Heading {
   id: string;
@@ -11,7 +17,6 @@ interface Heading {
 
 export function Toc() {
   const t = useTranslations("toc");
-
   const [headings, setHeadings] = useState<Heading[]>([]);
   const [activeId, setActiveId] = useState<string>("");
 
@@ -54,27 +59,9 @@ export function Toc() {
   }, []);
 
   return (
-    <nav className="sticky top-32 h-[calc(100vh-121px)] left-0 rounded-lg mx-auto overflow-y-auto p-4 hidden lg:block">
-      <p className="font-semibold text-lg my-2">{t("title")}</p>
-      <ul className="list-none flex flex-col gap-2">
-        {headings.map((heading) => (
-          <li
-            key={heading.id}
-            style={{ marginLeft: heading.level === 3 ? "1rem" : "0" }}
-          >
-            <a
-              href={`#${heading.id}`}
-              className={`hover:underline hover:text-foreground text-sm transition-colors duration-150 ${
-                activeId === heading.id
-                  ? "underline text-foreground"
-                  : "text-muted-foreground"
-              }`}
-            >
-              {heading.text}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <>
+      <TocPanel headings={headings} activeId={activeId} />
+      <MobileTocPanel headings={headings} activeId={activeId} />
+    </>
   );
 }
