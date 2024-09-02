@@ -1,5 +1,4 @@
 // Components
-import { BackButton } from "@/components/back-button";
 import { MDXContent } from "@/components/mdx/mdx-components";
 import { Tag } from "@/components/tag";
 import { Toc } from "@/components/toc";
@@ -94,9 +93,6 @@ export default async function PostPage({ params }: PostPageProps) {
         />
       </aside>
       <div className="lg:col-span-6">
-        <div className="pb-4">
-          <BackButton />
-        </div>
         <div className="flex flex-col gap-2">
           <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
           <div className="flex gap-2 mb-2">
