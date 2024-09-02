@@ -10,5 +10,8 @@
     "title": "Do you want to explore more posts?",
     "description": "Discover all the articles about web development by Web society.",
     "link": "Explore"
+  },
+  "relatedPosts": {
+    "title": "Related Posts"
   }
 }

@@ -1,3 +1,6 @@
+// Hooks
+import { useTranslations } from "next-intl";
+
 // Components
 import { RelatedPostCard } from "./related-post-card";
 
@@ -12,6 +15,8 @@ interface RelatedPostsProps {
 }
 
 export function RelatedPosts({ currentPost }: RelatedPostsProps) {
+  const t = useTranslations();
+
   const relatedPosts = posts
     .filter(
       (post) =>
@@ -24,7 +29,7 @@ export function RelatedPosts({ currentPost }: RelatedPostsProps) {
 
   return (
     <div className="sticky top-16 h-[calc(100vh-121px)] left-0 space-y-3 rounded-lg mx-auto lg:overflow-y-auto lg:px-4">
-      <p className="font-semibold text-lg">Related Posts</p>
+      <p className="font-semibold text-lg">{t("relatedPosts.title")}</p>
       {relatedPosts.length > 0 ? (
         relatedPosts.map((relatedPost) => (
           <RelatedPostCard

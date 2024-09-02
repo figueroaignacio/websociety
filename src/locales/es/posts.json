@@ -10,5 +10,8 @@
     "title": "Te interesa conocer más artículos?",
     "description": "Mirá y descubrí mas artículos de Web society.",
     "link": "Explorar"
+  },
+  "relatedPosts": {
+    "title": "Publicaciones relacionadas"
   }
 }
