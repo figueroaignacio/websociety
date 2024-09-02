@@ -21,6 +21,7 @@ import { Menu } from "lucide-react";
 
 // Utils
 import { getCurrentLocale } from "@/utils/getCurrentLocale";
+import { Logo } from "../logo";
 
 export function MobileMenu() {
   const t = useTranslations();
@@ -36,8 +37,8 @@ export function MobileMenu() {
           <Menu />
         </button>
       </SheetTrigger>
-      <SheetContent side="bottom">
-        <ul className="flex flex-col gap-6 pt-20 py-10 pl-8 items-end md:w-full md:min-h-0 text-2xl">
+      <SheetContent side="right">
+        <ul className="flex flex-col gap-12 pt-20 py-10 pl-8 items-end md:w-full md:min-h-0 text-2xl">
           <li>
             <LinkWithTransition
               href="/"
@@ -65,8 +66,10 @@ export function MobileMenu() {
             </li>
           ))}
         </ul>
-        <SheetFooter>
-          <SheetTitle>Web society.</SheetTitle>
+        <SheetFooter className="space-y-3">
+          <SheetTitle>
+            <Logo />
+          </SheetTitle>
           <SheetDescription>By a developer, for developers.</SheetDescription>
         </SheetFooter>
       </SheetContent>
