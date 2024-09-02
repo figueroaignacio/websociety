@@ -1,6 +1,6 @@
 // Components
-import { Loader } from "@/components/layout/loader";
+import { PostPageSkeleton } from "@/components/posts/post-page-skeleton";
 
 export default function Loading() {
-  return <Loader />;
+  return <PostPageSkeleton />;
 }
