@@ -8,7 +8,12 @@ import { Link } from "@/config/navigation";
 import { Alert, AlertDescription, AlertTitle } from "./ui/alert";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
-import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "./ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogTrigger,
+} from "./ui/dialog";
 import { Input } from "./ui/input";
 
 // Icons
@@ -39,7 +44,7 @@ export function Searcher() {
         </Button>
       </DialogTrigger>
       <DialogContent className="max-w-md sm:max-w-lg mx-auto p-4  sm:p-6 rounded-md shadow-lg">
-        <DialogTitle>{t("dialogTitle")}</DialogTitle>
+        <DialogDescription>{t("dialogTitle")}</DialogDescription>
         <Input
           type="text"
           value={query}
