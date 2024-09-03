@@ -1,14 +1,19 @@
-import { Link } from "@/config/navigation";
+// Hooks
 import { useSearch } from "@/hooks/useSearch";
-import { AlertOctagon, Search } from "lucide-react";
 import { useLocale } from "next-intl";
 import { useState } from "react";
+
+// Components
+import { Link } from "@/config/navigation";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "./ui/dialog";
 import { Input } from "./ui/input";
 
-const Searcher = () => {
+// Icons
+import { AlertOctagon, Search } from "lucide-react";
+
+export function Searcher() {
   const locale = useLocale();
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
@@ -75,6 +80,4 @@ const Searcher = () => {
       </DialogContent>
     </Dialog>
   );
-};
-
-export default Searcher;
+}

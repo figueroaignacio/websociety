@@ -7,12 +7,12 @@ import { usePathname } from "next/navigation";
 // Components
 import { LinkWithTransition } from "../link-with-transition";
 import { Logo } from "../logo";
+import { Searcher } from "../searcher";
 import { Settings } from "../settings";
 import { MobileMenu } from "./mobile-menu";
 
 // Utils
 import { getCurrentLocale } from "@/utils/getCurrentLocale";
-import Searcher from "../searcher";
 
 export function Navbar() {
   const pathname = usePathname();
