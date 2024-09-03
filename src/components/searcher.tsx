@@ -1,6 +1,6 @@
 // Hooks
 import { useSearch } from "@/hooks/useSearch";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 
 // Components
@@ -14,10 +14,11 @@ import { Input } from "./ui/input";
 import { AlertOctagon, Search } from "lucide-react";
 
 export function Searcher() {
-  const locale = useLocale();
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
+  const locale = useLocale();
   const results = useSearch(query, locale);
+  const t = useTranslations("searcher");
 
   const handleLinkClick = () => {
     setOpen(false);
@@ -33,16 +34,16 @@ export function Searcher() {
           size="sm"
         >
           <Search size={16} />
-          Buscar...
+          {t("label")}
         </Button>
       </DialogTrigger>
       <DialogContent className="max-w-md sm:max-w-lg mx-auto p-4 sm:p-6 rounded-md shadow-lg">
-        <DialogTitle>Buscar artículos o guías</DialogTitle>
+        <DialogTitle>{t("dialogTitle")}</DialogTitle>
         <Input
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Buscar..."
+          placeholder={t("inputPlaceholder")}
           className="w-full px-3 py-2 rounded-md"
         />
         <div className="my-4 max-h-80 overflow-y-auto">
@@ -71,7 +72,7 @@ export function Searcher() {
               <div className="text-sm text-muted-foreground">
                 <p className="flex flex-row justify-center items-center gap-3">
                   <AlertOctagon size={16} className="text-yellow-300" />
-                  No se encontraron resultados.
+                  {t("fallback")}
                 </p>
               </div>
             )}

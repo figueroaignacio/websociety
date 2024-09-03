@@ -1,0 +1,8 @@
+{
+  "searcher": {
+    "label": "Buscar...",
+    "dialogTitle": "Buscar artículos o guías",
+    "inputPlaceholder": "Escribe...",
+    "fallback": "No se encontraron resultados."
+  }
+}
