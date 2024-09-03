@@ -9,7 +9,6 @@ import { LinkWithTransition } from "../link-with-transition";
 import { Logo } from "../logo";
 import { Searcher } from "../searcher";
 import { Settings } from "../settings";
-import { SiteMobileNavbar } from "./site-mobile-navbar";
 
 // Utils
 import { getCurrentLocale } from "@/utils/getCurrentLocale";
@@ -21,7 +20,7 @@ export function SiteNavbar() {
   const currentLocale = getCurrentLocale(pathname);
 
   return (
-    <header className="sticky z-50 top-0 left-0 w-full border-b-[.0625rem] backdrop-blur-sm">
+    <header className="sticky z-50 top-0 left-0 w-full border-b-[.0625rem] backdrop-blur-sm hidden md:block">
       <div className="flex items-center justify-between gap-12 py-2 px-5 md:px-10 lg:px-16 max-w-[1580px] mx-auto">
         <div className="flex items-center gap-8">
           <Logo />
@@ -47,7 +46,6 @@ export function SiteNavbar() {
         <div className="flex gap-5 lg:gap-3 items-center">
           <Searcher />
           <Settings />
-          <SiteMobileNavbar />
         </div>
       </div>
     </header>
