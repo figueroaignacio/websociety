@@ -32,7 +32,7 @@ export function Settings() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon">
+        <Button variant="ghost" size="sm">
           <Settings2 size={16} />
         </Button>
       </DropdownMenuTrigger>

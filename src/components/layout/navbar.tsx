@@ -12,6 +12,7 @@ import { MobileMenu } from "./mobile-menu";
 
 // Utils
 import { getCurrentLocale } from "@/utils/getCurrentLocale";
+import Searcher from "../searcher";
 
 export function Navbar() {
   const pathname = usePathname();
@@ -44,7 +45,8 @@ export function Navbar() {
             </ul>
           </nav>
         </div>
-        <div className="flex gap-5 items-center">
+        <div className="flex gap-5 lg:gap-3 items-center">
+          <Searcher />
           <Settings />
           <MobileMenu />
         </div>

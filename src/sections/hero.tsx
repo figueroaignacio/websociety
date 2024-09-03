@@ -52,7 +52,7 @@ export function Hero() {
       <div className="py-28 md:py-32">
         <div className="flex items-center justify-center">
           <div className="flex flex-col text-center">
-            <div className="border-b border-t border-dashed py-20">
+            <div className="border-b border-t border-dashed py-10">
               <FramerH1
                 variants={FADE_UP_ANIMATION_VARIANTS}
                 className="font-extrabold text-4xl lg:text-5xl"
@@ -60,13 +60,13 @@ export function Hero() {
                 <span>{t("title")}</span>{" "}
                 <span className="gradient-text">{t("label")}</span>
               </FramerH1>
-              <FramerParagraph
-                variants={FADE_UP_ANIMATION_VARIANTS}
-                className="text-sm lg:text-lg text-muted-foreground px-0 lg:px-80"
-              >
-                {t("description")}
-              </FramerParagraph>
             </div>
+            <FramerParagraph
+              variants={FADE_UP_ANIMATION_VARIANTS}
+              className="text-sm lg:text-lg text-muted-foreground px-0 lg:px-80 mt-4"
+            >
+              {t("description")}
+            </FramerParagraph>
           </div>
         </div>
         <FramerDiv
