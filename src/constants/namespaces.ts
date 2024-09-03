@@ -11,4 +11,5 @@ export const namespaces: string[] = [
   "siteConfig",
   "challenges",
   "toc",
+  "searcher",
 ];
