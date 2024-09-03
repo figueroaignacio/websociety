@@ -5,6 +5,7 @@ import { useState } from "react";
 
 // Components
 import { Link } from "@/config/navigation";
+import { Alert, AlertDescription, AlertTitle } from "./ui/alert";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "./ui/dialog";
@@ -37,7 +38,7 @@ export function Searcher() {
           {t("label")}
         </Button>
       </DialogTrigger>
-      <DialogContent className="max-w-md sm:max-w-lg mx-auto p-4 sm:p-6 rounded-md shadow-lg">
+      <DialogContent className="max-w-md sm:max-w-lg mx-auto p-4  sm:p-6 rounded-md shadow-lg">
         <DialogTitle>{t("dialogTitle")}</DialogTitle>
         <Input
           type="text"
@@ -46,7 +47,7 @@ export function Searcher() {
           placeholder={t("inputPlaceholder")}
           className="w-full px-3 py-2 rounded-md"
         />
-        <div className="my-4 max-h-80 overflow-y-auto">
+        <div className="my-4 max-h-80 overflow-y-auto py-3">
           <ul className="space-y-2">
             {results.length > 0 ? (
               results.map((item) => (
@@ -69,12 +70,13 @@ export function Searcher() {
                 </li>
               ))
             ) : (
-              <div className="text-sm text-muted-foreground">
-                <p className="flex flex-row justify-center items-center gap-3">
-                  <AlertOctagon size={16} className="text-yellow-300" />
-                  {t("fallback")}
-                </p>
-              </div>
+              <Alert variant={"warning"}>
+                <AlertOctagon size={16} className="text-yellow-500" />
+                <AlertTitle>{t("fallback")}</AlertTitle>
+                <AlertDescription className="text-muted-foreground">
+                  {t("fallbackDescription")}
+                </AlertDescription>
+              </Alert>
             )}
           </ul>
         </div>

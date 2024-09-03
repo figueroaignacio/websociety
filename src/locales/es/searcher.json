@@ -3,6 +3,7 @@
     "label": "Buscar...",
     "dialogTitle": "Buscar artículos o guías",
     "inputPlaceholder": "Escribe...",
-    "fallback": "No se encontraron resultados."
+    "fallback": "No se encontraron resultados.",
+    "fallbackDescription": "Intente refinar sus términos de búsqueda o explorar diferentes temas."
   }
 }
