@@ -23,7 +23,7 @@ import { Menu } from "lucide-react";
 import { getCurrentLocale } from "@/utils/getCurrentLocale";
 import { Logo } from "../logo";
 
-export function MobileMenu() {
+export function SiteMobileNavbar() {
   const t = useTranslations();
   const navigation = t.raw("navigation");
   const pathname = usePathname();
