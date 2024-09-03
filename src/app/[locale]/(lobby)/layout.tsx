@@ -8,6 +8,7 @@ import { Navbar } from "@/components/layout/navbar";
 // Styles
 import "@/styles/globals.css";
 
+import { Banner } from "@/components/banner";
 import { locales } from "@/config/config";
 
 export function generateStaticParams() {
@@ -27,6 +28,7 @@ export default function LobbyLayout({
   return (
     <html suppressHydrationWarning>
       <body>
+        <Banner />
         <div className="min-h-[100dvh] grid grid-rows-[auto_1fr_auto] mx-auto">
           <Navbar />
           <main className="container">
