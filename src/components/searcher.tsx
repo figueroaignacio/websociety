@@ -16,6 +16,7 @@ import {
   DialogTrigger,
 } from "./ui/dialog";
 import { Input } from "./ui/input";
+import { ScrollArea } from "./ui/scroll-area";
 
 // Icons
 import { AlertOctagon, Search } from "lucide-react";
@@ -56,45 +57,47 @@ export function Searcher() {
           placeholder={t("inputPlaceholder")}
           className="w-full px-3 py-2 rounded-md"
         />
-        <div className="my-4 max-h-80 overflow-y-auto py-3">
-          <ul className="space-y-2">
-            {results.length > 0 ? (
-              results.map((item, index) => (
-                <motion.li
-                  key={item.slug}
-                  className="border rounded-sm p-4"
-                  variants={LIST_ITEM_VARIANTS}
-                  initial="hidden"
-                  animate="visible"
-                  custom={index}
-                >
-                  <Link
-                    href={`/${item.slug}`}
-                    className="font-semibold flex gap-2"
-                    onClick={handleLinkClick}
+        <div className="my-4 max-h-80 py-3">
+          <ScrollArea className="h-80">
+            <ul className="space-y-4">
+              {results.length > 0 ? (
+                results.map((item, index) => (
+                  <motion.li
+                    key={item.slug}
+                    className="border rounded-sm p-4"
+                    variants={LIST_ITEM_VARIANTS}
+                    initial="hidden"
+                    animate="visible"
+                    custom={index}
                   >
-                    <p className="underline">{item.title}</p>
-                    <Badge variant={"default"}>
-                      {item.slug.startsWith("posts/") ? "Artículo" : "Guía"}
-                    </Badge>
-                  </Link>
-                  {item.description && (
-                    <p className="text-sm text-muted-foreground line-clamp-2">
-                      {item.description}
-                    </p>
-                  )}
-                </motion.li>
-              ))
-            ) : (
-              <Alert variant={"warning"}>
-                <AlertOctagon size={16} className="text-yellow-500" />
-                <AlertTitle>{t("fallback")}</AlertTitle>
-                <AlertDescription className="text-muted-foreground">
-                  {t("fallbackDescription")}
-                </AlertDescription>
-              </Alert>
-            )}
-          </ul>
+                    <Link
+                      href={`/${item.slug}`}
+                      className="font-semibold flex gap-2"
+                      onClick={handleLinkClick}
+                    >
+                      <p className="underline">{item.title}</p>
+                      <Badge variant={"default"}>
+                        {item.slug.startsWith("posts/") ? "Artículo" : "Guía"}
+                      </Badge>
+                    </Link>
+                    {item.description && (
+                      <p className="text-sm text-muted-foreground line-clamp-2">
+                        {item.description}
+                      </p>
+                    )}
+                  </motion.li>
+                ))
+              ) : (
+                <Alert variant={"warning"}>
+                  <AlertOctagon size={16} className="text-yellow-500" />
+                  <AlertTitle>{t("fallback")}</AlertTitle>
+                  <AlertDescription className="text-muted-foreground">
+                    {t("fallbackDescription")}
+                  </AlertDescription>
+                </Alert>
+              )}
+            </ul>
+          </ScrollArea>
         </div>
       </DialogContent>
     </Dialog>
