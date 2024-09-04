@@ -6,8 +6,8 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 // Components
+import { Link } from "@/config/navigation";
 import Image from "next/image";
-import { LinkWithTransition } from "../link-with-transition";
 import { buttonVariants } from "../ui/button";
 import { Card, CardDescription, CardHeader, CardTitle } from "../ui/card";
 
@@ -33,7 +33,7 @@ export function GuideCta() {
           <CardDescription>{t("description")}</CardDescription>
         </div>
         <div>
-          <LinkWithTransition
+          <Link
             href="/guides"
             className={`${buttonVariants({
               variant: "default",
@@ -44,7 +44,7 @@ export function GuideCta() {
               size={".85rem"}
               className="transition-transform ease-in-out duration-300 transform translate-x-0 group-hover:translate-x-1"
             />
-          </LinkWithTransition>
+          </Link>
         </div>
       </CardHeader>
       <div>

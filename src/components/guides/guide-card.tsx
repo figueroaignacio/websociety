@@ -2,7 +2,7 @@
 import { useTranslations } from "next-intl";
 
 // Components
-import { LinkWithTransition } from "../link-with-transition";
+import { Link } from "@/config/navigation";
 import { buttonVariants } from "../ui/button";
 import {
   Card,
@@ -36,7 +36,7 @@ export function GuideCard({ description, title, slug }: GuideCardProps) {
         </CardDescription>
       </CardContent>
       <CardFooter className="flex justify-center">
-        <LinkWithTransition
+        <Link
           href={"/" + slug}
           className={`flex items-center ${buttonVariants({
             variant: "default",
@@ -47,7 +47,7 @@ export function GuideCard({ description, title, slug }: GuideCardProps) {
             size={18}
             className="ml-2 transition-transform duration-300 transform group-hover:translate-x-2"
           />
-        </LinkWithTransition>
+        </Link>
       </CardFooter>
     </Card>
   );

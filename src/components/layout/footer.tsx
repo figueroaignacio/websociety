@@ -2,7 +2,7 @@
 import { useTranslations } from "next-intl";
 
 // Components
-import { LinkWithTransition } from "../link-with-transition";
+import { Link } from "@/config/navigation";
 
 // Icons
 import { Copyright } from "lucide-react";
@@ -22,12 +22,12 @@ export function Footer() {
               <ul className="flex flex-col gap-2 py-2">
                 {navigation.map((navItem: any, index: number) => (
                   <li key={index} className="flex items-center">
-                    <LinkWithTransition
+                    <Link
                       href={navItem.href}
                       className="text-base text-muted-foreground hover:text-black dark:hover:text-white font-medium"
                     >
                       {navItem.title}
-                    </LinkWithTransition>
+                    </Link>
                   </li>
                 ))}
               </ul>

@@ -14,16 +14,16 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { LinkWithTransition } from "../link-with-transition";
+import { Link } from "@/config/navigation";
+import { Logo } from "../logo";
+import { Searcher } from "../searcher";
+import { Settings } from "../settings";
 
 // Icons
 import { Menu } from "lucide-react";
 
 // Utils
 import { getCurrentLocale } from "@/utils/getCurrentLocale";
-import { Logo } from "../logo";
-import { Searcher } from "../searcher";
-import { Settings } from "../settings";
 
 export function SiteMobileNavbar() {
   const t = useTranslations();
@@ -47,7 +47,7 @@ export function SiteMobileNavbar() {
           <SheetContent side="right">
             <ul className="flex flex-col gap-12 pt-20 py-10 pl-8 items-end md:w-full md:min-h-0 text-2xl">
               <li>
-                <LinkWithTransition
+                <Link
                   href="/"
                   className={`${
                     pathname === `/${currentLocale}`
@@ -56,11 +56,11 @@ export function SiteMobileNavbar() {
                   }  hover:text-foreground font-medium`}
                 >
                   <SheetClose>{t("navigationHome.title")}</SheetClose>
-                </LinkWithTransition>
+                </Link>
               </li>
               {navigation.map((navItem: any, index: number) => (
                 <li key={index}>
-                  <LinkWithTransition
+                  <Link
                     href={navItem.href}
                     className={`${
                       pathname === `/${currentLocale}${navItem.href}`
@@ -69,7 +69,7 @@ export function SiteMobileNavbar() {
                     }  hover:text-foreground font-medium`}
                   >
                     <SheetClose>{navItem.title}</SheetClose>
-                  </LinkWithTransition>
+                  </Link>
                 </li>
               ))}
             </ul>

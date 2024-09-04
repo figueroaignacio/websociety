@@ -10,7 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { LinkWithTransition } from "../link-with-transition";
+import { Link } from "@/config/navigation";
 import { Tag } from "../tag";
 
 // Icons
@@ -63,7 +63,7 @@ export function PostCard({
             <Tag tag={tag} key={tag} />
           ))}
         </div>
-        <LinkWithTransition
+        <Link
           href={"/" + slug}
           className={`flex z-10 ${buttonVariants({ variant: "default" })}`}
         >
@@ -72,7 +72,7 @@ export function PostCard({
             size={16}
             className="transition-transform ease-in-out duration-300 transform translate-x-0 group-hover:translate-x-1"
           />
-        </LinkWithTransition>
+        </Link>
       </CardFooter>
     </Card>
   );

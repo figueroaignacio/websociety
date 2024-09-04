@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 
 // Components
-import { LinkWithTransition } from "../link-with-transition";
+import { Link } from "@/config/navigation";
 import { Logo } from "../logo";
 import { Searcher } from "../searcher";
 import { Settings } from "../settings";
@@ -28,7 +28,7 @@ export function SiteNavbar() {
             <ul className="flex gap-8 items-center">
               {navigation.map((navItem: any, index: number) => (
                 <li key={index}>
-                  <LinkWithTransition
+                  <Link
                     href={`${navItem.href}`}
                     className={`${
                       pathname === `/${currentLocale}${navItem.href}`
@@ -37,7 +37,7 @@ export function SiteNavbar() {
                     }  hover:text-foreground font-medium text-sm`}
                   >
                     {navItem.title}
-                  </LinkWithTransition>
+                  </Link>
                 </li>
               ))}
             </ul>

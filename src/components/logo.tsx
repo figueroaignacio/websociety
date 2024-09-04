@@ -1,9 +1,9 @@
 // Components
-import { LinkWithTransition } from "./link-with-transition";
+import { Link } from "@/config/navigation";
 
 export function Logo() {
   return (
-    <LinkWithTransition href="/" className="flex items-center gap-2">
+    <Link href="/" className="flex items-center gap-2">
       <svg
         width="34"
         height="34"
@@ -24,6 +24,6 @@ export function Logo() {
         </g>
       </svg>
       <p className="text-xs hidden lg:block">Web society</p>
-    </LinkWithTransition>
+    </Link>
   );
 }

@@ -2,7 +2,7 @@
 import { useTranslations } from "next-intl";
 
 // Components
-import { LinkWithTransition } from "../link-with-transition";
+import { Link } from "@/config/navigation";
 import { buttonVariants } from "../ui/button";
 import { Card, CardDescription, CardHeader, CardTitle } from "../ui/card";
 
@@ -26,7 +26,7 @@ export function PostsCta() {
               <CardDescription>{t("description")}</CardDescription>
             </div>
             <div>
-              <LinkWithTransition
+              <Link
                 href="/posts"
                 className={`${buttonVariants({
                   variant: "default",
@@ -37,7 +37,7 @@ export function PostsCta() {
                   size={".85rem"}
                   className="transition-transform ease-in-out duration-300 transform translate-x-0 group-hover:translate-x-1"
                 />
-              </LinkWithTransition>
+              </Link>
             </div>
           </div>
         </CardHeader>
