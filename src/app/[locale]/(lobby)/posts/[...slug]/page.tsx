@@ -1,5 +1,6 @@
 // Components
 import { MDXContent } from "@/components/mdx/mdx-components";
+import { RelatedPosts } from "@/components/posts/related-posts";
 import { Tag } from "@/components/tag";
 import { Toc } from "@/components/toc";
 import { Separator } from "@/components/ui/separator";
@@ -11,7 +12,6 @@ import { posts } from "#site/content";
 import { notFound } from "next/navigation";
 
 // Metadata
-import { RelatedPosts } from "@/components/posts/related-posts";
 import { Metadata } from "next";
 
 interface PostPageProps {
