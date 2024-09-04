@@ -25,3 +25,12 @@ export const FADE_LEFT_ANIMATION_VARIANTS = {
   hidden: { opacity: 0, x: -10 },
   show: { opacity: 1, x: 0, transition: { type: "spring" } },
 };
+
+export const LIST_ITEM_VARIANTS = {
+  hidden: { opacity: 0, y: -20 },
+  visible: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: index * 0.1, duration: 0.4 },
+  }),
+};
