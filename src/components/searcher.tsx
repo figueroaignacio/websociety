@@ -57,7 +57,7 @@ export function Searcher() {
           className="w-full px-3 py-2 rounded-md"
         />
         <div className="my-4 max-h-80 overflow-y-auto py-3">
-          <ul className="space-y-2 px-1">
+          <ul className="space-y-2">
             {results.length > 0 ? (
               results.map((item, index) => (
                 <motion.li
