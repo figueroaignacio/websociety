@@ -1,4 +1,3 @@
-// components/Toc.tsx
 "use client";
 
 // Hooks
