@@ -13,7 +13,7 @@ export function PostsCta() {
   const t = useTranslations("postsCta");
 
   return (
-    <Card className="relative z-20">
+    <Card className="relative z-20 shadow-custom-card">
       <div className="w-full h-full absolute -z-10 flex flex-row justify-between left-0 py-12 right-0">
         <div className="w-full h-full border-border border-y border-dashed"></div>
         <div className="w-full h-full border-border border-y border-dashed"></div>
