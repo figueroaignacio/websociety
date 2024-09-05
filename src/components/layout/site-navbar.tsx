@@ -1,7 +1,6 @@
 "use client";
 
 // Hooks
-import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 
 // Components
@@ -13,10 +12,12 @@ import { Settings } from "../settings";
 // Utils
 import { getCurrentLocale } from "@/utils/getCurrentLocale";
 
-export function SiteNavbar() {
+export function SiteNavbar({
+  navigation,
+}: {
+  navigation: { title: string; href: string }[];
+}) {
   const pathname = usePathname();
-  const t = useTranslations();
-  const navigation = t.raw("navigation");
   const currentLocale = getCurrentLocale(pathname);
 
   return (
@@ -26,7 +27,7 @@ export function SiteNavbar() {
           <Logo />
           <nav className="hidden md:block">
             <ul className="flex gap-8 items-center">
-              {navigation.map((navItem: any, index: number) => (
+              {navigation.map((navItem, index) => (
                 <li key={index}>
                   <Link
                     href={`${navItem.href}`}

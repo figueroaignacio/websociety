@@ -1,7 +1,6 @@
 "use client";
 
 // Hooks
-import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 
 // Components
@@ -9,9 +8,7 @@ import {
   Sheet,
   SheetClose,
   SheetContent,
-  SheetDescription,
   SheetFooter,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Link } from "@/config/navigation";
@@ -25,11 +22,12 @@ import { Menu } from "lucide-react";
 // Utils
 import { getCurrentLocale } from "@/utils/getCurrentLocale";
 
-export function SiteMobileNavbar() {
-  const t = useTranslations();
-  const navigation = t.raw("navigation");
+export function SiteMobileNavbar({
+  navigation,
+}: {
+  navigation: { title: string; href: string }[];
+}) {
   const pathname = usePathname();
-
   const currentLocale = getCurrentLocale(pathname);
 
   return (
@@ -55,10 +53,10 @@ export function SiteMobileNavbar() {
                       : "text-muted-foreground"
                   }  hover:text-foreground font-medium`}
                 >
-                  <SheetClose>{t("navigationHome.title")}</SheetClose>
+                  Home
                 </Link>
               </li>
-              {navigation.map((navItem: any, index: number) => (
+              {navigation.map((navItem, index) => (
                 <li key={index}>
                   <Link
                     href={navItem.href}
@@ -74,12 +72,8 @@ export function SiteMobileNavbar() {
               ))}
             </ul>
             <SheetFooter className="space-y-3">
-              <SheetTitle>
-                <Logo />
-              </SheetTitle>
-              <SheetDescription>
-                By a developer, for developers.
-              </SheetDescription>
+              <Logo />
+              <span>By a developer, for developers.</span>
             </SheetFooter>
           </SheetContent>
         </Sheet>
