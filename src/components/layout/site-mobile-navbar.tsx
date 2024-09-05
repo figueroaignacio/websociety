@@ -22,11 +22,10 @@ import { Menu } from "lucide-react";
 // Utils
 import { getCurrentLocale } from "@/utils/getCurrentLocale";
 
-export function SiteMobileNavbar({
-  navigation,
-}: {
-  navigation: { title: string; href: string }[];
-}) {
+// Types
+import { Navigation } from "@/types/types";
+
+export function SiteMobileNavbar({ navigation }: { navigation: Navigation[] }) {
   const pathname = usePathname();
   const currentLocale = getCurrentLocale(pathname);
 

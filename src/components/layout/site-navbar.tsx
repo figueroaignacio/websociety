@@ -12,11 +12,10 @@ import { Settings } from "../settings";
 // Utils
 import { getCurrentLocale } from "@/utils/getCurrentLocale";
 
-export function SiteNavbar({
-  navigation,
-}: {
-  navigation: { title: string; href: string }[];
-}) {
+// Types
+import { Navigation } from "@/types/types";
+
+export function SiteNavbar({ navigation }: { navigation: Navigation[] }) {
   const pathname = usePathname();
   const currentLocale = getCurrentLocale(pathname);
 
