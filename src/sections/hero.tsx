@@ -88,7 +88,7 @@ export function Hero() {
               alt="Home hero code"
               width={0}
               height={0}
-              className="rounded-md bg-card"
+              className="rounded-md bg-card border"
               priority
             />
           )}
