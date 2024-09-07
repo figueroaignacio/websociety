@@ -1,11 +1,23 @@
+// Hooks
+import { useTranslations } from "next-intl";
+
+// Components
 import { BackButton } from "@/components/back-button";
 import { FramerDiv, FramerSection } from "@/components/framer";
 import { HeroBg } from "@/components/layout/hero-bg";
-import { FADE_DOWN_ANIMATION_VARIANTS } from "@/constants/animations";
 import { Rocket } from "lucide-react";
-import { useTranslations } from "next-intl";
 
-export default function ResourcesPage() {
+// Constants
+import { FADE_DOWN_ANIMATION_VARIANTS } from "@/constants/animations";
+
+// Utils
+import { unstable_setRequestLocale } from "next-intl/server";
+
+// Types
+import { MetadataParams } from "@/types/types";
+
+export default function ResourcesPage({ params: { locale } }: MetadataParams) {
+  unstable_setRequestLocale(locale);
   const t = useTranslations("resources");
 
   return (
