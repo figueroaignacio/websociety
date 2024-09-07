@@ -1,6 +1,7 @@
 {
   "challenges": {
     "title": "Participate on challenges to enhance your coding skills",
-    "fallback": "This section is in development."
+    "fallbackTitle": "The Challenges page is under development.",
+    "fallbackDescription": "Soon, you'll be able to complete web development challenges, upload your solutions, get feedback, and improve your skills."
   }
 }

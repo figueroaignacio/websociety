@@ -33,7 +33,7 @@ export default function ChallengesPage({ params: { locale } }: MetadataParams) {
 
   return (
     <FramerSection
-      className="flex justify-center items-center min-h-[100dvh]"
+      className="flex justify-center items-center min-h-[85dvh]"
       initial="hidden"
       animate="show"
       viewport={{ once: true }}
@@ -47,16 +47,19 @@ export default function ChallengesPage({ params: { locale } }: MetadataParams) {
       }}
     >
       <HeroBg />
-      <div className="border-t border-b border-dashed py-12 max-w-2xl">
+      <div className="border-y border-dashed py-12 max-w-2xl">
         <FramerDiv
           variants={FADE_DOWN_ANIMATION_VARIANTS}
-          className="flex flex-col justify-center items-center bg-card gap-3 text-center rounded-md p-16"
+          className="flex flex-col justify-center items-center bg-card gap-3 text-center rounded-md p-16 border"
         >
-          <div className="border-2 rounded-full p-3">
+          <div className="border-2 border-dashed rounded-full p-3">
             <Rocket size="1.5rem" />
           </div>
           <div>
-            <p className="opacity-75">{t("fallback")}</p>
+            <h2>{t("fallbackTitle")}</h2>
+          </div>
+          <div>
+            <p className="text-muted-foreground">{t("fallbackDescription")}</p>
           </div>
           <BackButton />
         </FramerDiv>
