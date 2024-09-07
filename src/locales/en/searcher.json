@@ -4,6 +4,10 @@
     "dialogTitle": "Search for articles or guides",
     "inputPlaceholder": "Type...",
     "fallback": "No results found",
-    "fallbackDescription": "Try refining your search terms or exploring different topics."
+    "fallbackDescription": "Try refining your search terms or exploring different topics.",
+    "badges": {
+      "post": "Post",
+      "guide": "Guide"
+    }
   }
 }

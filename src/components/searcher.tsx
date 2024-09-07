@@ -5,7 +5,6 @@ import { useState } from "react";
 
 // Components
 import { Link } from "@/config/navigation";
-import { motion } from "framer-motion";
 import { Alert, AlertDescription, AlertTitle } from "./ui/alert";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
@@ -20,9 +19,6 @@ import { ScrollArea } from "./ui/scroll-area";
 
 // Icons
 import { AlertOctagon, Search } from "lucide-react";
-
-// Constants
-import { LIST_ITEM_VARIANTS } from "@/constants/animations";
 
 export function Searcher() {
   const [query, setQuery] = useState("");
@@ -61,15 +57,8 @@ export function Searcher() {
           <ScrollArea className="h-80">
             <ul className="space-y-4">
               {results.length > 0 ? (
-                results.map((item, index) => (
-                  <motion.li
-                    key={item.slug}
-                    className="border rounded-sm p-4"
-                    variants={LIST_ITEM_VARIANTS}
-                    initial="hidden"
-                    animate="visible"
-                    custom={index}
-                  >
+                results.map((item) => (
+                  <li key={item.slug} className="border rounded-sm p-4">
                     <Link
                       href={`/${item.slug}`}
                       className="font-semibold flex gap-2"
@@ -77,7 +66,9 @@ export function Searcher() {
                     >
                       <p className="underline">{item.title}</p>
                       <Badge variant={"default"}>
-                        {item.slug.startsWith("posts/") ? "Artículo" : "Guía"}
+                        {item.slug.startsWith("posts/")
+                          ? `${t("badges.post")}`
+                          : `${t("badges.guide")}`}
                       </Badge>
                     </Link>
                     {item.description && (
@@ -85,7 +76,7 @@ export function Searcher() {
                         {item.description}
                       </p>
                     )}
-                  </motion.li>
+                  </li>
                 ))
               ) : (
                 <Alert variant={"warning"}>
