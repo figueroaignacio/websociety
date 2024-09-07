@@ -13,4 +13,5 @@ export const namespaces: string[] = [
   "toc",
   "searcher",
   "banner",
+  "resources",
 ];
