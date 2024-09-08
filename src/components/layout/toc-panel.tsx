@@ -19,8 +19,8 @@ export function TocPanel({ headings, activeId }: TocPanelProps) {
 
   return (
     <nav className="sticky top-16 h-[calc(100vh-121px)] left-0 rounded-lg mx-auto overflow-y-auto px-4 hidden lg:block">
-      <p className="font-semibold text-sm">{t("title")}</p>
-      <ul className="list-none flex flex-col gap-2">
+      <p className="font-semibold">{t("title")}</p>
+      <ul className="list-none flex flex-col gap-2 mt-5">
         {headings.map((heading) => (
           <li
             key={heading.id}

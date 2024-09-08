@@ -28,19 +28,22 @@ export function RelatedPosts({ currentPost }: RelatedPostsProps) {
     .slice(0, 4);
 
   return (
-    <div className="sticky top-16 lg:h-[calc(100vh-121px)] left-0 space-y-3 rounded-lg mx-auto lg:overflow-y-auto lg:px-4">
-      <p className="font-semibold text-sm">{t("relatedPosts.title")}</p>
-      {relatedPosts.length > 0 ? (
-        relatedPosts.map((relatedPost) => (
-          <RelatedPostCard
-            key={relatedPost.slug}
-            title={relatedPost.title}
-            slug={relatedPost.slug}
-          />
-        ))
-      ) : (
-        <p>No related posts by now.</p>
-      )}
+    <div className="sticky top-16 lg:h-[calc(100vh-121px)] left-0  rounded-lg mx-auto lg:overflow-y-auto lg:px-4">
+      <p className="font-semibold">{t("relatedPosts.title")}</p>
+      <ul className="space-y-3 mt-5">
+        {relatedPosts.length > 0 ? (
+          relatedPosts.map((relatedPost) => (
+            <li key={relatedPost.slug}>
+              <RelatedPostCard
+                title={relatedPost.title}
+                slug={relatedPost.slug}
+              />
+            </li>
+          ))
+        ) : (
+          <p>No related posts by now.</p>
+        )}
+      </ul>
     </div>
   );
 }
