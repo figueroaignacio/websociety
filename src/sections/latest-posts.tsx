@@ -13,6 +13,7 @@ import { posts } from "#site/content";
 import { sortPosts } from "@/utils/sortPosts";
 
 // Animations
+import { NoPostsMessage } from "@/components/posts/no-posts-message";
 import "@/styles/animations.css";
 
 export function LatestPosts() {
@@ -43,7 +44,7 @@ export function LatestPosts() {
             })}
           </ul>
         ) : (
-          <p>Nothing to see yet</p>
+          <NoPostsMessage />
         )}
       </div>
     </section>

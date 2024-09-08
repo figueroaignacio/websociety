@@ -13,5 +13,9 @@
   },
   "relatedPosts": {
     "title": "Publicaciones relacionadas"
+  },
+  "noPostsMessage": {
+    "title": "Publicaciones no encontradas.",
+    "description": "Ocurrió un error mientras se cargaban las publicaciones, intente más tarde."
   }
 }

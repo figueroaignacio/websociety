@@ -13,5 +13,9 @@
   },
   "relatedPosts": {
     "title": "Related Posts"
+  },
+  "noPostsMessage": {
+    "title": "No posts found",
+    "description": "An error has occurred while loading the posts. Please try again later."
   }
 }

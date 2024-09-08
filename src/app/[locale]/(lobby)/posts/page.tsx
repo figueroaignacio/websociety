@@ -3,6 +3,7 @@ import { useLocale, useTranslations } from "next-intl";
 
 // Components
 import { FramerH1, FramerLi, FramerSection } from "@/components/framer";
+import { NoPostsMessage } from "@/components/posts/no-posts-message";
 import { PostCard } from "@/components/posts/post-card";
 import { QueryPagination } from "@/components/query-pagination";
 
@@ -110,9 +111,7 @@ export default function PostsPage({
               })}
             </ul>
           ) : (
-            <section className="py-36 text-center">
-              <p className="text-xl">xd</p>
-            </section>
+            <NoPostsMessage />
           )}
         </div>
         <QueryPagination totalPages={totalPages} />
