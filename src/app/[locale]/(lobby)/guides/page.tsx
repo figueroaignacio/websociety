@@ -4,6 +4,7 @@ import { useLocale, useTranslations } from "next-intl";
 // Components
 import { FramerH1, FramerLi, FramerSection } from "@/components/framer";
 import { GuideCard } from "@/components/guides/guide-card";
+import { NoGuidesMessage } from "@/components/guides/no-guides-message";
 
 // Content
 import { guides } from "#site/content";
@@ -48,11 +49,7 @@ export default function LearnPage({ params: { locale } }: LearnPageProps) {
   const filteredGuides = guides.filter((guide) => guide.locale === lang);
 
   if (filteredGuides.length < 0) {
-    return (
-      <section className="py-36 text-center">
-        <p className="text-xl">xd</p>
-      </section>
-    );
+    return <NoGuidesMessage />;
   }
 
   return (

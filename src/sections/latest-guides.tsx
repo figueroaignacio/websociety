@@ -3,6 +3,7 @@ import { useLocale, useTranslations } from "next-intl";
 
 // Components
 import { GuideCard } from "@/components/guides/guide-card";
+import { NoGuidesMessage } from "@/components/guides/no-guides-message";
 
 // Content
 import { guides } from "#site/content";
@@ -18,11 +19,7 @@ export function LatestGuides() {
     .slice(0, 4);
 
   if (latestGuides.length < 0) {
-    return (
-      <section className="py-36 text-center">
-        <p className="text-xl">Nothing to see yet</p>
-      </section>
-    );
+    return <NoGuidesMessage />;
   }
 
   return (

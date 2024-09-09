@@ -10,5 +10,9 @@
     "title": "Estás buscando mejorar tus habilidades?",
     "description": "Explorá todas las guías y empezá a aprender hoy mismo!",
     "link": "Empezar"
+  },
+  "noGuidesMessage": {
+    "title": "Guías no encontradas.",
+    "description": "Ocurrió un error mientras se cargaban las guías, intente más tarde."
   }
 }

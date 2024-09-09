@@ -10,5 +10,9 @@
     "title": "Looking to Enhance Your Skills?",
     "description": "Explore all the guides and start learning today.",
     "link": "Get Started"
+  },
+  "noGuidesMessage": {
+    "title": "No guides found",
+    "description": "An error has occurred while loading the guides. Please try again later."
   }
 }
