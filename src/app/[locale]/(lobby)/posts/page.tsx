@@ -67,6 +67,10 @@ export default function PostsPage({
     POSTS_PER_PAGE * currentPage
   );
 
+  if (displayPosts.length < 0) {
+    return <NoPostsMessage />;
+  }
+
   return (
     <FramerSection
       initial="hidden"
@@ -91,28 +95,24 @@ export default function PostsPage({
           </FramerH1>
         </div>
         <div>
-          {displayPosts.length > 0 ? (
-            <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2">
-              {displayPosts.map((post) => {
-                return (
-                  <FramerLi
-                    variants={FADE_DOWN_ANIMATION_VARIANTS}
-                    key={post.slug}
-                  >
-                    <PostCard
-                      slug={post.slug}
-                      date={post.date}
-                      title={post.title}
-                      description={post.description ?? ""}
-                      categories={post.categories}
-                    />
-                  </FramerLi>
-                );
-              })}
-            </ul>
-          ) : (
-            <NoPostsMessage />
-          )}
+          <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2">
+            {displayPosts.map((post) => {
+              return (
+                <FramerLi
+                  variants={FADE_DOWN_ANIMATION_VARIANTS}
+                  key={post.slug}
+                >
+                  <PostCard
+                    slug={post.slug}
+                    date={post.date}
+                    title={post.title}
+                    description={post.description ?? ""}
+                    categories={post.categories}
+                  />
+                </FramerLi>
+              );
+            })}
+          </ul>
         </div>
         <QueryPagination totalPages={totalPages} />
       </div>

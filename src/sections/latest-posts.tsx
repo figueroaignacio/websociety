@@ -23,29 +23,29 @@ export function LatestPosts() {
     .filter((post) => post.locale === locale)
     .slice(0, 4);
 
+  if (latestPosts.length < 0) {
+    return <NoPostsMessage />;
+  }
+
   return (
     <section className="py-10 flex flex-col gap-7">
       <h2 className="font-bold text-3xl">{t("title")}</h2>
       <div>
-        {latestPosts?.length > 0 ? (
-          <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2">
-            {latestPosts.map((post) => {
-              return (
-                <li key={post.slug}>
-                  <PostCard
-                    title={post.title}
-                    date={post.date}
-                    description={post.description ?? ""}
-                    slug={post.slug}
-                    categories={post.categories}
-                  />
-                </li>
-              );
-            })}
-          </ul>
-        ) : (
-          <NoPostsMessage />
-        )}
+        <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2">
+          {latestPosts.map((post) => {
+            return (
+              <li key={post.slug}>
+                <PostCard
+                  title={post.title}
+                  date={post.date}
+                  description={post.description ?? ""}
+                  slug={post.slug}
+                  categories={post.categories}
+                />
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </section>
   );
