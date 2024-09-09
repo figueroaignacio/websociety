@@ -47,6 +47,14 @@ export default function LearnPage({ params: { locale } }: LearnPageProps) {
 
   const filteredGuides = guides.filter((guide) => guide.locale === lang);
 
+  if (filteredGuides.length < 0) {
+    return (
+      <section className="py-36 text-center">
+        <p className="text-xl">xd</p>
+      </section>
+    );
+  }
+
   return (
     <FramerSection
       initial="hidden"
@@ -68,29 +76,23 @@ export default function LearnPage({ params: { locale } }: LearnPageProps) {
       >
         {t("title")}
       </FramerH1>
-      {filteredGuides.length > 0 ? (
-        <ul className="grid gap-4 grid-cols-1 md:grid-cols-2">
-          {filteredGuides.map((guide) => {
-            return (
-              <FramerLi
-                variants={FADE_LEFT_ANIMATION_VARIANTS}
-                className="h-full"
-                key={guide.slug}
-              >
-                <GuideCard
-                  slug={guide.slug}
-                  title={guide.title}
-                  description={guide.description ?? ""}
-                />
-              </FramerLi>
-            );
-          })}
-        </ul>
-      ) : (
-        <section className="py-36 text-center">
-          <p className="text-xl">xd</p>
-        </section>
-      )}
+      <ul className="grid gap-4 grid-cols-1 md:grid-cols-2">
+        {filteredGuides.map((guide) => {
+          return (
+            <FramerLi
+              variants={FADE_LEFT_ANIMATION_VARIANTS}
+              className="h-full"
+              key={guide.slug}
+            >
+              <GuideCard
+                slug={guide.slug}
+                title={guide.title}
+                description={guide.description ?? ""}
+              />
+            </FramerLi>
+          );
+        })}
+      </ul>
     </FramerSection>
   );
 }
