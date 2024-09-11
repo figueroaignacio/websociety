@@ -3,6 +3,13 @@ import { MDXContent } from "@/components/mdx/mdx-components";
 import { RelatedPosts } from "@/components/posts/related-posts";
 import { Tag } from "@/components/tag";
 import { Toc } from "@/components/toc";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
 import { Separator } from "@/components/ui/separator";
 
 // Content
@@ -36,6 +43,28 @@ async function getPostFromParams(params: PostPageProps["params"]) {
     console.error("Error getting post from params:", error);
     return null;
   }
+}
+
+async function getPreviousPost(currentPostSlug: string, locale: string) {
+  const localePosts = posts.filter((post) => post.locale === locale);
+  const currentIndex = localePosts.findIndex(
+    (post) => post.slugAsParams === currentPostSlug
+  );
+  if (currentIndex > 0) {
+    return localePosts[currentIndex - 1];
+  }
+  return null;
+}
+
+async function getNextPost(currentPostSlug: string, locale: string) {
+  const localePosts = posts.filter((post) => post.locale === locale);
+  const currentIndex = localePosts.findIndex(
+    (post) => post.slugAsParams === currentPostSlug
+  );
+  if (currentIndex < localePosts.length - 1) {
+    return localePosts[currentIndex + 1];
+  }
+  return null;
 }
 
 export async function generateMetadata({
@@ -78,12 +107,18 @@ export async function generateStaticParams(): Promise<
 > {
   return posts.map((post) => ({ slug: post.slugAsParams.split("/") }));
 }
+
 export default async function PostPage({ params }: PostPageProps) {
+  const { locale = "en" } = params;
+
   const post = await getPostFromParams(params);
 
   if (!post || !post.published) {
     notFound();
   }
+
+  const previousPost = await getPreviousPost(post.slugAsParams, locale);
+  const nextPost = await getNextPost(post.slugAsParams, locale);
 
   return (
     <article className="mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 relative top-12">
@@ -104,6 +139,27 @@ export default async function PostPage({ params }: PostPageProps) {
         </div>
         <Separator className="mb-5" />
         <MDXContent code={post.body} />
+        <Separator className="my-8" />
+        <Pagination className="mt-8">
+          <PaginationContent className="flex justify-between w-full">
+            {previousPost && (
+              <PaginationItem className="flex items-center ">
+                <PaginationPrevious
+                  title={previousPost.title}
+                  href={`/posts/${previousPost.slugAsParams}`}
+                />
+              </PaginationItem>
+            )}
+            {nextPost && (
+              <PaginationItem>
+                <PaginationNext
+                  title={nextPost.title}
+                  href={`/posts/${nextPost.slugAsParams}`}
+                />
+              </PaginationItem>
+            )}
+          </PaginationContent>
+        </Pagination>
       </div>
       <aside className="lg:col-span-3">
         <Toc />
