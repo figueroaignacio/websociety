@@ -30,8 +30,8 @@ export async function generateMetadata({ params: { locale } }: MetadataParams) {
       process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000"
     ),
     title: {
-      default: t("title"),
-      template: `%s - ${t("title")} `,
+      default: t("titleDefault"),
+      template: `%s - ${t("titleTemplate")} `,
     },
     description: t("description"),
     authors: [
