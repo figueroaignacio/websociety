@@ -4,7 +4,7 @@
 import { useTranslations } from "next-intl";
 import { usePathname, useSearchParams } from "next/navigation";
 
-// Componentes
+// Components
 import {
   Pagination,
   PaginationContent,
@@ -33,7 +33,7 @@ export function QueryPagination({
   const nextPage = currentPage + 1;
 
   const createPageURL = (pageNumber: number | string) => {
-    const params = new URLSearchParams(searchParams);
+    const params = new URLSearchParams(searchParams as any);
     params.set("page", pageNumber.toString());
     return `${pathname}?${params.toString()}`;
   };
