@@ -1,6 +1,7 @@
 "use client";
 
 // Hooks
+import { useTranslations } from "next-intl";
 import { usePathname, useSearchParams } from "next/navigation";
 
 // Componentes
@@ -24,6 +25,7 @@ export function QueryPagination({
 }: QueryPaginationProps) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const t = useTranslations("paginationPosts");
 
   const currentPage = Number(searchParams.get("page")) || 1;
 
@@ -41,7 +43,10 @@ export function QueryPagination({
       <PaginationContent>
         {prevPage >= 1 ? (
           <PaginationItem>
-            <PaginationPrevious href={createPageURL(prevPage)} />
+            <PaginationPrevious
+              href={createPageURL(prevPage)}
+              title={t("previousLabel")}
+            />
           </PaginationItem>
         ) : null}
 
@@ -63,7 +68,10 @@ export function QueryPagination({
 
         {nextPage <= totalPages ? (
           <PaginationItem>
-            <PaginationNext href={createPageURL(nextPage)} />
+            <PaginationNext
+              href={createPageURL(nextPage)}
+              title={t("nextLabel")}
+            />
           </PaginationItem>
         ) : null}
       </PaginationContent>

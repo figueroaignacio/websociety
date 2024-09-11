@@ -17,5 +17,9 @@
   "noPostsMessage": {
     "title": "No posts found",
     "description": "An error has occurred while loading the posts. Please try again later."
+  },
+  "paginationPosts": {
+    "previousLabel": "Previous",
+    "nextLabel": "Next"
   }
 }
