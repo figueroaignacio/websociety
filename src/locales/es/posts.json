@@ -18,8 +18,8 @@
     "title": "Publicaciones no encontradas.",
     "description": "Ocurrió un error mientras se cargaban las publicaciones, intente más tarde."
   },
-  "paginationPosts": {
-    "previousLabel": "Anterior",
-    "nextLabel": "Siguiente"
+  "paginationPostPage": {
+    "previousLabel": "Anterior publicación",
+    "nextLabel": "Siguiente publicación"
   }
 }

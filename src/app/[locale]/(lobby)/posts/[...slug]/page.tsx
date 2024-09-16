@@ -1,15 +1,9 @@
 // Components
 import { MDXContent } from "@/components/mdx/mdx-components";
+import { PostPagePagination } from "@/components/posts/post-page-pagination";
 import { RelatedPosts } from "@/components/posts/related-posts";
 import { Tag } from "@/components/tag";
 import { Toc } from "@/components/toc";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination";
 import { Separator } from "@/components/ui/separator";
 
 // Content
@@ -140,26 +134,7 @@ export default async function PostPage({ params }: PostPageProps) {
         <Separator className="mb-5" />
         <MDXContent code={post.body} />
         <Separator className="my-8" />
-        <Pagination className="mt-8">
-          <PaginationContent className="flex justify-between w-full">
-            {previousPost && (
-              <PaginationItem className="flex items-center ">
-                <PaginationPrevious
-                  title={previousPost.title}
-                  href={`/posts/${previousPost.slugAsParams}`}
-                />
-              </PaginationItem>
-            )}
-            {nextPost && (
-              <PaginationItem>
-                <PaginationNext
-                  title={nextPost.title}
-                  href={`/posts/${nextPost.slugAsParams}`}
-                />
-              </PaginationItem>
-            )}
-          </PaginationContent>
-        </Pagination>
+        <PostPagePagination previousPost={previousPost} nextPost={nextPost} />
       </div>
       <aside className="lg:col-span-3">
         <Toc />
