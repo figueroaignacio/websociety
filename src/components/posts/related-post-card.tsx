@@ -1,8 +1,12 @@
+// Hooks
+import { useTranslations } from "next-intl";
+
 // Components
 import { Link } from "@/config/navigation";
 
 // Icons
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { buttonVariants } from "../ui/button";
 
 interface RelatedPostCardProps {
   title: string;
@@ -10,13 +14,21 @@ interface RelatedPostCardProps {
 }
 
 export function RelatedPostCard({ title, slug }: RelatedPostCardProps) {
+  const t = useTranslations();
+
   return (
-    <Link
-      href={`/${slug}`}
-      className="flex justify-between items-center py-4 px-4 rounded-lg transition-all duration-150 transform hover:scale-[1.03] bg-card border shadow-sm"
-    >
-      <h4 className="text-sm">{title}</h4>
-      <ArrowUpRight className="ml-2 transition-transform duration-150 transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-    </Link>
+    <div className="flex flex-col py-4 px-4 rounded-lg bg-card border shadow-sm">
+      <h4 className="text-sm mb-6">{title}</h4>
+      <Link
+        href={`/${slug}`}
+        className={buttonVariants({ variant: "default" })}
+      >
+        {t("posts.button")}
+        <ArrowRight
+          size={20}
+          className="ml-2 transition-transform duration-150 transform group-hover:translate-x-1 "
+        />
+      </Link>
+    </div>
   );
 }
