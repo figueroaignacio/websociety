@@ -2,7 +2,6 @@
 import { MDXContent } from "@/components/mdx/mdx-components";
 import { PostPagePagination } from "@/components/posts/post-page-pagination";
 import { RelatedPosts } from "@/components/posts/related-posts";
-import { Tag } from "@/components/tag";
 import { Toc } from "@/components/toc";
 import { Separator } from "@/components/ui/separator";
 
@@ -13,6 +12,9 @@ import { posts } from "#site/content";
 import { notFound } from "next/navigation";
 
 // Metadata
+import { Tag } from "@/components/tag";
+import { formatDate } from "@/utils/formatDate";
+import { Calendar, TagIcon } from "lucide-react";
 import { Metadata } from "next";
 
 interface PostPageProps {
@@ -123,13 +125,21 @@ export default async function PostPage({ params }: PostPageProps) {
       </aside>
       <div className="lg:col-span-6">
         <div className="flex flex-col gap-2">
-          <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
-          <div className="flex gap-2 mb-2">
-            {post.categories?.map((tag) => (
-              <Tag tag={tag} key={tag} />
-            ))}
-          </div>
+          <dl className="flex text-xs">
+            <dt className="sr-only">Published at</dt>
+            <dd className="flex items-center gap-2">
+              <Calendar size={12} />
+              <time dateTime={post.date}>{formatDate(post.date, locale)}</time>
+            </dd>
+          </dl>
+          <h1 className="text-3xl font-bold ">{post.title}</h1>
           <p className="mb-4">{post.description}</p>
+          {post.categories?.map((tag, index) => (
+            <div key={index} className="flex items-center gap-2 mb-3">
+              <TagIcon size={16} />
+              <Tag tag={tag} key={tag} />
+            </div>
+          ))}
         </div>
         <Separator className="mb-5" />
         <MDXContent code={post.body} />
