@@ -18,12 +18,12 @@ const iconMap: { [key: string]: JSX.Element } = {
   book: <BookCheck size="3rem" />,
   learn: <GraduationCap size="3rem" />,
   code: <Code2 size="3rem" />,
-  resources: <Globe size="3rem" />, // Added icon for resources
+  resources: <Globe size="3rem" />,
 };
 
 export function Features() {
   const t = useTranslations();
-  const features = t.raw("features"); // Use t() for proper translation
+  const features = t.raw("features");
 
   return (
     <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-3">
