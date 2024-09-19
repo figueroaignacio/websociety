@@ -24,45 +24,34 @@ export async function GET(req: NextRequest) {
     return new ImageResponse(
       (
         <div tw="flex relative flex-col p-12 w-full h-full items-start bg-[#09090b] text-[#f5f5f5]">
-          <div tw="flex items-center">
+          <div tw="flex items-center gap-2">
             <svg
-              width="124"
-              height="124"
-              viewBox="0 0 34 34"
-              fill="none"
+              width="34"
+              height="34"
+              viewBox="0 0 200 200"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <rect width="34" height="34" rx="6" fill="#6B21A8" />
-              <path
-                d="M6 11C6 9.34315 7.34315 8 9 8V8C10.6569 8 12 9.34315 12 11V23C12 24.6569 10.6569 26 9 26V26C7.34315 26 6 24.6569 6 23V11Z"
-                fill="#F5F5F5"
-              />
-              <rect
-                x="13"
-                y="8"
-                width="15"
-                height="5"
-                rx="2.5"
-                fill="#F5F5F5"
-              />
-              <rect
-                x="13"
-                y="14"
-                width="10"
-                height="5"
-                rx="2.5"
-                fill="#F5F5F5"
-              />
-              <circle cx="27.5" cy="24.5" r="1.5" fill="#F5F5F5" />
+              <rect width="200" height="200" fill="#6b21a8" rx="34" />
+              <g
+                fill="none"
+                stroke="#ffffff"
+                strokeWidth="16"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M50 100 L75 75 L50 50" />
+                <path d="M150 100 L125 125 L150 150" />
+                <path d="M75 150 L125 50" />
+              </g>
             </svg>
-            <p tw="ml-2 font-bold text-2xl text-[#f5f5f5]">{title}</p>
+            <div>Web society</div>
           </div>
           <div tw="flex flex-col flex-1 py-10">
             <div tw="flex text-xl uppercase font-bold tracking-tight text-[#f5f5f5]">
               POST
             </div>
             <div tw="flex text-[80px] font-bold text-[50px]">{heading}</div>
-            <div tw="text-[#f5f5f5]">{description}</div>
+            <div tw="text-[#f5f5f5] text-lg">{description}</div>
           </div>
           <div tw="flex items-center w-full justify-between">
             <div tw="flex text-xl text-[#f5f5f5]">{t("url")}</div>
