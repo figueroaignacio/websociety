@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 // Components
 import { BackButton } from "@/components/back-button";
 import { FramerDiv, FramerSection } from "@/components/framer";
-import { HeroBg } from "@/components/layout/hero-bg";
+import { HeroBg } from "@/components/hero-bg";
 import { Rocket } from "lucide-react";
 
 // Constants

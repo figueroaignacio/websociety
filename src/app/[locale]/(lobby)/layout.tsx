@@ -2,9 +2,9 @@ import { unstable_setRequestLocale } from "next-intl/server";
 
 // Components
 import { Banner } from "@/components/banner";
+import { Footer } from "@/components/footer";
 import { FramerWrapper } from "@/components/framer";
-import { Footer } from "@/components/layout/footer";
-import { Navbar } from "@/components/layout/navbar";
+import { Navbar } from "@/components/navigation/navbar";
 
 // Styles
 import "@/styles/globals.css";

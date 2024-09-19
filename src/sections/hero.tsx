@@ -12,7 +12,7 @@ import {
   FramerParagraph,
   FramerSection,
 } from "@/components/framer";
-import { HeroBg } from "@/components/layout/hero-bg";
+import { HeroBg } from "@/components/hero-bg";
 import Image from "next/image";
 
 // Images - Icons

@@ -1,12 +1,11 @@
 "use client";
 
 // Hooks
-import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 
 // Components
-import { MobileTocPanel } from "./layout/mobile-toc-panel";
-import { TocPanel } from "./layout/toc-panel";
+import { MobileTocPanel } from "./mobile-toc-panel";
+import { TocPanel } from "./toc-panel";
 
 interface Heading {
   id: string;
@@ -15,7 +14,6 @@ interface Heading {
 }
 
 export function Toc() {
-  const t = useTranslations("toc");
   const [headings, setHeadings] = useState<Heading[]>([]);
   const [activeId, setActiveId] = useState<string>("");
 

@@ -1,8 +1,8 @@
 // Components
 import { MDXContent } from "@/components/mdx/mdx-components";
+import { Toc } from "@/components/navigation/toc";
 import { PostPagePagination } from "@/components/posts/post-page-pagination";
 import { RelatedPosts } from "@/components/posts/related-posts";
-import { Toc } from "@/components/toc";
 import { Separator } from "@/components/ui/separator";
 
 // Content
