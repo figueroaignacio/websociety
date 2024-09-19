@@ -148,7 +148,9 @@ export default async function PostPage({ params }: PostPageProps) {
           ))}
         </div>
         <Separator className="mb-5" />
-        <MDXContent code={post.body} />
+        <div id="content">
+          <MDXContent code={post.body} />
+        </div>
         <Separator className="my-8" />
         <PostPagePagination previousPost={previousPost} nextPost={nextPost} />
       </div>

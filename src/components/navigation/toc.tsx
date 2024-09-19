@@ -18,13 +18,17 @@ export function Toc() {
   const [activeId, setActiveId] = useState<string>("");
 
   useEffect(() => {
-    const headingElements = Array.from(document.querySelectorAll("h2, h3")).map(
-      (heading) => ({
-        id: heading.id,
-        text: heading.textContent,
-        level: heading.tagName.toLowerCase() === "h2" ? 2 : 3,
-      })
-    );
+    const contentContainer = document.getElementById("content");
+
+    if (!contentContainer) return;
+
+    const headingElements = Array.from(
+      contentContainer.querySelectorAll("h2, h3")
+    ).map((heading) => ({
+      id: heading.id,
+      text: heading.textContent,
+      level: heading.tagName.toLowerCase() === "h2" ? 2 : 3,
+    }));
 
     setHeadings(headingElements as Heading[]);
 
