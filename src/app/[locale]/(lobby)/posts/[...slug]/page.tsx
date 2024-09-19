@@ -74,7 +74,13 @@ export async function generateMetadata({
 
     const ogSearchParams = new URLSearchParams({ title: post.title });
 
+    const metadataBase =
+      locale === "en"
+        ? process.env.NEXT_PUBLIC_APP_URL_EN
+        : process.env.NEXT_PUBLIC_APP_URL_ES;
+
     return {
+      metadataBase: new URL(metadataBase ?? "http://localhost:3000"),
       title: post.title,
       description: post.description,
       openGraph: {
