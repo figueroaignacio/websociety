@@ -1,6 +1,7 @@
 import { unstable_setRequestLocale } from "next-intl/server";
 
 // Components
+import { Banner } from "@/components/banner";
 import { FramerWrapper } from "@/components/framer";
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
@@ -8,7 +9,7 @@ import { Navbar } from "@/components/layout/navbar";
 // Styles
 import "@/styles/globals.css";
 
-import { Banner } from "@/components/banner";
+// Config
 import { locales } from "@/config/config";
 
 export function generateStaticParams() {
