@@ -29,7 +29,7 @@ export function RelatedPosts({ currentPost }: RelatedPostsProps) {
 
   return (
     <div className="sticky top-16 lg:h-[calc(100vh-121px)] left-0  rounded-lg mx-auto lg:overflow-y-auto lg:px-4">
-      <p className="font-semibold">{t("relatedPosts.title")}</p>
+      <p className="font-semibold text-xs">{t("relatedPosts.title")}</p>
       <ul className="space-y-3 mt-5">
         {relatedPosts.length > 0 ? (
           relatedPosts.map((relatedPost) => (
