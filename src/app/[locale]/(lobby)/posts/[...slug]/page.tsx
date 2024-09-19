@@ -3,18 +3,20 @@ import { MDXContent } from "@/components/mdx/mdx-components";
 import { Toc } from "@/components/navigation/toc";
 import { PostPagePagination } from "@/components/posts/post-page-pagination";
 import { RelatedPosts } from "@/components/posts/related-posts";
+import { Tag } from "@/components/tag";
 import { Separator } from "@/components/ui/separator";
 
 // Content
 import { posts } from "#site/content";
 
 // Utils
+import { formatDate } from "@/utils/formatDate";
 import { notFound } from "next/navigation";
 
-// Metadata
-import { Tag } from "@/components/tag";
-import { formatDate } from "@/utils/formatDate";
+// Icons
 import { Calendar, TagIcon } from "lucide-react";
+
+// Metadata
 import { Metadata } from "next";
 
 interface PostPageProps {
