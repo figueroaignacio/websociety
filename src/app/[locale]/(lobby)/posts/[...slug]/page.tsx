@@ -92,7 +92,7 @@ export async function generateMetadata({
         url: post.slug,
         images: [
           {
-            url: `${locale}/api/og?${ogSearchParams.toString()}`,
+            url: `/api/og?${ogSearchParams.toString()}`,
             width: 1200,
             height: 630,
             alt: post.title,
