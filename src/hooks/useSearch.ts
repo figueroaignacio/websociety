@@ -4,7 +4,7 @@
 import { useEffect, useState } from "react";
 
 // Content
-import { guides, posts } from "#site/content";
+import { guides, posts } from "@content";
 
 type ContentItem = {
   slug: string;

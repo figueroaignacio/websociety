@@ -8,7 +8,7 @@ import { Separator } from "@/components/ui/separator";
 import { notFound } from "next/navigation";
 
 // Content
-import { guides } from "#site/content";
+import { guides } from "@content";
 
 // Styles
 import "@/styles/mdx.css";

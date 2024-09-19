@@ -8,7 +8,7 @@ import { PostCard } from "@/components/posts/post-card";
 import { QueryPagination } from "@/components/query-pagination";
 
 // Content
-import { posts } from "#site/content";
+import { posts } from "@content";
 
 // Utils
 import { sortPosts } from "@/utils/sortPosts";

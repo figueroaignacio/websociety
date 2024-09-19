@@ -7,7 +7,7 @@ import { GuideCard } from "@/components/guides/guide-card";
 import { NoGuidesMessage } from "@/components/guides/no-guides-message";
 
 // Content
-import { guides } from "#site/content";
+import { guides } from "@content";
 
 // Constants / Config
 import {

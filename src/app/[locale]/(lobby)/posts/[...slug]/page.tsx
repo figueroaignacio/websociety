@@ -7,7 +7,7 @@ import { Tag } from "@/components/tag";
 import { Separator } from "@/components/ui/separator";
 
 // Content
-import { posts } from "#site/content";
+import { posts } from "@content";
 
 // Utils
 import { formatDate } from "@/utils/formatDate";

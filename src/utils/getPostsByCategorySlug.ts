@@ -1,4 +1,4 @@
-import { Post } from "#site/content";
+import { Post } from "@content";
 import { slug } from "github-slugger";
 
 export function getPostsByCategorySlug(posts: Post[], tag: string) {

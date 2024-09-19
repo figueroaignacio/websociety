@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { RelatedPostCard } from "./related-post-card";
 
 // Content
-import { posts } from "#site/content";
+import { posts } from "@content";
 
 interface RelatedPostsProps {
   currentPost: {

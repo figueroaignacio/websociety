@@ -1,4 +1,4 @@
-import { Guides } from "#site/content";
+import { Guides } from "@content";
 
 export function sortGuides(guides: Guides[]) {
   return guides.sort((a, b) => {
