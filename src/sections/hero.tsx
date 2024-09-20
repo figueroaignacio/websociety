@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import {
   FramerDiv,
   FramerH1,
-  FramerParagraph,
+  FramerH2,
   FramerSection,
 } from "@/components/framer";
 import { HeroBg } from "@/components/hero-bg";
@@ -61,12 +61,12 @@ export function Hero() {
                 <span className="gradient-text">{t("label")}</span>
               </FramerH1>
             </div>
-            <FramerParagraph
+            <FramerH2
               variants={FADE_UP_ANIMATION_VARIANTS}
               className="text-sm lg:text-lg text-muted-foreground px-0 lg:px-80 mt-4"
             >
               {t("description")}
-            </FramerParagraph>
+            </FramerH2>
           </div>
         </div>
         <FramerDiv
