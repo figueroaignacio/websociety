@@ -18,7 +18,7 @@ export function SharePost({ slug, locale }: ShareButtonProps) {
   const url = `${baseUrl}/${locale}/posts/${slug}`;
 
   return (
-    <section className="border p-4 rounded-md">
+    <section className="border p-4 rounded-md mt-8">
       <h3 className="text-2xl font-bold mb-2">{t("share.title")}</h3>
       <p className="font-medium mb-6 text-foreground">
         {t("share.description")}

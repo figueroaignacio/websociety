@@ -161,13 +161,12 @@ export default async function PostPage({ params }: PostPageProps) {
         </div>
         <Separator className="my-8" />
         <PostPagePagination previousPost={previousPost} nextPost={nextPost} />
-        <Separator className="my-6" />
         <SharePost slug={postSlug} locale={locale} />
       </div>
       <aside className="lg:col-span-3">
         <Toc />
       </aside>
-      <div className="block lg:hidden mt-8">
+      <div className="block lg:hidden">
         <RelatedPosts
           currentPost={{
             slug: post.slug,
