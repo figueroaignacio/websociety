@@ -23,5 +23,9 @@
   "paginationPostPage": {
     "previousLabel": "Previous post",
     "nextLabel": "Next post"
+  },
+  "sharePost": {
+    "title": "Share this post",
+    "description": "Help others discover valuable content by sharing it on your favorite platforms."
   }
 }

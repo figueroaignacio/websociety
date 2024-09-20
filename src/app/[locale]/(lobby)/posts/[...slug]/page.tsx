@@ -3,7 +3,7 @@ import { MDXContent } from "@/components/mdx/mdx-components";
 import { Toc } from "@/components/navigation/toc";
 import { PostPagePagination } from "@/components/posts/post-page-pagination";
 import { RelatedPosts } from "@/components/posts/related-posts";
-// import { SharePost } from "@/components/share-post";
+import { SharePost } from "@/components/posts/share-post";
 import { Tag } from "@/components/tag";
 import { Separator } from "@/components/ui/separator";
 
@@ -158,7 +158,7 @@ export default async function PostPage({ params }: PostPageProps) {
         <Separator className="my-8" />
         <PostPagePagination previousPost={previousPost} nextPost={nextPost} />
         <Separator className="my-6" />
-        {/* <SharePost slug={postSlug} locale={locale} /> */}
+        <SharePost slug={postSlug} locale={locale} />
       </div>
       <aside className="lg:col-span-3">
         <Toc />
