@@ -1,5 +1,5 @@
 // Hooks
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 // Components
 import { RelatedPostCard } from "./related-post-card";
@@ -9,6 +9,7 @@ import { posts } from "@content";
 
 interface RelatedPostsProps {
   currentPost: {
+    locale: string;
     slug: string;
     categories: string[];
   };
@@ -16,15 +17,17 @@ interface RelatedPostsProps {
 
 export function RelatedPosts({ currentPost }: RelatedPostsProps) {
   const t = useTranslations();
+  const locale = useLocale();
 
   const relatedPosts = posts
-    .filter(
-      (post) =>
-        post.slug !== currentPost.slug &&
-        (post.categories || []).some((category) =>
-          currentPost.categories.includes(category)
-        )
-    )
+    .filter((post) => {
+      const isSameLocale = post.locale === locale;
+      const isNotCurrentPost = post.slug !== currentPost.slug;
+      const isRelatedCategory = (post.categories || []).some((category) =>
+        currentPost.categories.includes(category)
+      );
+      return isSameLocale && isNotCurrentPost && isRelatedCategory;
+    })
     .slice(0, 4);
 
   return (
