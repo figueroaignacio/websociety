@@ -37,7 +37,7 @@ export function CategoryFilter({
       <h1 className="font-bold text-3xl mb-2">{t("posts.title")}</h1>
       <p className="text-foreground mb-4">{t("posts.description")}</p>
       <Separator className="my-4" />
-      <div className="py-6 px-4 border rounded-lg shadow-sm">
+      <div className="py-6 px-4 border rounded-lg shadow-sm bg-card">
         <h2 className="text-xs font-semibold mb-3">{t("posts.filter")}</h2>
         <div className="flex flex-row flex-wrap gap-y-2 gap-x-3">
           {categories.map((category) => (
