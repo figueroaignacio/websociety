@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { Button } from "../ui/button";
 
 // Constants
-import { socialPlatforms } from "@/constants/social-platforns";
+import { socialPlatforms } from "@/constants/social-platforms";
 
 interface ShareButtonProps {
   slug: string;
