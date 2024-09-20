@@ -38,7 +38,7 @@ export async function generateMetadata({ params: { locale } }: MetadataParams) {
   };
 }
 
-const POSTS_PER_PAGE = 4;
+const POSTS_PER_PAGE = 6;
 
 interface PostsPageProps {
   searchParams: {

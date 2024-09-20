@@ -130,7 +130,11 @@ export default async function PostPage({ params }: PostPageProps) {
     <article className="mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 relative top-12">
       <aside className="hidden lg:block lg:col-span-3">
         <RelatedPosts
-          currentPost={{ slug: post.slug, categories: post.categories }}
+          currentPost={{
+            slug: post.slug,
+            categories: post.categories,
+            locale: post.locale,
+          }}
         />
       </aside>
       <div className="lg:col-span-6">
@@ -165,7 +169,11 @@ export default async function PostPage({ params }: PostPageProps) {
       </aside>
       <div className="block lg:hidden mt-8">
         <RelatedPosts
-          currentPost={{ slug: post.slug, categories: post.categories }}
+          currentPost={{
+            slug: post.slug,
+            categories: post.categories,
+            locale: post.locale,
+          }}
         />
       </div>
     </article>
