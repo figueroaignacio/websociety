@@ -65,7 +65,6 @@ export default function PostsPage({
     (post) => post.published && post.locale === lang
   );
 
-  // Extraer las categorías únicas de los posts
   const categories = Array.from(
     new Set(filteredPosts.flatMap((post) => post.categories || []))
   );
