@@ -1,5 +1,5 @@
 // Hooks
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 
 // Components
 import { FramerLi, FramerSection } from "@/components/framer";
@@ -55,7 +55,6 @@ export default function PostsPage({
   params: { locale },
 }: PostsPageProps) {
   unstable_setRequestLocale(locale);
-  const t = useTranslations("posts");
   const lang = useLocale();
 
   const currentPage = Number(searchParams?.page) || 1;
