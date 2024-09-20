@@ -2,7 +2,7 @@
 import { useLocale, useTranslations } from "next-intl";
 
 // Components
-import { FramerH1, FramerLi, FramerSection } from "@/components/framer";
+import { FramerLi, FramerSection } from "@/components/framer";
 import { NoPostsMessage } from "@/components/posts/no-posts-message";
 import { PostCard } from "@/components/posts/post-card";
 import { QueryPagination } from "@/components/query-pagination";
@@ -11,6 +11,7 @@ import { QueryPagination } from "@/components/query-pagination";
 import { posts } from "@content";
 
 // Utils
+import { postFilter } from "@/utils/postsFilter";
 import { sortPosts } from "@/utils/sortPosts";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
@@ -18,6 +19,7 @@ import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { FADE_DOWN_ANIMATION_VARIANTS } from "@/constants/animations";
 
 // Metadata
+import { CategoryFilter } from "@/components/category-filter";
 import { MetadataParams } from "@/types/types";
 
 export async function generateMetadata({ params: { locale } }: MetadataParams) {
@@ -41,6 +43,7 @@ const POSTS_PER_PAGE = 4;
 interface PostsPageProps {
   searchParams: {
     page?: string;
+    category?: string;
   };
   params: {
     locale: string;
@@ -56,10 +59,24 @@ export default function PostsPage({
   const lang = useLocale();
 
   const currentPage = Number(searchParams?.page) || 1;
+  const selectedCategory = searchParams?.category || null;
+
   const filteredPosts = posts.filter(
     (post) => post.published && post.locale === lang
   );
-  const sortedPosts = sortPosts(filteredPosts);
+
+  // Extraer las categorías únicas de los posts
+  const categories = Array.from(
+    new Set(filteredPosts.flatMap((post) => post.categories || []))
+  );
+
+  const { filteredPosts: filteredAndSortedPosts } = postFilter({
+    categories,
+    posts: filteredPosts,
+    selectedCategory,
+  });
+
+  const sortedPosts = sortPosts(filteredAndSortedPosts);
   const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
 
   const displayPosts = sortedPosts.slice(
@@ -67,10 +84,9 @@ export default function PostsPage({
     POSTS_PER_PAGE * currentPage
   );
 
-  if (displayPosts.length < 0) {
+  if (displayPosts.length < 1) {
     return <NoPostsMessage />;
   }
-
   return (
     <FramerSection
       initial="hidden"
@@ -84,37 +100,33 @@ export default function PostsPage({
           },
         },
       }}
+      className="flex flex-col  top-12 relative"
     >
-      <div className="flex flex-col gap-12 mt-24 max-w-4xl mx-auto">
-        <div className="flex flex-col gap-3">
-          <FramerH1
-            variants={FADE_DOWN_ANIMATION_VARIANTS}
-            className="font-bold text-2xl lg:text-4xl text-center text-muted-foreground"
-          >
-            {t("title")}
-          </FramerH1>
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div className="lg:col-span-4">
+          <CategoryFilter
+            categories={categories}
+            selectedCategory={selectedCategory}
+          />
         </div>
-        <div>
+        <div className="lg:col-span-8">
           <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2">
-            {displayPosts.map((post) => {
-              return (
-                <FramerLi
-                  variants={FADE_DOWN_ANIMATION_VARIANTS}
-                  key={post.slug}
-                >
-                  <PostCard
-                    slug={post.slug}
-                    date={post.date}
-                    title={post.title}
-                    description={post.description ?? ""}
-                    categories={post.categories}
-                  />
-                </FramerLi>
-              );
-            })}
+            {displayPosts.map((post) => (
+              <FramerLi variants={FADE_DOWN_ANIMATION_VARIANTS} key={post.slug}>
+                <PostCard
+                  slug={post.slug}
+                  date={post.date}
+                  title={post.title}
+                  description={post.description ?? ""}
+                  categories={post.categories}
+                />
+              </FramerLi>
+            ))}
           </ul>
+          <div className="mt-10">
+            <QueryPagination totalPages={totalPages} />
+          </div>
         </div>
-        <QueryPagination totalPages={totalPages} />
       </div>
     </FramerSection>
   );

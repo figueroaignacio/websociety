@@ -1,7 +1,9 @@
 {
   "posts": {
-    "title": "The ramblings of Web society",
-    "button": "Read More"
+    "title": "Reflections of Web Society",
+    "description": "Insights on Web Development",
+    "button": "Read More",
+    "filter": "What are your interestings topics?"
   },
   "latestPosts": {
     "title": "Latest Posts"

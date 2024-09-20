@@ -17,8 +17,8 @@ export function RelatedPostCard({ title, slug }: RelatedPostCardProps) {
   const t = useTranslations();
 
   return (
-    <div className="flex flex-col py-4 px-4 rounded-lg bg-card border shadow-sm">
-      <h4 className="text-sm mb-6">{title}</h4>
+    <div className="flex flex-col gap-5 py-4 px-4 rounded-lg bg-card border shadow-sm">
+      <h4 className="text-sm font-semibold">{title}</h4>
       <Link
         href={`/${slug}`}
         className={buttonVariants({ variant: "default" })}
@@ -26,7 +26,7 @@ export function RelatedPostCard({ title, slug }: RelatedPostCardProps) {
         {t("posts.button")}
         <ArrowRight
           size={20}
-          className="ml-2 transition-transform duration-150 transform group-hover:translate-x-1 "
+          className="ml-2 transition-transform duration-150 transform group-hover:translate-x-1"
         />
       </Link>
     </div>

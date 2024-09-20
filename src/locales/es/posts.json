@@ -1,7 +1,9 @@
 {
   "posts": {
-    "title": "Las divagaciones de Web society",
-    "button": "Leer más"
+    "title": "Reflexiones de Web Society",
+    "description": "Perspectivas sobre Desarrollo Web",
+    "button": "Leer más",
+    "filter": "¿Cuales son tus temas de interés?"
   },
   "latestPosts": {
     "title": "Publicaciones Recientes"
