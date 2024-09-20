@@ -14,7 +14,7 @@ interface ShareButtonProps {
 
 export function SharePost({ slug, locale }: ShareButtonProps) {
   const t = useTranslations();
-  const baseUrl = "https://websociety.netlify.app";
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL;
   const url = `${baseUrl}/${locale}/posts/${slug}`;
 
   return (
