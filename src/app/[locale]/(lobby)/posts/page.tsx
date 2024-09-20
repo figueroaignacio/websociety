@@ -85,6 +85,7 @@ export default function PostsPage({
   if (displayPosts.length < 1) {
     return <NoPostsMessage />;
   }
+
   return (
     <FramerSection
       initial="hidden"
