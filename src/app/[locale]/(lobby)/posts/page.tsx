@@ -2,6 +2,7 @@
 import { useLocale } from "next-intl";
 
 // Components
+import { CategoryFilter } from "@/components/category-filter";
 import { FramerLi, FramerSection } from "@/components/framer";
 import { NoPostsMessage } from "@/components/posts/no-posts-message";
 import { PostCard } from "@/components/posts/post-card";
@@ -19,7 +20,6 @@ import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { FADE_DOWN_ANIMATION_VARIANTS } from "@/constants/animations";
 
 // Metadata
-import { CategoryFilter } from "@/components/category-filter";
 import { MetadataParams } from "@/types/types";
 
 export async function generateMetadata({ params: { locale } }: MetadataParams) {
