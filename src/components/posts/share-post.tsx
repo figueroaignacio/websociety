@@ -19,9 +19,9 @@ export function SharePost({ slug, locale }: ShareButtonProps) {
 
   return (
     <section className="border p-4 rounded-md mt-8">
-      <h3 className="text-2xl font-bold mb-2">{t("share.title")}</h3>
+      <h3 className="text-2xl font-bold mb-2">{t("sharePost.title")}</h3>
       <p className="font-medium mb-6 text-foreground">
-        {t("share.description")}
+        {t("sharePost.description")}
       </p>
       <div className="flex gap-2 items-center flex-wrap">
         {socialPlatforms.map(({ name, urlBase, icon: Icon }) => (
