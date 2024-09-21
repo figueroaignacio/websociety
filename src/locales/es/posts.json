@@ -21,8 +21,10 @@
     "description": "Ocurrió un error mientras se cargaban las publicaciones, intente más tarde."
   },
   "paginationPostPage": {
-    "previousLabel": "Anterior publicación",
-    "nextLabel": "Siguiente publicación"
+    "previousPostLabel": "Anterior publicación",
+    "nextPostLabel": "Siguiente publicación",
+    "previousLabel": "Anterior",
+    "nextLabel": "Siguiente"
   },
   "sharePost": {
     "title": "Comparte esta publicación",

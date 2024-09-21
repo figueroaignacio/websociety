@@ -28,7 +28,7 @@ export function PostPagePagination({
           <ArrowLeft className="size-5" />
           <div className="text-left">
             <span className="block text-xs sm:text-sm">
-              {t("paginationPostPage.previousLabel")}
+              {t("paginationPostPage.previousPostLabel")}
             </span>
             <span className="block font-bold text-sm sm:text-md">
               {previousPost.title}
@@ -45,7 +45,7 @@ export function PostPagePagination({
         >
           <div className="text-right">
             <span className="block text-xs sm:text-sm">
-              {t("paginationPostPage.nextLabel")}
+              {t("paginationPostPage.nextPostLabel")}
             </span>
             <span className="block font-bold text-sm sm:text-md">
               {nextPost.title}

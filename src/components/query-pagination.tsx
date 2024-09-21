@@ -25,7 +25,7 @@ export function QueryPagination({
 }: QueryPaginationProps) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const t = useTranslations("paginationPosts");
+  const t = useTranslations("paginationPostPage");
 
   const currentPage = Number(searchParams.get("page")) || 1;
 

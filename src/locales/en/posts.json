@@ -21,8 +21,10 @@
     "description": "An error has occurred while loading the posts. Please try again later."
   },
   "paginationPostPage": {
-    "previousLabel": "Previous post",
-    "nextLabel": "Next post"
+    "previousPostLabel": "Previous post",
+    "nextPostLabel": "Next post",
+    "previousLabel": "Previous",
+    "nextLabel": "Next"
   },
   "sharePost": {
     "title": "Share this post",
