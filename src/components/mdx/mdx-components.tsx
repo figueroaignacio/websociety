@@ -1,5 +1,12 @@
 // Components
+import { Link } from "@/config/navigation";
 import Image from "next/image";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
 import { Callout } from "./callout";
 
 import { cn } from "@/lib/utils";
@@ -13,6 +20,11 @@ const useMDXComponents = (code: string) => {
 const components = {
   Image,
   Callout,
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+  Link,
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1 className={cn("mt-2 scroll-m-20 font-bold", className)} {...props} />
   ),
