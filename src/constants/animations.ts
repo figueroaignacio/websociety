@@ -23,7 +23,11 @@ export const FADE_UP_ANIMATION_VARIANTS = {
 
 export const FADE_LEFT_ANIMATION_VARIANTS = {
   hidden: { opacity: 0, x: -10 },
-  show: { opacity: 1, x: 0, transition: { type: "spring" } },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: { type: "spring", stiffness: 200, damping: 6, bounce: 0.3 },
+  },
 };
 
 export const LIST_ITEM_VARIANTS = {

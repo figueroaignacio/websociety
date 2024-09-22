@@ -17,7 +17,7 @@ import { sortPosts } from "@/utils/sortPosts";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 // Constants / Config
-import { FADE_DOWN_ANIMATION_VARIANTS } from "@/constants/animations";
+import { FADE_LEFT_ANIMATION_VARIANTS } from "@/constants/animations";
 
 // Metadata
 import { MetadataParams } from "@/types/types";
@@ -99,19 +99,21 @@ export default function PostsPage({
           },
         },
       }}
-      className="flex flex-col  top-12 relative"
+      className="flex flex-col top-12 relative"
     >
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <div className="lg:col-span-4">
-          <CategoryFilter
-            categories={categories}
-            selectedCategory={selectedCategory}
-          />
+          <div className="sticky top-16 left-0">
+            <CategoryFilter
+              categories={categories}
+              selectedCategory={selectedCategory}
+            />
+          </div>
         </div>
         <div className="lg:col-span-8">
-          <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2">
+          <ul className="grid gap-4 grid-cols-1 lg:grid-cols-2">
             {displayPosts.map((post) => (
-              <FramerLi variants={FADE_DOWN_ANIMATION_VARIANTS} key={post.slug}>
+              <FramerLi variants={FADE_LEFT_ANIMATION_VARIANTS} key={post.slug}>
                 <PostCard
                   slug={post.slug}
                   date={post.date}
