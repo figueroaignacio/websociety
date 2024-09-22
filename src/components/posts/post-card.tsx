@@ -21,9 +21,9 @@ import { formatDate } from "@/utils/formatDate";
 import { buttonVariants } from "../ui/button";
 
 interface ArticleCardProps {
-  title: string;
+  title?: string;
   date: string;
-  description: string;
+  description?: string;
   slug: string;
   categories?: string[];
 }

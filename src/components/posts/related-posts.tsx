@@ -2,7 +2,7 @@
 import { useLocale, useTranslations } from "next-intl";
 
 // Components
-import { RelatedPostCard } from "./related-post-card";
+import { PostCard } from "./post-card";
 
 // Content
 import { posts } from "@content";
@@ -31,15 +31,20 @@ export function RelatedPosts({ currentPost }: RelatedPostsProps) {
     .slice(0, 4);
 
   return (
-    <div className="sticky top-16 lg:h-[calc(100vh-121px)] left-0  rounded-lg mx-auto lg:overflow-y-auto lg:px-4">
-      <p className="font-semibold text-xs">{t("relatedPosts.title")}</p>
+    <div className="rounded-lg mx-auto lg:overflow-y-auto my-8">
+      <p className="font-semibold">{t("relatedPosts.title")}</p>
       <ul className="space-y-3 mt-5">
         {relatedPosts.length > 0 ? (
           relatedPosts.map((relatedPost) => (
             <li key={relatedPost.slug}>
-              <RelatedPostCard
+              <PostCard
                 title={relatedPost.title}
+                description={
+                  relatedPost.description || "No description provided"
+                }
                 slug={relatedPost.slug}
+                date={relatedPost.date}
+                categories={relatedPost.categories}
               />
             </li>
           ))

@@ -128,15 +128,7 @@ export default async function PostPage({ params }: PostPageProps) {
 
   return (
     <article className="mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 relative top-12">
-      <aside className="hidden lg:block lg:col-span-3">
-        <RelatedPosts
-          currentPost={{
-            slug: post.slug,
-            categories: post.categories,
-            locale: post.locale,
-          }}
-        />
-      </aside>
+      <aside className="hidden lg:block lg:col-span-3"></aside>
       <div className="lg:col-span-6">
         <div className="flex flex-col gap-2">
           <dl className="flex text-xs">
@@ -162,6 +154,14 @@ export default async function PostPage({ params }: PostPageProps) {
         <Separator className="my-8" />
         <PostPagePagination previousPost={previousPost} nextPost={nextPost} />
         <SharePost slug={postSlug} locale={locale} />
+        <Separator className="my-8" />
+        <RelatedPosts
+          currentPost={{
+            slug: post.slug,
+            categories: post.categories,
+            locale: post.locale,
+          }}
+        />
       </div>
       <aside className="lg:col-span-3">
         <Toc />
