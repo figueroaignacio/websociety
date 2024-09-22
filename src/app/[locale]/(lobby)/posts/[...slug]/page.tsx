@@ -11,13 +11,14 @@ import { Separator } from "@/components/ui/separator";
 import { posts } from "@content";
 
 // Utils
-import { formatDate } from "@/utils/formatDate";
 import { notFound } from "next/navigation";
 
 // Icons
 import { Calendar, TagIcon } from "lucide-react";
 
 // Metadata
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { formatDate } from "@/utils/formatDate";
 import { Metadata } from "next";
 
 interface PostPageProps {
@@ -128,10 +129,36 @@ export default async function PostPage({ params }: PostPageProps) {
 
   return (
     <article className="mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 relative top-12">
-      <aside className="hidden lg:block lg:col-span-3"></aside>
+      <aside className="hidden lg:block lg:col-span-3">
+        <div className="flex flex-col gap-5">
+          <div className="flex items-center gap-1">
+            <Avatar>
+              <AvatarImage src="https://github.com/figueroaignacio.png" />
+            </Avatar>
+            <p>Ignacio Figueroa</p>
+          </div>
+        </div>
+        <Separator className="my-8" />
+        <div className="space-y-3 mb-8">
+          <dl className="lg:flex text-xs hidden">
+            <dt className="sr-only">Published at</dt>
+            <dd className="flex items-center gap-2">
+              <Calendar size={12} />
+              <time dateTime={post.date}>{formatDate(post.date, locale)}</time>
+            </dd>
+          </dl>
+          <div className="lg:flex items-center gap-2 mb-3 flex-wrap hidden">
+            <TagIcon size={16} />
+            {post.categories?.map((tag, index) => (
+              <Tag tag={tag} key={tag} />
+            ))}
+          </div>
+        </div>
+        <SharePost slug={postSlug} locale={locale} />
+      </aside>
       <div className="lg:col-span-6">
         <div className="flex flex-col gap-2">
-          <dl className="flex text-xs">
+          <dl className="flex text-xs lg:hidden">
             <dt className="sr-only">Published at</dt>
             <dd className="flex items-center gap-2">
               <Calendar size={12} />
@@ -140,7 +167,7 @@ export default async function PostPage({ params }: PostPageProps) {
           </dl>
           <h1 className="text-3xl font-bold ">{post.title}</h1>
           <p className="mb-4">{post.description}</p>
-          <div className="flex items-center gap-2 mb-3">
+          <div className="flex items-center gap-2 mb-3 lg:hidden">
             <TagIcon size={16} />
             {post.categories?.map((tag, index) => (
               <Tag tag={tag} key={tag} />
@@ -153,7 +180,9 @@ export default async function PostPage({ params }: PostPageProps) {
         </div>
         <Separator className="my-8" />
         <PostPagePagination previousPost={previousPost} nextPost={nextPost} />
-        <SharePost slug={postSlug} locale={locale} />
+        <div className="mt-8 block lg:hidden">
+          <SharePost slug={postSlug} locale={locale} />
+        </div>
         <Separator className="my-8" />
         <RelatedPosts
           currentPost={{
@@ -166,15 +195,6 @@ export default async function PostPage({ params }: PostPageProps) {
       <aside className="lg:col-span-3">
         <Toc />
       </aside>
-      <div className="block lg:hidden">
-        <RelatedPosts
-          currentPost={{
-            slug: post.slug,
-            categories: post.categories,
-            locale: post.locale,
-          }}
-        />
-      </div>
     </article>
   );
 }

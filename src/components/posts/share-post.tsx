@@ -18,15 +18,10 @@ export function SharePost({ slug, locale }: ShareButtonProps) {
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL;
   const url = `${baseUrl}/${locale}/posts/${slug}`;
 
-  const handleCopyUrl = () => {
-    navigator.clipboard.writeText(url);
-    alert(t("sharePost.copied"));
-  };
-
   return (
-    <section className="border p-4 rounded-md mt-8">
-      <h3 className="text-2xl font-bold mb-2">{t("sharePost.title")}</h3>
-      <p className="font-medium mb-6 text-foreground">
+    <section className="border p-4 rounded-md">
+      <h3 className="font-bold mb-2 text-xl">{t("sharePost.title")}</h3>
+      <p className="font-medium text-sm mb-6 text-foreground">
         {t("sharePost.description")}
       </p>
       <ul className="flex gap-2 items-center flex-wrap">
