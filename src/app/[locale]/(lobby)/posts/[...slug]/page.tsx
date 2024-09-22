@@ -169,7 +169,7 @@ export default async function PostPage({ params }: PostPageProps) {
           </dl>
           <h1 className="text-3xl font-bold ">{post.title}</h1>
           <p className="mb-4">{post.description}</p>
-          <div className="flex items-center gap-2 mb-3 lg:hidden">
+          <div className="flex items-center gap-2 mb-3 lg:hidden flex-wrap">
             <TagIcon size={16} />
             {post.categories?.map((tag, index) => (
               <Tag tag={tag} key={tag} />
