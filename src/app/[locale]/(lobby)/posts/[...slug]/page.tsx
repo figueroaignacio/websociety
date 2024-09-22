@@ -154,7 +154,9 @@ export default async function PostPage({ params }: PostPageProps) {
             ))}
           </div>
         </div>
-        <SharePost slug={postSlug} locale={locale} />
+        <div className="sticky top-16 left-0">
+          <SharePost slug={postSlug} locale={locale} />
+        </div>
       </aside>
       <div className="lg:col-span-6">
         <div className="flex flex-col gap-2">
