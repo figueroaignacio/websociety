@@ -1,4 +1,5 @@
 // Components
+import { Toaster } from "@/components/ui/sonner";
 import NextTopLoader from "nextjs-toploader";
 
 // Providers
@@ -78,6 +79,7 @@ export default async function RootLayout({
             {children}
           </ThemeProvider>
         </NextIntlClientProvider>
+        <Toaster />
       </body>
     </html>
   );

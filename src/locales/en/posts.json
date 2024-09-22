@@ -28,6 +28,11 @@
   },
   "sharePost": {
     "title": "Share this post",
-    "description": "Help others discover valuable content by sharing it on your favorite platforms."
+    "description": "Help others discover valuable content by sharing it on your favorite platforms.",
+    "copyLink": {
+      "label": "Copy Link",
+      "copiedTitle": "Link copied",
+      "copiedDescription": "The post URL has been successfully copied to your clipboard."
+    }
   }
 }
