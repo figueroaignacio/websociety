@@ -40,7 +40,6 @@ const guides = defineCollection({
       date: s.isodate(),
       locale: s.string(),
       body: s.mdx(),
-      isIndex: s.boolean().default(false),
     })
     .transform(computedFields),
 });

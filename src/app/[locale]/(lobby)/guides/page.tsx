@@ -46,9 +46,7 @@ export default function LearnPage({ params: { locale } }: LearnPageProps) {
   const t = useTranslations("guides");
   const lang = useLocale();
 
-  const filteredGuides = guides.filter(
-    (guide) => guide.locale === lang && guide.isIndex === true
-  );
+  const filteredGuides = guides.filter((guide) => guide.locale === lang);
 
   if (filteredGuides.length < 0) {
     return <NoGuidesMessage />;
