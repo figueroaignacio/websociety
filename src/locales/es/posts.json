@@ -3,7 +3,8 @@
     "title": "Reflexiones de Web Society",
     "description": "Perspectivas sobre Desarrollo Web",
     "button": "Leer más",
-    "filter": "¿Cuales son tus temas de interés?"
+    "filter": "¿Cuales son tus temas de interés?",
+    "readTime": "Minutos de lectura"
   },
   "latestPosts": {
     "title": "Publicaciones Recientes"

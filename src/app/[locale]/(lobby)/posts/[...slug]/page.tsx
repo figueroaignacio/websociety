@@ -1,6 +1,7 @@
 // Components
 import { MDXContent } from "@/components/mdx/mdx-components";
 import { Toc } from "@/components/navigation/toc";
+import { PostDetails } from "@/components/posts/post-details";
 import { PostPagePagination } from "@/components/posts/post-page-pagination";
 import { RelatedPosts } from "@/components/posts/related-posts";
 import { SharePost } from "@/components/posts/share-post";
@@ -11,14 +12,14 @@ import { Separator } from "@/components/ui/separator";
 import { posts } from "@content";
 
 // Utils
+import { formatDate } from "@/utils/formatDate";
+import { calculateReadingTime } from "@/utils/readingTime";
 import { notFound } from "next/navigation";
 
 // Icons
 import { Calendar, TagIcon } from "lucide-react";
 
 // Metadata
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import { formatDate } from "@/utils/formatDate";
 import { Metadata } from "next";
 
 interface PostPageProps {
@@ -33,9 +34,11 @@ async function getPostFromParams(params: PostPageProps["params"]) {
     const slug = params?.slug.join("/");
     const post = posts.find((post) => post.slugAsParams === slug);
     if (post) {
+      const readingTime = calculateReadingTime(post.body);
       return {
         ...post,
         categories: post.categories || [],
+        readingTime,
       };
     }
     return null;
@@ -130,30 +133,7 @@ export default async function PostPage({ params }: PostPageProps) {
   return (
     <article className="mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 relative top-12">
       <aside className="hidden lg:block lg:col-span-3">
-        <div className="flex flex-col gap-5">
-          <div className="flex items-center gap-1">
-            <Avatar>
-              <AvatarImage src="https://github.com/figueroaignacio.png" />
-            </Avatar>
-            <p>Ignacio Figueroa</p>
-          </div>
-        </div>
-        <Separator className="my-8" />
-        <div className="space-y-3 mb-8">
-          <dl className="lg:flex text-xs hidden">
-            <dt className="sr-only">Published at</dt>
-            <dd className="flex items-center gap-2">
-              <Calendar size={12} />
-              <time dateTime={post.date}>{formatDate(post.date, locale)}</time>
-            </dd>
-          </dl>
-          <div className="lg:flex items-center gap-2 mb-3 flex-wrap hidden">
-            <TagIcon size={16} />
-            {post.categories?.map((tag, index) => (
-              <Tag tag={tag} key={tag} />
-            ))}
-          </div>
-        </div>
+        <PostDetails post={post} locale={locale} />
         <div className="sticky top-16 left-0">
           <SharePost slug={postSlug} locale={locale} />
         </div>
@@ -180,7 +160,6 @@ export default async function PostPage({ params }: PostPageProps) {
         <div id="content">
           <MDXContent code={post.body} />
         </div>
-        <Separator className="my-8" />
         <PostPagePagination previousPost={previousPost} nextPost={nextPost} />
         <div className="mt-8 block lg:hidden">
           <SharePost slug={postSlug} locale={locale} />

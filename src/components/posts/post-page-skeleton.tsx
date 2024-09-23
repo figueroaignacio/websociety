@@ -23,12 +23,12 @@ export function PostPageSkeleton() {
             ))}
           </div>
         </div>
-        <div className="my-8 space-y-4">
+        <div className="my-8 space-y-4 bg-card p-4 rounded-md">
           <Skeleton className="w-36 h-6" />
           <div className="space-y-2">
-            <Skeleton className="w-full h-4" />
-            <Skeleton className="w-56 h-4" />
-            <Skeleton className="w-28 h-4" />
+            <Skeleton className="w-full h-3" />
+            <Skeleton className="w-56 h-3" />
+            <Skeleton className="w-28 h-3" />
           </div>
           <div className="flex flex-wrap items-center gap-3">
             <Skeleton className="w-28 h-7" />

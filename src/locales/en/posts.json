@@ -3,7 +3,8 @@
     "title": "Reflections of Web Society",
     "description": "Insights on Web Development",
     "button": "Read More",
-    "filter": "What are your interestings topics?"
+    "filter": "What are your interestings topics?",
+    "readTime": "Minutos de lectura"
   },
   "latestPosts": {
     "title": "Latest Posts"
