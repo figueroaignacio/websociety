@@ -33,7 +33,7 @@
     "copyLink": {
       "label": "Copiar Link",
       "copiedTitle": "Enlace copiado",
-      "copiedDescription": "El enclace del post ha sido copiada exitosamente al portapapeles."
+      "copiedDescription": "El enlace ha sido copiado al portapapeles."
     }
   }
 }

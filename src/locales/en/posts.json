@@ -33,7 +33,7 @@
     "copyLink": {
       "label": "Copy Link",
       "copiedTitle": "Link copied",
-      "copiedDescription": "The post URL has been successfully copied to your clipboard."
+      "copiedDescription": "The URL has been copied to your clipboard."
     }
   }
 }
