@@ -55,6 +55,7 @@ const resources = defineCollection({
       published: s.boolean().default(true),
       locale: s.string(),
       body: s.mdx(),
+      categories: s.array(s.string()).optional(),
     })
     .transform(computedFields),
 });
