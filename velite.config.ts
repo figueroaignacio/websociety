@@ -44,6 +44,21 @@ const guides = defineCollection({
     .transform(computedFields),
 });
 
+const resources = defineCollection({
+  name: "Resources",
+  pattern: "./resources/**/*.mdx",
+  schema: s
+    .object({
+      slug: s.path(),
+      title: s.string().max(99),
+      description: s.string().max(999),
+      published: s.boolean().default(true),
+      locale: s.string(),
+      body: s.mdx(),
+    })
+    .transform(computedFields),
+});
+
 export default defineConfig({
   root: "./src/content",
   output: {
@@ -53,7 +68,7 @@ export default defineConfig({
     name: "[name]-[hash:6].[ext]",
     clean: true,
   },
-  collections: { posts, guides },
+  collections: { posts, guides, resources },
   mdx: {
     rehypePlugins: [
       rehypeSlug,
