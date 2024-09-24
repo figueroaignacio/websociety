@@ -2,7 +2,6 @@
 import { useTranslations } from "next-intl";
 
 // Components
-import { FramerH1, FramerParagraph, FramerSection } from "@/components/framer";
 import { ResourceCard } from "@/components/resources/resource-card";
 
 // Icons
@@ -14,7 +13,6 @@ import { resources } from "@content";
 import { unstable_setRequestLocale } from "next-intl/server";
 
 // Constants
-import { FADE_DOWN_ANIMATION_VARIANTS } from "@/constants/animations";
 
 // Types
 import { MetadataParams } from "@/types/types";
@@ -24,38 +22,15 @@ export default function ResourcesPage({ params: { locale } }: MetadataParams) {
   const t = useTranslations("resources");
 
   return (
-    <FramerSection
-      initial="hidden"
-      animate="show"
-      viewport={{ once: true }}
-      variants={{
-        hidden: {},
-        show: {
-          transition: {
-            staggerChildren: 0.25,
-          },
-        },
-      }}
-      className="flex flex-col top-12 relative"
-    >
+    <section className="flex flex-col top-12 relative">
       <div>
-        <FramerH1
-          variants={FADE_DOWN_ANIMATION_VARIANTS}
-          className="font-bold text-3xl mb-2"
-        >
-          {t("title")}
-        </FramerH1>
-        <FramerParagraph
-          variants={FADE_DOWN_ANIMATION_VARIANTS}
-          className="text-foreground"
-        >
-          {t("description")}
-        </FramerParagraph>
+        <h1 className="font-bold text-3xl mb-2">{t("title")}</h1>
+        <p className="text-foreground">{t("description")}</p>
       </div>
-      <div className="grid grid-cols-10 gap-6 mt-12">
-        <div className="col-span-3 bg-slate-700"></div>
-        <div className="col-span-7">
-          <ul className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 md:grid-cols-10 gap-6 mt-12">
+        <div className="hidden md:block md:col-span-3 bg-slate-700"></div>
+        <div className="col-span-10 md:col-span-7">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {resources.map((resource, index) => (
               <li key={index}>
                 <ResourceCard
@@ -67,6 +42,6 @@ export default function ResourcesPage({ params: { locale } }: MetadataParams) {
           </ul>
         </div>
       </div>
-    </FramerSection>
+    </section>
   );
 }

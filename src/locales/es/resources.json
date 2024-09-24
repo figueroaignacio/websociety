@@ -2,5 +2,9 @@
   "resources": {
     "title": "Recursos para desarrolladores",
     "description": "Explora los últimos recursos sobre desarrollo web, diseño UI/UX, blogs y más para mantenerte a la vanguardia en la industria."
+  },
+  "resourceCard": {
+    "detailsButton": "Detalles",
+    "visitButton": "Visitar"
   }
 }
