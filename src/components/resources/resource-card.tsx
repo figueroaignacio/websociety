@@ -2,7 +2,7 @@
 import { useTranslations } from "next-intl";
 
 // Components
-import { Button } from "../ui/button";
+import { Button, buttonVariants } from "../ui/button";
 import {
   Card,
   CardContent,
@@ -18,9 +18,14 @@ import { ExternalLink, FileText, ImageIcon } from "lucide-react";
 interface ResourceCardProps {
   title: string;
   description: string;
+  pageUrl: string;
 }
 
-export function ResourceCard({ description, title }: ResourceCardProps) {
+export function ResourceCard({
+  description,
+  title,
+  pageUrl,
+}: ResourceCardProps) {
   const t = useTranslations("resourceCard");
 
   return (
@@ -43,10 +48,16 @@ export function ResourceCard({ description, title }: ResourceCardProps) {
           <FileText className="mr-2" size={16} />
           {t("detailsButton")}
         </Button>
-        <Button className="flex items-center" variant="outline">
+        <a
+          target="_blank"
+          href={pageUrl}
+          className={`flex items-center ${buttonVariants({
+            variant: "outline",
+          })}`}
+        >
           <ExternalLink className="mr-2" size={16} />
           {t("visitButton")}
-        </Button>
+        </a>
       </CardFooter>
     </Card>
   );
