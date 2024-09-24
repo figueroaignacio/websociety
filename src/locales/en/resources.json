@@ -1,6 +1,6 @@
 {
   "resources": {
-    "fallbackTitle": "The Resources page is under development.",
-    "fallbackDescription": "The Resources page is under development. Here you'll find recommended tools, libraries, and guides to improve your web development workflow and learn new technologies."
+    "title": "Developer Resources",
+    "description": "Explore the latest resources on web development, UI/UX design, blogs, and more to stay ahead in the industry."
   }
 }

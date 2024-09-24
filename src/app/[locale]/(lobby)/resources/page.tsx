@@ -2,16 +2,13 @@
 import { useTranslations } from "next-intl";
 
 // Components
-import { BackButton } from "@/components/back-button";
-import { FramerDiv, FramerSection } from "@/components/framer";
-import { HeroBg } from "@/components/hero-bg";
-import { Rocket } from "lucide-react";
-
-// Constants
-import { FADE_DOWN_ANIMATION_VARIANTS } from "@/constants/animations";
+import { FramerH1, FramerParagraph, FramerSection } from "@/components/framer";
 
 // Utils
 import { unstable_setRequestLocale } from "next-intl/server";
+
+// Constants
+import { FADE_DOWN_ANIMATION_VARIANTS } from "@/constants/animations";
 
 // Types
 import { MetadataParams } from "@/types/types";
@@ -22,7 +19,6 @@ export default function ResourcesPage({ params: { locale } }: MetadataParams) {
 
   return (
     <FramerSection
-      className="flex justify-center items-center min-h-[85dvh]"
       initial="hidden"
       animate="show"
       viewport={{ once: true }}
@@ -34,25 +30,20 @@ export default function ResourcesPage({ params: { locale } }: MetadataParams) {
           },
         },
       }}
+      className="flex flex-col top-12 relative"
     >
-      <HeroBg />
-      <div className="border-y border-dashed py-12 max-w-2xl">
-        <FramerDiv
-          variants={FADE_DOWN_ANIMATION_VARIANTS}
-          className="flex flex-col justify-center items-center bg-card gap-3 text-center rounded-md p-16 border"
-        >
-          <div className="border-2 border-dashed rounded-full p-3">
-            <Rocket size="1.5rem" />
-          </div>
-          <div>
-            <h2>{t("fallbackTitle")}</h2>
-          </div>
-          <div>
-            <p className="text-muted-foreground">{t("fallbackDescription")}</p>
-          </div>
-          <BackButton />
-        </FramerDiv>
-      </div>
+      <FramerH1
+        variants={FADE_DOWN_ANIMATION_VARIANTS}
+        className="font-bold text-3xl mb-2"
+      >
+        {t("title")}
+      </FramerH1>
+      <FramerParagraph
+        variants={FADE_DOWN_ANIMATION_VARIANTS}
+        className="text-foreground"
+      >
+        {t("description")}
+      </FramerParagraph>
     </FramerSection>
   );
 }

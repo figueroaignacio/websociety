@@ -1,6 +1,6 @@
 {
   "resources": {
-    "fallbackTitle": "La página de Recursos está en desarrollo.",
-    "fallbackDescription": "Aquí encontrarán herramientas, bibliotecas, y guías recomendadas para mejorar su flujo de trabajo en el desarrollo web y aprender nuevas tecnologías."
+    "title": "Recursos para desarrolladores",
+    "description": "Explora los últimos recursos sobre desarrollo web, diseño UI/UX, blogs y más para mantenerte a la vanguardia en la industria."
   }
 }
