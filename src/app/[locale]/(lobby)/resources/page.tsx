@@ -4,8 +4,6 @@ import { useTranslations } from "next-intl";
 // Components
 import { ResourceCard } from "@/components/resources/resource-card";
 
-// Icons
-
 // Content
 import { resources } from "@content";
 
