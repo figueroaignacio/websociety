@@ -12,8 +12,6 @@ import { resources } from "@content";
 // Utils
 import { unstable_setRequestLocale } from "next-intl/server";
 
-// Constants
-
 // Types
 import { MetadataParams } from "@/types/types";
 
