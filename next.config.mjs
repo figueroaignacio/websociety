@@ -18,6 +18,12 @@ if (!process.env.VELITE_STARTED && (isDev || isBuild)) {
 const nextConfig = {
   images: {
     formats: ["image/webp"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+      },
+    ],
   },
   trailingSlash: false,
 };
