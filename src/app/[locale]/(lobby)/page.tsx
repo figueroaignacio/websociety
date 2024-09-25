@@ -6,10 +6,12 @@ import { Features } from "@/sections/features";
 import { Hero } from "@/sections/hero";
 import { LatestGuides } from "@/sections/latest-guides";
 import { LatestPosts } from "@/sections/latest-posts";
+import { Resources } from "@/sections/resources";
 
 // CTA's
 import { GuideCta } from "@/components/guides/guides-cta";
 import { PostsCta } from "@/components/posts/posts-cta";
+import { ResourcesCta } from "@/components/resources/resources-cta";
 
 interface HomePageProps {
   params: { locale: string };
@@ -27,6 +29,8 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
         <PostsCta />
         <LatestGuides />
         <GuideCta />
+        <Resources />
+        <ResourcesCta />
         <FAQS />
       </div>
     </section>
