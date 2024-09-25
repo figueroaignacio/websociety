@@ -2,9 +2,10 @@
 import { useTranslations } from "next-intl";
 
 // Components
+import { Link } from "@/config/navigation";
 import Image from "next/image";
 import { Tag } from "../tag";
-import { Button, buttonVariants } from "../ui/button";
+import { buttonVariants } from "../ui/button";
 import {
   Card,
   CardContent,
@@ -23,6 +24,7 @@ interface ResourceCardProps {
   pageUrl: string;
   image?: string;
   tags: string[];
+  slug: string;
 }
 
 export function ResourceCard({
@@ -30,7 +32,8 @@ export function ResourceCard({
   title,
   pageUrl,
   image,
-  tags = [],
+  tags,
+  slug,
 }: ResourceCardProps) {
   const t = useTranslations("resourceCard");
 
@@ -69,10 +72,15 @@ export function ResourceCard({
         </CardDescription>
       </CardContent>
       <CardFooter className="gap-2">
-        <Button className="flex items-center">
+        <Link
+          className={`flex items-center ${buttonVariants({
+            variant: "default",
+          })}`}
+          href={slug}
+        >
           <FileText className="mr-2" size={16} />
           {t("detailsButton")}
-        </Button>
+        </Link>
         <a
           target="_blank"
           href={pageUrl}

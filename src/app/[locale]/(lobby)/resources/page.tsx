@@ -35,6 +35,7 @@ export default function ResourcesPage({ params: { locale } }: MetadataParams) {
                   title={resource.title}
                   image={resource.img}
                   tags={resource.categories ?? []}
+                  slug={resource.slug}
                 />
               </li>
             ))}
