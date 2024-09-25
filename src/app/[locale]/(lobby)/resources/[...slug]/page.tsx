@@ -8,6 +8,9 @@ import { resources } from "@content";
 import { notFound } from "next/navigation";
 
 // Metadata
+import { BackButton } from "@/components/back-button";
+import { buttonVariants } from "@/components/ui/button";
+import { ExternalLink } from "lucide-react";
 import { Metadata } from "next";
 
 interface ResourcePageProps {
@@ -67,11 +70,26 @@ export default async function ResourcePage({ params }: ResourcePageProps) {
   }
 
   return (
-    <article className="relative top-16 max-w-3xl mx-auto">
-      <h1 className="text-3xl font-bold">{resources.title}</h1>
-      <p className="mb-4">{resources.description}</p>
+    <article className="relative bg-card top-16  max-w-3xl mx-auto shadow-custom-card rounded-lg border p-6 transition-all duration-300 ease-in-out">
+      <div className="mt-3 mb-6">
+        <BackButton />
+      </div>
+      <h1 className="text-4xl font-extrabold mb-4">{resources.title}</h1>
+      <p className="mb-6">{resources.description}</p>
       <div>
         <MDXContent code={resources.body} />
+      </div>
+      <div className="mt-7">
+        <a
+          target="_blank"
+          href={resources.pageUrl}
+          className={`flex items-center ${buttonVariants({
+            variant: "default",
+          })}`}
+        >
+          <ExternalLink className="mr-1" size={16} />
+          Visitar {resources.title}
+        </a>
       </div>
     </article>
   );
