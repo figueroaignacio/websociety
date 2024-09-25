@@ -70,7 +70,7 @@ export default async function ResourcePage({ params }: ResourcePageProps) {
   }
 
   return (
-    <article className="relative bg-card top-16  max-w-3xl mx-auto shadow-custom-card rounded-lg border p-6 transition-all duration-300 ease-in-out">
+    <article className="relative top-16 max-w-3xl mx-auto">
       <div className="mt-3 mb-6">
         <BackButton />
       </div>
