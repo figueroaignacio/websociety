@@ -40,5 +40,15 @@
       "name": "Ignacio Figueroa",
       "url": "https://github.com/figueroaignacio"
     }
+  },
+  "resourcesConfig": {
+    "url": "https://websociety.netlify.app/es/recursos",
+    "title": "Recursos",
+    "description": "Explora los últimos recursos sobre desarrollo web, diseño UI/UX, blogs y más para mantenerse a la vanguardia en la industria.",
+    "creator": "Ignacio Figueroa | Desarrollador web",
+    "author": {
+      "name": "Ignacio Figueroa",
+      "url": "https://github.com/figueroaignacio"
+    }
   }
 }

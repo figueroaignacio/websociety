@@ -8,12 +8,34 @@ import { ResourceCard } from "@/components/resources/resource-card";
 import { resources } from "@content";
 
 // Utils
-import { unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
-// Types
+// Metadata
 import { MetadataParams } from "@/types/types";
 
-export default function ResourcesPage({ params: { locale } }: MetadataParams) {
+export async function generateMetadata({ params: { locale } }: MetadataParams) {
+  const t = await getTranslations({ locale, namespace: "resourcesConfig" });
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    authors: [
+      {
+        name: t("author.name"),
+        url: t("author.url"),
+      },
+    ],
+    creator: t("creator"),
+  };
+}
+
+interface ResourcesPageProps {
+  params: { locale: string };
+}
+
+export default function ResourcesPage({
+  params: { locale },
+}: ResourcesPageProps) {
   unstable_setRequestLocale(locale);
   const t = useTranslations("resources");
 
