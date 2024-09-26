@@ -3,7 +3,6 @@ import { useLocale } from "next-intl";
 
 // Components
 import { CategoryFilter } from "@/components/category-filter";
-import { FramerLi, FramerSection } from "@/components/framer";
 import { NoPostsMessage } from "@/components/posts/no-posts-message";
 import { PostCard } from "@/components/posts/post-card";
 import { QueryPagination } from "@/components/query-pagination";
@@ -17,7 +16,6 @@ import { sortPosts } from "@/utils/sortPosts";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 // Constants / Config
-import { FADE_LEFT_ANIMATION_VARIANTS } from "@/constants/animations";
 
 // Metadata
 import { MetadataParams } from "@/types/types";
@@ -87,20 +85,7 @@ export default function PostsPage({
   }
 
   return (
-    <FramerSection
-      initial="hidden"
-      animate="show"
-      viewport={{ once: true }}
-      variants={{
-        hidden: {},
-        show: {
-          transition: {
-            staggerChildren: 0.25,
-          },
-        },
-      }}
-      className="flex flex-col top-12 relative"
-    >
+    <section className="flex flex-col top-12 relative">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <div className="lg:col-span-4">
           <div className="sticky top-16 left-0">
@@ -113,7 +98,7 @@ export default function PostsPage({
         <div className="lg:col-span-8">
           <ul className="grid gap-4 grid-cols-1 lg:grid-cols-2">
             {displayPosts.map((post) => (
-              <FramerLi variants={FADE_LEFT_ANIMATION_VARIANTS} key={post.slug}>
+              <li key={post.slug}>
                 <PostCard
                   slug={post.slug}
                   date={post.date}
@@ -121,7 +106,7 @@ export default function PostsPage({
                   description={post.description ?? ""}
                   categories={post.categories}
                 />
-              </FramerLi>
+              </li>
             ))}
           </ul>
           <div className="mt-10">
@@ -129,6 +114,6 @@ export default function PostsPage({
           </div>
         </div>
       </div>
-    </FramerSection>
+    </section>
   );
 }
