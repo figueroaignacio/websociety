@@ -11,5 +11,36 @@
     "title": "Resources for Web Developers",
     "description": "Discover a treasure trove of curated resources for web developers. Boost your skills and stay up-to-date with the latest tools and technologies.",
     "button": "Explore the Resources"
-  }
+  },
+
+  "resourcesSection": {
+    "title": "Resources for Developers",
+    "description": "If you're looking for useful resources for any purpose, explore the Resources page."
+  },
+  "resourceItems": [
+    {
+      "title": "Developer Communities",
+      "description": "Spaces where you can share knowledge, ask questions, and resolve doubts with other passionate developers."
+    },
+    {
+      "title": "Places to Learn",
+      "description": "Platforms offering a variety of web development courses to enhance your skills and knowledge."
+    },
+    {
+      "title": "Places to Practice",
+      "description": "Sites where you can perform exercises and practical challenges to apply and reinforce your coding skills."
+    },
+    {
+      "title": "Useful Tools",
+      "description": "Resources and applications that help you optimize and improve your daily workflow in development."
+    },
+    {
+      "title": "Documentation",
+      "description": "Guides and official documentation on popular technologies, offering best practices and useful resources."
+    },
+    {
+      "title": "Libraries and Frameworks",
+      "description": "Collections of pre-built code that allow you to speed up development and improve the quality of your projects."
+    }
+  ]
 }

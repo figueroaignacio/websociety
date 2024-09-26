@@ -11,5 +11,35 @@
     "title": "Recursos para Desarrolladores Web",
     "description": "Descubre un tesoro de recursos seleccionados para desarrolladores web. Mejora tus habilidades y mantente al día con las últimas herramientas y tecnologías.",
     "button": "Explora los Recursos"
-  }
+  },
+  "resourcesSection": {
+    "title": "Recursos para Desarrolladores",
+    "description": " Si estás buscando recursos útiles para cualquier propósito, explora la página de Recursos."
+  },
+  "resourceItems": [
+    {
+      "title": "Comunidades de Desarrolladores",
+      "description": "Espacios donde puedes compartir conocimientos, hacer preguntas y resolver dudas con otros desarrolladores apasionados."
+    },
+    {
+      "title": "Lugares para Aprender",
+      "description": "Plataformas que ofrecen una variedad de cursos de desarrollo web para mejorar tus habilidades y conocimientos."
+    },
+    {
+      "title": "Lugares para Practicar",
+      "description": "Sitios donde puedes realizar ejercicios y desafíos prácticos para aplicar y reforzar tus habilidades de codificación."
+    },
+    {
+      "title": "Herramientas Útiles",
+      "description": "Recursos y aplicaciones que te ayudarán a optimizar y mejorar tu flujo de trabajo diario en el desarrollo."
+    },
+    {
+      "title": "Documentación",
+      "description": "Guías y documentación oficial sobre tecnologías populares, que ofrecen las mejores prácticas y recursos útiles."
+    },
+    {
+      "title": "Bibliotecas y Frameworks",
+      "description": "Colecciones de código preconstruido que te permiten acelerar el desarrollo y mejorar la calidad de tus proyectos."
+    }
+  ]
 }
