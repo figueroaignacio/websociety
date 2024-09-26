@@ -32,7 +32,10 @@ interface PostPageProps {
 async function getPostFromParams(params: PostPageProps["params"]) {
   try {
     const slug = params?.slug.join("/");
-    const post = posts.find((post) => post.slugAsParams === slug);
+    const locale = params.locale || "en";
+    const post = posts.find(
+      (post) => post.slugAsParams === slug && post.locale === locale
+    );
     if (post) {
       const readingTime = calculateReadingTime(post.body);
       return {
