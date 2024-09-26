@@ -2,12 +2,7 @@
 import { useTranslations } from "next-intl";
 
 // Components
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-} from "@/components/ui/card";
+import { ResourceItem } from "@/components/resources/resource-item";
 
 // Types
 import { Resources as ResourcesTypes } from "@content";
@@ -34,19 +29,11 @@ export function Resources() {
       <p className="">{t("resourcesSection.description")}</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5">
         {resources.map((resource: ResourcesTypes, index: number) => (
-          <Card key={index} className="rounded-lg text-center">
-            <CardHeader className="justify-center items-center">
-              <div className="mb-4 border-2 p-4 rounded-full border-dashed">
-                {icons[index].icon}
-              </div>
-              <h3 className="text-lg font-semibold">{resource.title}</h3>
-            </CardHeader>
-            <CardContent>
-              <CardDescription className="text-gray-600">
-                {resource.description}
-              </CardDescription>
-            </CardContent>
-          </Card>
+          <ResourceItem
+            key={index}
+            icon={icons[index].icon}
+            resource={resource}
+          />
         ))}
       </div>
     </div>
