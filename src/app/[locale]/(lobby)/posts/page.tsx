@@ -15,8 +15,6 @@ import { postFilter } from "@/utils/postsFilter";
 import { sortPosts } from "@/utils/sortPosts";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
-// Constants / Config
-
 // Metadata
 import { MetadataParams } from "@/types/types";
 
