@@ -6,5 +6,10 @@
   "resourceCard": {
     "detailsButton": "Detalles",
     "visitButton": "Visitar"
+  },
+  "resourcesCta": {
+    "title": "Recursos para Desarrolladores Web",
+    "description": "Descubre un tesoro de recursos seleccionados para desarrolladores web. Mejora tus habilidades y mantente al día con las últimas herramientas y tecnologías.",
+    "button": "Explora los Recursos"
   }
 }

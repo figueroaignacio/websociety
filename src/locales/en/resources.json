@@ -6,5 +6,10 @@
   "resourceCard": {
     "detailsButton": "Details",
     "visitButton": "Visit"
+  },
+  "resourcesCta": {
+    "title": "Resources for Web Developers",
+    "description": "Discover a treasure trove of curated resources for web developers. Boost your skills and stay up-to-date with the latest tools and technologies.",
+    "button": "Explore the Resources"
   }
 }
