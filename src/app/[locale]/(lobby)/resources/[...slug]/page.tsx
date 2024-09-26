@@ -70,8 +70,8 @@ export default async function ResourcePage({ params }: ResourcePageProps) {
   }
 
   return (
-    <article className="relative top-16 max-w-3xl mx-auto">
-      <div className="mt-3 mb-6">
+    <article className="relative top-12 max-w-3xl mx-auto">
+      <div className="mb-5">
         <BackButton />
       </div>
       <h1 className="text-4xl font-extrabold mb-4">{resources.title}</h1>
