@@ -36,7 +36,7 @@ export function Resources() {
         {resources.map((resource: ResourcesTypes, index: number) => (
           <Card key={index} className="rounded-lg text-center">
             <CardHeader className="justify-center items-center">
-              <div className="mb-4 border p-4 rounded-full border-dashed border-purple-500">
+              <div className="mb-4 border-2 p-4 rounded-full border-dashed">
                 {icons[index].icon}
               </div>
               <h3 className="text-lg font-semibold">{resource.title}</h3>
