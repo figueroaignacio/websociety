@@ -1,6 +1,7 @@
 import { Link } from "@/config/navigation";
 import { Copyright } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { Logo } from "./logo";
 
 export function Footer() {
   const t = useTranslations();
@@ -11,7 +12,9 @@ export function Footer() {
       <div className="container mx-auto px-4 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto ">
           <div className="space-y-4">
-            <h2 className="text-lg font-semibold">{t("footer.title")}</h2>
+            {/* <h2 className="text-lg font-semibold">{t("footer.title")}</h2>
+             */}
+            <Logo />
             <p className="text-muted-foreground">{t("footer.subtitle")}</p>
           </div>
           <nav aria-label="Footer Navigation">
