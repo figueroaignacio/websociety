@@ -80,6 +80,20 @@
   }
 
   .gradient-background {
-    @apply bg-gradient-to-r from-purple-600 via-purple-500 to-violet-600 dark:from-purple-700 dark:via-purple-700 dark:to-violet-700 text-white;
+    @apply bg-gradient-to-br from-purple-600 via-violet-500 to-fuchsia-500  text-white;
+    background-size: 200% 200%;
+    animation: gradientShift 15s ease infinite;
+  }
+
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 }

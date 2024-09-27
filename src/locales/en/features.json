@@ -14,11 +14,6 @@
       "title": "Web Development Resources",
       "description": "Access a selection of tools, guides, tutorials, and documentation to enhance your web development skills and stay up-to-date with best practices.",
       "icon": "resources"
-    },
-    {
-      "title": "Complete Challenges",
-      "description": "Take on web coding challenges to sharpen your skills, solve problems, and showcase your expertise.",
-      "icon": "code"
     }
   ]
 }
