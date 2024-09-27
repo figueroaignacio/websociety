@@ -1,9 +1,12 @@
 {
   "footer": {
     "title": "Web society",
-    "subtitle": "Site built by a developer for developers",
+    "subtitle": "Empowering web developers to achieve excellence and growth.",
     "aboutHeading": "About",
     "description": "Web society is a thriving community of web developers who come together to share knowledge, collaborate, and grow their skills. We are passionate about building beautiful and user-friendly web experiences.",
-    "copyright": "2024 Web society. All rights reserved."
+    "copyright": "2024 Web society. All rights reserved.",
+    "navigation": {
+      "title": "Discover"
+    }
   }
 }
