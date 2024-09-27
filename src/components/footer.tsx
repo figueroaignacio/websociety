@@ -9,11 +9,9 @@ export function Footer() {
 
   return (
     <footer className="border-t mt-24 mb-16">
-      <div className="container mx-auto px-4 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto ">
+      <div className="mx-auto py-12 md:py-16">
+        <div className="py-2 px-5 md:px-10 lg:px-16 max-w-[1580px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto">
           <div className="space-y-4">
-            {/* <h2 className="text-lg font-semibold">{t("footer.title")}</h2>
-             */}
             <Logo />
             <p className="text-muted-foreground">{t("footer.subtitle")}</p>
           </div>
@@ -40,14 +38,6 @@ export function Footer() {
             </h2>
             <p className="text-muted-foreground">{t("footer.description")}</p>
           </div>
-          {/* <div className="space-y-4">
-            <h2 className="text-lg font-semibold">{t("footer.contact")}</h2>
-            <address className="not-italic text-muted-foreground">
-              <p>{t("footer.address")}</p>
-              <p>{t("footer.email")}</p>
-              <p>{t("footer.phone")}</p>
-            </address>
-          </div> */}
         </div>
         <div className="mt-12 pt-8 text-center">
           <p className="text-sm text-muted-foreground flex items-center justify-center gap-2">
