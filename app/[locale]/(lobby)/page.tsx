@@ -11,7 +11,6 @@ import { Resources } from "@/sections/resources";
 // CTA's
 import { GuideCta } from "@/components/guides/guides-cta";
 import { PostsCta } from "@/components/posts/posts-cta";
-import { ResourcesCta } from "@/components/resources/resources-cta";
 
 interface HomePageProps {
   params: { locale: string };
@@ -30,7 +29,6 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
         <LatestGuides />
         <GuideCta />
         <Resources />
-        <ResourcesCta />
         <FAQS />
       </div>
     </section>

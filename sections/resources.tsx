@@ -7,8 +7,21 @@ import { ResourceItem } from "../components/resources/resource-item";
 // Types
 import { Resources as ResourcesTypes } from "@content";
 
+// Utils
+import { buttonVariants } from "@/components/ui/button";
+
 // Icons
-import { Book, ClipboardList, Code, Hammer, Layout, Users } from "lucide-react";
+import { Link } from "@/config/navigation";
+import {
+  ArrowRight,
+  Book,
+  ClipboardList,
+  Code,
+  Hammer,
+  Layout,
+  Library,
+  Users,
+} from "lucide-react";
 
 export function Resources() {
   const t = useTranslations();
@@ -36,6 +49,19 @@ export function Resources() {
           />
         ))}
       </div>
+      <Link
+        href="/resources"
+        className={`${buttonVariants({
+          variant: "outline",
+        })} mt-7 flex items-center gap-3 group`}
+      >
+        <Library className="mr-2 h-4 w-4" />
+        <span>{t("resourcesSection.button")}</span>
+        <ArrowRight
+          size={".85rem"}
+          className="transition-transform ease-in-out duration-300 transform translate-x-0 group-hover:translate-x-1"
+        />
+      </Link>
     </div>
   );
 }

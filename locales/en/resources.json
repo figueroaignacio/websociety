@@ -7,15 +7,10 @@
     "detailsButton": "Details",
     "visitButton": "Visit"
   },
-  "resourcesCta": {
-    "title": "Resources for Web Developers",
-    "description": "Discover a treasure trove of curated resources for web developers. Boost your skills and stay up-to-date with the latest tools and technologies.",
-    "button": "Explore the Resources"
-  },
-
   "resourcesSection": {
     "title": "Resources for Developers",
-    "description": "If you're looking for useful resources for any purpose, explore the Resources page."
+    "description": "If you're looking for useful resources for any purpose, explore the Resources page.",
+    "button": "Explore the Resources"
   },
   "resourceItems": [
     {
