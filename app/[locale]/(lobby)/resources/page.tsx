@@ -46,7 +46,9 @@ export default function ResourcesPage({
         <p className="text-foreground">{t("description")}</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-10 gap-6 mt-12">
-        <div className="hidden md:block md:col-span-3 dark:bg-gray-500/25 bg-gray-200 rounded-md"></div>
+        <div className="hidden md:block md:col-span-3 dark:bg-gray-500/25 bg-gray-200 rounded-md">
+          <p className="text-center py-5">Filter goes here</p>
+        </div>
         <div className="col-span-10 md:col-span-7">
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {resources.map((resource, index) => (
