@@ -1,8 +1,8 @@
 // Components
-import { BackButton } from "../../../../../../components/back-button";
-import { MDXContent } from "../../../../../../components/mdx/mdx-components";
-import { Toc } from "../../../../../../components/navigation/toc";
-import { Separator } from "../../../../../../components/ui/separator";
+import { BackButton } from "@/components/back-button";
+import { MDXContent } from "@/components/mdx/mdx-components";
+import { Toc } from "@/components/navigation/toc";
+import { Separator } from "@/components/ui/separator";
 
 // Utils
 import { notFound } from "next/navigation";

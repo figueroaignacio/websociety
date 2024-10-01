@@ -1,20 +1,20 @@
 // Components
-import { MDXContent } from "../../../../../../components/mdx/mdx-components";
-import { Toc } from "../../../../../../components/navigation/toc";
-import { PostDetails } from "../../../../../../components/posts/post-details";
-import { PostPagePagination } from "../../../../../../components/posts/post-page-pagination";
-import { RelatedPosts } from "../../../../../../components/posts/related-posts";
-import { SharePost } from "../../../../../../components/posts/share-post";
-import { Tag } from "../../../../../../components/tag";
-import { Separator } from "../../../../../../components/ui/separator";
+import { MDXContent } from "@/components/mdx/mdx-components";
+import { Toc } from "@/components/navigation/toc";
+import { PostDetails } from "@/components/posts/post-details";
+import { PostPagePagination } from "@/components/posts/post-page-pagination";
+import { RelatedPosts } from "@/components/posts/related-posts";
+import { SharePost } from "@/components/posts/share-post";
+import { Tag } from "@/components/tag";
+import { Separator } from "@/components/ui/separator";
 
 // Content
 import { posts } from "@content";
 
 // Utils
+import { formatDate } from "@/utils/formatDate";
+import { calculateReadingTime } from "@/utils/readingTime";
 import { notFound } from "next/navigation";
-import { formatDate } from "../../../../../../utils/formatDate";
-import { calculateReadingTime } from "../../../../../../utils/readingTime";
 
 // Icons
 import { Calendar, TagIcon } from "lucide-react";

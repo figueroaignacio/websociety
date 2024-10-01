@@ -1,13 +1,13 @@
 // Components
-import { BackButton } from "../../../../../../components/back-button";
-import { MDXContent } from "../../../../../../components/mdx/mdx-components";
+import { BackButton } from "@/components/back-button";
+import { MDXContent } from "@/components/mdx/mdx-components";
 
 // Content
 import { resources } from "@content";
 
 // Utils
+import { buttonVariants } from "@/components/ui/button";
 import { notFound } from "next/navigation";
-import { buttonVariants } from "../../../../../../components/ui/button";
 
 // Icons
 import { ExternalLink } from "lucide-react";
