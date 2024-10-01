@@ -32,7 +32,10 @@ export function ResourcesCta() {
         <Button className="w-full ">
           <Library className="mr-2 h-4 w-4" />
           <span>{t("button")}</span>
-          <ArrowRight className="ml-2 h-4 w-4" />
+          <ArrowRight
+            size={".85rem"}
+            className="transition-transform ease-in-out duration-300 transform translate-x-0 group-hover:translate-x-1"
+          />
         </Button>
       </CardFooter>
     </Card>

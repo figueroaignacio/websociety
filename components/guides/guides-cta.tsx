@@ -14,7 +14,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from "../ui/card";
 // Icons - Images
 import GuidesCtaDark from "@/assets/images/guides-cta-code-dark.svg";
 import GuidesCtaLight from "@/assets/images/guides-cta-code-light.svg";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, GraduationCap } from "lucide-react";
 
 export function GuideCta() {
   const t = useTranslations("guidesCta");
@@ -39,6 +39,7 @@ export function GuideCta() {
               variant: "default",
             })} flex items-center gap-3 group`}
           >
+            <GraduationCap className="size-4" />
             {t("link")}
             <ArrowRight
               size={".85rem"}

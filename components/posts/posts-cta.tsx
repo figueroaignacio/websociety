@@ -7,7 +7,7 @@ import { buttonVariants } from "../ui/button";
 import { Card, CardDescription, CardHeader, CardTitle } from "../ui/card";
 
 // Icons - Images
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, FileText } from "lucide-react";
 
 export function PostsCta() {
   const t = useTranslations("postsCta");
@@ -32,6 +32,7 @@ export function PostsCta() {
                   variant: "default",
                 })} flex items-center gap-3 group`}
               >
+                <FileText className="size-4" />
                 {t("link")}
                 <ArrowRight
                   size={".85rem"}
