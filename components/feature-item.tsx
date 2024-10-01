@@ -41,7 +41,7 @@ export function FeatureItem({
             <h3 className="text-2xl font-bold text-white mb-4">
               {feature.title}
             </h3>
-            <p className="text-white text-opacity-80 text-lg leading-relaxed">
+            <p className="text-white text-opacity-80 leading-relaxed text-sm">
               {feature.description}
             </p>
           </div>
