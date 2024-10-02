@@ -63,7 +63,7 @@ export function Hero() {
             </div>
             <FramerH2
               variants={FADE_UP_ANIMATION_VARIANTS}
-              className="text-sm lg:text-lg text-muted-foreground px-0 lg:px-80 mt-4"
+              className="text-sm lg:text-lg text-muted-foreground mt-4 max-w-2xl text-center mx-auto"
             >
               {t("description")}
             </FramerH2>
