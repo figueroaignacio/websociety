@@ -7,13 +7,13 @@ import { useEffect, useState } from "react";
 
 // Components
 import Image from "next/image";
+import { BgBorders } from "../components/bg-borders";
 import {
   FramerDiv,
   FramerH1,
   FramerH2,
   FramerSection,
 } from "../components/framer";
-import { HeroBg } from "../components/hero-bg";
 
 // Images - Icons
 import HeroCodeImageDark from "@/assets/images/home-hero-dark.svg";
@@ -48,7 +48,7 @@ export function Hero() {
       }}
       className="relative"
     >
-      <HeroBg />
+      <BgBorders />
       <div className="py-28 md:py-32">
         <div className="flex items-center justify-center">
           <div className="flex flex-col text-center">

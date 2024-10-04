@@ -2,6 +2,7 @@ import { unstable_setRequestLocale } from "next-intl/server";
 
 // Components
 import { Banner } from "@/components/banner";
+import { BgBlur } from "@/components/bg-blur";
 import { Footer } from "@/components/footer";
 import { FramerWrapper } from "@/components/framer";
 import { Navbar } from "@/components/navigation/navbar";
@@ -31,6 +32,7 @@ export default function LobbyLayout({
       <body>
         <Banner />
         <div className="min-h-[100dvh] grid grid-rows-[auto_1fr_auto] mx-auto">
+          <BgBlur />
           <Navbar />
           <main className="container">
             <FramerWrapper>{children}</FramerWrapper>

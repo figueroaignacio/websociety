@@ -20,7 +20,7 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
   unstable_setRequestLocale(locale);
 
   return (
-    <section>
+    <section className="relative z-50">
       <Hero />
       <div className="max-w-4xl mx-auto flex flex-col gap-24 mt-24">
         <Features />

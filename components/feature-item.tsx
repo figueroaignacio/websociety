@@ -23,7 +23,7 @@ export function FeatureItem({
   return (
     <div className={index === 2 ? "sm:col-span-2" : ""}>
       <Card
-        className={`h-full w-full overflow-hidden rounded-2xl gradient-background bg-opacity-10 backdrop-blur-lg border border-white border-opacity-20 shadow-md ${
+        className={`h-full w-full overflow-hidden rounded-2xl bg-opacity-10  border border-opacity-20 shadow-sm ${
           index === 2 ? "sm:flex sm:flex-row sm:items-center" : ""
         }`}
       >
@@ -38,10 +38,8 @@ export function FeatureItem({
             </div>
           </div>
           <div className={index === 2 ? "sm:flex-grow" : ""}>
-            <h3 className="text-2xl font-bold text-white mb-4">
-              {feature.title}
-            </h3>
-            <p className="text-white text-opacity-80 leading-relaxed text-sm">
+            <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
+            <p className="text-opacity-80 leading-relaxed text-sm">
               {feature.description}
             </p>
           </div>
