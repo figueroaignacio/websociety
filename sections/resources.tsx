@@ -37,7 +37,7 @@ export function Resources() {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8 flex flex-col gap-2">
+    <div className="max-w-4xl mx-auto py-8 flex flex-col gap-2">
       <h2 className="text-3xl font-bold">{t("resourcesSection.title")}</h2>
       <p className="">{t("resourcesSection.description")}</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5">
