@@ -46,6 +46,7 @@ export function Hero() {
           },
         },
       }}
+      className="relative"
     >
       <BgBorders />
       <div className="py-28 md:py-32">
