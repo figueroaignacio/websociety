@@ -17,10 +17,9 @@ interface GuideCardProps {
   title: string;
   description: string;
   slug: string;
-  icon: React.ReactNode;
 }
 
-export function GuideCard({ description, title, slug, icon }: GuideCardProps) {
+export function GuideCard({ description, title, slug }: GuideCardProps) {
   const t = useTranslations("guides");
 
   return (
