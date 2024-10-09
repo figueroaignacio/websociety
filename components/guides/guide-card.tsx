@@ -1,9 +1,6 @@
-// Hooks
-import { useTranslations } from "next-intl";
+"use client";
 
-// Components
-import { Link } from "../../config/navigation";
-import { buttonVariants } from "../ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -11,42 +8,40 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "../ui/card";
-
-// Icons
+} from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { Link } from "../../config/navigation";
 
 interface GuideCardProps {
   title: string;
   description: string;
   slug: string;
+  icon: React.ReactNode;
 }
 
-export function GuideCard({ description, title, slug }: GuideCardProps) {
+export function GuideCard({ description, title, slug, icon }: GuideCardProps) {
   const t = useTranslations("guides");
 
   return (
-    <Card className="transition-shadow duration-300 overflow-hidden relative">
-      <CardHeader className="bg-popover text-center">
-        <CardTitle className="text-2xl font-bold py-12">{title}</CardTitle>
+    <Card>
+      <CardHeader>
+        <div>
+          <CardTitle>{title}</CardTitle>
+        </div>
       </CardHeader>
-      <CardContent className="p-6">
-        <CardDescription className="text-center text-pretty">
-          {description}
-        </CardDescription>
+      <CardContent>
+        <CardDescription>{description}</CardDescription>
       </CardContent>
-      <CardFooter className="flex justify-center">
-        <Link
-          href={"/" + slug}
-          className={`flex items-center ${buttonVariants({
-            variant: "default",
-          })} group`}
-        >
-          {t("button")}
-          <ArrowRight
-            size={18}
-            className="ml-2 transition-transform duration-300 transform group-hover:translate-x-2"
-          />
+      <CardFooter>
+        <Link href={"/" + slug} className="w-full">
+          <Button className="w-full group" variant="default">
+            <span className="mr-2">{t("button")}</span>
+            <ArrowRight
+              size={18}
+              className="transition-transform duration-300 group-hover:translate-x-1"
+            />
+          </Button>
         </Link>
       </CardFooter>
     </Card>
