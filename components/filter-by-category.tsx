@@ -26,7 +26,7 @@ export function FilterByCategory({
       <h2 id="category-filter" className="text-lg font-semibold mb-4">
         {t("title")}
       </h2>
-      <ul className="flex gap-2">
+      <ul className="flex flex-wrap gap-2">
         <li>
           <CategoryLink href="?category=" isActive={!selectedCategory}>
             {allCategoriesLabel}

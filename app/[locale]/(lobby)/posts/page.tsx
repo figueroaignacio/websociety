@@ -1,8 +1,7 @@
 // Hooks
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 // Components
-import { CategoryFilter } from "@/components/category-filter";
 import { NoPostsMessage } from "@/components/posts/no-posts-message";
 import { PostCard } from "@/components/posts/post-card";
 import { QueryPagination } from "@/components/query-pagination";
@@ -16,6 +15,7 @@ import { sortPosts } from "@/utils/sortPosts";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 // Metadata
+import { FilterByCategory } from "@/components/filter-by-category";
 import { MetadataParams } from "@/types/types";
 
 export async function generateMetadata({ params: { locale } }: MetadataParams) {
@@ -52,6 +52,7 @@ export default function PostsPage({
 }: PostsPageProps) {
   unstable_setRequestLocale(locale);
   const lang = useLocale();
+  const t = useTranslations("posts");
 
   const currentPage = Number(searchParams?.page) || 1;
   const selectedCategory = searchParams?.category || null;
@@ -84,10 +85,12 @@ export default function PostsPage({
 
   return (
     <section className="flex flex-col top-12 relative">
+      <h1 className="font-bold text-3xl mb-2">{t("title")}</h1>
+      <p className="text-foreground mb-4">{t("description")}</p>
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <div className="lg:col-span-4">
           <div className="sticky top-16 left-0">
-            <CategoryFilter
+            <FilterByCategory
               categories={categories}
               selectedCategory={selectedCategory}
             />
