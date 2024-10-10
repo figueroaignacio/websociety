@@ -1,6 +1,9 @@
+// Hooks
+import { useTranslations } from "next-intl";
+
+// Components
 import { buttonVariants } from "@/components/ui/button";
 import { Link } from "@/config/navigation";
-import { useTranslations } from "next-intl";
 
 interface FilterByCategoryProps {
   categories: string[];
