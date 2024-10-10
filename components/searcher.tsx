@@ -56,7 +56,7 @@ export function Searcher() {
           <ul className="space-y-4">
             {results.length > 0 ? (
               results.map((item) => (
-                <li key={item.slug} className="border rounded-sm p-4">
+                <li key={item.slug} className=" p-4">
                   <Link
                     href={`/${item.slug}`}
                     className="font-semibold flex gap-2"
