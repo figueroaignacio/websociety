@@ -56,13 +56,13 @@ export function PostCard({
         <CardDescription className="leading-10 text-pretty text-sm line-clamp-2">
           {description}
         </CardDescription>
-      </CardContent>
-      <CardFooter className="flex flex-col items-start gap-5">
         <div className="flex flex-wrap gap-2 text-xs">
           {categories?.map((tag) => (
             <Tag tag={tag} key={tag} />
           ))}
         </div>
+      </CardContent>
+      <CardFooter className="flex flex-col items-start gap-5">
         <Link
           href={"/" + slug}
           className={`flex z-10 ${buttonVariants({ variant: "default" })}`}
