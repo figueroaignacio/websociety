@@ -8,8 +8,6 @@ import { NoGuidesMessage } from "@/components/guides/no-guides-message";
 // Content
 import { guides } from "@content";
 
-// Constants / Config
-
 // Utils
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
