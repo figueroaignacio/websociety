@@ -41,7 +41,7 @@ export function SiteMobileNavbar({ navigation }: { navigation: Navigation[] }) {
               <Menu />
             </button>
           </SheetTrigger>
-          <SheetContent side="right">
+          <SheetContent side="right" className="z-[150]">
             <ul className="flex flex-col gap-12 pt-20 py-10 pl-8 items-end md:w-full md:min-h-0 text-2xl">
               <li>
                 <Link
