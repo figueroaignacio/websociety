@@ -1,5 +1,5 @@
 // Hooks
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 // Components
 import { ResourceCard } from "@/components/resources/resource-card";
@@ -38,6 +38,11 @@ export default function ResourcesPage({
 }: ResourcesPageProps) {
   unstable_setRequestLocale(locale);
   const t = useTranslations("resources");
+  const lang = useLocale();
+
+  const filteredResources = resources.filter(
+    (resource) => resource.locale === lang
+  );
 
   return (
     <section className="flex flex-col top-12 relative">
@@ -51,7 +56,7 @@ export default function ResourcesPage({
         </div>
         <div className="col-span-10 md:col-span-7">
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {resources.map((resource, index) => (
+            {filteredResources.map((resource, index) => (
               <li key={index}>
                 <ResourceCard
                   pageUrl={resource.pageUrl}
