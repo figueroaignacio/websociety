@@ -1,6 +1,7 @@
 {
   "guides": {
     "title": "Guides by Web society",
+    "description": "What are you interested to learn today?",
     "button": "Learn More"
   },
   "latestGuides": {

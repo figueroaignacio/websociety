@@ -2,7 +2,6 @@
 import { useLocale, useTranslations } from "next-intl";
 
 // Components
-import { FramerH1, FramerLi, FramerSection } from "@/components/framer";
 import { GuideCard } from "@/components/guides/guide-card";
 import { NoGuidesMessage } from "@/components/guides/no-guides-message";
 
@@ -10,10 +9,6 @@ import { NoGuidesMessage } from "@/components/guides/no-guides-message";
 import { guides } from "@content";
 
 // Constants / Config
-import {
-  FADE_DOWN_ANIMATION_VARIANTS,
-  FADE_LEFT_ANIMATION_VARIANTS,
-} from "@/constants/animations";
 
 // Utils
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
@@ -53,43 +48,29 @@ export default function LearnPage({ params: { locale } }: LearnPageProps) {
   }
 
   return (
-    <FramerSection
-      initial="hidden"
-      animate="show"
-      viewport={{ once: true }}
-      variants={{
-        hidden: {},
-        show: {
-          transition: {
-            staggerChildren: 0.25,
-          },
-        },
-      }}
-      className="flex flex-col gap-12 mt-24 max-w-4xl mx-auto"
-    >
-      <FramerH1
-        variants={FADE_DOWN_ANIMATION_VARIANTS}
-        className="font-bold text-2xl lg:text-4xl text-center text-muted-foreground"
-      >
-        {t("title")}
-      </FramerH1>
-      <ul className="grid gap-4 grid-cols-1 md:grid-cols-2">
-        {filteredGuides.map((guide) => {
-          return (
-            <FramerLi
-              variants={FADE_LEFT_ANIMATION_VARIANTS}
-              className="h-full"
-              key={guide.slug}
-            >
-              <GuideCard
-                slug={guide.slug}
-                title={guide.title}
-                description={guide.description ?? ""}
-              />
-            </FramerLi>
-          );
-        })}
-      </ul>
-    </FramerSection>
+    <section className="flex flex-col top-12 relative">
+      <h1 className="font-bold text-3xl mb-2">{t("title")}</h1>
+      <p className="text-foreground mb-4">{t("description")}</p>
+      <div className="grid grid-cols-12 gap-5">
+        <div className="col-span-3 bg-card rounded-md">
+          <p className="text-center mt-5">Filter goes here.</p>
+        </div>
+        <div className="col-span-9">
+          <ul className="grid gap-4 grid-cols-1 md:grid-cols-2">
+            {filteredGuides.map((guide) => {
+              return (
+                <li className="h-full" key={guide.slug}>
+                  <GuideCard
+                    slug={guide.slug}
+                    title={guide.title}
+                    description={guide.description ?? ""}
+                  />
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </div>
+    </section>
   );
 }
