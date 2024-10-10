@@ -14,7 +14,7 @@ export function Features() {
   const features = t.raw("features");
 
   return (
-    <section className="grid grid-cols-1 sm:grid-cols-2 gap-6 rounded-3xl">
+    <section className="grid grid-cols-1 sm:grid-cols-2 gap-3 rounded-3xl">
       {features.map(
         (
           feature: { title: string; description: string; icon: string },

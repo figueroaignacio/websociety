@@ -31,7 +31,7 @@ export function LatestPosts() {
     <section className="py-10 flex flex-col gap-7">
       <h2 className="font-bold text-3xl">{t("title")}</h2>
       <div>
-        <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2">
+        <ul className="grid gap-3 grid-cols-1 sm:grid-cols-2">
           {latestPosts.map((post) => {
             return (
               <li key={post.slug}>
