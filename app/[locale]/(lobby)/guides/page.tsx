@@ -52,10 +52,10 @@ export default function LearnPage({ params: { locale } }: LearnPageProps) {
       <h1 className="font-bold text-3xl mb-2">{t("title")}</h1>
       <p className="text-foreground mb-4">{t("description")}</p>
       <div className="grid grid-cols-12 gap-5">
-        <div className="col-span-3 bg-card rounded-md">
+        <div className="lg:col-span-3 bg-card rounded-md hidden lg:block">
           <p className="text-center mt-5">Filter goes here.</p>
         </div>
-        <div className="col-span-9">
+        <div className="lg:col-span-9 col-span-12">
           <ul className="grid gap-4 grid-cols-1 md:grid-cols-2">
             {filteredGuides.map((guide) => {
               return (
