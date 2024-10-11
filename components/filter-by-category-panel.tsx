@@ -17,7 +17,7 @@ export function FilterByCategoryPanel({
   return (
     <nav
       aria-labelledby="category-filter-desktop"
-      className="bg-card p-6 rounded-lg border shadow-sm hidden lg:block"
+      className=" rounded-lg hidden lg:block"
     >
       <h2 id="category-filter-desktop" className="text-lg font-semibold mb-4">
         {t("title")}
