@@ -31,7 +31,7 @@ export function FilterByCategoryMobilePanel({
 
   return (
     <Sheet>
-      <SheetTrigger asChild className="lg:hidden fixed bottom-6 right-6">
+      <SheetTrigger asChild className="lg:hidden fixed bottom-4 right-4">
         <Button size={"icon"} aria-labelledby="category-filter-mobile">
           <Filter />
         </Button>

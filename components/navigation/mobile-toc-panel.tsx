@@ -26,7 +26,7 @@ export function MobileTocPanel({ headings, activeId }: MobileTocMobileProps) {
   return (
     <Sheet>
       <SheetTrigger asChild className="lg:hidden fixed bottom-4 right-4 z-50">
-        <Button variant="default" size="icon" className="mx-auto rounded-full">
+        <Button variant="default" size="icon" className="mx-auto">
           <Sidebar />
         </Button>
       </SheetTrigger>
