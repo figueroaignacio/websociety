@@ -9,6 +9,7 @@ import { Navbar } from "@/components/navigation/navbar";
 import "@/styles/globals.css";
 
 // Config
+import { BgBlur } from "@/components/bg-blur";
 import { locales } from "@/config/config";
 
 export function generateStaticParams() {
@@ -29,6 +30,7 @@ export default function LobbyLayout({
     <html suppressHydrationWarning>
       <body>
         <div className="min-h-[100dvh] grid grid-rows-[auto_1fr_auto] mx-auto">
+          <BgBlur />
           <Navbar />
           <main className="container">
             <FramerWrapper>{children}</FramerWrapper>
