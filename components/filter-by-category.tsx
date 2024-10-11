@@ -1,9 +1,6 @@
-// Hooks
-import { useTranslations } from "next-intl";
-
 // Components
-import { buttonVariants } from "@/components/ui/button";
-import { Link } from "@/config/navigation";
+import { FilterByCategoryMobilePanel } from "./filter-by-category-mobile-panel";
+import { FilterByCategoryPanel } from "./filter-by-category-panel";
 
 interface FilterByCategoryProps {
   categories: string[];
@@ -16,53 +13,18 @@ export function FilterByCategory({
   selectedCategory,
   allCategoriesLabel = "Todas",
 }: FilterByCategoryProps) {
-  const t = useTranslations("filter");
-
   return (
-    <nav
-      aria-labelledby="category-filter"
-      className="bg-card p-6 rounded-lg border shadow-sm"
-    >
-      <h2 id="category-filter" className="text-lg font-semibold mb-4">
-        {t("title")}
-      </h2>
-      <ul className="flex flex-wrap gap-2">
-        <li>
-          <CategoryLink href="?category=" isActive={!selectedCategory}>
-            {allCategoriesLabel}
-          </CategoryLink>
-        </li>
-        {categories.map((category) => (
-          <li key={category}>
-            <CategoryLink
-              href={`?category=${encodeURIComponent(category)}`}
-              isActive={selectedCategory === category}
-            >
-              {category}
-            </CategoryLink>
-          </li>
-        ))}
-      </ul>
-    </nav>
-  );
-}
-
-interface CategoryLinkProps {
-  href: string;
-  isActive: boolean;
-  children: React.ReactNode;
-}
-
-function CategoryLink({ href, isActive, children }: CategoryLinkProps) {
-  return (
-    <Link
-      href={href}
-      className={buttonVariants({
-        variant: isActive ? "default" : "outline",
-        className: "w-full justify-start",
-      })}
-    >
-      {children}
-    </Link>
+    <>
+      <FilterByCategoryMobilePanel
+        categories={categories}
+        selectedCategory={selectedCategory}
+        allCategoriesLabel={allCategoriesLabel}
+      />
+      <FilterByCategoryPanel
+        categories={categories}
+        selectedCategory={selectedCategory}
+        allCategoriesLabel={allCategoriesLabel}
+      />
+    </>
   );
 }

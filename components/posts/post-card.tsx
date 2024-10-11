@@ -65,7 +65,7 @@ export function PostCard({
       <CardFooter className="flex flex-col items-start gap-5">
         <Link
           href={"/" + slug}
-          className={`flex z-10 ${buttonVariants({ variant: "default" })}`}
+          className={`flex  ${buttonVariants({ variant: "default" })}`}
         >
           {t("button")}
           <ArrowRight
