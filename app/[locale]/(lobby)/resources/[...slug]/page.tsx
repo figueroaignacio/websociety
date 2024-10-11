@@ -24,8 +24,9 @@ interface ResourcePageProps {
 
 async function getResourceFromParams(params: ResourcePageProps["params"]) {
   const slug = params?.slug.join("/");
+  const locale = params.locale || "en";
   const resource = resources.find(
-    (resource) => resource?.slugAsParams === slug
+    (resource) => resource?.slugAsParams === slug && resource.locale === locale
   );
 
   return resource;
