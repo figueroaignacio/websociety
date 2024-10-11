@@ -1,4 +1,3 @@
-// components/TocMobile.tsx
 "use client";
 
 // Hooks
