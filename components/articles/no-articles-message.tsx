@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 // Icons
 import { FileWarning } from "lucide-react";
 
-export function NoPostsMessage() {
+export function NoArticlesMessage() {
   const t = useTranslations("noPostsMessage");
 
   return (

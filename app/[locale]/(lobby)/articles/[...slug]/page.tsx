@@ -1,8 +1,8 @@
 // Components
-import { PostDetails } from "@/components/articles/post-details";
-import { PostPagePagination } from "@/components/articles/post-page-pagination";
-import { RelatedPosts } from "@/components/articles/related-posts";
-import { SharePost } from "@/components/articles/share-post";
+import { ArticleDetails } from "@/components/articles/article-details";
+import { ArticlePagePagination } from "@/components/articles/article-page-pagination";
+import { RelatedArticles } from "@/components/articles/related-articles";
+import { ShareArticle } from "@/components/articles/share-article";
 import { MDXContent } from "@/components/mdx/mdx-components";
 import { Toc } from "@/components/navigation/toc";
 import { Tag } from "@/components/tag";
@@ -136,9 +136,9 @@ export default async function PostPage({ params }: PostPageProps) {
   return (
     <article className="mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 relative top-12">
       <aside className="hidden lg:block lg:col-span-3">
-        <PostDetails post={post} locale={locale} />
+        <ArticleDetails post={post} locale={locale} />
         <div className="sticky top-16 left-0">
-          <SharePost slug={postSlug} locale={locale} />
+          <ShareArticle slug={postSlug} locale={locale} />
         </div>
       </aside>
       <div className="lg:col-span-6">
@@ -163,12 +163,15 @@ export default async function PostPage({ params }: PostPageProps) {
         <div id="content">
           <MDXContent code={post.body} />
         </div>
-        <PostPagePagination previousPost={previousPost} nextPost={nextPost} />
+        <ArticlePagePagination
+          previousPost={previousPost}
+          nextPost={nextPost}
+        />
         <div className="mt-8 block lg:hidden">
-          <SharePost slug={postSlug} locale={locale} />
+          <ShareArticle slug={postSlug} locale={locale} />
         </div>
         <Separator className="my-8" />
-        <RelatedPosts
+        <RelatedArticles
           currentPost={{
             slug: post.slug,
             categories: post.categories,

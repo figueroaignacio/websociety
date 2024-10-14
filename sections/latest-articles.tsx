@@ -4,8 +4,8 @@
 import { useLocale, useTranslations } from "next-intl";
 
 // Components
-import { NoPostsMessage } from "../components/articles/no-posts-message";
-import { PostCard } from "../components/articles/post-card";
+import { PostCard } from "../components/articles/article-card";
+import { NoPostsMessage } from "../components/articles/no-articles-message";
 
 // Content
 import { articles } from "@content";

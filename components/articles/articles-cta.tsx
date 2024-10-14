@@ -9,7 +9,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from "../ui/card";
 // Icons - Images
 import { ArrowRight, FileText } from "lucide-react";
 
-export function PostsCta() {
+export function ArticlesCta() {
   const t = useTranslations("postsCta");
 
   return (

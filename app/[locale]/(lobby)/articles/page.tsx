@@ -2,8 +2,8 @@
 import { useLocale, useTranslations } from "next-intl";
 
 // Components
-import { NoPostsMessage } from "@/components/articles/no-posts-message";
-import { PostCard } from "@/components/articles/post-card";
+import { ArticleCard } from "@/components/articles/article-card";
+import { NoArticlesMessage } from "@/components/articles/no-articles-message";
 import { FilterByCategory } from "@/components/filter-by-category";
 import { QueryPagination } from "@/components/query-pagination";
 
@@ -80,7 +80,7 @@ export default function ArticlesPage({
   );
 
   if (displayPosts.length < 1) {
-    return <NoPostsMessage />;
+    return <NoArticlesMessage />;
   }
 
   return (
@@ -100,7 +100,7 @@ export default function ArticlesPage({
           <ul className="grid gap-4 grid-cols-1 lg:grid-cols-2">
             {displayPosts.map((post) => (
               <li key={post.slug}>
-                <PostCard
+                <ArticleCard
                   slug={post.slug}
                   date={post.date}
                   title={post.title}

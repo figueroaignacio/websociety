@@ -2,7 +2,7 @@
 import { Separator } from "../ui/separator";
 import { Skeleton } from "../ui/skeleton";
 
-export function PostPageSkeleton() {
+export function ArticlePageSkeleton() {
   return (
     <article className="mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 relative top-12">
       <aside className="hidden lg:block lg:col-span-3">

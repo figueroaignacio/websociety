@@ -28,7 +28,7 @@ interface ArticleCardProps {
   categories?: string[];
 }
 
-export function PostCard({
+export function ArticleCard({
   title,
   date,
   description,

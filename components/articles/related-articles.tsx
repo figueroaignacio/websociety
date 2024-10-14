@@ -2,10 +2,10 @@
 import { useLocale, useTranslations } from "next-intl";
 
 // Components
-import { PostCard } from "./post-card";
+import { ArticleCard } from "./article-card";
 
 // Content
-import { posts } from "@content";
+import { articles } from "@content";
 
 interface RelatedPostsProps {
   currentPost: {
@@ -15,18 +15,18 @@ interface RelatedPostsProps {
   };
 }
 
-export function RelatedPosts({ currentPost }: RelatedPostsProps) {
+export function RelatedArticles({ currentPost }: RelatedPostsProps) {
   const t = useTranslations();
   const locale = useLocale();
 
-  const relatedPosts = posts
-    .filter((post) => {
-      const isSameLocale = post.locale === locale;
-      const isNotCurrentPost = post.slug !== currentPost.slug;
-      const isRelatedCategory = (post.categories || []).some((category) =>
+  const relatedPosts = articles
+    .filter((article) => {
+      const isSameLocale = article.locale === locale;
+      const isNotCurrentArticle = article.slug !== currentPost.slug;
+      const isRelatedCategory = (article.categories || []).some((category) =>
         currentPost.categories.includes(category)
       );
-      return isSameLocale && isNotCurrentPost && isRelatedCategory;
+      return isSameLocale && isNotCurrentArticle && isRelatedCategory;
     })
     .slice(0, 4);
 
@@ -37,7 +37,7 @@ export function RelatedPosts({ currentPost }: RelatedPostsProps) {
         {relatedPosts.length > 0 ? (
           relatedPosts.map((relatedPost) => (
             <li key={relatedPost.slug}>
-              <PostCard
+              <ArticleCard
                 title={relatedPost.title}
                 description={
                   relatedPost.description || "No description provided"
@@ -49,7 +49,7 @@ export function RelatedPosts({ currentPost }: RelatedPostsProps) {
             </li>
           ))
         ) : (
-          <p>No related posts by now.</p>
+          <p>No related articles by now.</p>
         )}
       </ul>
     </div>

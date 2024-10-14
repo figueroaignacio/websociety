@@ -1,5 +1,5 @@
 // Components
-import { PostCardSkeleton } from "@/components/articles/post-card-skeleton";
+import { ArticleCardSkeleton } from "@/components/articles/article-card-skeleton";
 import { Separator } from "@/components/ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -28,7 +28,7 @@ export default function LoadingPosts() {
           <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2">
             {Array.from({ length: 6 }).map((_, index) => (
               <li key={index}>
-                <PostCardSkeleton />
+                <ArticleCardSkeleton />
               </li>
             ))}
           </ul>

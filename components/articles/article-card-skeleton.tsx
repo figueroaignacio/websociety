@@ -9,7 +9,7 @@ import {
 } from "../ui/card";
 import { Skeleton } from "../ui/skeleton";
 
-export function PostCardSkeleton() {
+export function ArticleCardSkeleton() {
   return (
     <Card className="border-none">
       <CardHeader>

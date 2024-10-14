@@ -21,7 +21,7 @@ interface PostDetailsProps {
   locale: string;
 }
 
-export const PostDetails = ({ post, locale }: PostDetailsProps) => {
+export const ArticleDetails = ({ post, locale }: PostDetailsProps) => {
   const t = useTranslations();
 
   return (

@@ -20,10 +20,10 @@ interface ShareButtonProps {
   locale: string;
 }
 
-export function SharePost({ slug, locale }: ShareButtonProps) {
+export function ShareArticle({ slug, locale }: ShareButtonProps) {
   const t = useTranslations();
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL;
-  const url = `${baseUrl}/${locale}/posts/${slug}`;
+  const url = `${baseUrl}/${locale}/articles/${slug}`;
 
   return (
     <Card>

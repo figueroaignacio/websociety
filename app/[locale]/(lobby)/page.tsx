@@ -9,7 +9,7 @@ import { LatestGuides } from "@/sections/latest-guides";
 import { Resources } from "@/sections/resources";
 
 // CTA's
-import { PostsCta } from "@/components/articles/posts-cta";
+import { ArticlesCta } from "@/components/articles/articles-cta";
 import { GuideCta } from "@/components/guides/guides-cta";
 
 interface HomePageProps {
@@ -25,7 +25,7 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
       <div className="max-w-4xl mx-auto flex flex-col gap-24 mt-24">
         <Features />
         <LatestArticles />
-        <PostsCta />
+        <ArticlesCta />
         <LatestGuides />
         <GuideCta />
         <Resources />

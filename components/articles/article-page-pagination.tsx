@@ -7,15 +7,15 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 // Components
 import { Link } from "../../config/navigation";
 
-interface PostPagePaginationProps {
+interface ArticlePagePaginationProps {
   previousPost: { slugAsParams: string; title: string } | null;
   nextPost: { slugAsParams: string; title: string } | null;
 }
 
-export function PostPagePagination({
+export function ArticlePagePagination({
   previousPost,
   nextPost,
-}: PostPagePaginationProps) {
+}: ArticlePagePaginationProps) {
   const t = useTranslations();
 
   return (
