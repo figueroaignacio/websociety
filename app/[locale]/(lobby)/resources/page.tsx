@@ -67,7 +67,7 @@ export default function ResourcesPage({
         <p className="text-foreground">{t("description")}</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mt-12">
-        <div className="hidden md:block md:col-span-3">
+        <div className="sticky top-16 left-0 md:col-span-3">
           <FilterByCategory
             categories={categories}
             selectedCategory={selectedCategory}

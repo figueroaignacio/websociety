@@ -14,6 +14,7 @@ export function CategoryLink({ href, isActive, children }: CategoryLinkProps) {
       className={buttonVariants({
         variant: isActive ? "default" : "outline",
         className: " justify-start",
+        size: "sm",
       })}
     >
       {children}
