@@ -11,7 +11,7 @@ import { QueryPagination } from "@/components/query-pagination";
 import { articles } from "@content";
 
 // Utils
-import { postFilter } from "@/utils/postsFilter";
+import { articlesFilter } from "@/utils/articlesFilter";
 import { sortArticles } from "@/utils/sortArticles";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
@@ -34,9 +34,9 @@ export async function generateMetadata({ params: { locale } }: MetadataParams) {
   };
 }
 
-const POSTS_PER_PAGE = 6;
+const ARTICLES_PER_PAGE = 6;
 
-interface PostsPageProps {
+interface ArticlesPageProps {
   searchParams: {
     page?: string;
     category?: string;
@@ -49,7 +49,7 @@ interface PostsPageProps {
 export default function ArticlesPage({
   searchParams,
   params: { locale },
-}: PostsPageProps) {
+}: ArticlesPageProps) {
   unstable_setRequestLocale(locale);
   const lang = useLocale();
   const t = useTranslations("posts");
@@ -65,21 +65,21 @@ export default function ArticlesPage({
     new Set(filteredArticles.flatMap((post) => post.categories || []))
   );
 
-  const { filteredPosts: filteredAndSortedPosts } = postFilter({
+  const { filteredArticles: filteredAndSortedArticles } = articlesFilter({
     categories,
-    posts: filteredArticles,
+    articles: filteredArticles,
     selectedCategory,
   });
 
-  const sortedPosts = sortArticles(filteredAndSortedPosts);
-  const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
+  const sortedArticles = sortArticles(filteredAndSortedArticles);
+  const totalPages = Math.ceil(sortedArticles.length / ARTICLES_PER_PAGE);
 
-  const displayPosts = sortedPosts.slice(
-    POSTS_PER_PAGE * (currentPage - 1),
-    POSTS_PER_PAGE * currentPage
+  const displayArticles = sortedArticles.slice(
+    ARTICLES_PER_PAGE * (currentPage - 1),
+    ARTICLES_PER_PAGE * currentPage
   );
 
-  if (displayPosts.length < 1) {
+  if (displayArticles.length < 1) {
     return <NoArticlesMessage />;
   }
 
@@ -98,7 +98,7 @@ export default function ArticlesPage({
         </div>
         <div className="lg:col-span-8">
           <ul className="grid gap-4 grid-cols-1 lg:grid-cols-2">
-            {displayPosts.map((post) => (
+            {displayArticles.map((post) => (
               <li key={post.slug}>
                 <ArticleCard
                   slug={post.slug}
