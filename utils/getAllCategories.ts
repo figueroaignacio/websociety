@@ -1,10 +1,10 @@
-import { Post } from "@content";
+import { Articles } from "@content";
 
-export function getAllCategories(posts: Post[]) {
+export function getAllCategories(articles: Articles[]) {
   const tags: Record<string, number> = {};
 
-  posts.forEach((posts) => {
-    posts.categories?.forEach((tag) => {
+  articles.forEach((article) => {
+    article.categories?.forEach((tag) => {
       tags[tag] = (tags[tag] ?? 0) + 1;
     });
   });

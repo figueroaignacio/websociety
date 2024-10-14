@@ -1,10 +1,10 @@
-import { Post } from "@content";
+import { Articles } from "@content";
 import { slug } from "github-slugger";
 
-export function getPostsByCategorySlug(posts: Post[], tag: string) {
-  return posts.filter((post) => {
-    if (!post) return false;
-    const slugifiedTags = post.categories?.map((tag) => slug(tag));
+export function getPostsByCategorySlug(articles: Articles[], tag: string) {
+  return articles.filter((article) => {
+    if (!article) return false;
+    const slugifiedTags = article.categories?.map((tag) => slug(tag));
 
     return slugifiedTags?.includes(tag);
   });
