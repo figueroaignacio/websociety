@@ -12,14 +12,19 @@ export default function LoadingPosts() {
             <Skeleton className="w-96 h-8 mb-3" />
             <Skeleton className="w-52 h-4" />
             <Separator className="my-4" />
-            <div className="py-6 px-4 rounded-lg shadow-sm bg-card">
+            <div className="mt-8">
               <Skeleton className="w-52 h-4 mb-4" />
               <ul className="flex flex-row flex-wrap gap-y-2 gap-x-3">
-                {Array.from({ length: 6 }).map((_, index) => (
-                  <li key={index}>
-                    <Skeleton className="w-12 h-4" />
-                  </li>
-                ))}
+                {Array.from({ length: 14 }).map((_, index) => {
+                  const widths = ["w-16", "w-20", "w-24"];
+                  const randomWidth =
+                    widths[Math.floor(Math.random() * widths.length)];
+                  return (
+                    <li key={index}>
+                      <Skeleton className={`${randomWidth} h-6`} />
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>
