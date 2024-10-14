@@ -4,8 +4,8 @@
 import { useLocale, useTranslations } from "next-intl";
 
 // Components
-import { PostCard } from "../components/articles/article-card";
-import { NoPostsMessage } from "../components/articles/no-articles-message";
+import { ArticleCard } from "../components/articles/article-card";
+import { NoArticlesMessage } from "../components/articles/no-articles-message";
 
 // Content
 import { articles } from "@content";
@@ -24,7 +24,7 @@ export function LatestArticles() {
     .slice(0, 4);
 
   if (latestPosts.length < 0) {
-    return <NoPostsMessage />;
+    return <NoArticlesMessage />;
   }
 
   return (
@@ -35,7 +35,7 @@ export function LatestArticles() {
           {latestPosts.map((post) => {
             return (
               <li key={post.slug}>
-                <PostCard
+                <ArticleCard
                   title={post.title}
                   date={post.date}
                   description={post.description ?? ""}
