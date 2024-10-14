@@ -1,5 +1,5 @@
 // Components
-import { PostCardSkeleton } from "@/components/posts/post-card-skeleton";
+import { PostCardSkeleton } from "@/components/articles/post-card-skeleton";
 import { Separator } from "@/components/ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
 

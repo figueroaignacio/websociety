@@ -1,15 +1,15 @@
 // Components
+import { PostDetails } from "@/components/articles/post-details";
+import { PostPagePagination } from "@/components/articles/post-page-pagination";
+import { RelatedPosts } from "@/components/articles/related-posts";
+import { SharePost } from "@/components/articles/share-post";
 import { MDXContent } from "@/components/mdx/mdx-components";
 import { Toc } from "@/components/navigation/toc";
-import { PostDetails } from "@/components/posts/post-details";
-import { PostPagePagination } from "@/components/posts/post-page-pagination";
-import { RelatedPosts } from "@/components/posts/related-posts";
-import { SharePost } from "@/components/posts/share-post";
 import { Tag } from "@/components/tag";
 import { Separator } from "@/components/ui/separator";
 
 // Content
-import { posts } from "@content";
+import { articles } from "@content";
 
 // Utils
 import { formatDate } from "@/utils/formatDate";
@@ -33,7 +33,7 @@ async function getPostFromParams(params: PostPageProps["params"]) {
   try {
     const slug = params?.slug.join("/");
     const locale = params.locale || "en";
-    const post = posts.find(
+    const post = articles.find(
       (post) => post.slugAsParams === slug && post.locale === locale
     );
     if (post) {
@@ -52,7 +52,7 @@ async function getPostFromParams(params: PostPageProps["params"]) {
 }
 
 async function getPreviousPost(currentPostSlug: string, locale: string) {
-  const localePosts = posts.filter((post) => post.locale === locale);
+  const localePosts = articles.filter((post) => post.locale === locale);
   const currentIndex = localePosts.findIndex(
     (post) => post.slugAsParams === currentPostSlug
   );
@@ -63,7 +63,7 @@ async function getPreviousPost(currentPostSlug: string, locale: string) {
 }
 
 async function getNextPost(currentPostSlug: string, locale: string) {
-  const localePosts = posts.filter((post) => post.locale === locale);
+  const localePosts = articles.filter((post) => post.locale === locale);
   const currentIndex = localePosts.findIndex(
     (post) => post.slugAsParams === currentPostSlug
   );
@@ -117,7 +117,7 @@ export async function generateMetadata({
 export async function generateStaticParams(): Promise<
   PostPageProps["params"][]
 > {
-  return posts.map((post) => ({ slug: post.slugAsParams.split("/") }));
+  return articles.map((post) => ({ slug: post.slugAsParams.split("/") }));
 }
 
 export default async function PostPage({ params }: PostPageProps) {

@@ -4,13 +4,13 @@ import { unstable_setRequestLocale } from "next-intl/server";
 import { FAQS } from "@/sections/faqs";
 import { Features } from "@/sections/features";
 import { Hero } from "@/sections/hero";
+import { LatestArticles } from "@/sections/latest-articles";
 import { LatestGuides } from "@/sections/latest-guides";
-import { LatestPosts } from "@/sections/latest-posts";
 import { Resources } from "@/sections/resources";
 
 // CTA's
+import { PostsCta } from "@/components/articles/posts-cta";
 import { GuideCta } from "@/components/guides/guides-cta";
-import { PostsCta } from "@/components/posts/posts-cta";
 
 interface HomePageProps {
   params: { locale: string };
@@ -24,7 +24,7 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
       <Hero />
       <div className="max-w-4xl mx-auto flex flex-col gap-24 mt-24">
         <Features />
-        <LatestPosts />
+        <LatestArticles />
         <PostsCta />
         <LatestGuides />
         <GuideCta />

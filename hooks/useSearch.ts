@@ -4,7 +4,7 @@
 import { useEffect, useState } from "react";
 
 // Content
-import { guides, posts } from "@content";
+import { articles, guides } from "@content";
 
 type ContentItem = {
   slug: string;
@@ -35,7 +35,7 @@ export function useSearch(query: string, currentLocale: string) {
     }
 
     const normalizedQuery = normalizeText(query);
-    const combinedItems = [...posts, ...guides];
+    const combinedItems = [...articles, ...guides];
     const filteredItems = combinedItems.filter(
       (item) =>
         item.locale === currentLocale &&

@@ -2,20 +2,20 @@
 import { useLocale, useTranslations } from "next-intl";
 
 // Components
-import { NoPostsMessage } from "@/components/posts/no-posts-message";
-import { PostCard } from "@/components/posts/post-card";
+import { NoPostsMessage } from "@/components/articles/no-posts-message";
+import { PostCard } from "@/components/articles/post-card";
+import { FilterByCategory } from "@/components/filter-by-category";
 import { QueryPagination } from "@/components/query-pagination";
 
 // Content
-import { posts } from "@content";
+import { articles } from "@content";
 
 // Utils
 import { postFilter } from "@/utils/postsFilter";
-import { sortPosts } from "@/utils/sortPosts";
+import { sortArticles } from "@/utils/sortArticles";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 // Metadata
-import { FilterByCategory } from "@/components/filter-by-category";
 import { MetadataParams } from "@/types/types";
 
 export async function generateMetadata({ params: { locale } }: MetadataParams) {
@@ -46,7 +46,7 @@ interface PostsPageProps {
   };
 }
 
-export default function PostsPage({
+export default function ArticlesPage({
   searchParams,
   params: { locale },
 }: PostsPageProps) {
@@ -57,21 +57,21 @@ export default function PostsPage({
   const currentPage = Number(searchParams?.page) || 1;
   const selectedCategory = searchParams?.category || null;
 
-  const filteredPosts = posts.filter(
+  const filteredArticles = articles.filter(
     (post) => post.published && post.locale === lang
   );
 
   const categories = Array.from(
-    new Set(filteredPosts.flatMap((post) => post.categories || []))
+    new Set(filteredArticles.flatMap((post) => post.categories || []))
   );
 
   const { filteredPosts: filteredAndSortedPosts } = postFilter({
     categories,
-    posts: filteredPosts,
+    posts: filteredArticles,
     selectedCategory,
   });
 
-  const sortedPosts = sortPosts(filteredAndSortedPosts);
+  const sortedPosts = sortArticles(filteredAndSortedPosts);
   const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
 
   const displayPosts = sortedPosts.slice(

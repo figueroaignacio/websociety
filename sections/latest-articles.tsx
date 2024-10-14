@@ -4,22 +4,22 @@
 import { useLocale, useTranslations } from "next-intl";
 
 // Components
-import { NoPostsMessage } from "../components/posts/no-posts-message";
-import { PostCard } from "../components/posts/post-card";
+import { NoPostsMessage } from "../components/articles/no-posts-message";
+import { PostCard } from "../components/articles/post-card";
 
 // Content
-import { posts } from "@content";
+import { articles } from "@content";
 
 // Utils
-import { sortPosts } from "@/utils/sortPosts";
+import { sortArticles } from "@/utils/sortArticles";
 
 // Animations
 import "@/styles/animations.css";
 
-export function LatestPosts() {
+export function LatestArticles() {
   const t = useTranslations("latestPosts");
   const locale = useLocale();
-  const latestPosts = sortPosts(posts)
+  const latestPosts = sortArticles(articles)
     .filter((post) => post.locale === locale)
     .slice(0, 4);
 

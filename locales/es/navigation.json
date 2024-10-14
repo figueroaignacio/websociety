@@ -1,8 +1,8 @@
 {
   "navigation": [
     {
-      "title": "Publicaciones",
-      "href": "/posts"
+      "title": "Artículos",
+      "href": "/articles"
     },
     {
       "title": "Guías",

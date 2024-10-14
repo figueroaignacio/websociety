@@ -1,8 +1,8 @@
 {
   "navigation": [
     {
-      "title": "Posts",
-      "href": "/posts"
+      "title": "Articles",
+      "href": "/articles"
     },
     {
       "title": "Guides",
