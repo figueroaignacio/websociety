@@ -22,7 +22,7 @@ export function ArticlePagePagination({
     <div className="flex flex-col sm:flex-row justify-between items-center mt-12 space-y-4 sm:space-y-0 gap-7">
       {previousPost ? (
         <Link
-          href={`/posts/${previousPost.slugAsParams}`}
+          href={`/articles/${previousPost.slugAsParams}`}
           className="group flex items-center gap-2 w-full sm:w-auto"
         >
           <ArrowLeft className="size-5" />
@@ -40,7 +40,7 @@ export function ArticlePagePagination({
       )}
       {nextPost ? (
         <Link
-          href={`/posts/${nextPost.slugAsParams}`}
+          href={`/articles/${nextPost.slugAsParams}`}
           className="group flex items-center justify-end gap-2 w-full sm:w-auto"
         >
           <div className="text-right">
