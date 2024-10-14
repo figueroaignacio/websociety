@@ -22,67 +22,69 @@ import { Calendar, TagIcon } from "lucide-react";
 // Metadata
 import { Metadata } from "next";
 
-interface PostPageProps {
+interface ArticlePageProps {
   params: {
     slug: string[];
     locale?: string;
   };
 }
 
-async function getPostFromParams(params: PostPageProps["params"]) {
+async function getArticleFromParams(params: ArticlePageProps["params"]) {
   try {
     const slug = params?.slug.join("/");
     const locale = params.locale || "en";
-    const post = articles.find(
-      (post) => post.slugAsParams === slug && post.locale === locale
+    const article = articles.find(
+      (article) => article.slugAsParams === slug && article.locale === locale
     );
-    if (post) {
-      const readingTime = calculateReadingTime(post.body);
+    if (article) {
+      const readingTime = calculateReadingTime(article.body);
       return {
-        ...post,
-        categories: post.categories || [],
+        ...article,
+        categories: article.categories || [],
         readingTime,
       };
     }
     return null;
   } catch (error) {
-    console.error("Error getting post from params:", error);
+    console.error("Error getting article from params:", error);
     return null;
   }
 }
 
-async function getPreviousPost(currentPostSlug: string, locale: string) {
-  const localePosts = articles.filter((post) => post.locale === locale);
-  const currentIndex = localePosts.findIndex(
-    (post) => post.slugAsParams === currentPostSlug
+async function getPreviousArticle(currentArticleSlug: string, locale: string) {
+  const localeArticles = articles.filter(
+    (article) => article.locale === locale
+  );
+  const currentIndex = localeArticles.findIndex(
+    (article) => article.slugAsParams === currentArticleSlug
   );
   if (currentIndex > 0) {
-    return localePosts[currentIndex - 1];
+    return localeArticles[currentIndex - 1];
   }
   return null;
 }
 
-async function getNextPost(currentPostSlug: string, locale: string) {
-  const localePosts = articles.filter((post) => post.locale === locale);
-  const currentIndex = localePosts.findIndex(
-    (post) => post.slugAsParams === currentPostSlug
+async function getNextArticle(currentArticleSlug: string, locale: string) {
+  const localeArticle = articles.filter((article) => article.locale === locale);
+  const currentIndex = localeArticle.findIndex(
+    (article) => article.slugAsParams === currentArticleSlug
   );
-  if (currentIndex < localePosts.length - 1) {
-    return localePosts[currentIndex + 1];
+  if (currentIndex < localeArticle.length - 1) {
+    return localeArticle[currentIndex + 1];
   }
   return null;
 }
 
 export async function generateMetadata({
   params,
-}: PostPageProps): Promise<Metadata> {
+}: ArticlePageProps): Promise<Metadata> {
   const { slug, locale = "en" } = params;
 
   try {
-    const post = await getPostFromParams({ slug, locale });
-    if (!post) return {};
+    const article = await getArticleFromParams({ slug, locale });
+    if (!article) return {};
 
-    const ogSearchParams = new URLSearchParams({ title: post.title });
+    const ogSearchParams = new URLSearchParams({ title: article.title });
 
     const metadataBase =
       locale === "en"
@@ -91,19 +93,19 @@ export async function generateMetadata({
 
     return {
       metadataBase: new URL(metadataBase ?? "http://localhost:3000"),
-      title: post.title,
-      description: post.description,
+      title: article.title,
+      description: article.description,
       openGraph: {
-        title: post.title,
-        description: post.description,
+        title: article.title,
+        description: article.description,
         type: "article",
-        url: post.slug,
+        url: article.slug,
         images: [
           {
             url: `/api/og?${ogSearchParams.toString()}`,
             width: 1200,
             height: 630,
-            alt: post.title,
+            alt: article.title,
           },
         ],
       },
@@ -115,30 +117,33 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams(): Promise<
-  PostPageProps["params"][]
+  ArticlePageProps["params"][]
 > {
-  return articles.map((post) => ({ slug: post.slugAsParams.split("/") }));
+  return articles.map((article) => ({ slug: article.slugAsParams.split("/") }));
 }
 
-export default async function PostPage({ params }: PostPageProps) {
+export default async function ArticlePage({ params }: ArticlePageProps) {
   const { slug, locale = "en" } = params;
-  const postSlug = slug.join("/");
+  const articleSlug = slug.join("/");
 
-  const post = await getPostFromParams(params);
+  const article = await getArticleFromParams(params);
 
-  if (!post || !post.published) {
+  if (!article || !article.published) {
     notFound();
   }
 
-  const previousPost = await getPreviousPost(post.slugAsParams, locale);
-  const nextPost = await getNextPost(post.slugAsParams, locale);
+  const previousArticle = await getPreviousArticle(
+    article.slugAsParams,
+    locale
+  );
+  const nextArticle = await getNextArticle(article.slugAsParams, locale);
 
   return (
     <article className="mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 relative top-12">
       <aside className="hidden lg:block lg:col-span-3">
-        <ArticleDetails post={post} locale={locale} />
+        <ArticleDetails post={article} locale={locale} />
         <div className="sticky top-16 left-0">
-          <ShareArticle slug={postSlug} locale={locale} />
+          <ShareArticle slug={articleSlug} locale={locale} />
         </div>
       </aside>
       <div className="lg:col-span-6">
@@ -147,35 +152,37 @@ export default async function PostPage({ params }: PostPageProps) {
             <dt className="sr-only">Published at</dt>
             <dd className="flex items-center gap-2">
               <Calendar size={12} />
-              <time dateTime={post.date}>{formatDate(post.date, locale)}</time>
+              <time dateTime={article.date}>
+                {formatDate(article.date, locale)}
+              </time>
             </dd>
           </dl>
-          <h1 className="text-3xl font-bold ">{post.title}</h1>
-          <p className="mb-4">{post.description}</p>
+          <h1 className="text-3xl font-bold ">{article.title}</h1>
+          <p className="mb-4">{article.description}</p>
           <div className="flex items-center gap-2 mb-3 lg:hidden flex-wrap">
             <TagIcon size={16} />
-            {post.categories?.map((tag, index) => (
+            {article.categories?.map((tag, index) => (
               <Tag tag={tag} key={tag} />
             ))}
           </div>
         </div>
         <Separator className="mb-5" />
         <div id="content">
-          <MDXContent code={post.body} />
+          <MDXContent code={article.body} />
         </div>
         <ArticlePagePagination
-          previousPost={previousPost}
-          nextPost={nextPost}
+          previousPost={previousArticle}
+          nextPost={nextArticle}
         />
         <div className="mt-8 block lg:hidden">
-          <ShareArticle slug={postSlug} locale={locale} />
+          <ShareArticle slug={articleSlug} locale={locale} />
         </div>
         <Separator className="my-8" />
         <RelatedArticles
           currentPost={{
-            slug: post.slug,
-            categories: post.categories,
-            locale: post.locale,
+            slug: article.slug,
+            categories: article.categories,
+            locale: article.locale,
           }}
         />
       </div>
