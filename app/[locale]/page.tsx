@@ -1,5 +1,9 @@
 import { unstable_setRequestLocale } from "next-intl/server";
 
+// Components
+import { Footer } from "@/components/footer";
+import { Navbar } from "@/components/navigation/navbar";
+
 // Sections
 import { FAQS } from "@/sections/faqs";
 import { Features } from "@/sections/features";
@@ -21,6 +25,7 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
 
   return (
     <section className="relative z-50">
+      <Navbar />
       <Hero />
       <div className="max-w-4xl mx-auto flex flex-col gap-24 mt-24">
         <Features />
@@ -31,6 +36,7 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
         <Resources />
         <FAQS />
       </div>
+      <Footer />
     </section>
   );
 }

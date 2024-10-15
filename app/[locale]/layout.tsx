@@ -1,4 +1,5 @@
 // Components
+import { FramerWrapper } from "@/components/framer";
 import { Toaster } from "@/components/ui/sonner";
 import NextTopLoader from "nextjs-toploader";
 
@@ -76,7 +77,7 @@ export default async function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            {children}
+            <FramerWrapper>{children}</FramerWrapper>
           </ThemeProvider>
         </NextIntlClientProvider>
         <Toaster />
