@@ -93,9 +93,9 @@ export function SidebarMobile({
                     <Link
                       href={href}
                       className={cn(
-                        "flex items-center py-2 px-4 gap-2 rounded-md transition-colors dark:hover:bg-gray-600 dark:hover:bg-opacity-30 hover:bg-gray-300 hover:bg-opacity-50 duration-100",
+                        "flex items-center py-2 px-4 gap-2 rounded-md transition-colors dark:hover:bg-gray-600 dark:hover:bg-opacity-30 hover:bg-gray-200 hover:bg-opacity-50 duration-100",
                         isActive &&
-                          "dark:bg-gray-600 dark:bg-opacity-30 bg-gray-300 bg-opacity-50"
+                          "dark:bg-gray-600 dark:bg-opacity-30 bg-gray-200 bg-opacity-50"
                       )}
                     >
                       <Icon className="h-4 w-4 flex-shrink-0" />
