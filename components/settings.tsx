@@ -32,7 +32,7 @@ export function Settings() {
       <SheetTrigger asChild>
         <Button variant="outline" size="sm" className="gap-2 justify-start">
           <Settings2 size={16} />
-          <span className="text-sm">Settings</span>
+          <span className="text-sm">{t("settings.title")}</span>
         </Button>
       </SheetTrigger>
       <SheetContent side="right" className="w-80">
