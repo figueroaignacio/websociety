@@ -28,8 +28,10 @@ export function ShareArticle({ slug, locale }: ShareButtonProps) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>{t("sharePost.title")}</CardTitle>
-        <CardDescription>{t("sharePost.description")}</CardDescription>
+        <CardTitle className="text-lg">{t("sharePost.title")}</CardTitle>
+        <CardDescription className="text-sm">
+          {t("sharePost.description")}
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <ul className="flex gap-2 items-center flex-wrap">
@@ -43,7 +45,11 @@ export function ShareArticle({ slug, locale }: ShareButtonProps) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button variant="outline" className="flex items-center gap-3">
+                <Button
+                  variant="outline"
+                  className="flex items-center gap-3"
+                  size="sm"
+                >
                   <Icon />
                   {name}
                 </Button>

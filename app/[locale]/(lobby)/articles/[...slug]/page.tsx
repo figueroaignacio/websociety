@@ -142,9 +142,6 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     <article className="mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
       <aside className="hidden lg:block lg:col-span-3">
         <ArticleDetails post={article} locale={locale} />
-        <div className="sticky top-16 left-0">
-          <ShareArticle slug={articleSlug} locale={locale} />
-        </div>
       </aside>
       <div className="lg:col-span-6">
         <div className="flex flex-col gap-2">
@@ -174,7 +171,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           previousPost={previousArticle}
           nextPost={nextArticle}
         />
-        <div className="mt-8 block lg:hidden">
+        <div className="mt-8  ">
           <ShareArticle slug={articleSlug} locale={locale} />
         </div>
         <Separator className="my-8" />

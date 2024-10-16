@@ -31,6 +31,7 @@ export function CopyLinkButton({ url }: CopyLinkButtonProps) {
       variant="outline"
       className="flex items-center gap-3"
       onClick={handleCopyUrl}
+      size="sm"
     >
       <ClipboardCopy className="w-4 h-4" />
       {t("sharePost.copyLink.label")}
