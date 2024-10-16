@@ -43,7 +43,7 @@ export function LocaleSwitcher({ label }: Props) {
           <button
             key={localeOption}
             onClick={() => onLocaleChange(localeOption)}
-            className={`flex justify-between items-center py-2 px-4 rounded-md hover:bg-gray-200 hover:bg-opacity-50 duration-100 text-muted-foreground hover:text-foreground ${
+            className={`flex justify-between items-center py-2 px-4 rounded-md dark:hover:bg-gray-600 dark:hover:bg-opacity-30 hover:bg-gray-200 hover:bg-opacity-50 duration-100  hover:text-foreground ${
               locale === localeOption
                 ? "dark:bg-gray-600 dark:bg-opacity-30 bg-gray-200 bg-opacity-50 text-foreground"
                 : ""

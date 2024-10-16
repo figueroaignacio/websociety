@@ -36,7 +36,7 @@ export function ToggleTheme() {
           <button
             key={theme.value}
             onClick={() => handleThemeChange(theme.value)}
-            className={`flex justify-between items-center py-2 px-4 rounded-md hover:bg-gray-200 hover:bg-opacity-50 duration-100 ${
+            className={`flex justify-between items-center py-2 px-4 rounded-md dark:hover:bg-gray-600 dark:hover:bg-opacity-30 hover:bg-gray-200 hover:bg-opacity-50 duration-100 ${
               selectedTheme === theme.value
                 ? "dark:bg-gray-600 dark:bg-opacity-30 bg-gray-200 bg-opacity-50 text-foreground"
                 : ""
