@@ -84,7 +84,7 @@ export default function ArticlesPage({
   }
 
   return (
-    <section className="flex flex-col top-12 relative">
+    <section className="flex flex-col">
       <h1 className="font-bold text-3xl mb-2">{t("title")}</h1>
       <p className="text-foreground mb-4">{t("description")}</p>
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">

@@ -139,7 +139,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   const nextArticle = await getNextArticle(article.slugAsParams, locale);
 
   return (
-    <article className="mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 relative top-12">
+    <article className="mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
       <aside className="hidden lg:block lg:col-span-3">
         <ArticleDetails post={article} locale={locale} />
         <div className="sticky top-16 left-0">

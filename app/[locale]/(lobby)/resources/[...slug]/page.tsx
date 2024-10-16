@@ -73,7 +73,7 @@ export default async function ResourcePage({ params }: ResourcePageProps) {
   }
 
   return (
-    <article className="relative top-12 max-w-3xl mx-auto">
+    <article className="max-w-3xl mx-auto">
       <div className="mb-5">
         <BackButton />
       </div>

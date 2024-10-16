@@ -8,9 +8,9 @@ export function Footer() {
   const navigation = t.raw("navigation");
 
   return (
-    <footer className="border-t mt-24 mb-16">
-      <div className="mx-auto py-12 md:py-16">
-        <div className="py-2 px-5 md:px-10 lg:px-16 max-w-[1580px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto">
+    <footer className="border-t mt-24">
+      <div className="py-12">
+        <div className="py-2 px-5 max-w-[1580px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto">
           <div className="space-y-4">
             <Logo />
             <p className="text-muted-foreground">{t("footer.subtitle")}</p>
@@ -36,7 +36,9 @@ export function Footer() {
             <h2 className="text-lg font-semibold">
               {t("footer.aboutHeading")}
             </h2>
-            <p className="text-muted-foreground">{t("footer.description")}</p>
+            <p className="text-muted-foreground text-sm">
+              {t("footer.description")}
+            </p>
           </div>
         </div>
         <div className="mt-12 pt-8 text-center">

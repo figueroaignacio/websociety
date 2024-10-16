@@ -61,7 +61,7 @@ export default function ResourcesPage({
   });
 
   return (
-    <section className="flex flex-col top-12 relative">
+    <section className="flex flex-col">
       <div>
         <h1 className="font-bold text-3xl mb-2">{t("title")}</h1>
         <p className="text-foreground">{t("description")}</p>
