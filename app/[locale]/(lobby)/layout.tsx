@@ -1,9 +1,8 @@
 import { unstable_setRequestLocale } from "next-intl/server";
 
 // Components
-import { Footer } from "@/components/footer";
 import { FramerWrapper } from "@/components/framer";
-import { Navbar } from "@/components/navigation/navbar";
+import { Sidebar } from "@/components/navigation/sidebar";
 
 // Styles
 import "@/styles/globals.css";
@@ -27,17 +26,16 @@ export default function LobbyLayout({
 }: LobbyLayoutProps) {
   unstable_setRequestLocale(locale);
   return (
-    <html suppressHydrationWarning>
-      <body>
-        <div className="min-h-[100dvh] grid grid-rows-[auto_1fr_auto] mx-auto">
-          <BgBlur />
-          <Navbar />
-          <main className="container">
-            <FramerWrapper>{children}</FramerWrapper>
-          </main>
-          <Footer />
+    <>
+      <BgBlur />
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
+        <div className="lg:col-span-2">
+          <Sidebar />
         </div>
-      </body>
-    </html>
+        <main className="container lg:contain-none lg:col-span-10">
+          <FramerWrapper>{children}</FramerWrapper>
+        </main>
+      </div>
+    </>
   );
 }

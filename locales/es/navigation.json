@@ -2,19 +2,23 @@
   "navigation": [
     {
       "title": "Artículos",
-      "href": "/articles"
+      "href": "/articles",
+      "icon": "fileText"
     },
     {
       "title": "Guías",
-      "href": "/guides"
+      "href": "/guides",
+      "icon": "bookOpen"
     },
     {
       "title": "Recursos",
-      "href": "/resources"
+      "href": "/resources",
+      "icon": "folder"
     }
   ],
   "navigationHome": {
-    "title": "Inicio"
+    "title": "Inicio",
+    "icon": "home"
   },
   "backButton": {
     "label": "Volver"
