@@ -4,7 +4,7 @@ import { Skeleton } from "../ui/skeleton";
 
 export function ArticlePageSkeleton() {
   return (
-    <article className="mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 relative top-12">
+    <article className="mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
       <aside className="hidden lg:block lg:col-span-3">
         <div className="flex items-center gap-2">
           <Skeleton className="size-12 rounded-full" />

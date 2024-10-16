@@ -5,7 +5,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 export default function LoadingPosts() {
   return (
-    <section className="flex flex-col top-12 relative">
+    <section className="flex flex-col">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <div className="lg:col-span-4">
           <div className="max-w-2xl mx-auto">
