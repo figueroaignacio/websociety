@@ -5,14 +5,6 @@ import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
 import { useState } from "react";
 
-// Components
-import {
-  DropdownMenuGroup,
-  DropdownMenuLabel,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
-} from "./ui/dropdown-menu";
-
 // Icons
 import { Palette } from "lucide-react";
 
@@ -34,23 +26,26 @@ export function ToggleTheme() {
   };
 
   return (
-    <DropdownMenuRadioGroup
-      value={selectedTheme}
-      onValueChange={handleThemeChange}
-    >
-      <DropdownMenuGroup className="flex items-center">
+    <div className="space-y-2">
+      <div className="flex items-center">
         <Palette size={16} className="ml-2 text-muted-foreground" />
-        <DropdownMenuLabel>{t("selectTheme.title")}</DropdownMenuLabel>
-      </DropdownMenuGroup>
-      {themes.map((theme: any) => (
-        <DropdownMenuRadioItem
-          key={theme.value}
-          value={theme.value}
-          className="flex justify-between items-center"
-        >
-          {theme.label}
-        </DropdownMenuRadioItem>
-      ))}
-    </DropdownMenuRadioGroup>
+        <span className="ml-2">{t("selectTheme.title")}</span>
+      </div>
+      <div className="flex flex-col space-y-1">
+        {themes.map((theme: any) => (
+          <button
+            key={theme.value}
+            onClick={() => handleThemeChange(theme.value)}
+            className={`flex justify-between items-center py-2 px-4 rounded-md hover:bg-gray-200 hover:bg-opacity-50 duration-100 ${
+              selectedTheme === theme.value
+                ? "dark:bg-gray-600 dark:bg-opacity-30 bg-gray-200 bg-opacity-50 text-foreground"
+                : ""
+            }`}
+          >
+            {theme.label}
+          </button>
+        ))}
+      </div>
+    </div>
   );
 }

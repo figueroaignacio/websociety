@@ -5,13 +5,8 @@ import { useLocale, useTranslations } from "next-intl";
 import { useTransition } from "react";
 import { usePathname, useRouter } from "../config/navigation";
 
-// Components
-import {
-  DropdownMenuGroup,
-  DropdownMenuLabel,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
-} from "./ui/dropdown-menu";
+// Icons
+import { Languages } from "lucide-react";
 
 // Config
 import { locales } from "../config/config";
@@ -38,19 +33,26 @@ export function LocaleSwitcher({ label }: Props) {
   }
 
   return (
-    <DropdownMenuRadioGroup value={locale} onValueChange={onLocaleChange}>
-      <DropdownMenuGroup className="flex items-center">
-        <DropdownMenuLabel>{label}</DropdownMenuLabel>
-      </DropdownMenuGroup>
-      {locales.map((locale) => (
-        <DropdownMenuRadioItem
-          key={locale}
-          value={locale}
-          className="relative flex items-center space-x-2"
-        >
-          {t("locale", { locale })}
-        </DropdownMenuRadioItem>
-      ))}
-    </DropdownMenuRadioGroup>
+    <div className="space-y-2">
+      <div className="flex items-center gap-1 ">
+        <Languages size={16} className="ml-2 text-muted-foreground" />
+        <span className="ml-2">Seleccionar Idioma</span>
+      </div>
+      <div className="flex flex-col space-y-1">
+        {locales.map((localeOption) => (
+          <button
+            key={localeOption}
+            onClick={() => onLocaleChange(localeOption)}
+            className={`flex justify-between items-center py-2 px-4 rounded-md hover:bg-gray-200 hover:bg-opacity-50 duration-100 text-muted-foreground hover:text-foreground ${
+              locale === localeOption
+                ? "dark:bg-gray-600 dark:bg-opacity-30 bg-gray-200 bg-opacity-50 text-foreground"
+                : ""
+            }`}
+          >
+            {t("locale", { locale: localeOption })}
+          </button>
+        ))}
+      </div>
+    </div>
   );
 }

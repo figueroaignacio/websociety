@@ -5,22 +5,20 @@ import { useTranslations } from "next-intl";
 import { LocaleSwitcher } from "./locale-switcher";
 import { ToggleTheme } from "./toggle-theme";
 import { Button, buttonVariants } from "./ui/button";
+import { Separator } from "./ui/separator";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "./ui/sheet";
 
 // Icons
 import {
   Bug,
   GithubIcon,
   HelpCircle,
-  Languages,
   Mail,
   Settings2,
   SettingsIcon,
@@ -30,67 +28,62 @@ export function Settings() {
   const t = useTranslations();
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="sm">
+    <Sheet>
+      <SheetTrigger asChild>
+        <Button variant="outline" size="sm" className="gap-2 justify-start">
           <Settings2 size={16} />
+          <span className="text-sm">Settings</span>
         </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-60 mr-7">
-        <DropdownMenuGroup className="flex items-center">
-          <SettingsIcon size={16} className="ml-2 text-muted-foreground" />
-          <DropdownMenuLabel>{t("settings.title")}</DropdownMenuLabel>
-        </DropdownMenuGroup>
-        <DropdownMenuSeparator />
-        <ToggleTheme />
-        <DropdownMenuSeparator />
-        <DropdownMenuGroup className="flex items-center">
-          <Languages size={16} className="ml-2 text-muted-foreground" />
-          <DropdownMenuLabel>{t("localeSwitcher.label")}</DropdownMenuLabel>
-        </DropdownMenuGroup>
-        <LocaleSwitcher />
-        <DropdownMenuSeparator />
-        <DropdownMenuGroup className="flex items-center">
-          <HelpCircle size={16} className="ml-2 text-muted-foreground" />
-          <DropdownMenuLabel>{t("support.title")}</DropdownMenuLabel>
-        </DropdownMenuGroup>
-        <DropdownMenuItem>
-          <a
-            href="https://github.com/figueroaignacio/frontendsociety/issues"
-            className={`${buttonVariants({
-              variant: "outline",
-            })} flex justify-between`}
-            target="_blank"
-          >
-            {t("support.reportBug.title")}
-            <Bug size={16} />
-          </a>
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          <a
-            href="mailto:ignaciofigueroadev@gmail.com"
-            className={`${buttonVariants({
-              variant: "outline",
-            })} flex justify-between`}
-            target="_blank"
-          >
-            {t("support.developerContact.title")}
-            <Mail size={16} />
-          </a>
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          <a
-            href="https://github.com/figueroaignacio/frontendsociety"
-            className={`${buttonVariants({
-              variant: "outline",
-            })} flex justify-between`}
-            target="_blank"
-          >
-            {t("support.sourceCode.title")}
-            <GithubIcon size={16} />
-          </a>
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+      </SheetTrigger>
+      <SheetContent side="right" className="w-80">
+        <SheetHeader>
+          <div className="flex items-center gap-2">
+            <SettingsIcon size={24} className="ml-2 text-muted-foreground" />
+            <SheetTitle>{t("settings.title")}</SheetTitle>
+          </div>
+        </SheetHeader>
+        <Separator className="my-4" />
+        <div className="mt-4 space-y-4">
+          <ToggleTheme />
+          <LocaleSwitcher />
+          <div className="flex items-center gap-2">
+            <HelpCircle size={16} className="ml-2 text-muted-foreground" />
+            <span>{t("support.title")}</span>
+          </div>
+          <div className="space-y-2">
+            <a
+              href="https://github.com/figueroaignacio/frontendsociety/issues"
+              className={`${buttonVariants({
+                variant: "outline",
+              })} flex justify-between`}
+              target="_blank"
+            >
+              {t("support.reportBug.title")}
+              <Bug size={16} />
+            </a>
+            <a
+              href="mailto:ignaciofigueroadev@gmail.com"
+              className={`${buttonVariants({
+                variant: "outline",
+              })} flex justify-between`}
+              target="_blank"
+            >
+              {t("support.developerContact.title")}
+              <Mail size={16} />
+            </a>
+            <a
+              href="https://github.com/figueroaignacio/frontendsociety"
+              className={`${buttonVariants({
+                variant: "outline",
+              })} flex justify-between`}
+              target="_blank"
+            >
+              {t("support.sourceCode.title")}
+              <GithubIcon size={16} />
+            </a>
+          </div>
+        </div>
+      </SheetContent>
+    </Sheet>
   );
 }

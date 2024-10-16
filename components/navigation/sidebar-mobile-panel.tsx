@@ -15,6 +15,7 @@ import {
 import { Link } from "@/config/navigation";
 import { Logo } from "../logo";
 import { Searcher } from "../searcher";
+import { Settings } from "../settings";
 import { Button } from "../ui/button";
 
 // Icons
@@ -25,7 +26,6 @@ import {
   Folder,
   HelpCircle,
   Home,
-  Settings,
 } from "lucide-react";
 
 // Utils
@@ -40,7 +40,6 @@ const icons = {
   fileText: FileText,
   bookOpen: BookOpen,
   folder: Folder,
-  settings: Settings,
   help: HelpCircle,
 };
 
@@ -109,6 +108,13 @@ export function SidebarMobile({
               })}
             </ul>
           </nav>
+          <div className="p-4 border-t border-border">
+            <ul className="space-y-2">
+              <li>
+                <Settings />
+              </li>
+            </ul>
+          </div>
         </SheetContent>
       </Sheet>
     </header>
