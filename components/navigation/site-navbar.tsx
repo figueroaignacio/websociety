@@ -6,8 +6,6 @@ import { usePathname } from "next/navigation";
 // Components
 import { Link } from "../../config/navigation";
 import { Logo } from "../logo";
-import { Searcher } from "../searcher";
-import { Settings } from "../settings";
 
 // Utils
 import { getCurrentLocale } from "../../utils/getCurrentLocale";
@@ -42,10 +40,6 @@ export function SiteNavbar({ navigation }: { navigation: Navigation[] }) {
               ))}
             </ul>
           </nav>
-        </div>
-        <div className="flex gap-5 lg:gap-3 items-center">
-          <Searcher />
-          <Settings />
         </div>
       </div>
     </header>

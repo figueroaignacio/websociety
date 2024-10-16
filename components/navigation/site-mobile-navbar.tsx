@@ -6,8 +6,6 @@ import { usePathname } from "next/navigation";
 // Components
 import { Link } from "../../config/navigation";
 import { Logo } from "../logo";
-import { Searcher } from "../searcher";
-import { Settings } from "../settings";
 import {
   Sheet,
   SheetClose,
@@ -33,8 +31,6 @@ export function SiteMobileNavbar({ navigation }: { navigation: Navigation[] }) {
     <header className="flex items-center justify-between py-2 px-5 sticky z-[100] top-0 left-0 w-full border-b-[.0625rem] backdrop-blur-sm md:hidden">
       <Logo />
       <div className="flex items-center gap-3">
-        <Searcher />
-        <Settings />
         <Sheet>
           <SheetTrigger asChild className="md:hidden">
             <button>
