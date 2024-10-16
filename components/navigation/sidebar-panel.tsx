@@ -53,7 +53,7 @@ export function SidebarDesktop({
   ];
 
   return (
-    <aside className="bg-card min-h-screen sticky left-0 top-0 border-r border-border shadow-sm z-50 hidden lg:block">
+    <aside className="min-h-screen sticky left-0 top-0 border-r border-border shadow-sm z-50 hidden lg:block">
       <nav className="p-4 space-y-8">
         <div className="flex items-center justify-start">
           <Logo />
