@@ -1,7 +1,5 @@
 import { unstable_setRequestLocale } from "next-intl/server";
 
-// Components
-
 // Sections
 import { FAQS } from "@/sections/faqs";
 import { Features } from "@/sections/features";
