@@ -1,12 +1,14 @@
 // Utils
 import { locales } from "@/config/config";
-import { getMessages, unstable_setRequestLocale } from "next-intl/server";
+import { unstable_setRequestLocale } from "next-intl/server";
 
 // Font
 import "@fontsource-variable/onest";
 
 // Styles
+import { Footer } from "@/components/footer";
 import { FramerWrapper } from "@/components/framer";
+import { Navbar } from "@/components/navigation/navbar";
 import "@/styles/globals.css";
 
 // Metadata
@@ -15,20 +17,21 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
-interface LocaleLayoutProps {
+interface LandingLayoutProps {
   children: React.ReactNode;
   params: { locale: string };
 }
 export default async function LandingLayout({
   children,
   params: { locale },
-}: LocaleLayoutProps) {
-  const messages = await getMessages();
+}: LandingLayoutProps) {
   unstable_setRequestLocale(locale);
 
   return (
     <main>
+      <Navbar />
       <FramerWrapper>{children}</FramerWrapper>
+      <Footer />
     </main>
   );
 }

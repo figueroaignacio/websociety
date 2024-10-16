@@ -1,8 +1,6 @@
 import { unstable_setRequestLocale } from "next-intl/server";
 
 // Components
-import { Footer } from "@/components/footer";
-import { Navbar } from "@/components/navigation/navbar";
 
 // Sections
 import { FAQS } from "@/sections/faqs";
@@ -24,21 +22,17 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
   unstable_setRequestLocale(locale);
 
   return (
-    <>
-      <Navbar />
-      <section className="relative z-50 container">
-        <Hero />
-        <div className="max-w-4xl mx-auto flex flex-col gap-24 mt-24">
-          <Features />
-          <LatestArticles />
-          <ArticlesCta />
-          <LatestGuides />
-          <GuideCta />
-          <Resources />
-          <FAQS />
-        </div>
-      </section>
-      <Footer />
-    </>
+    <section className="relative z-50 container">
+      <Hero />
+      <div className="max-w-4xl mx-auto flex flex-col gap-24 mt-24">
+        <Features />
+        <LatestArticles />
+        <ArticlesCta />
+        <LatestGuides />
+        <GuideCta />
+        <Resources />
+        <FAQS />
+      </div>
+    </section>
   );
 }
