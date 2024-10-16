@@ -35,7 +35,7 @@ export function Searcher() {
       <DialogTrigger asChild>
         <Button
           variant="outline"
-          className="flex gap-2"
+          className="flex justify-start gap-2 py-5"
           onClick={() => setOpen(true)}
           size="sm"
         >
