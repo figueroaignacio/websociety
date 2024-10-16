@@ -2,98 +2,86 @@
 
 // Hooks
 import { useTranslations } from "next-intl";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 
 // Components
-import Image from "next/image";
-import { BgBorders } from "../components/bg-borders";
-import {
-  FramerDiv,
-  FramerH1,
-  FramerH2,
-  FramerSection,
-} from "../components/framer";
+import { BgBlur } from "@/components/bg-blur";
+import { BgBorders } from "@/components/bg-borders";
+import { buttonVariants } from "@/components/ui/button";
+import { Link } from "@/config/navigation";
+import { motion } from "framer-motion";
 
-// Images - Icons
-import HeroCodeImageDark from "@/assets/images/home-hero-dark.svg";
-import HeroCodeImageLight from "@/assets/images/home-hero-light.svg";
-import { ArrowDown } from "lucide-react";
-
-// Constants
-import { FADE_UP_ANIMATION_VARIANTS } from "../constants/animations";
+// Icons
+import { ArrowRight, Star } from "lucide-react";
 
 export function Hero() {
-  const { theme, resolvedTheme } = useTheme();
-  const [isThemeResolved, setIsThemeResolved] = useState(false);
-
   const t = useTranslations("hero");
 
-  useEffect(() => {
-    setIsThemeResolved(true);
-  }, [resolvedTheme]);
-
   return (
-    <FramerSection
-      initial="hidden"
-      animate="show"
-      viewport={{ once: true }}
-      variants={{
-        hidden: {},
-        show: {
-          transition: {
-            staggerChildren: 0.15,
-          },
-        },
-      }}
-      className="relative"
-    >
+    <div className="relative">
       <BgBorders />
-      <div className="py-28 md:py-32">
-        <div className="flex items-center justify-center">
-          <div className="flex flex-col text-center">
-            <div className="border-b border-t border-dashed py-10">
-              <FramerH1
-                variants={FADE_UP_ANIMATION_VARIANTS}
-                className="font-extrabold text-4xl lg:text-5xl"
-              >
-                <span>{t("title")}</span>{" "}
-                <span className="gradient-text">{t("label")}</span>
-              </FramerH1>
-            </div>
-            <FramerH2
-              variants={FADE_UP_ANIMATION_VARIANTS}
-              className="text-sm lg:text-lg text-muted-foreground mt-4 max-w-2xl text-center mx-auto"
+      <section className="relative overflow-hidden bg-gradient-to-b from-background to-background/80 py-20 sm:py-32">
+        <BgBlur />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-3xl font-extrabold tracking-tight md:text-6xl lg:border-t lg:border-b lg:py-12"
+            >
+              {t.rich("title", {
+                text: (chunks) => (
+                  <span className="block gradient-text">{chunks}</span>
+                ),
+              })}
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mx-auto mt-6 max-w-2xl text-sm lg:text-lg text-muted-foreground"
             >
               {t("description")}
-            </FramerH2>
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="mt-10 flex justify-center gap-4 max-w-lg mx-auto px-12"
+            >
+              <Link
+                href="/articles"
+                className={buttonVariants({
+                  size: "sm",
+                  className: "group",
+                })}
+              >
+                Explore
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+              <a
+                href="https://github.com/figueroaignacio/websociety"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={buttonVariants({
+                  variant: "outline",
+                  size: "sm",
+                  className: "group",
+                })}
+              >
+                Star on GitHub
+                <Star className="ml-2 h-4 w-4 transition-transform group-hover:scale-110 text-yellow-400" />
+              </a>
+            </motion.div>
           </div>
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="mt-16 flex justify-center"
+          ></motion.div>
         </div>
-        <FramerDiv
-          variants={FADE_UP_ANIMATION_VARIANTS}
-          className="w-full flex py-10 flex-col items-center gap-2 text-muted-foreground"
-        >
-          <span>Scroll down</span>
-          <FramerDiv variants={FADE_UP_ANIMATION_VARIANTS}>
-            <ArrowDown className="border-[1px] border-border w-8 h-8 rounded-full p-1 animate-bounce" />
-          </FramerDiv>
-        </FramerDiv>
-        <FramerDiv
-          variants={FADE_UP_ANIMATION_VARIANTS}
-          className="flex justify-center"
-        >
-          {isThemeResolved && (
-            <Image
-              src={theme === "dark" ? HeroCodeImageDark : HeroCodeImageLight}
-              alt="Home hero code"
-              width={0}
-              height={0}
-              className="rounded-md bg-card border"
-              priority
-            />
-          )}
-        </FramerDiv>
-      </div>
-    </FramerSection>
+      </section>
+    </div>
   );
 }

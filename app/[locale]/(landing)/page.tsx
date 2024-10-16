@@ -24,19 +24,21 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
   unstable_setRequestLocale(locale);
 
   return (
-    <section className="relative z-50">
+    <>
       <Navbar />
-      <Hero />
-      <div className="max-w-4xl mx-auto flex flex-col gap-24 mt-24">
-        <Features />
-        <LatestArticles />
-        <ArticlesCta />
-        <LatestGuides />
-        <GuideCta />
-        <Resources />
-        <FAQS />
-      </div>
+      <section className="relative z-50 container">
+        <Hero />
+        <div className="max-w-4xl mx-auto flex flex-col gap-24 mt-24">
+          <Features />
+          <LatestArticles />
+          <ArticlesCta />
+          <LatestGuides />
+          <GuideCta />
+          <Resources />
+          <FAQS />
+        </div>
+      </section>
       <Footer />
-    </section>
+    </>
   );
 }
