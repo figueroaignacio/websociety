@@ -5,7 +5,6 @@ import { useTranslations } from "next-intl";
 
 // Components
 import { BgBlur } from "@/components/bg-blur";
-import { BgBorders } from "@/components/bg-borders";
 import { buttonVariants } from "@/components/ui/button";
 import { Link } from "@/config/navigation";
 import { motion } from "framer-motion";
@@ -18,7 +17,6 @@ export function Hero() {
 
   return (
     <div className="relative">
-      <BgBorders />
       <section className="relative overflow-hidden bg-gradient-to-b from-background to-background/80 py-20 sm:py-32">
         <BgBlur />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -27,7 +25,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-3xl font-extrabold tracking-tight md:text-6xl lg:border-t lg:border-b lg:py-12"
+              className="text-3xl font-extrabold tracking-tight md:text-6xl"
             >
               {t.rich("title", {
                 text: (chunks) => (
