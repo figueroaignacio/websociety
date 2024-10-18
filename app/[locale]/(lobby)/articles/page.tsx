@@ -87,17 +87,15 @@ export default function ArticlesPage({
     <section className="flex flex-col">
       <h1 className="font-bold text-3xl mb-2">{t("title")}</h1>
       <p className="text-foreground mb-4">{t("description")}</p>
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <div className="grid grid-cols-1 gap-8">
         <div className="lg:col-span-4">
-          <div className="sticky top-16 left-0">
-            <FilterByCategory
-              categories={categories}
-              selectedCategory={selectedCategory}
-            />
-          </div>
+          <FilterByCategory
+            categories={categories}
+            selectedCategory={selectedCategory}
+          />
         </div>
         <div className="lg:col-span-8">
-          <ul className="grid gap-4 grid-cols-1 lg:grid-cols-2">
+          <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {displayArticles.map((post) => (
               <li key={post.slug}>
                 <ArticleCard
