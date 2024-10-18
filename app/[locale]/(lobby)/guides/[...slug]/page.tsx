@@ -57,7 +57,7 @@ export default async function GuidePage({ params }: PostPageProps) {
   }
 
   return (
-    <article className="mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
+    <article className="mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 py-6 sm:py-8 md:py-12">
       <div className="lg:col-span-3"></div>
       <div className="lg:col-span-6">
         <div className="pb-7">

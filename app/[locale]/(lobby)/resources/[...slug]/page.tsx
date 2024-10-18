@@ -73,7 +73,7 @@ export default async function ResourcePage({ params }: ResourcePageProps) {
   }
 
   return (
-    <article className="max-w-3xl mx-auto">
+    <article className="max-w-3xl mx-auto py-6 sm:py-8 md:py-12">
       <div className="mb-5">
         <BackButton />
       </div>
