@@ -1,19 +1,19 @@
 {
-  "guides": {
-    "title": "Guides by Web society",
-    "description": "What are you interested to learn today?",
-    "button": "Learn More"
+  "curriculum": {
+    "title": "Curriculum",
+    "description": "What's your next learning step?",
+    "button": "Get Started"
   },
-  "latestGuides": {
-    "title": "Latest Guides"
+  "latestCurriculum": {
+    "title": "Latest Curriculums"
   },
-  "guidesCta": {
-    "title": "Looking to Enhance Your Skills?",
-    "description": "Explore all the guides and start learning today.",
-    "link": "Start learning today"
+  "curriculumCta": {
+    "title": "Ready to Advance Your Career?",
+    "description": "Explore all the curriculums and start your learning journey today.",
+    "link": "Start advancing today"
   },
-  "noGuidesMessage": {
-    "title": "No guides found",
-    "description": "An error has occurred while loading the guides. Please try again later."
+  "noCurriculumMessage": {
+    "title": "No curriculums found",
+    "description": "An error occurred while loading the curriculums. Please try again later."
   }
 }

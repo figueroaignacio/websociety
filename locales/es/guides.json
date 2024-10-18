@@ -1,19 +1,19 @@
 {
-  "guides": {
-    "title": "Guías de Web society",
-    "description": "¿Que te interesa aprender hoy?",
-    "button": "Empezar"
+  "curriculum": {
+    "title": "Currículum",
+    "description": "¿Cuál es el siguiente paso en tu aprendizaje?",
+    "button": "Comenzar"
   },
-  "latestGuides": {
-    "title": "Guías Recientes"
+  "latestCurriculum": {
+    "title": "Últimos Currículums"
   },
-  "guidesCta": {
-    "title": "Estás buscando mejorar tus habilidades?",
-    "description": "Explorá todas las guías y empezá a aprender hoy mismo!",
-    "link": "Empieza a aprender hoy"
+  "curriculumCta": {
+    "title": "¿Estás listo para avanzar en tu carrera?",
+    "description": "Explora todos los currículums y empieza a seguir tu ruta de aprendizaje hoy mismo.",
+    "link": "Empieza a avanzar hoy"
   },
-  "noGuidesMessage": {
-    "title": "Guías no encontradas.",
-    "description": "Ocurrió un error mientras se cargaban las guías, intente más tarde."
+  "noCurriculumMessage": {
+    "title": "Currículums no encontrados.",
+    "description": "Ocurrió un error mientras se cargaban los currículums, por favor intenta nuevamente más tarde."
   }
 }

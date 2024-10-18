@@ -36,7 +36,7 @@ interface LearnPageProps {
 
 export default function LearnPage({ params: { locale } }: LearnPageProps) {
   unstable_setRequestLocale(locale);
-  const t = useTranslations("guides");
+  const t = useTranslations("curriculum");
   const lang = useLocale();
 
   const filteredGuides = guides.filter((guide) => guide.locale === lang);
@@ -46,29 +46,29 @@ export default function LearnPage({ params: { locale } }: LearnPageProps) {
   }
 
   return (
-    <section className="flex flex-col">
-      <h1 className="font-bold text-3xl mb-2">{t("title")}</h1>
-      <p className="text-foreground mb-4">{t("description")}</p>
-      <div className="grid grid-cols-12 gap-5">
-        <div className="lg:col-span-3 bg-card rounded-md hidden lg:block">
-          <p className="text-center mt-5">Filter goes here.</p>
-        </div>
-        <div className="lg:col-span-9 col-span-12">
-          <ul className="grid gap-4 grid-cols-1 md:grid-cols-2">
-            {filteredGuides.map((guide) => {
-              return (
-                <li className="h-full" key={guide.slug}>
-                  <GuideCard
-                    slug={guide.slug}
-                    title={guide.title}
-                    description={guide.description ?? ""}
-                  />
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      </div>
-    </section>
+    <>
+      <div className="bg-gradient-to-r from-violet-500 to-purple-500 w-[calc(100%+2rem)] ml-[-1rem] h-[calc(12rem+2.5rem)] mt-[-1.25rem]"></div>
+      <section className="relative -mt-20 flex flex-col justify-center items-center border py-6 sm:py-8 md:py-12 rounded-md shadow-sm bg-card mb-6 sm:mb-8 md:mb-12 max-w-3xl mx-auto px-4 sm:px-6 md:px-8">
+        <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl mb-2 sm:mb-3 md:mb-4 text-center">
+          {t("title")}
+        </h1>
+        <p className="text-foreground text-sm sm:text-base md:text-lg mb-4 sm:mb-6 md:mb-8 text-center max-w-2xl">
+          {t("description")}
+        </p>
+        <ul className="grid gap-4 grid-cols-1 w-full">
+          {filteredGuides.map((guide) => {
+            return (
+              <li className="h-full" key={guide.slug}>
+                <GuideCard
+                  slug={guide.slug}
+                  title={guide.title}
+                  description={guide.description ?? ""}
+                />
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    </>
   );
 }

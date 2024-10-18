@@ -33,7 +33,7 @@ export default function LobbyLayout({
         <div className="lg:col-span-2">
           <Sidebar />
         </div>
-        <main className="lg:col-span-10 container md:contain-none lg:px-5 lg:py-12 py-4">
+        <main className="lg:col-span-10 container md:contain-none">
           <FramerWrapper>{children}</FramerWrapper>
           <Footer />
         </main>

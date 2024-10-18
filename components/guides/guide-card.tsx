@@ -1,17 +1,14 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { ArrowRight } from "lucide-react";
+// Hooks
 import { useTranslations } from "next-intl";
-import { Link } from "../../config/navigation";
+
+// Components
+import { Card, CardTitle } from "@/components/ui/card";
+
+// Icons
+import { Link } from "@/config/navigation";
+import { ExternalLink } from "lucide-react";
 
 interface GuideCardProps {
   title: string;
@@ -23,26 +20,11 @@ export function GuideCard({ description, title, slug }: GuideCardProps) {
   const t = useTranslations("guides");
 
   return (
-    <Card>
-      <CardHeader>
-        <div>
-          <CardTitle>{title}</CardTitle>
-        </div>
-      </CardHeader>
-      <CardContent>
-        <CardDescription>{description}</CardDescription>
-      </CardContent>
-      <CardFooter>
-        <Link href={"/" + slug} className="w-full">
-          <Button className="w-full group" variant="default">
-            <span className="mr-2">{t("button")}</span>
-            <ArrowRight
-              size={18}
-              className="transition-transform duration-300 group-hover:translate-x-1"
-            />
-          </Button>
-        </Link>
-      </CardFooter>
-    </Card>
+    <Link href={"/" + slug} className="w-full">
+      <Card className="flex-row items-center justify-between px-8 py-6 transition-transform transform hover:scale-[1.02] duration-300">
+        <CardTitle className="text-sm lg:text-lg">{title}</CardTitle>
+        <ExternalLink className="transition-transform transform hover:rotate-12 duration-300" />
+      </Card>
+    </Link>
   );
 }

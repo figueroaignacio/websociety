@@ -84,10 +84,10 @@ export default function ArticlesPage({
   }
 
   return (
-    <section className="flex flex-col">
+    <section className="flex flex-col lg:px-5 lg:py-12 py-4">
       <h1 className="font-bold text-3xl mb-2">{t("title")}</h1>
-      <p className="text-foreground mb-4">{t("description")}</p>
-      <div className="grid grid-cols-1 gap-8">
+      <p className="text-foreground">{t("description")}</p>
+      <div className="grid grid-cols-1 gap-6 mt-6">
         <div className="lg:col-span-4">
           <FilterByCategory
             categories={categories}
