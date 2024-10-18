@@ -1,5 +1,8 @@
 import { unstable_setRequestLocale } from "next-intl/server";
 
+// Components
+import { ParticleBackground } from "@/components/framer/particle-background";
+
 // Sections
 import { FAQS } from "@/sections/faqs";
 import { Features } from "@/sections/features";
@@ -20,17 +23,20 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
   unstable_setRequestLocale(locale);
 
   return (
-    <section className="relative z-50 container">
-      <Hero />
-      <div className="max-w-4xl mx-auto flex flex-col gap-24 mt-24">
-        <Features />
-        <LatestArticles />
-        <ArticlesCta />
-        <LatestGuides />
-        <GuideCta />
-        <Resources />
-        <FAQS />
-      </div>
-    </section>
+    <>
+      <ParticleBackground />
+      <section className="relative z-50 container">
+        <Hero />
+        <div className="max-w-3xl mx-auto flex flex-col gap-24 mt-24">
+          <Features />
+          <LatestArticles />
+          <ArticlesCta />
+          <LatestGuides />
+          <GuideCta />
+          <Resources />
+          <FAQS />
+        </div>
+      </section>
+    </>
   );
 }

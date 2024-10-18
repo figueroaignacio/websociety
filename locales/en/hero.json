@@ -1,6 +1,10 @@
 {
   "hero": {
     "title": "Empower and Elevate your <text>Web Development Journey</text>",
-    "description": "Discover the latest web trends, enhance your web development skills, and explore innovative resources. Embrace new challenges that propel your career towards success."
+    "description": "Discover the latest web trends, enhance your web development skills, and explore innovative resources. Embrace new challenges that propel your career towards success.",
+    "buttons": {
+      "exploreLabel": "Explore",
+      "starOnGithubLabel": "Star on GitHub"
+    }
   }
 }

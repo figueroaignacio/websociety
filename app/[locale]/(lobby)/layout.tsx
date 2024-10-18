@@ -1,6 +1,8 @@
 import { unstable_setRequestLocale } from "next-intl/server";
 
 // Components
+import { BgBlur } from "@/components/bg-blur";
+import { Footer } from "@/components/footer";
 import { FramerWrapper } from "@/components/framer";
 import { Sidebar } from "@/components/navigation/sidebar";
 
@@ -8,8 +10,6 @@ import { Sidebar } from "@/components/navigation/sidebar";
 import "@/styles/globals.css";
 
 // Config
-import { BgBlur } from "@/components/bg-blur";
-import { Footer } from "@/components/footer";
 import { locales } from "@/config/config";
 
 export function generateStaticParams() {
@@ -33,7 +33,7 @@ export default function LobbyLayout({
         <div className="lg:col-span-2">
           <Sidebar />
         </div>
-        <main className="lg:col-span-10 container md:contain-none lg:px-5 py-12">
+        <main className="lg:col-span-10 container md:contain-none lg:px-5 lg:py-12 py-4">
           <FramerWrapper>{children}</FramerWrapper>
           <Footer />
         </main>

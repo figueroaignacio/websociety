@@ -38,8 +38,8 @@ export function FeatureItem({
             </div>
           </div>
           <div className={index === 2 ? "sm:flex-grow" : ""}>
-            <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
-            <p className="text-opacity-80 leading-relaxed text-sm">
+            <h3 className="text-xl font-bold mb-4">{feature.title}</h3>
+            <p className="text-muted-foreground leading-relaxed text-sm">
               {feature.description}
             </p>
           </div>

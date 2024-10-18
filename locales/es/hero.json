@@ -1,6 +1,10 @@
 {
   "hero": {
     "title": "Potencia y Eleva tu camino en el <text>Desarrollo Web</text>",
-    "description": "Descubre las últimas tendencias web, perfecciona tus habilidades en desarrollo web y explora recursos innovadores. Acepta nuevos desafíos que catapulten tu carrera hacia el éxito."
+    "description": "Descubre las últimas tendencias web, perfecciona tus habilidades en desarrollo web y explora recursos innovadores. Acepta nuevos desafíos que catapulten tu carrera hacia el éxito.",
+    "buttons": {
+      "exploreLabel": "Explorar",
+      "starOnGithubLabel": "Dar Estrella"
+    }
   }
 }

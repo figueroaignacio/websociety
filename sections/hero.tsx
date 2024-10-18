@@ -10,14 +10,15 @@ import { Link } from "@/config/navigation";
 import { motion } from "framer-motion";
 
 // Icons
-import { ArrowRight, Star } from "lucide-react";
+import { Github } from "@/components/tech-icons";
+import { ArrowRight } from "lucide-react";
 
 export function Hero() {
   const t = useTranslations("hero");
 
   return (
     <div className="relative">
-      <section className="relative overflow-hidden bg-gradient-to-b from-background to-background/80 py-20 sm:py-32">
+      <section className="relative overflow-hidden  py-20 sm:py-32">
         <BgBlur />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -51,11 +52,11 @@ export function Hero() {
                 href="/articles"
                 className={buttonVariants({
                   size: "sm",
-                  className: "group",
+                  className: "group flex items-center gap-2",
                 })}
               >
-                Explore
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                {t("buttons.exploreLabel")}
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
               <a
                 href="https://github.com/figueroaignacio/websociety"
@@ -64,11 +65,11 @@ export function Hero() {
                 className={buttonVariants({
                   variant: "outline",
                   size: "sm",
-                  className: "group",
+                  className: "group  flex items-center gap-2",
                 })}
               >
-                Star on GitHub
-                <Star className="ml-2 h-4 w-4 transition-transform group-hover:scale-110 text-yellow-400" />
+                <Github />
+                {t("buttons.starOnGithubLabel")}
               </a>
             </motion.div>
           </div>

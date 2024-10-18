@@ -68,7 +68,7 @@ export function SidebarMobile({
           <Button
             variant="default"
             size="icon"
-            className="lg:hidden fixed top-4 left-4 z-50 p-2 rounded-md"
+            className="lg:hidden fixed bottom-4 left-4 z-50 p-2 rounded-md"
           >
             <span className="sr-only">Open Sidebar</span>
             <ChevronRight />

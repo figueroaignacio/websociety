@@ -14,7 +14,7 @@ interface ResourceItemProps {
 
 export function ResourceItem({ icon, resource }: ResourceItemProps) {
   return (
-    <Card className="rounded-lg text-center bg-transparent relative overflow-hidden">
+    <Card className="rounded-lg text-center bg-transparent relative overflow-hidden backdrop-filter backdrop-blur-md">
       <CardHeader className="justify-center items-center">
         <div className="w-16 h-16 rounded-full flex items-center gradient-background justify-center">
           {icon}
