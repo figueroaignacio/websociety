@@ -66,7 +66,7 @@ export function SidebarMobile({
       <Sheet>
         <SheetTrigger asChild>
           <Button
-            variant="default"
+            variant="secondary"
             size="icon"
             className="lg:hidden fixed bottom-4 left-4 z-50 p-2 rounded-md"
           >
