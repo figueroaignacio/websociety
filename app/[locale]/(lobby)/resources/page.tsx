@@ -66,13 +66,11 @@ export default function ResourcesPage({
         <h1 className="font-bold text-3xl mb-2">{t("title")}</h1>
         <p className="text-foreground">{t("description")}</p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mt-12">
-        <div className="sticky top-16 left-0 md:col-span-3">
-          <FilterByCategory
-            categories={categories}
-            selectedCategory={selectedCategory}
-          />
-        </div>
+      <div className="grid grid-cols-1  gap-6 mt-12">
+        <FilterByCategory
+          categories={categories}
+          selectedCategory={selectedCategory}
+        />
         <div className="col-span-10 md:col-span-9">
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {filteredAndSortedPosts.map((resource, index) => (
