@@ -76,7 +76,7 @@ export function SidebarMobile({
           </Button>
         </SheetTrigger>
         <SheetContent side="left" className="p-0">
-          <SheetHeader className="p-4 border-b border-border">
+          <SheetHeader className="py-3 px-5 border-b border-border">
             <SheetTitle className="mt-2">
               <Logo />
             </SheetTitle>

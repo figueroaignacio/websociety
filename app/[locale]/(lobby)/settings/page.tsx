@@ -1,9 +1,15 @@
 "use client";
 
+// Hooks
+import { useTranslations } from "next-intl";
+
+// Components
 import { LocaleSwitcher } from "@/components/locale-switcher";
 import { ToggleTheme } from "@/components/toggle-theme";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+// Icons
 import {
   Bug,
   GithubIcon,
@@ -12,7 +18,6 @@ import {
   SettingsIcon,
   Sliders,
 } from "lucide-react";
-import { useTranslations } from "next-intl";
 
 type SupportLinkProps = {
   href: string;
@@ -61,7 +66,7 @@ export default function SettingsPage() {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-2xl">
+    <div className="mx-auto lg:px-4 lg:py-8 max-w-2xl">
       <div className="flex items-center gap-2 mb-6">
         <SettingsIcon size={24} className="text-primary" />
         <h1 className="text-2xl font-bold">{t("settings.title")}</h1>
