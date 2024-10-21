@@ -4,10 +4,7 @@
     "description": "¿Cuál es el siguiente paso en tu aprendizaje?",
     "button": "Comenzar"
   },
-  "latestCurriculum": {
-    "title": "Últimos Currículums"
-  },
-  "curriculumCta": {
+  "guidesCta": {
     "title": "¿Estás listo para avanzar en tu carrera?",
     "description": "Explora todos los currículums y empieza a seguir tu ruta de aprendizaje hoy mismo.",
     "link": "Empieza a avanzar hoy"

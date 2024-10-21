@@ -8,7 +8,6 @@ import { FAQS } from "@/sections/faqs";
 import { Features } from "@/sections/features";
 import { Hero } from "@/sections/hero";
 import { LatestArticles } from "@/sections/latest-articles";
-import { LatestGuides } from "@/sections/latest-guides";
 import { Resources } from "@/sections/resources";
 
 // CTA's
@@ -31,9 +30,8 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
           <Features />
           <LatestArticles />
           <ArticlesCta />
-          <LatestGuides />
-          <GuideCta />
           <Resources />
+          <GuideCta />
           <FAQS />
         </div>
       </section>

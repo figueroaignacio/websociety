@@ -12,7 +12,7 @@ import { guides } from "@content";
 import { sortGuides } from "@/utils/sortGuides";
 
 export function LatestGuides() {
-  const t = useTranslations("latestGuides");
+  const t = useTranslations("latest");
   const locale = useLocale();
   const latestGuides = sortGuides(guides)
     .filter((guide) => guide.locale === locale)
