@@ -5,7 +5,7 @@ import { SidebarDesktop } from "./sidebar-panel";
 
 export function Sidebar() {
   const t = useTranslations();
-  const navigation = t.raw("navigation") as Navigation[];
+  const navigation = t.raw("sidebarNavigation") as Navigation[];
   const { title: homeTitle, icon: homeIcon } = t.raw("navigationHome") as {
     title: string;
     icon: string;

@@ -14,6 +14,23 @@
       "title": "Resources",
       "href": "/resources",
       "icon": "folder"
+    }
+  ],
+  "sidebarNavigation": [
+    {
+      "title": "Articles",
+      "href": "/articles",
+      "icon": "fileText"
+    },
+    {
+      "title": "Guides",
+      "href": "/guides",
+      "icon": "bookOpen"
+    },
+    {
+      "title": "Resources",
+      "href": "/resources",
+      "icon": "folder"
     },
     {
       "title": "Settings",
