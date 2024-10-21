@@ -1,9 +1,10 @@
 {
   "settings": {
-    "title": "Settings"
+    "title": "Settings",
+    "preferences": "Preferences"
   },
   "selectTheme": {
-    "title": "Select Theme"
+    "title": "Theme"
   },
   "themes": [
     {

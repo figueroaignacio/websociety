@@ -36,14 +36,16 @@ export function LocaleSwitcher({ label }: Props) {
     <div className="space-y-2">
       <div className="flex items-center gap-1 ">
         <Languages size={16} className="ml-2 text-muted-foreground" />
-        <span className="ml-2">Seleccionar Idioma</span>
+        <span className="ml-2 text-xl font-bold text-foreground">
+          {t("label")}
+        </span>
       </div>
       <div className="flex flex-col space-y-1">
         {locales.map((localeOption) => (
           <button
             key={localeOption}
             onClick={() => onLocaleChange(localeOption)}
-            className={`flex justify-between items-center py-2 px-4 rounded-md dark:hover:bg-gray-600 dark:hover:bg-opacity-30 hover:bg-gray-200 hover:bg-opacity-50 duration-100  hover:text-foreground ${
+            className={`flex justify-between items-center py-2 px-4 rounded-md dark:hover:bg-gray-600 dark:hover:bg-opacity-30 hover:bg-gray-200 hover:bg-opacity-50 duration-100  hover:text-foreground cursor-pointer ${
               locale === localeOption
                 ? "dark:bg-gray-600 dark:bg-opacity-30 bg-gray-200 bg-opacity-50 text-foreground"
                 : ""

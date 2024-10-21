@@ -17,13 +17,13 @@ import {
   Folder,
   HelpCircle,
   Home,
+  SettingsIcon,
   Users,
 } from "lucide-react";
 
 // Utils
 import { cn } from "@/lib/utils";
 import { getCurrentLocale } from "@/utils/getCurrentLocale";
-import { Settings } from "../settings";
 
 const icons = {
   home: Home,
@@ -33,6 +33,7 @@ const icons = {
   analytics: BarChart,
   customers: Users,
   help: HelpCircle,
+  settings: SettingsIcon,
 };
 
 interface SidebarDesktopProps {
@@ -84,13 +85,6 @@ export function SidebarDesktop({
           </ul>
         </div>
       </nav>
-      <div className="p-4 border-t border-border">
-        <ul className="space-y-2">
-          <li>
-            <Settings />
-          </li>
-        </ul>
-      </div>
     </aside>
   );
 }

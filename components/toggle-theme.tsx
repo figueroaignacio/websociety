@@ -29,7 +29,9 @@ export function ToggleTheme() {
     <div className="space-y-2">
       <div className="flex items-center">
         <Palette size={16} className="ml-2 text-muted-foreground" />
-        <span className="ml-2">{t("selectTheme.title")}</span>
+        <span className="ml-2 text-xl font-bold text-foreground">
+          {t("selectTheme.title")}
+        </span>
       </div>
       <div className="flex flex-col space-y-1">
         {themes.map((theme: any) => (

@@ -15,7 +15,6 @@ import {
 import { Link } from "@/config/navigation";
 import { Logo } from "../logo";
 import { Searcher } from "../searcher";
-import { Settings } from "../settings";
 import { Button } from "../ui/button";
 
 // Icons
@@ -108,13 +107,6 @@ export function SidebarMobile({
               })}
             </ul>
           </nav>
-          <div className="p-4 border-t border-border">
-            <ul className="space-y-2">
-              <li>
-                <Settings />
-              </li>
-            </ul>
-          </div>
         </SheetContent>
       </Sheet>
     </header>
