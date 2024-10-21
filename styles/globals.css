@@ -5,7 +5,7 @@
 @layer base {
   :root {
     --background: 0 0% 96%;
-    --foreground: 240 10% 3.9%;
+    --foreground: 0 0% 18%;
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 95%;
@@ -28,7 +28,7 @@
 
   .dark {
     --background: 240, 20%, 5%;
-    --foreground: 0 0% 98%;
+    --foreground: 0 0% 90%;
     --card: 240, 20%, 7%;
     --card-foreground: 0 0% 98%;
     --popover: 240, 20%, 8%;
@@ -60,6 +60,10 @@
 
   button {
     @apply cursor-default;
+  }
+
+  h1 {
+    @apply text-foreground;
   }
 
   ::-webkit-scrollbar {
