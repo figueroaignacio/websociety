@@ -69,7 +69,7 @@ export default function SettingsPage() {
     <>
       <div className="bg-gradient-to-r from-violet-500 to-purple-500 w-[calc(100%+2rem)] ml-[-1rem] h-[calc(12rem+2.5rem)] mt-[-1.25rem]"></div>
 
-      <div className="relative -mt-20 mx-auto lg:px-4 max-w-2xl bg-card rounded-md border">
+      <div className="relative -mt-20 mx-auto lg:px-4 pb-12 max-w-2xl bg-card rounded-md border">
         <div className="flex items-center text-center justify-center gap-2 py-12">
           <SettingsIcon size={24} className="text-primary" />
           <h1 className="text-2xl font-bold">{t("settings.title")}</h1>
