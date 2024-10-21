@@ -55,7 +55,7 @@ export function Resources() {
       <Link
         href="/resources"
         className={`${buttonVariants({
-          variant: "outline",
+          variant: "default",
         })} mt-7 flex items-center gap-3 group`}
       >
         <Library className="mr-2 h-4 w-4" />

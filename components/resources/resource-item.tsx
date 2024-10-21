@@ -1,11 +1,6 @@
-// Components
-import { Card, CardContent, CardDescription, CardHeader } from "../ui/card";
-
-// Types
 import { Resources as ResourcesTypes } from "@content";
-
-// Icons
 import { ReactNode } from "react";
+import { Card, CardTitle } from "../ui/card";
 
 interface ResourceItemProps {
   icon: ReactNode;
@@ -14,16 +9,18 @@ interface ResourceItemProps {
 
 export function ResourceItem({ icon, resource }: ResourceItemProps) {
   return (
-    <Card className="rounded-lg text-center bg-transparent relative overflow-hidden backdrop-filter backdrop-blur-md">
-      <CardHeader className="justify-center items-center">
-        <div className="w-16 h-16 rounded-full flex items-center gradient-background justify-center">
+    <Card className="min-h-60 relative overflow-hidden flex flex-col justify-between p-5 rounded-lg">
+      <div className="relative z-10">
+        <CardTitle className="max-w-52 mb-4 text-2xl font-bold text-foreground">
+          {resource.title}
+        </CardTitle>
+        <p className="text-sm text-foreground mb-6">{resource.description}</p>
+      </div>
+      <div className="relative z-10 self-end">
+        <div className="p-3 rounded-full inline-block bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-lg transition-transform duration-300 transform hover:scale-105">
           {icon}
         </div>
-        <h3 className="text-lg font-semibold">{resource.title}</h3>
-      </CardHeader>
-      <CardContent>
-        <CardDescription>{resource.description}</CardDescription>
-      </CardContent>
+      </div>
     </Card>
   );
 }
