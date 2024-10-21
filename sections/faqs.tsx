@@ -14,7 +14,7 @@ export function FAQS() {
   const faqs = t.raw("faqs");
 
   return (
-    <section className="flex flex-col gap-12">
+    <section className="flex flex-col gap-12 mb-12">
       <h2 className="font-bold text-2xl lg:text-4xl">FAQ&apos;s</h2>
       <Accordion
         type="single"
