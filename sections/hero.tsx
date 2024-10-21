@@ -26,7 +26,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-3xl font-extrabold tracking-tight md:text-6xl"
+              className="text-3xl font-extrabold tracking-tight md:text-6xl lg:text-7xl"
             >
               {t.rich("title", {
                 text: (chunks) => (
