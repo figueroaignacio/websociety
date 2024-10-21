@@ -25,6 +25,7 @@ import {
   Folder,
   HelpCircle,
   Home,
+  SettingsIcon,
 } from "lucide-react";
 
 // Utils
@@ -40,6 +41,7 @@ const icons = {
   bookOpen: BookOpen,
   folder: Folder,
   help: HelpCircle,
+  settings: SettingsIcon,
 };
 
 interface SidebarMobileProps {
