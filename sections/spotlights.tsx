@@ -17,7 +17,7 @@ export function Spotlights() {
         ) => {
           return (
             <div
-              className={`${index === 2 ? "lg:col-span-4" : "lg:col-span-2"}`}
+              className={`${index === 2 ? "md:col-span-4" : "lg:col-span-2"}`}
               key={index}
             >
               <SpotlightCard spotlight={spotlight} />
