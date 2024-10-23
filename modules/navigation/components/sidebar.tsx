@@ -6,7 +6,7 @@ import { SidebarMobile } from "./sidebar-mobile-panel";
 import { SidebarDesktop } from "./sidebar-panel";
 
 // Types
-import { Navigation } from "@/types/types";
+import { Navigation } from "../types";
 
 export function Sidebar() {
   const t = useTranslations();

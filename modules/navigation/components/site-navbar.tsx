@@ -11,7 +11,7 @@ import { Link } from "@/config/navigation";
 import { getCurrentLocale } from "@/utils/getCurrentLocale";
 
 // Types
-import { Navigation } from "@/types/types";
+import { Navigation } from "../types";
 
 export function SiteNavbar({ navigation }: { navigation: Navigation[] }) {
   const pathname = usePathname();

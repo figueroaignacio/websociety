@@ -13,11 +13,8 @@ import {
 } from "@/components/ui/sheet";
 import { Sidebar } from "lucide-react";
 
-interface Heading {
-  id: string;
-  text: string | null;
-  level: number;
-}
+// Types
+import { Heading } from "../types";
 
 interface MobileTocMobileProps {
   headings: Heading[];

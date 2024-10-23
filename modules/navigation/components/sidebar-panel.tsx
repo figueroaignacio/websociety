@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 
 // Types
-import { Navigation } from "@/types/types";
+import { Navigation } from "../types";
 
 // Utils
 import { cn } from "@/lib/utils";

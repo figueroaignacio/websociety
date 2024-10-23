@@ -12,7 +12,7 @@ import { guides } from "@content";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 // Metadata
-import { MetadataParams } from "@/types/types";
+import { MetadataParams } from "@/types";
 
 export async function generateMetadata({ params: { locale } }: MetadataParams) {
   const t = await getTranslations({ locale, namespace: "guidesConfig" });

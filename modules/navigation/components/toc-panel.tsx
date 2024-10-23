@@ -3,11 +3,8 @@
 // Hooks
 import { useTranslations } from "next-intl";
 
-interface Heading {
-  id: string;
-  text: string | null;
-  level: number;
-}
+// Types
+import { Heading } from "../types";
 
 interface TocPanelProps {
   headings: Heading[];

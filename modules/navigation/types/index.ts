@@ -1,11 +1,3 @@
-export type MetadataParams = {
-  params: {
-    locale: string;
-  };
-};
-
-export type Locale = "es" | "en";
-
 export type Navigation = {
   icon:
     | "home"
@@ -19,3 +11,9 @@ export type Navigation = {
   title: string;
   href: string;
 };
+
+export interface Heading {
+  id: string;
+  text: string | null;
+  level: number;
+}

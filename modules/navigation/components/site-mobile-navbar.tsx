@@ -21,7 +21,7 @@ import { Menu } from "lucide-react";
 import { getCurrentLocale } from "@/utils/getCurrentLocale";
 
 // Types
-import { Navigation } from "@/types/types";
+import { Navigation } from "../types";
 
 export function SiteMobileNavbar({ navigation }: { navigation: Navigation[] }) {
   const pathname = usePathname();

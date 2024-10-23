@@ -33,7 +33,7 @@ import { cn } from "@/lib/utils";
 import { getCurrentLocale } from "@/utils/getCurrentLocale";
 
 // Types
-import { Navigation } from "@/types/types";
+import { Navigation } from "../types";
 
 const icons = {
   home: Home,

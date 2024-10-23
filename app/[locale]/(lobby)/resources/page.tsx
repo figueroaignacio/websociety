@@ -13,7 +13,7 @@ import { resources } from "@content";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 // Metadata
-import { MetadataParams } from "@/types/types";
+import { MetadataParams } from "@/types";
 
 export async function generateMetadata({ params: { locale } }: MetadataParams) {
   const t = await getTranslations({ locale, namespace: "resourcesConfig" });
@@ -47,20 +47,16 @@ export default function ResourcesPage({
   const t = useTranslations("resources");
   const lang = useLocale();
 
-  // Obtener la categoría seleccionada de los searchParams
   const selectedCategory = searchParams?.category || null;
 
-  // Filtrar los recursos por idioma
   const filteredResources = resources.filter(
     (resource) => resource.locale === lang
   );
 
-  // Obtener las categorías únicas
   const categories = Array.from(
     new Set(filteredResources.flatMap((resource) => resource.categories || []))
   );
 
-  // Filtrar los recursos según la categoría seleccionada
   const { filteredResources: filteredAndSortedPosts } = resourcesFilter({
     categories,
     resources: filteredResources,
