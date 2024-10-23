@@ -12,7 +12,18 @@
   "postsCta": {
     "title": "Te interesa conocer más artículos?",
     "description": "Mirá y descubrí mas artículos de Web society.",
-    "link": "Explorar todas las publicaciones"
+    "link": "Explorar todas las publicaciones",
+    "items": [
+      {
+        "title": "Artículos profundos",
+        "icon": "BookOpen"
+      },
+
+      {
+        "title": "Últimas tendencias",
+        "icon": "Zap"
+      }
+    ]
   },
   "relatedPosts": {
     "title": "Artículos que pueden interesarte"

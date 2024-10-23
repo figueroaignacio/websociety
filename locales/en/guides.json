@@ -10,7 +10,21 @@
   "guidesCta": {
     "title": "Ready to Advance Your Career?",
     "description": "Explore all the curriculums and start your learning journey today.",
-    "link": "Start advancing today"
+    "link": "Start advancing today",
+    "items": [
+      {
+        "title": "Comprehensive Tutorials",
+        "icon": "BookOpen"
+      },
+      {
+        "title": "Practical Examples",
+        "icon": "Code"
+      },
+      {
+        "title": "Community Support",
+        "icon": "Users"
+      }
+    ]
   },
   "noCurriculumMessage": {
     "title": "No curriculums found",

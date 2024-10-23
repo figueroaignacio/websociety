@@ -7,7 +7,21 @@
   "guidesCta": {
     "title": "¿Estás listo para avanzar en tu carrera?",
     "description": "Explora todos los currículums y empieza a seguir tu ruta de aprendizaje hoy mismo.",
-    "link": "Empieza a avanzar hoy"
+    "link": "Empieza a avanzar hoy",
+    "items": [
+      {
+        "title": "Tutoriales Completos",
+        "icon": "BookOpen"
+      },
+      {
+        "title": "Ejemplos Prácticos",
+        "icon": "Code"
+      },
+      {
+        "title": "Soporte de la Comunidad",
+        "icon": "Users"
+      }
+    ]
   },
   "noCurriculumMessage": {
     "title": "Currículums no encontrados.",

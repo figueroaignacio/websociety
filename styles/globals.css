@@ -89,6 +89,10 @@
     animation: gradientShift 15s ease infinite;
   }
 
+  .cta-background-gradient {
+    @apply bg-gradient-to-br from-purple-600 to-indigo-700;
+  }
+
   @keyframes gradientShift {
     0% {
       background-position: 0% 50%;

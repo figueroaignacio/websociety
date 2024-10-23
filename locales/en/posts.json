@@ -10,9 +10,20 @@
     "title": "Latest Posts"
   },
   "postsCta": {
-    "title": "Do you want to explore more posts?",
-    "description": "Discover all the articles about web development by Web society.",
-    "link": "Explore all posts"
+    "title": "¿Te interesa conocer más artículos?",
+    "description": "Descubre todos los artículos sobre desarrollo web en Web Society.",
+    "link": "Explorar todas las publicaciones",
+    "items": [
+      {
+        "title": "Comprehensive Tutorials",
+        "icon": "BookOpen"
+      },
+
+      {
+        "title": "Latest Trends",
+        "icon": "Zap"
+      }
+    ]
   },
   "relatedPosts": {
     "title": "Articles you may find interesting"

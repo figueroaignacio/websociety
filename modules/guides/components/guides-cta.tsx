@@ -2,8 +2,6 @@
 
 // Hooks
 import { useTranslations } from "next-intl";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 
 // Components
 import { buttonVariants } from "@/components/ui/button";
@@ -14,55 +12,86 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Link } from "@/config/navigation";
-import Image from "next/image";
+import { motion } from "framer-motion";
 
-// Icons - Images
-import GuidesCtaDark from "@/assets/images/guides-cta-code-dark.svg";
-import GuidesCtaLight from "@/assets/images/guides-cta-code-light.svg";
-import { ArrowRight, GraduationCap } from "lucide-react";
+// Icons
+import { ArrowRight, BookOpen, Code, GraduationCap, Users } from "lucide-react";
 
 export function GuideCta() {
   const t = useTranslations("guidesCta");
-  const { theme, resolvedTheme } = useTheme();
-  const [isThemeResolved, setIsThemeResolved] = useState(false);
 
-  useEffect(() => {
-    setIsThemeResolved(true);
-  }, [resolvedTheme]);
+  interface Item {
+    title: string;
+    icon: string;
+  }
+
+  const items = t.raw("items") as Item[];
+
+  const icons = {
+    BookOpen: BookOpen,
+    Code: Code,
+    Users: Users,
+  };
 
   return (
-    <Card className="shadow-custom-card flex flex-col md:flex-row md:items-center">
-      <CardHeader className="gap-4">
-        <div className="flex flex-col gap-3">
-          <CardTitle>{t("title")}</CardTitle>
-          <CardDescription>{t("description")}</CardDescription>
+    <Card className="overflow-hidden relative cta-background-gradient text-white">
+      <div className="absolute inset-0 opacity-10">
+        <svg
+          className="w-full h-full"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          <motion.path
+            d="M0,50 Q25,30 50,50 T100,50 L100,100 L0,100 Z"
+            fill="currentColor"
+            animate={{
+              d: [
+                "M0,50 Q25,30 50,50 T100,50 L100,100 L0,100 Z",
+                "M0,50 Q25,70 50,50 T100,50 L100,100 L0,100 Z",
+                "M0,50 Q25,30 50,50 T100,50 L100,100 L0,100 Z",
+              ],
+            }}
+            transition={{
+              repeat: Infinity,
+              duration: 10,
+              ease: "easeInOut",
+            }}
+          />
+        </svg>
+      </div>
+      <div className="relative z-10 p-6 md:p-8">
+        <CardHeader className="p-0 mb-6">
+          <CardTitle className="text-4xl font-extrabold mb-4 tracking-tight">
+            {t("title")}
+          </CardTitle>
+          <CardDescription className="text-xl text-purple-100">
+            {t("description")}
+          </CardDescription>
+        </CardHeader>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+          {items.map((item, index) => {
+            const Icon = icons[item.icon as keyof typeof icons];
+            return (
+              <div key={index} className="flex items-center space-x-3">
+                {Icon && <Icon className="h-6 w-6 text-purple-200" />}
+                <span className="text-sm font-medium">{item.title}</span>
+              </div>
+            );
+          })}
         </div>
         <div>
           <Link
             href="/guides"
             className={`${buttonVariants({
-              variant: "default",
-            })} flex items-center gap-3 group`}
+              variant: "secondary",
+              size: "lg",
+            })} w-full flex items-center justify-center gap-3 group bg-white text-purple-950`}
           >
-            <GraduationCap className="size-4" />
-            {t("link")}
-            <ArrowRight
-              size={".85rem"}
-              className="transition-transform ease-in-out duration-300 transform translate-x-0 group-hover:translate-x-1"
-            />
+            <GraduationCap className="h-5 w-5" />
+            <span>{t("link")}</span>
+            <ArrowRight className="h-4 w-4 transition-transform duration-300 transform translate-x-0 group-hover:translate-x-1" />
           </Link>
         </div>
-      </CardHeader>
-      <div>
-        {isThemeResolved && (
-          <Image
-            src={theme === "dark" ? GuidesCtaDark : GuidesCtaLight}
-            alt="Cta coding"
-            width={0}
-            height={0}
-            className="bg-cover rounded-md"
-          />
-        )}
       </div>
     </Card>
   );
