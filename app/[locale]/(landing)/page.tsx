@@ -4,7 +4,6 @@ import { unstable_setRequestLocale } from "next-intl/server";
 import { ParticleBackground } from "@/components/framer/particle-background";
 
 // Sections
-import { FAQS } from "@/sections/faqs";
 import { Hero } from "@/sections/hero";
 import { LatestArticles } from "@/sections/latest-articles";
 import { Resources } from "@/sections/resources";
@@ -32,7 +31,6 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
           <ArticlesCta />
           <Resources />
           <GuideCta />
-          <FAQS />
         </div>
       </section>
     </>

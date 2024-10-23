@@ -1,4 +1,8 @@
 {
+  "faqPage": {
+    "title": "Preguntas Frecuentes",
+    "description": "Encuentra las respuestas a preguntas frecuentes y como conseguir una buena experiencia."
+  },
   "faqs": [
     {
       "value": "item-1",

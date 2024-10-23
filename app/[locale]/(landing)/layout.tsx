@@ -28,7 +28,7 @@ export default async function LandingLayout({
   unstable_setRequestLocale(locale);
 
   return (
-    <main>
+    <main className="min-h-[100dvh] grid grid-rows-[auto_1fr_auto]">
       <Navbar />
       <FramerWrapper>{children}</FramerWrapper>
       <Footer />

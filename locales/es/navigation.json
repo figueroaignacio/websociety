@@ -1,6 +1,14 @@
 {
   "navigation": [
     {
+      "title": "Sobre",
+      "href": "/about"
+    },
+    {
+      "title": "Preguntas Frecuentes",
+      "href": "/faq"
+    },
+    {
       "title": "Artículos",
       "href": "/articles",
       "icon": "fileText"

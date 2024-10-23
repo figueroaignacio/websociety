@@ -1,4 +1,8 @@
 {
+  "faqPage": {
+    "title": "Frequently Asked Questions",
+    "description": "Find answers to the most common questions and how to get the most out of your experience."
+  },
   "faqs": [
     {
       "value": "item-1",

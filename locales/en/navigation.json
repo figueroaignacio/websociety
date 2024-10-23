@@ -1,19 +1,24 @@
 {
   "navigation": [
     {
+      "title": "About",
+      "href": "/about"
+    },
+    {
+      "title": "Faq",
+      "href": "/faq"
+    },
+    {
       "title": "Articles",
-      "href": "/articles",
-      "icon": "fileText"
+      "href": "/articles"
     },
     {
       "title": "Guides",
-      "href": "/guides",
-      "icon": "bookOpen"
+      "href": "/guides"
     },
     {
       "title": "Resources",
-      "href": "/resources",
-      "icon": "folder"
+      "href": "/resources"
     }
   ],
   "sidebarNavigation": [
