@@ -32,7 +32,7 @@ export function SiteNavbar({ navigation }: { navigation: Navigation[] }) {
                       pathname === `/${currentLocale}${navItem.href}`
                         ? "text-foreground"
                         : "text-muted-foreground"
-                    }  hover:text-foreground font-medium text-sm`}
+                    }  hover:text-foreground font-medium text-xs`}
                   >
                     {navItem.title}
                   </Link>
