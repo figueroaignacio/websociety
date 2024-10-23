@@ -1,5 +1,5 @@
 // Components
-import { BackButton } from "@/components/back-button";
+import { BackButton } from "@/components/common/back-button";
 import { MDXContent } from "@/components/mdx/mdx-components";
 
 // Content

@@ -1,6 +1,6 @@
 // Components
+import { Tag } from "@/components/common/tag";
 import { MDXContent } from "@/components/mdx/mdx-components";
-import { Tag } from "@/components/tag";
 import { Separator } from "@/components/ui/separator";
 import { ArticleDetails } from "@/modules/articles/components/article-details";
 import { ArticlePagePagination } from "@/modules/articles/components/article-page-pagination";

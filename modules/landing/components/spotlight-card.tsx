@@ -1,6 +1,6 @@
 // Components
+import { Waves } from "@/components/common/waves";
 import { Card, CardTitle } from "@/components/ui/card";
-import { Waves } from "@/components/waves";
 
 // Icons
 import { BookCheck, Code2, Globe, GraduationCap } from "lucide-react";

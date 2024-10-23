@@ -2,7 +2,7 @@
 import { useTranslations } from "next-intl";
 
 // Components
-import { Link } from "../config/navigation";
+import { Link } from "../../config/navigation";
 import { Logo } from "./logo";
 
 // Icons

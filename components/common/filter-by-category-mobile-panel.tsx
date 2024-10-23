@@ -4,6 +4,8 @@
 import { useTranslations } from "next-intl";
 
 // Components
+import { CategoryLink } from "@/components/common/category-link";
+import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetClose,
@@ -13,8 +15,6 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Filter } from "lucide-react";
-import { CategoryLink } from "./category-link";
-import { Button } from "./ui/button";
 
 interface FilterMobileProps {
   categories: string[];

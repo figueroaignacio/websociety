@@ -4,7 +4,7 @@
 import { usePathname } from "next/navigation";
 
 // Components
-import { Logo } from "@/components/logo";
+import { Logo } from "@/components/common/logo";
 import {
   Sheet,
   SheetClose,

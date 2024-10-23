@@ -4,13 +4,13 @@
 import { useTranslations } from "next-intl";
 
 // Components
-import { BgBlur } from "@/components/bg-blur";
+import { BgBlur } from "@/components/common/bg-blur";
 import { buttonVariants } from "@/components/ui/button";
 import { Link } from "@/config/navigation";
 import { motion } from "framer-motion";
 
 // Icons
-import { Github } from "@/components/tech-icons";
+import { Github } from "@/components/common/tech-icons";
 import { ArrowRight } from "lucide-react";
 
 export function Hero() {

@@ -1,5 +1,5 @@
 // Components
-import { Loader } from "@/components/loader";
+import { Loader } from "@/components/common/loader";
 
 export default function Loading() {
   return <Loader />;

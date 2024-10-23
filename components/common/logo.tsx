@@ -1,5 +1,5 @@
 // Components
-import { Link } from "../config/navigation";
+import { Link } from "@/config/navigation";
 
 export function Logo() {
   return (

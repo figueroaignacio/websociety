@@ -2,7 +2,7 @@
 import { useTranslations } from "next-intl";
 
 // Components
-import { Tag } from "@/components/tag";
+import { Tag } from "@/components/common/tag";
 import { buttonVariants } from "@/components/ui/button";
 import {
   Card,

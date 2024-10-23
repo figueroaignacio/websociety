@@ -1,8 +1,8 @@
 import { unstable_setRequestLocale } from "next-intl/server";
 
 // Components
-import { BgBlur } from "@/components/bg-blur";
-import { Footer } from "@/components/footer";
+import { BgBlur } from "@/components/common/bg-blur";
+import { Footer } from "@/components/common/footer";
 import { FramerWrapper } from "@/components/framer";
 import { Sidebar } from "@/modules/navigation/components/sidebar";
 

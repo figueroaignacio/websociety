@@ -1,5 +1,5 @@
 // Components
-import { Footer } from "@/components/footer";
+import { Footer } from "@/components/common/footer";
 import { FramerWrapper } from "@/components/framer";
 import { Navbar } from "@/modules/navigation/components/navbar";
 

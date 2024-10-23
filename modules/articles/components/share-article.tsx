@@ -2,7 +2,7 @@
 import { useTranslations } from "next-intl";
 
 // Components
-import { CopyLinkButton } from "@/components/copy-link-button";
+import { CopyLinkButton } from "@/components/common/copy-link-button";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/card";
 
 // Constants
-import { socialPlatforms } from "@/constants/social-platforms";
+import { socialPlatforms } from "@/components/common/social-platforms";
 
 interface ShareButtonProps {
   slug: string;

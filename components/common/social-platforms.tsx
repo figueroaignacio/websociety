@@ -1,4 +1,4 @@
-import { Facebook, LinkedIn, Whatsapp, X } from "../components/social-icons";
+import { Facebook, LinkedIn, Whatsapp, X } from "./social-icons";
 
 export const socialPlatforms = [
   {

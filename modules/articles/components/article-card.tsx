@@ -2,7 +2,7 @@
 import { useLocale, useTranslations } from "next-intl";
 
 // Components
-import { Tag } from "@/components/tag";
+import { Tag } from "@/components/common/tag";
 import {
   Card,
   CardContent,

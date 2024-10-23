@@ -1,20 +1,20 @@
 // Hooks
 import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
-import { useSearch } from "../hooks/useSearch";
+import { useSearch } from "../../hooks/useSearch";
 
 // Components
-import { Link } from "../config/navigation";
-import { Alert, AlertDescription, AlertTitle } from "./ui/alert";
-import { Badge } from "./ui/badge";
-import { Button } from "./ui/button";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogTrigger,
-} from "./ui/dialog";
-import { Input } from "./ui/input";
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Link } from "@/config/navigation";
 
 // Icons
 import { AlertOctagon, Search } from "lucide-react";

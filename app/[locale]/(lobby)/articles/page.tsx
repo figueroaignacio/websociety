@@ -2,8 +2,8 @@
 import { useLocale, useTranslations } from "next-intl";
 
 // Components
-import { FilterByCategory } from "@/components/filter-by-category";
-import { QueryPagination } from "@/components/query-pagination";
+import { FilterByCategory } from "@/components/common/filter-by-category";
+import { QueryPagination } from "@/components/common/query-pagination";
 import { ArticleCard } from "@/modules/articles/components/article-card";
 import { NoArticlesMessage } from "@/modules/articles/components/no-articles-message";
 
