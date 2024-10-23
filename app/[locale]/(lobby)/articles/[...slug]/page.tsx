@@ -1,12 +1,12 @@
 // Components
-import { ArticleDetails } from "@/components/articles/article-details";
-import { ArticlePagePagination } from "@/components/articles/article-page-pagination";
-import { RelatedArticles } from "@/components/articles/related-articles";
-import { ShareArticle } from "@/components/articles/share-article";
 import { MDXContent } from "@/components/mdx/mdx-components";
-import { Toc } from "@/components/navigation/toc";
 import { Tag } from "@/components/tag";
 import { Separator } from "@/components/ui/separator";
+import { ArticleDetails } from "@/modules/articles/components/article-details";
+import { ArticlePagePagination } from "@/modules/articles/components/article-page-pagination";
+import { RelatedArticles } from "@/modules/articles/components/related-articles";
+import { ShareArticle } from "@/modules/articles/components/share-article";
+import { Toc } from "@/modules/navigation/components/toc";
 
 // Content
 import { articles } from "@content";

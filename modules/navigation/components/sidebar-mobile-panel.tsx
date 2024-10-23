@@ -4,6 +4,9 @@
 import { usePathname } from "next/navigation";
 
 // Components
+import { Logo } from "@/components/logo";
+import { Searcher } from "@/components/searcher";
+import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetClose,
@@ -13,9 +16,6 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Link } from "@/config/navigation";
-import { Logo } from "../logo";
-import { Searcher } from "../searcher";
-import { Button } from "../ui/button";
 
 // Icons
 import {
@@ -33,7 +33,7 @@ import { cn } from "@/lib/utils";
 import { getCurrentLocale } from "@/utils/getCurrentLocale";
 
 // Types
-import { Navigation } from "../../types/types";
+import { Navigation } from "@/types/types";
 
 const icons = {
   home: Home,

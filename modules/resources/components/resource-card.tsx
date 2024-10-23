@@ -2,10 +2,8 @@
 import { useTranslations } from "next-intl";
 
 // Components
-import Image from "next/image";
-import { Link } from "../../config/navigation";
-import { Tag } from "../tag";
-import { buttonVariants } from "../ui/button";
+import { Tag } from "@/components/tag";
+import { buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -13,7 +11,9 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "../ui/card";
+} from "@/components/ui/card";
+import { Link } from "@/config/navigation";
+import Image from "next/image";
 
 // Icons
 import { ExternalLink, FileText, ImageIcon } from "lucide-react";

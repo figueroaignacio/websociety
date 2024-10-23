@@ -4,14 +4,14 @@
 import { usePathname } from "next/navigation";
 
 // Components
-import { Link } from "../../config/navigation";
-import { Logo } from "../logo";
+import { Logo } from "@/components/logo";
+import { Link } from "@/config/navigation";
 
 // Utils
-import { getCurrentLocale } from "../../utils/getCurrentLocale";
+import { getCurrentLocale } from "@/utils/getCurrentLocale";
 
 // Types
-import { Navigation } from "../../types/types";
+import { Navigation } from "@/types/types";
 
 export function SiteNavbar({ navigation }: { navigation: Navigation[] }) {
   const pathname = usePathname();

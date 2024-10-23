@@ -1,7 +1,7 @@
 // Components
-import { ArticleCardSkeleton } from "@/components/articles/article-card-skeleton";
 import { Separator } from "@/components/ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
+import { ArticleCardSkeleton } from "@/modules/articles/components/article-card-skeleton";
 
 export default function LoadingPosts() {
   return (

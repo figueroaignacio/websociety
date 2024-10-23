@@ -1,11 +1,18 @@
-import { ResourceCard } from "@/components/resources/resource-card";
-import { resourcesFilter } from "@/utils/resourcesFilter";
-import { resources } from "@content";
+// Hooks
 import { useLocale, useTranslations } from "next-intl";
+
+// Components
+import { FilterByCategory } from "@/components/filter-by-category";
+import { ResourceCard } from "@/modules/resources/components/resource-card";
+import { resourcesFilter } from "@/modules/resources/utils/resourcesFilter";
+
+// Content
+import { resources } from "@content";
+
+// Utils
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 // Metadata
-import { FilterByCategory } from "@/components/filter-by-category";
 import { MetadataParams } from "@/types/types";
 
 export async function generateMetadata({ params: { locale } }: MetadataParams) {

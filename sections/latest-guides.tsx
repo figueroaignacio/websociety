@@ -2,14 +2,14 @@
 import { useLocale, useTranslations } from "next-intl";
 
 // Components
-import { GuideCard } from "../components/guides/guide-card";
-import { NoGuidesMessage } from "../components/guides/no-guides-message";
+import { GuideCard } from "@/modules/guides/components/guide-card";
+import { NoGuidesMessage } from "@/modules/guides/components/no-guides-message";
 
 // Content
 import { guides } from "@content";
 
 // Utils
-import { sortGuides } from "@/utils/sortGuides";
+import { sortGuides } from "@/modules/guides/utils/sortGuides";
 
 export function LatestGuides() {
   const t = useTranslations("latest");

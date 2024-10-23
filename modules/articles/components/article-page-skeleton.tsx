@@ -1,6 +1,6 @@
 // Components
-import { Separator } from "../ui/separator";
-import { Skeleton } from "../ui/skeleton";
+import { Separator } from "@/components/ui/separator";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export function ArticlePageSkeleton() {
   return (

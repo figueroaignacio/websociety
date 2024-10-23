@@ -4,10 +4,9 @@
 import { usePathname } from "next/navigation";
 
 // Components
+import { Logo } from "@/components/logo";
+import { Searcher } from "@/components/searcher";
 import { Link } from "@/config/navigation";
-import { Navigation } from "../../types/types";
-import { Logo } from "../logo";
-import { Searcher } from "../searcher";
 
 // Icons
 import {
@@ -20,6 +19,9 @@ import {
   SettingsIcon,
   Users,
 } from "lucide-react";
+
+// Types
+import { Navigation } from "@/types/types";
 
 // Utils
 import { cn } from "@/lib/utils";

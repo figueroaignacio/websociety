@@ -4,14 +4,14 @@
 import { useLocale, useTranslations } from "next-intl";
 
 // Components
-import { ArticleCard } from "../components/articles/article-card";
-import { NoArticlesMessage } from "../components/articles/no-articles-message";
+import { ArticleCard } from "@/modules/articles/components/article-card";
+import { NoArticlesMessage } from "@/modules/articles/components/no-articles-message";
 
 // Content
 import { articles } from "@content";
 
 // Utils
-import { sortArticles } from "@/utils/sortArticles";
+import { sortArticles } from "@/modules/articles/utils/sortArticles";
 
 // Animations
 import "@/styles/animations.css";

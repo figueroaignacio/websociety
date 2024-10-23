@@ -2,8 +2,7 @@
 import { useLocale, useTranslations } from "next-intl";
 
 // Components
-import { Link } from "../../config/navigation";
-import { Tag } from "../tag";
+import { Tag } from "@/components/tag";
 import {
   Card,
   CardContent,
@@ -11,14 +10,15 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "../ui/card";
+} from "@/components/ui/card";
+import { Link } from "@/config/navigation";
 
 // Icons
 import { ArrowRight, Calendar } from "lucide-react";
 
 // Utils
-import { formatDate } from "../../utils/formatDate";
-import { buttonVariants } from "../ui/button";
+import { buttonVariants } from "@/components/ui/button";
+import { formatDate } from "@/utils/formatDate";
 
 interface ArticleCardProps {
   title?: string;

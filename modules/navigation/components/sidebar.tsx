@@ -1,7 +1,12 @@
+// Hooks
 import { useTranslations } from "next-intl";
-import { Navigation } from "../../types/types";
+
+// Components
 import { SidebarMobile } from "./sidebar-mobile-panel";
 import { SidebarDesktop } from "./sidebar-panel";
+
+// Types
+import { Navigation } from "@/types/types";
 
 export function Sidebar() {
   const t = useTranslations();

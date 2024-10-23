@@ -2,7 +2,7 @@
 import { useTranslations } from "next-intl";
 
 // Components
-import { SpotlightCard } from "../components/spotlight-card";
+import { SpotlightCard } from "@/modules/landing/components/spotlight-card";
 
 export function Spotlights() {
   const t = useTranslations();

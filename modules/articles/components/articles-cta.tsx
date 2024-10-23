@@ -2,8 +2,8 @@
 import { useTranslations } from "next-intl";
 
 // Components
-import { Link } from "../../config/navigation";
-import { buttonVariants } from "../ui/button";
+import { buttonVariants } from "@/components/ui/button";
+import { Link } from "@/config/navigation";
 
 // Icons - Images
 import { ArrowRight, FileText } from "lucide-react";

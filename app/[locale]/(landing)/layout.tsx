@@ -1,3 +1,8 @@
+// Components
+import { Footer } from "@/components/footer";
+import { FramerWrapper } from "@/components/framer";
+import { Navbar } from "@/modules/navigation/components/navbar";
+
 // Utils
 import { locales } from "@/config/config";
 import { unstable_setRequestLocale } from "next-intl/server";
@@ -6,12 +11,7 @@ import { unstable_setRequestLocale } from "next-intl/server";
 import "@fontsource-variable/onest";
 
 // Styles
-import { Footer } from "@/components/footer";
-import { FramerWrapper } from "@/components/framer";
-import { Navbar } from "@/components/navigation/navbar";
 import "@/styles/globals.css";
-
-// Metadata
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));

@@ -2,17 +2,17 @@
 import { useLocale, useTranslations } from "next-intl";
 
 // Components
-import { ArticleCard } from "@/components/articles/article-card";
-import { NoArticlesMessage } from "@/components/articles/no-articles-message";
 import { FilterByCategory } from "@/components/filter-by-category";
 import { QueryPagination } from "@/components/query-pagination";
+import { ArticleCard } from "@/modules/articles/components/article-card";
+import { NoArticlesMessage } from "@/modules/articles/components/no-articles-message";
 
 // Content
 import { articles } from "@content";
 
 // Utils
-import { articlesFilter } from "@/utils/articlesFilter";
-import { sortArticles } from "@/utils/sortArticles";
+import { articlesFilter } from "@/modules/articles/utils/articlesFilter";
+import { sortArticles } from "@/modules/articles/utils/sortArticles";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 // Metadata

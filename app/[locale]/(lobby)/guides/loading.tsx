@@ -1,6 +1,6 @@
 // Components
-import { GuideCardSkeleton } from "@/components/guides/guide-card-skeleton";
 import { Skeleton } from "@/components/ui/skeleton";
+import { GuideCardSkeleton } from "@/modules/guides/components/guide-card-skeleton";
 
 export default function LoadingGuides() {
   return (

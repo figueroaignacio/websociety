@@ -2,15 +2,15 @@
 import { useTranslations } from "next-intl";
 
 // Components
-import { Tag } from "../tag";
-import { Avatar, AvatarImage } from "../ui/avatar";
-import { Separator } from "../ui/separator";
+import { Tag } from "@/components/tag";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { Separator } from "@/components/ui/separator";
 
 // Icons
 import { Calendar, TagIcon, Timer } from "lucide-react";
 
 // Utils
-import { formatDate } from "../../utils/formatDate";
+import { formatDate } from "@/utils/formatDate";
 
 interface PostDetailsProps {
   post: {

@@ -4,10 +4,10 @@
 import { useTranslations } from "next-intl";
 
 // Components
-import { LocaleSwitcher } from "@/components/locale-switcher";
-import { ToggleTheme } from "@/components/toggle-theme";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { LocaleSwitcher } from "@/modules/settings/components/locale-switcher";
+import { SupportLink } from "@/modules/settings/components/support-link";
+import { ToggleTheme } from "@/modules/settings/components/toggle-theme";
 
 // Icons
 import {
@@ -18,21 +18,6 @@ import {
   SettingsIcon,
   Sliders,
 } from "lucide-react";
-
-type SupportLinkProps = {
-  href: string;
-  title: string;
-  icon: React.ReactNode;
-};
-
-const SupportLink: React.FC<SupportLinkProps> = ({ href, title, icon }) => (
-  <Button variant="outline" className="w-full justify-between" asChild>
-    <a href={href} target="_blank" rel="noopener noreferrer">
-      {title}
-      {icon}
-    </a>
-  </Button>
-);
 
 const SectionHeader: React.FC<{ icon: React.ReactNode; title: string }> = ({
   icon,

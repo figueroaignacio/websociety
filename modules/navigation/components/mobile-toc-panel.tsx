@@ -4,9 +4,14 @@
 import { useTranslations } from "next-intl";
 
 // Components
+import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { Sidebar } from "lucide-react";
-import { Button } from "../ui/button";
-import { Sheet, SheetClose, SheetContent, SheetTrigger } from "../ui/sheet";
 
 interface Heading {
   id: string;

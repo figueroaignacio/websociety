@@ -2,18 +2,18 @@
 import { useTranslations } from "next-intl";
 
 // Components
-import { CopyLinkButton } from "../copy-link-button";
-import { Button } from "../ui/button";
+import { CopyLinkButton } from "@/components/copy-link-button";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "../ui/card";
+} from "@/components/ui/card";
 
 // Constants
-import { socialPlatforms } from "../../constants/social-platforms";
+import { socialPlatforms } from "@/constants/social-platforms";
 
 interface ShareButtonProps {
   slug: string;

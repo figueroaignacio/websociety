@@ -1,6 +1,11 @@
-import { Resources as ResourcesTypes } from "@content";
+// React
 import { ReactNode } from "react";
-import { Card, CardTitle } from "../ui/card";
+
+// Components
+import { Card, CardTitle } from "@/components/ui/card";
+
+// Types
+import { Resources as ResourcesTypes } from "@content";
 
 interface ResourceItemProps {
   icon: ReactNode;

@@ -1,18 +1,18 @@
 "use client";
 
 // Hooks
+import { usePathname, useRouter } from "@/config/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { useTransition } from "react";
-import { usePathname, useRouter } from "../config/navigation";
 
 // Icons
 import { Languages } from "lucide-react";
 
 // Config
-import { locales } from "../config/config";
+import { locales } from "@/config/config";
 
 // Types
-import { Locale } from "../types/types";
+import { Locale } from "@/types/types";
 
 type Props = {
   label?: string;

@@ -6,10 +6,15 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 // Components
+import { buttonVariants } from "@/components/ui/button";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Link } from "@/config/navigation";
 import Image from "next/image";
-import { Link } from "../../config/navigation";
-import { buttonVariants } from "../ui/button";
-import { Card, CardDescription, CardHeader, CardTitle } from "../ui/card";
 
 // Icons - Images
 import GuidesCtaDark from "@/assets/images/guides-cta-code-dark.svg";

@@ -4,24 +4,24 @@
 import { usePathname } from "next/navigation";
 
 // Components
-import { Link } from "../../config/navigation";
-import { Logo } from "../logo";
+import { Logo } from "@/components/logo";
 import {
   Sheet,
   SheetClose,
   SheetContent,
   SheetFooter,
   SheetTrigger,
-} from "../ui/sheet";
+} from "@/components/ui/sheet";
+import { Link } from "@/config/navigation";
 
 // Icons
 import { Menu } from "lucide-react";
 
 // Utils
-import { getCurrentLocale } from "../../utils/getCurrentLocale";
+import { getCurrentLocale } from "@/utils/getCurrentLocale";
 
 // Types
-import { Navigation } from "../../types/types";
+import { Navigation } from "@/types/types";
 
 export function SiteMobileNavbar({ navigation }: { navigation: Navigation[] }) {
   const pathname = usePathname();
