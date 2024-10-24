@@ -12,11 +12,10 @@ import { ExternalLink } from "lucide-react";
 
 interface GuideCardProps {
   title: string;
-  description: string;
   slug: string;
 }
 
-export function GuideCard({ description, title, slug }: GuideCardProps) {
+export function GuideCard({ title, slug }: GuideCardProps) {
   const t = useTranslations("guides");
 
   return (
