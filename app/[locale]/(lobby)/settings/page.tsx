@@ -1,15 +1,9 @@
 "use client";
 
-// Hooks
-import { useTranslations } from "next-intl";
-
-// Components
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import { LocaleSwitcher } from "@/modules/settings/components/locale-switcher";
 import { SupportLink } from "@/modules/settings/components/support-link";
 import { ToggleTheme } from "@/modules/settings/components/toggle-theme";
-
-// Icons
 import {
   Bug,
   GithubIcon,
@@ -18,6 +12,7 @@ import {
   SettingsIcon,
   Sliders,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const SectionHeader: React.FC<{ icon: React.ReactNode; title: string }> = ({
   icon,
@@ -51,44 +46,38 @@ export default function SettingsPage() {
   ];
 
   return (
-    <>
-      <div className="bg-gradient-to-r from-violet-500 to-purple-500 w-[calc(100%+2rem)] ml-[-1rem] h-[calc(12rem+2.5rem)] mt-[-1.25rem]"></div>
+    <div className="w-full mx-auto px-4 py-8">
+      <div className="flex items-center gap-2 mb-8">
+        <SettingsIcon size={28} className="text-primary" />
+        <h1 className="text-3xl font-bold">{t("settings.title")}</h1>
+      </div>
 
-      <div className="relative -mt-20 mx-auto px-4 pb-12 max-w-2xl bg-card rounded-md border">
-        <div className="flex items-center text-center justify-center gap-2 py-12">
-          <SettingsIcon size={24} className="text-primary" />
-          <h1 className="text-2xl font-bold">{t("settings.title")}</h1>
-        </div>
-        <Card className="mb-6">
-          <CardHeader>
-            <CardTitle>
-              <SectionHeader
-                icon={<Sliders size={20} className="text-primary" />}
-                title={t("settings.preferences")}
-              />
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
+      <div className="space-y-8">
+        <section>
+          <SectionHeader
+            icon={<Sliders size={20} className="text-primary" />}
+            title={t("settings.preferences")}
+          />
+          <div className="space-y-6">
             <ToggleTheme />
             <LocaleSwitcher />
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle>
-              <SectionHeader
-                icon={<HelpCircle size={20} className="text-primary" />}
-                title={t("support.title")}
-              />
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-2">
+          </div>
+        </section>
+
+        <Separator />
+
+        <section>
+          <SectionHeader
+            icon={<HelpCircle size={20} className="text-primary" />}
+            title={t("support.title")}
+          />
+          <div className="grid gap-4">
             {supportLinks.map((link, index) => (
               <SupportLink key={index} {...link} />
             ))}
-          </CardContent>
-        </Card>
+          </div>
+        </section>
       </div>
-    </>
+    </div>
   );
 }
