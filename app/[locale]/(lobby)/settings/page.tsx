@@ -1,5 +1,9 @@
 "use client";
 
+// Hooks
+import { useTranslations } from "next-intl";
+
+// Components
 import { Separator } from "@/components/ui/separator";
 import { LocaleSwitcher } from "@/modules/settings/components/locale-switcher";
 import { SupportLink } from "@/modules/settings/components/support-link";
@@ -12,7 +16,6 @@ import {
   SettingsIcon,
   Sliders,
 } from "lucide-react";
-import { useTranslations } from "next-intl";
 
 const SectionHeader: React.FC<{ icon: React.ReactNode; title: string }> = ({
   icon,
