@@ -32,7 +32,7 @@ export function ArticleCard({
   const locale = useLocale();
 
   return (
-    <Card className="overflow-hidden transition-all duration-300 hover:shadow-md group">
+    <Card className="overflow-hidden">
       <CardHeader className="relative pb-0">
         <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-purple-700 to-indigo-300" />
         <div className="flex justify-between items-center text-xs text-muted-foreground mb-2">
