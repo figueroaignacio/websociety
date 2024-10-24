@@ -1,3 +1,7 @@
+// Hooks
+import { useLocale, useTranslations } from "next-intl";
+
+// Components
 import { Tag } from "@/components/common/tag";
 import { buttonVariants } from "@/components/ui/button";
 import {
@@ -9,9 +13,12 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Link } from "@/config/navigation";
+
+// Utils
 import { formatDate } from "@/utils/formatDate";
+
+// Icons
 import { ArrowRight, Calendar } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
 
 interface ArticleCardProps {
   title?: string;
