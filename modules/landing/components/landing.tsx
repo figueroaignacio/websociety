@@ -4,10 +4,10 @@ import { ArticlesCta } from "@/modules/articles/components/articles-cta";
 import { GuideCta } from "@/modules/guides/components/guides-cta";
 
 // Sections
-import { Hero } from "@/sections/hero";
-import { LatestArticles } from "@/sections/latest-articles";
-import { Resources } from "@/sections/resources";
-import { Spotlights } from "@/sections/spotlights";
+import { Hero } from "@/modules/landing/views/hero";
+import { LatestArticles } from "@/modules/landing/views/latest-articles";
+import { Resources } from "@/modules/landing/views/resources";
+import { Spotlights } from "@/modules/landing/views/spotlights";
 
 export function Landing() {
   return (
