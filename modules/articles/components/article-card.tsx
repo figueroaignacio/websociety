@@ -1,8 +1,5 @@
-// Hooks
-import { useLocale, useTranslations } from "next-intl";
-
-// Components
 import { Tag } from "@/components/common/tag";
+import { buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -12,13 +9,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Link } from "@/config/navigation";
-
-// Icons
-import { ArrowRight, Calendar } from "lucide-react";
-
-// Utils
-import { buttonVariants } from "@/components/ui/button";
 import { formatDate } from "@/utils/formatDate";
+import { ArrowRight, Calendar } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
 
 interface ArticleCardProps {
   title?: string;
@@ -39,38 +32,44 @@ export function ArticleCard({
   const locale = useLocale();
 
   return (
-    <Card className="shadow-sm">
-      <CardHeader className="flex flex-row justify-between items-center relative">
-        <dl className="flex text-xs">
-          <dt className="sr-only">Published at</dt>
-          <dd className="flex items-center gap-2">
-            <Calendar size={12} />
-            <time dateTime={date}>{formatDate(date, locale)}</time>
-          </dd>
-        </dl>
-      </CardHeader>
-      <CardContent className="flex flex-col gap-5">
-        <CardTitle className="text-pretty text-lg line-clamp-1">
+    <Card className="overflow-hidden transition-all duration-300 hover:shadow-md group">
+      <CardHeader className="relative pb-0">
+        <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-purple-700 to-indigo-300" />
+        <div className="flex justify-between items-center text-xs text-muted-foreground mb-2">
+          <dl className="flex items-center gap-2">
+            <dt className="sr-only">Published at</dt>
+            <dd className="flex items-center gap-2">
+              <Calendar size={12} />
+              <time dateTime={date}>{formatDate(date, locale)}</time>
+            </dd>
+          </dl>
+        </div>
+        <CardTitle className="text-xl font-bold line-clamp-2 group-hover:text-primary transition-colors duration-300">
           {title}
         </CardTitle>
-        <CardDescription className="leading-10 text-pretty text-sm line-clamp-2">
+      </CardHeader>
+      <CardContent className="flex flex-col gap-4 pt-4">
+        <CardDescription className="text-sm line-clamp-3">
           {description}
         </CardDescription>
-        <div className="flex flex-wrap gap-2 text-xs">
+        <div className="flex flex-wrap gap-2">
           {categories?.map((tag) => (
             <Tag tag={tag} key={tag} />
           ))}
         </div>
       </CardContent>
-      <CardFooter className="flex flex-col items-start gap-5">
+      <CardFooter className="pt-4">
         <Link
           href={"/" + slug}
-          className={`flex  ${buttonVariants({ variant: "default" })}`}
+          className={buttonVariants({
+            variant: "default",
+            className: "w-full justify-center group",
+          })}
         >
-          {t("button")}
+          <span>{t("button")}</span>
           <ArrowRight
             size={16}
-            className="transition-transform ease-in-out duration-300 transform translate-x-0 group-hover:translate-x-1"
+            className="ml-2 transition-transform ease-in-out duration-300 transform translate-x-0 group-hover:translate-x-1"
           />
         </Link>
       </CardFooter>

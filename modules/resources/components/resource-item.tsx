@@ -14,7 +14,8 @@ interface ResourceItemProps {
 
 export function ResourceItem({ icon, resource }: ResourceItemProps) {
   return (
-    <Card className="min-h-60 relative overflow-hidden flex flex-col justify-between p-5 rounded-lg">
+    <Card className="min-h-60 relative overflow-hidden flex flex-col justify-between p-7 rounded-lg">
+      <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-purple-700 to-indigo-300" />
       <div className="relative z-10">
         <CardTitle className="max-w-52 mb-4 text-2xl font-bold text-foreground">
           {resource.title}
