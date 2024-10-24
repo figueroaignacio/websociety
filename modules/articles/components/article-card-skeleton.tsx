@@ -11,8 +11,8 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 export function ArticleCardSkeleton() {
   return (
-    <Card className="border-none">
-      <CardHeader>
+    <Card className="dark:border-none">
+      <CardHeader className="relative">
         <CardTitle>
           <Skeleton className="w-48 h-4" />
         </CardTitle>
@@ -20,7 +20,7 @@ export function ArticleCardSkeleton() {
       <CardContent>
         <CardDescription className="flex flex-col gap-2">
           {Array.from({ length: 3 }).map((_, index) => (
-            <Skeleton className="w-72 h-4" key={index} />
+            <Skeleton className="w-full h-4" key={index} />
           ))}
         </CardDescription>
       </CardContent>

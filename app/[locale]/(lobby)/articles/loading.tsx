@@ -6,13 +6,13 @@ import { ArticleCardSkeleton } from "@/modules/articles/components/article-card-
 export default function LoadingPosts() {
   return (
     <section className="flex flex-col lg:px-5 lg:py-12 py-4">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <div className="grid grid-cols-1 gap-8">
         <div className="lg:col-span-4">
-          <div className="max-w-2xl mx-auto">
+          <div className="w-full">
             <Skeleton className="w-96 h-8 mb-3" />
             <Skeleton className="w-52 h-4" />
             <Separator className="my-4" />
-            <div className="mt-8">
+            <div className="mt-8 hidden lg:block">
               <Skeleton className="w-52 h-4 mb-4" />
               <ul className="flex flex-row flex-wrap gap-y-2 gap-x-3">
                 {Array.from({ length: 14 }).map((_, index) => {
@@ -30,7 +30,7 @@ export default function LoadingPosts() {
           </div>
         </div>
         <div className="lg:col-span-8">
-          <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2">
+          <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {Array.from({ length: 6 }).map((_, index) => (
               <li key={index}>
                 <ArticleCardSkeleton />
