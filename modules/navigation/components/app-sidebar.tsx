@@ -43,7 +43,7 @@ export function AppSidebar() {
   return (
     <Sidebar collapsible="icon">
       <SidebarHeader>
-        <SidebarMenuButton size={"lg"} className="rounded-none">
+        <SidebarMenuButton size={"lg"} className="rounded-sm">
           <Logo />
           <span>Web society</span>
         </SidebarMenuButton>
