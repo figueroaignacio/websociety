@@ -16,7 +16,6 @@ export default function NotFound() {
         </p>
         <BackButton />
       </div>
-      <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-purple-600 to-transparent"></div>
     </section>
   );
 }
