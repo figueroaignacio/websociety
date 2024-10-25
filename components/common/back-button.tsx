@@ -1,8 +1,8 @@
 "use client";
 
 // Hooks
+import { useRouter } from "@/config/i18n/routing";
 import { useTranslations } from "next-intl";
-import { useRouter } from "next/navigation";
 
 // Icons
 import { ArrowLeft } from "lucide-react";

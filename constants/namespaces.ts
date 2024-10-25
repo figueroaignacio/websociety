@@ -14,4 +14,5 @@ export const namespaces: string[] = [
   "searcher",
   "resources",
   "filter",
+  "notFound",
 ];

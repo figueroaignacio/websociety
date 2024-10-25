@@ -1,32 +1,22 @@
-// Provider
-import { ThemeProvider } from "@/providers/theme-provider";
+// Hooks
+import { useTranslations } from "next-intl";
 
 // Components
 import { BackButton } from "@/components/common/back-button";
 
-// Icons
-import { HelpCircle } from "lucide-react";
-
 export default function NotFound() {
+  const t = useTranslations("notFound");
+
   return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="system"
-      enableSystem
-      disableTransitionOnChange
-    >
-      <section className="min-h-[90vh] flex justify-center items-center container">
-        <div className="flex flex-col justify-center items-center gap-3 text-center border-2 rounded-md p-16 border-dashed">
-          <div className="border-2 rounded-full p-3">
-            <HelpCircle size="1.5rem" />
-          </div>
-          <div>404</div>
-          <div>
-            <p className="opacity-75">Not found</p>
-          </div>
-          <BackButton />
-        </div>
-      </section>
-    </ThemeProvider>
+    <section className="relative flex min-h-screen items-center justify-center">
+      <div className="relative z-10 flex flex-col items-center gap-8 px-4 text-center">
+        <h1 className="text-8xl font-bold sm:text-9xl text-foreground">404</h1>
+        <p className="max-w-md text-xl text-foreground sm:text-2xl">
+          {t("description")}
+        </p>
+        <BackButton />
+      </div>
+      <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-purple-600 to-transparent"></div>
+    </section>
   );
 }
