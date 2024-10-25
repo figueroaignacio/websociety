@@ -10,7 +10,6 @@ import {
   SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
-  SidebarGroupLabel,
   SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
@@ -51,7 +50,7 @@ export function AppSidebar() {
       <SidebarSeparator />
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Application</SidebarGroupLabel>
+          {/* <SidebarGroupLabel>Application</SidebarGroupLabel> */}
           <SidebarGroupContent>
             <SidebarMenu>
               {navigation.map((item) => {
