@@ -1,6 +1,6 @@
 // next-intl
 import createNextIntlPlugin from "next-intl/plugin";
-const withNextIntl = createNextIntlPlugin();
+const withNextIntl = createNextIntlPlugin("./config/i18n/request.ts");
 
 // Velite
 const isDev = process.argv.indexOf("dev") !== -1;

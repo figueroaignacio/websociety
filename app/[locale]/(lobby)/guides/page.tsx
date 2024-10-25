@@ -9,7 +9,7 @@ import { NoGuidesMessage } from "@/modules/guides/components/no-guides-message";
 import { guides } from "@content";
 
 // Utils
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 // Metadata
 import { MetadataParams } from "@/types";
@@ -35,7 +35,7 @@ interface LearnPageProps {
 }
 
 export default function LearnPage({ params: { locale } }: LearnPageProps) {
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
   const t = useTranslations("curriculum");
   const lang = useLocale();
 

@@ -7,9 +7,8 @@ import { useTranslations } from "next-intl";
 import { Card, CardTitle } from "@/components/ui/card";
 
 // Icons
-import { Link } from "@/config/navigation";
+import { Link } from "@/config/i18n/routing";
 import { ExternalLink } from "lucide-react";
-
 interface GuideCardProps {
   title: string;
   slug: string;

@@ -8,11 +8,11 @@ import { ThemeProvider } from "@/providers/theme-provider";
 import { NextIntlClientProvider } from "next-intl";
 
 // Utils
-import { locales } from "@/config/config";
+import { routing } from "@/config/i18n/routing";
 import {
   getMessages,
   getTranslations,
-  unstable_setRequestLocale,
+  setRequestLocale,
 } from "next-intl/server";
 
 // Font
@@ -51,7 +51,7 @@ export async function generateMetadata({ params: { locale } }: MetadataParams) {
 }
 
 export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
+  return routing.locales.map((locale) => ({ locale }));
 }
 
 interface LocaleLayoutProps {
@@ -64,7 +64,7 @@ export default async function RootLayout({
   params: { locale },
 }: LocaleLayoutProps) {
   const messages = await getMessages();
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
 
   return (
     <html lang={locale} suppressHydrationWarning>

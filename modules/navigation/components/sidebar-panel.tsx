@@ -6,8 +6,7 @@ import { usePathname } from "next/navigation";
 // Components
 import { Logo } from "@/components/common/logo";
 import { Searcher } from "@/components/common/searcher";
-import { Link } from "@/config/navigation";
-
+import { Link } from "@/config/i18n/routing";
 // Icons
 import {
   BarChart,

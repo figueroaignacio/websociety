@@ -1,14 +1,14 @@
 // Hooks
 import { useTranslations } from "next-intl";
 
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 
 interface FaqPageProps {
   params: { locale: string };
 }
 
 export default function FaqPage({ params: { locale } }: FaqPageProps) {
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
   const t = useTranslations();
   const faqs = t.raw("faqs");
 

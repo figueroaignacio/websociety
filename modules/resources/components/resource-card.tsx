@@ -12,9 +12,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Link } from "@/config/navigation";
+import { Link } from "@/config/i18n/routing";
 import Image from "next/image";
-
 // Icons
 import { ExternalLink, FileText, ImageIcon } from "lucide-react";
 

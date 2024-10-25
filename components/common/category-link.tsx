@@ -1,6 +1,5 @@
 import { buttonVariants } from "@/components/ui/button";
-import { Link } from "@/config/navigation";
-
+import { Link } from "@/config/i18n/routing";
 interface CategoryLinkProps {
   href: string;
   isActive: boolean;

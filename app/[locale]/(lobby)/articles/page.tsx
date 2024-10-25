@@ -13,7 +13,7 @@ import { articles } from "@content";
 // Utils
 import { articlesFilter } from "@/modules/articles/utils/articlesFilter";
 import { sortArticles } from "@/modules/articles/utils/sortArticles";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 // Metadata
 import { MetadataParams } from "@/types";
@@ -50,7 +50,7 @@ export default function ArticlesPage({
   searchParams,
   params: { locale },
 }: ArticlesPageProps) {
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
   const lang = useLocale();
   const t = useTranslations("posts");
 

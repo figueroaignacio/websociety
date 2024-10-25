@@ -1,5 +1,3 @@
-import { unstable_setRequestLocale } from "next-intl/server";
-
 // Components
 import { BgBlur } from "@/components/common/bg-blur";
 import { Footer } from "@/components/common/footer";
@@ -10,10 +8,11 @@ import { Sidebar } from "@/modules/navigation/components/sidebar";
 import "@/styles/globals.css";
 
 // Config
-import { locales } from "@/config/config";
+import { routing } from "@/config/i18n/routing";
+import { setRequestLocale } from "next-intl/server";
 
 export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
+  return routing.locales.map((locale) => ({ locale }));
 }
 
 interface LobbyLayoutProps {
@@ -25,7 +24,8 @@ export default function LobbyLayout({
   children,
   params: { locale },
 }: LobbyLayoutProps) {
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
+
   return (
     <>
       <BgBlur />

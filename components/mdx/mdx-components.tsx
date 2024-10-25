@@ -1,6 +1,6 @@
 // Components
+import { Link } from "@/config/i18n/routing";
 import Image from "next/image";
-import { Link } from "../../config/navigation";
 import {
   Accordion,
   AccordionContent,

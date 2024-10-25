@@ -5,8 +5,7 @@ import { useTranslations } from "next-intl";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 // Components
-import { Link } from "@/config/navigation";
-
+import { Link } from "@/config/i18n/routing";
 interface ArticlePagePaginationProps {
   previousPost: { slugAsParams: string; title: string } | null;
   nextPost: { slugAsParams: string; title: string } | null;

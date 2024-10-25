@@ -12,7 +12,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Link } from "@/config/navigation";
+import { Link } from "@/config/i18n/routing";
 
 // Utils
 import { formatDate } from "@/utils/formatDate";

@@ -1,13 +1,14 @@
-import { unstable_setRequestLocale } from "next-intl/server";
-
+// Components
 import { Landing } from "@/modules/landing/components/landing";
+
+import { setRequestLocale } from "next-intl/server";
 
 interface HomePageProps {
   params: { locale: string };
 }
 
 export default function HomePage({ params: { locale } }: HomePageProps) {
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
 
   return <Landing />;
 }

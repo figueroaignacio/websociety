@@ -12,7 +12,7 @@ import {
   SheetFooter,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Link } from "@/config/navigation";
+import { Link } from "@/config/i18n/routing";
 
 // Icons
 import { Menu } from "lucide-react";

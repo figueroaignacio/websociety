@@ -1,5 +1,5 @@
 // Components
-import { Link } from "@/config/navigation";
+import { Link } from "@/config/i18n/routing";
 
 export function Logo() {
   return (

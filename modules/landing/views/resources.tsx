@@ -11,7 +11,7 @@ import { Resources as ResourcesTypes } from "@content";
 import { buttonVariants } from "@/components/ui/button";
 
 // Icons
-import { Link } from "@/config/navigation";
+import { Link } from "@/config/i18n/routing";
 import {
   ArrowRight,
   Book,
@@ -22,7 +22,6 @@ import {
   Library,
   Users,
 } from "lucide-react";
-
 export function Resources() {
   const t = useTranslations();
   const resources = t.raw("resourceItems");

@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 // Components
 import { BgBlur } from "@/components/common/bg-blur";
 import { buttonVariants } from "@/components/ui/button";
-import { Link } from "@/config/navigation";
+import { Link } from "@/config/i18n/routing";
 import { motion } from "framer-motion";
 
 // Icons

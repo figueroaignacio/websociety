@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 
 // Components
 import { buttonVariants } from "@/components/ui/button";
-import { Link } from "@/config/navigation";
+import { Link } from "@/config/i18n/routing";
 
 // Icons
 import { ArrowRight, BookOpen, FileText, Star, Zap } from "lucide-react";

@@ -10,7 +10,7 @@ import { resourcesFilter } from "@/modules/resources/utils/resourcesFilter";
 import { resources } from "@content";
 
 // Utils
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 // Metadata
 import { MetadataParams } from "@/types";
@@ -43,7 +43,7 @@ export default function ResourcesPage({
   searchParams,
   params: { locale },
 }: ResourcesPageProps) {
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
   const t = useTranslations("resources");
   const lang = useLocale();
 

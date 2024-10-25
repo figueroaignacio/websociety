@@ -14,8 +14,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-import { Link } from "@/config/navigation";
-
+import { Link } from "@/config/i18n/routing";
 // Icons
 import { AlertOctagon, Search } from "lucide-react";
 

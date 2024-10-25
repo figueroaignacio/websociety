@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 // Components
 import { Logo } from "@/components/common/logo";
-import { Link } from "@/config/navigation";
+import { Link } from "@/config/i18n/routing";
 
 // Utils
 import { getCurrentLocale } from "@/utils/getCurrentLocale";

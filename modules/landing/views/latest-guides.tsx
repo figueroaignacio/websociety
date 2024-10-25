@@ -29,11 +29,7 @@ export function LatestGuides() {
         <ul className="grid gap-3 grid-cols-1 sm:grid-cols-2 auto-rows-fr">
           {latestGuides.map((guide, index) => (
             <li key={index}>
-              <GuideCard
-                title={guide.title}
-                description={guide.description ?? ""}
-                slug={guide.slug}
-              />
+              <GuideCard title={guide.title} slug={guide.slug} />
             </li>
           ))}
         </ul>
