@@ -1,12 +1,15 @@
 "use client";
 
 // Hooks
-import { locales, usePathname, useRouter } from "@/config/i18n/routing";
+import { usePathname, useRouter } from "@/config/i18n/routing";
 import { useLocale, useTranslations } from "next-intl";
 import { useTransition } from "react";
 
 // Icons
 import { Languages } from "lucide-react";
+
+// Config
+import { locales } from "@/config/i18n/routing";
 
 // Types
 import { Locale } from "@/types";

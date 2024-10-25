@@ -1,8 +1,8 @@
 // Components
 import { BgBlur } from "@/components/common/bg-blur";
 import { Footer } from "@/components/common/footer";
-import { FramerWrapper } from "@/components/framer";
-import { Sidebar } from "@/modules/navigation/components/sidebar";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { AppSidebar } from "@/modules/navigation/components/app-sidebar";
 
 // Styles
 import "@/styles/globals.css";
@@ -20,7 +20,7 @@ interface LobbyLayoutProps {
   params: { locale: string };
 }
 
-export default function LobbyLayout({
+export default function LocaleLayout({
   children,
   params: { locale },
 }: LobbyLayoutProps) {
@@ -29,15 +29,16 @@ export default function LobbyLayout({
   return (
     <>
       <BgBlur />
-      <div className="grid grid-cols-1 lg:grid-cols-12">
-        <div className="lg:col-span-2">
-          <Sidebar />
-        </div>
-        <main className="lg:col-span-10 container md:contain-none">
-          <FramerWrapper>{children}</FramerWrapper>
+      <SidebarProvider>
+        <AppSidebar />
+        <main className="container">
+          <div className="fixed bottom-4 left-4 lg:hidden z-50 bg-card border rounded-md">
+            <SidebarTrigger />
+          </div>
+          {children}
           <Footer />
         </main>
-      </div>
+      </SidebarProvider>
     </>
   );
 }

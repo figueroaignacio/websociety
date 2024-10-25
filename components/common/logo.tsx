@@ -23,7 +23,6 @@ export function Logo() {
           <path d="M75 150 L125 50" />
         </g>
       </svg>
-      <p className="text-xs hidden lg:block">Web society</p>
     </Link>
   );
 }

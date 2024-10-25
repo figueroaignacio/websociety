@@ -1,4 +1,3 @@
-// next-intl
 import { createNavigation } from "next-intl/navigation";
 import { defineRouting, LocalePrefix, Pathnames } from "next-intl/routing";
 
@@ -9,13 +8,15 @@ export const pathnames: Pathnames<typeof locales> = {
   "/": "/",
   "/pathnames": {
     en: "/pathnames",
-    es: "/pfadnamen",
+    es: "/pathnames",
   },
 };
 
 export const routing = defineRouting({
-  locales: ["en", "es"],
-  defaultLocale: "en",
+  locales,
+  defaultLocale,
+  localePrefix,
+  pathnames,
 });
 
 export const { Link, redirect, usePathname, useRouter } =

@@ -1,13 +1,5 @@
 export type Navigation = {
-  icon:
-    | "home"
-    | "articles"
-    | "guides"
-    | "resources"
-    | "analytics"
-    | "customers"
-    | "settings"
-    | "help";
+  icon: "home" | "articles" | "guides" | "resources" | "settings";
   title: string;
   href: string;
 };

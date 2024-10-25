@@ -1,3 +1,5 @@
+"use client";
+
 // Hooks
 import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
@@ -6,7 +8,6 @@ import { useSearch } from "../../hooks/useSearch";
 // Components
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -16,7 +17,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Link } from "@/config/i18n/routing";
 // Icons
-import { AlertOctagon, Search } from "lucide-react";
+import { AlertOctagon } from "lucide-react";
 
 export function Searcher() {
   const [query, setQuery] = useState("");
@@ -31,16 +32,8 @@ export function Searcher() {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger asChild>
-        <Button
-          variant="outline"
-          className="flex justify-start gap-2 py-5"
-          onClick={() => setOpen(true)}
-          size="sm"
-        >
-          <Search size={16} />
-          {t("label")}
-        </Button>
+      <DialogTrigger className="ml-2 text-start w-full">
+        {t("label")}
       </DialogTrigger>
       <DialogContent className="max-w-md sm:max-w-lg mx-auto p-4 sm:p-6 rounded-md shadow-lg">
         <DialogDescription>{t("dialogTitle")}</DialogDescription>
