@@ -59,11 +59,7 @@ export default function LearnPage({ params: { locale } }: LearnPageProps) {
           {filteredGuides.map((guide) => {
             return (
               <li className="h-full" key={guide.slug}>
-                <GuideCard
-                  slug={guide.slug}
-                  title={guide.title}
-                  description={guide.description ?? ""}
-                />
+                <GuideCard slug={guide.slug} title={guide.title} />
               </li>
             );
           })}
