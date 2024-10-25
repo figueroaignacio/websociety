@@ -13,7 +13,7 @@ export function Footer() {
   const navigation = t.raw("navigation");
 
   return (
-    <footer className="border-t mt-24  md:px-10 lg:px-16 backdrop-blur-md">
+    <footer className="border-t mt-24 px-5 md:px-10 lg:px-16 backdrop-blur-md">
       <div className="py-12">
         <div className="max-w-[1580px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto">
           <div className="space-y-4">
