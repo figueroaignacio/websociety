@@ -23,7 +23,6 @@ export function Landing() {
           <GuideCta />
         </div>
       </section>
-      ;
     </>
   );
 }
