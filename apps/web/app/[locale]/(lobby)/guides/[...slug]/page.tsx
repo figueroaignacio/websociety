@@ -10,9 +10,6 @@ import { notFound } from "next/navigation";
 // Content
 import { guides } from "@content";
 
-// Styles
-import "@/styles/mdx.css";
-
 // Metadata
 import { Metadata } from "next";
 
