@@ -14,7 +14,7 @@ import { articles } from "@content";
 import { sortArticles } from "@/modules/articles/utils/sortArticles";
 
 // Animations
-import "@/styles/animations.css";
+import "@/common/styles/animations.css";
 
 export function LatestArticles() {
   const t = useTranslations("latestPosts");
