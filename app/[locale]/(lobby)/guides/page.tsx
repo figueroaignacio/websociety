@@ -46,8 +46,8 @@ export default function LearnPage({ params: { locale } }: LearnPageProps) {
   }
 
   return (
-    <>
-      <div className="bg-gradient-to-r from-violet-500 to-purple-500 w-[calc(100%+2rem)] ml-[-1rem] h-[calc(12rem+2.5rem)] mt-[-1.25rem]"></div>
+    <div className="relative">
+      <div className="bg-gradient-to-r from-violet-500 to-purple-500 w-[calc(100%+2rem)] ml-[-1rem] h-[calc(12rem+2.5rem)]" />
       <section className="relative -mt-20 flex flex-col justify-center items-center border py-6 sm:py-8 md:py-12 rounded-md shadow-sm bg-card mb-6 sm:mb-8 md:mb-12 max-w-3xl mx-auto px-4 sm:px-6 md:px-8">
         <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl mb-2 sm:mb-3 md:mb-4 text-center">
           {t("title")}
@@ -65,6 +65,6 @@ export default function LearnPage({ params: { locale } }: LearnPageProps) {
           })}
         </ul>
       </section>
-    </>
+    </div>
   );
 }

@@ -1,4 +1,7 @@
+"use client";
+
 // Hooks
+import { usePathname } from "@/config/i18n/routing";
 import { useTranslations } from "next-intl";
 
 // Components
@@ -7,20 +10,21 @@ import { Searcher } from "@/components/common/searcher";
 import {
   Sidebar,
   SidebarContent,
-  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
+  SidebarGroupLabel,
   SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarSeparator,
-  SidebarTrigger,
 } from "@/components/ui/sidebar";
+import { Link } from "@/config/i18n/routing";
 
 // Icons
+import { BookOpen, FileText, Folder, Settings } from "lucide-react";
+
+// Utils
 import { cn } from "@/lib/utils";
-import { BookOpen, FileText, Folder, Search, Settings } from "lucide-react";
 
 interface NavigationItem {
   icon: keyof typeof iconMap;
@@ -38,61 +42,50 @@ const iconMap = {
 export function AppSidebar() {
   const t = useTranslations();
   const navigation: NavigationItem[] = t.raw("sidebarNavigation");
+  const pathname = usePathname();
 
   return (
-    <Sidebar collapsible="icon">
-      <SidebarHeader>
-        <SidebarMenuButton size={"lg"} className="rounded-sm">
+    <Sidebar>
+      <SidebarHeader className="border-b">
+        <SidebarMenuButton size={"lg"} variant="none">
           <Logo />
           <span>Web society</span>
         </SidebarMenuButton>
       </SidebarHeader>
-      <SidebarSeparator />
       <SidebarContent>
+        <SidebarGroup className="mt-5">
+          <Searcher></Searcher>
+        </SidebarGroup>
         <SidebarGroup>
-          {/* <SidebarGroupLabel>Application</SidebarGroupLabel> */}
+          <SidebarGroupLabel>Application</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {navigation.map((item) => {
                 const IconComponent = iconMap[item.icon];
+                const isActive = pathname === item.href;
+
                 return (
                   <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton
-                      asChild
-                      tooltip={item.title}
+                    <Link
+                      href={item.href}
                       className={cn(
-                        "flex items-center py-2 px-4 gap-2 rounded-sm transition-colors dark:hover:bg-gray-600 dark:hover:bg-opacity-30 hover:bg-gray-200 hover:bg-opacity-50 duration-100 text-muted-foreground hover:text-foreground text-sm"
-                        // isActive &&
-                        //   "dark:bg-gray-600 dark:bg-opacity-30 bg-gray-200 bg-opacity-50 text-foreground"
+                        "flex items-center py-2 px-4 gap-2 rounded-sm transition-colors dark:hover:bg-gray-600 dark:hover:bg-opacity-30 hover:bg-gray-200 hover:bg-opacity-50 duration-100 text-muted-foreground hover:text-foreground text-sm",
+                        isActive &&
+                          "dark:bg-gray-600 dark:bg-opacity-30 bg-gray-200 bg-opacity-50 text-foreground"
                       )}
                     >
-                      <a href={item.href}>
-                        {IconComponent && <IconComponent className="mr-2" />}
-                        <span>{item.title}</span>
-                      </a>
-                    </SidebarMenuButton>
+                      {IconComponent && (
+                        <IconComponent className="mr-2 size-4" />
+                      )}
+                      <span>{item.title}</span>
+                    </Link>
                   </SidebarMenuItem>
                 );
               })}
-              <SidebarMenuItem>
-                <SidebarMenuButton
-                  className={cn(
-                    "flex items-center py-2 px-4 gap-2 rounded-sm transition-colors dark:hover:bg-gray-600 dark:hover:bg-opacity-30 hover:bg-gray-200 hover:bg-opacity-50 duration-100 text-muted-foreground hover:text-foreground text-sm"
-                    // isActive &&
-                    //   "dark:bg-gray-600 dark:bg-opacity-30 bg-gray-200 bg-opacity-50 text-foreground"
-                  )}
-                >
-                  <Search />
-                  <Searcher />
-                </SidebarMenuButton>
-              </SidebarMenuItem>
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
-      <SidebarFooter>
-        <SidebarTrigger />
-      </SidebarFooter>
     </Sidebar>
   );
 }

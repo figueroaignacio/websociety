@@ -31,11 +31,11 @@ export default function LocaleLayout({
       <BgBlur />
       <SidebarProvider>
         <AppSidebar />
-        <main className="container">
-          <div className="fixed bottom-4 left-4 lg:hidden z-50 bg-card border rounded-md">
+        <main>
+          <header className="pl-3 py-3 border-b sticky w-full top-0 left-0 backdrop-blur-md z-50">
             <SidebarTrigger />
-          </div>
-          {children}
+          </header>
+          <div className="container">{children}</div>
           <Footer />
         </main>
       </SidebarProvider>

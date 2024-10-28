@@ -5,7 +5,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 export default function LoadingGuides() {
   return (
     <>
-      <div className="bg-gradient-to-r from-violet-500 to-purple-500 w-[calc(100%+2rem)] ml-[-1rem] h-[calc(12rem+2.5rem)] mt-[-1.25rem]"></div>
+      <div className="bg-gradient-to-r from-violet-500 to-purple-500 w-[calc(100%+2rem)] ml-[-1rem] h-[calc(12rem+2.5rem)]"></div>
       <section className="relative -mt-20 flex flex-col justify-center items-center border py-6 sm:py-8 md:py-12 rounded-md shadow-sm bg-card mb-6 sm:mb-8 md:mb-12 max-w-3xl mx-auto px-4 sm:px-6 md:px-8">
         <div className="space-y-2 flex flex-col justify-center items-center">
           <Skeleton className="w-44 h-5 lg:w-60 lg:h-8" />
