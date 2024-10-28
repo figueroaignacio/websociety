@@ -45,16 +45,16 @@ export function AppSidebar() {
   const pathname = usePathname();
 
   return (
-    <Sidebar>
-      <SidebarHeader className="border-b">
+    <Sidebar collapsible="icon">
+      <SidebarHeader>
         <SidebarMenuButton size={"lg"} variant="none">
           <Logo />
           <span>Web society</span>
         </SidebarMenuButton>
       </SidebarHeader>
       <SidebarContent>
-        <SidebarGroup className="mt-5">
-          <Searcher></Searcher>
+        <SidebarGroup className="mt-5 group-data-[collapsible=icon]:hidden">
+          <Searcher />
         </SidebarGroup>
         <SidebarGroup>
           <SidebarGroupLabel>Application</SidebarGroupLabel>
@@ -63,22 +63,25 @@ export function AppSidebar() {
               {navigation.map((item) => {
                 const IconComponent = iconMap[item.icon];
                 const isActive = pathname === item.href;
-
                 return (
                   <SidebarMenuItem key={item.title}>
-                    <Link
-                      href={item.href}
+                    <SidebarMenuButton
+                      asChild
                       className={cn(
-                        "flex items-center py-2 px-4 gap-2 rounded-sm transition-colors dark:hover:bg-gray-600 dark:hover:bg-opacity-30 hover:bg-gray-200 hover:bg-opacity-50 duration-100 text-muted-foreground hover:text-foreground text-sm",
+                        " rounded-sm transition-colors dark:hover:bg-gray-600 dark:hover:bg-opacity-30 hover:bg-gray-200 hover:bg-opacity-50 duration-100 text-muted-foreground hover:text-foreground text-sm",
                         isActive &&
                           "dark:bg-gray-600 dark:bg-opacity-30 bg-gray-200 bg-opacity-50 text-foreground"
                       )}
+                      tooltip={item.title}
                     >
-                      {IconComponent && (
-                        <IconComponent className="mr-2 size-4" />
-                      )}
-                      <span>{item.title}</span>
-                    </Link>
+                      <Link
+                        href={item.href}
+                        className="flex items-center py-2 px-4 gap-2"
+                      >
+                        {IconComponent && <IconComponent />}
+                        <span>{item.title}</span>
+                      </Link>
+                    </SidebarMenuButton>
                   </SidebarMenuItem>
                 );
               })}
