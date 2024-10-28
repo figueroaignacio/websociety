@@ -32,7 +32,7 @@ export default function LocaleLayout({
       <SidebarProvider>
         <AppSidebar />
         <main>
-          <header className="pl-3 py-3 border-b sticky w-full top-0 left-0 backdrop-blur-md z-50 flex items-center">
+          <header className="pl-3 py-2 border-b sticky w-full top-0 left-0 backdrop-blur-md z-50 flex items-center">
             <SidebarTrigger />
           </header>
           <div className="container">{children}</div>
