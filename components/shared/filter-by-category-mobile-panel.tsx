@@ -4,7 +4,7 @@
 import { useTranslations } from "next-intl";
 
 // Components
-import { CategoryLink } from "@/components/common/category-link";
+import { CategoryLink } from "@/components/shared/category-link";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,

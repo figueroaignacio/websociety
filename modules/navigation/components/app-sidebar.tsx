@@ -5,8 +5,8 @@ import { usePathname } from "@/config/i18n/routing";
 import { useTranslations } from "next-intl";
 
 // Components
-import { Logo } from "@/components/common/logo";
-import { Searcher } from "@/components/common/searcher";
+import { Logo } from "@/components/shared/logo";
+import { Searcher } from "@/components/shared/searcher";
 import {
   Sidebar,
   SidebarContent,

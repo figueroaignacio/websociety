@@ -2,7 +2,7 @@
 import { useLocale, useTranslations } from "next-intl";
 
 // Components
-import { FilterByCategory } from "@/components/common/filter-by-category";
+import { FilterByCategory } from "@/components/shared/filter-by-category";
 import { ResourceCard } from "@/modules/resources/components/resource-card";
 import { resourcesFilter } from "@/modules/resources/utils/resourcesFilter";
 

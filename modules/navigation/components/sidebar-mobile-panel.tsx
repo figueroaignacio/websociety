@@ -4,8 +4,8 @@
 import { usePathname } from "next/navigation";
 
 // Components
-import { Logo } from "@/components/common/logo";
-import { Searcher } from "@/components/common/searcher";
+import { Logo } from "@/components/shared/logo";
+import { Searcher } from "@/components/shared/searcher";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,

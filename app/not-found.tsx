@@ -2,7 +2,7 @@
 import { useTranslations } from "next-intl";
 
 // Components
-import { BackButton } from "@/components/common/back-button";
+import { BackButton } from "@/components/shared/back-button";
 
 export default function NotFound() {
   const t = useTranslations("notFound");

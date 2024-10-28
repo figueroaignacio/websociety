@@ -1,6 +1,6 @@
 // Components
-import { BgBlur } from "@/components/common/bg-blur";
-import { Footer } from "@/components/common/footer";
+import { BgBlur } from "@/components/shared/bg-blur";
+import { Footer } from "@/components/shared/footer";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/modules/navigation/components/app-sidebar";
 

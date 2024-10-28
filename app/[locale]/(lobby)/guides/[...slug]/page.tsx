@@ -1,6 +1,6 @@
 // Components
-import { BackButton } from "@/components/common/back-button";
 import { MDXContent } from "@/components/mdx/mdx-components";
+import { BackButton } from "@/components/shared/back-button";
 import { Separator } from "@/components/ui/separator";
 import { Toc } from "@/modules/navigation/components/toc";
 

@@ -4,7 +4,7 @@
 import { usePathname } from "next/navigation";
 
 // Components
-import { Logo } from "@/components/common/logo";
+import { Logo } from "@/components/shared/logo";
 import { Link } from "@/config/i18n/routing";
 
 // Utils

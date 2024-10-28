@@ -1,5 +1,5 @@
 // Components
-import { Waves } from "@/components/common/waves";
+import { Waves } from "@/components/shared/waves";
 import { Card, CardTitle } from "@/components/ui/card";
 
 // Icons

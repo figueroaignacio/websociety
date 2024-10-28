@@ -14,7 +14,7 @@ import {
   ReactIcon,
   TailwindIcon,
   TypescriptIcon,
-} from "../common/tech-icons";
+} from "../shared/tech-icons";
 
 import { motion } from "framer-motion";
 
