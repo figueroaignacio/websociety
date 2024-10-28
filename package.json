@@ -1,0 +1,18 @@
+{
+  "name": "websociety",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "packageManager": "pnpm@9.12.3",
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "start": "turbo start"
+  },
+  "keywords": [],
+  "author": "Ignacio Figueroa",
+  "license": "ISC",
+  "devDependencies": {
+    "turbo": "^2.2.3"
+  }
+}

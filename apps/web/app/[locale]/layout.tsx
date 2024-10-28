@@ -2,7 +2,7 @@
 import { FramerWrapper } from "@/components/framer";
 
 // Providers
-import { ThemeProvider } from "@/providers/theme-provider";
+import { ThemeProvider } from "@/common/providers/theme-provider";
 import { NextIntlClientProvider } from "next-intl";
 
 // Utils

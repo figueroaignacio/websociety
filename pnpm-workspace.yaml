@@ -1,0 +1,6 @@
+packages:
+  - "apps/*"
+
+hoist: true
+npmFlags:
+  - "--legacy-peer-deps"
