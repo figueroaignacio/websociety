@@ -1,9 +1,9 @@
 import { ChevronLeft, ChevronRight, MoreHorizontal } from "lucide-react";
 import * as React from "react";
 
+import { cn } from "@/utils/cn";
 import Link from "next/link";
 import { UrlObject } from "url";
-import { cn } from "../../lib/utils";
 import { ButtonProps, buttonVariants } from "./button";
 type Url = string | UrlObject;
 

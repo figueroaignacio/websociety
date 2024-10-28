@@ -9,8 +9,8 @@ import {
 } from "../ui/accordion";
 import { Callout } from "./callout";
 
+import { cn } from "@/utils/cn";
 import * as runtime from "react/jsx-runtime";
-import { cn } from "../../lib/utils";
 
 const useMDXComponents = (code: string) => {
   const fn = new Function(code);

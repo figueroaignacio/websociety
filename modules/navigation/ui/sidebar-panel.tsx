@@ -23,7 +23,7 @@ import {
 import { Navigation } from "../types";
 
 // Utils
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 import { getCurrentLocale } from "@/utils/getCurrentLocale";
 
 const icons = {
