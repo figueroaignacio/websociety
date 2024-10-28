@@ -73,7 +73,7 @@ export default function ResourcesPage({
           selectedCategory={selectedCategory}
         />
         <div className="col-span-10 md:col-span-9">
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <ul className="grid-template-cols">
             {filteredAndSortedPosts.map((resource, index) => (
               <li key={index}>
                 <ResourceCard

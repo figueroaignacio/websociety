@@ -109,6 +109,11 @@
     @apply bg-gradient-to-br from-purple-600 to-indigo-700;
   }
 
+  .grid-template-cols {
+    @apply grid gap-4;
+    grid-template-columns: repeat(auto-fit, minmax(22.5rem, 1fr));
+  }
+
   @keyframes gradientShift {
     0% {
       background-position: 0% 50%;
