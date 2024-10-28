@@ -1,7 +1,7 @@
 // Components
 import { ParticleBackground } from "@/components/framer/particle-background";
-import { ArticlesCta } from "@/modules/articles/components/articles-cta";
-import { GuideCta } from "@/modules/guides/components/guides-cta";
+import { ArticlesCta } from "@/modules/articles/ui/articles-cta";
+import { GuideCta } from "@/modules/guides/ui/guides-cta";
 
 // Sections
 import { Hero } from "@/modules/landing/views/hero";

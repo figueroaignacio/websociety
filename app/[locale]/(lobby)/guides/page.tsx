@@ -2,8 +2,8 @@
 import { useLocale, useTranslations } from "next-intl";
 
 // Components
-import { GuideCard } from "@/modules/guides/components/guide-card";
-import { NoGuidesMessage } from "@/modules/guides/components/no-guides-message";
+import { GuideCard } from "@/modules/guides/ui/guide-card";
+import { NoGuidesMessage } from "@/modules/guides/ui/no-guides-message";
 
 // Content
 import { guides } from "@content";

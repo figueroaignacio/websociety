@@ -1,7 +1,7 @@
 // Components
 import { FramerWrapper } from "@/components/framer";
 import { Footer } from "@/components/shared/footer";
-import { Navbar } from "@/modules/navigation/components/navbar";
+import { Navbar } from "@/modules/navigation/ui/navbar";
 
 // Font
 import "@fontsource-variable/onest";

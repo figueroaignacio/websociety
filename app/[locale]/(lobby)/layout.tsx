@@ -2,7 +2,7 @@
 import { BgBlur } from "@/components/shared/bg-blur";
 import { Footer } from "@/components/shared/footer";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/modules/navigation/components/app-sidebar";
+import { AppSidebar } from "@/modules/navigation/ui/app-sidebar";
 
 // Styles
 import "@/styles/globals.css";

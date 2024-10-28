@@ -2,11 +2,11 @@
 import { MDXContent } from "@/components/mdx/mdx-components";
 import { Tag } from "@/components/shared/tag";
 import { Separator } from "@/components/ui/separator";
-import { ArticleDetails } from "@/modules/articles/components/article-details";
-import { ArticlePagePagination } from "@/modules/articles/components/article-page-pagination";
-import { RelatedArticles } from "@/modules/articles/components/related-articles";
-import { ShareArticle } from "@/modules/articles/components/share-article";
-import { Toc } from "@/modules/navigation/components/toc";
+import { ArticleDetails } from "@/modules/articles/ui/article-details";
+import { ArticlePagePagination } from "@/modules/articles/ui/article-page-pagination";
+import { RelatedArticles } from "@/modules/articles/ui/related-articles";
+import { ShareArticle } from "@/modules/articles/ui/share-article";
+import { Toc } from "@/modules/navigation/ui/toc";
 
 // Content
 import { articles } from "@content";

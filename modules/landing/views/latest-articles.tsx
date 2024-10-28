@@ -4,8 +4,8 @@
 import { useLocale, useTranslations } from "next-intl";
 
 // Components
-import { ArticleCard } from "@/modules/articles/components/article-card";
-import { NoArticlesMessage } from "@/modules/articles/components/no-articles-message";
+import { ArticleCard } from "@/modules/articles/ui/article-card";
+import { NoArticlesMessage } from "@/modules/articles/ui/no-articles-message";
 
 // Content
 import { articles } from "@content";

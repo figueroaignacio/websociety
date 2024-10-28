@@ -1,5 +1,5 @@
 // Components
-import { Landing } from "@/modules/landing/components/landing";
+import { Landing } from "@/modules/landing/ui/landing";
 
 import { setRequestLocale } from "next-intl/server";
 

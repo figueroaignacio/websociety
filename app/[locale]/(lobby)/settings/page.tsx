@@ -5,9 +5,9 @@ import { useTranslations } from "next-intl";
 
 // Components
 import { Separator } from "@/components/ui/separator";
-import { LocaleSwitcher } from "@/modules/settings/components/locale-switcher";
-import { SupportLink } from "@/modules/settings/components/support-link";
-import { ToggleTheme } from "@/modules/settings/components/toggle-theme";
+import { LocaleSwitcher } from "@/modules/settings/ui/locale-switcher";
+import { SupportLink } from "@/modules/settings/ui/support-link";
+import { ToggleTheme } from "@/modules/settings/ui/toggle-theme";
 import {
   Bug,
   GithubIcon,

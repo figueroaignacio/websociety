@@ -2,7 +2,7 @@
 import { useTranslations } from "next-intl";
 
 // Components
-import { ResourceItem } from "@/modules/resources/components/resource-item";
+import { ResourceItem } from "@/modules/resources/ui/resource-item";
 
 // Types
 import { Resources as ResourcesTypes } from "@content";
