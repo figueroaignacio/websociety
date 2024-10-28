@@ -1,5 +1,4 @@
 // Components
-import { AppBreadcrumb } from "@/components/common/app-breadcrumb";
 import { BgBlur } from "@/components/common/bg-blur";
 import { Footer } from "@/components/common/footer";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
@@ -35,9 +34,6 @@ export default function LocaleLayout({
         <main>
           <header className="pl-3 py-3 border-b sticky w-full top-0 left-0 backdrop-blur-md z-50 flex items-center">
             <SidebarTrigger />
-            <div className="ml-4 flex-grow">
-              <AppBreadcrumb />
-            </div>
           </header>
           <div className="container">{children}</div>
           <Footer />
