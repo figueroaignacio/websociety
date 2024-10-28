@@ -23,8 +23,8 @@ import {
 import { Navigation } from "../types";
 
 // Utils
-import { cn } from "@/utils/cn";
-import { getCurrentLocale } from "@/utils/getCurrentLocale";
+import { cn } from "@/common/utils/cn";
+import { getCurrentLocale } from "@/common/utils/getCurrentLocale";
 
 const icons = {
   home: Home,

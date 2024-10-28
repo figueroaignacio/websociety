@@ -17,10 +17,10 @@ import {
 import "@fontsource-variable/onest";
 
 // Styles
-import "@/styles/globals.css";
+import "@/common/styles/globals.css";
 
 // Metadata
-import { MetadataParams } from "@/types";
+import { MetadataParams } from "@/common/types";
 
 export async function generateMetadata({ params: { locale } }: MetadataParams) {
   const t = await getTranslations({ locale, namespace: "siteConfig" });

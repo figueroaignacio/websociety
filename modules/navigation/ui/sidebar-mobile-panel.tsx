@@ -28,8 +28,8 @@ import {
 } from "lucide-react";
 
 // Utils
-import { cn } from "@/utils/cn";
-import { getCurrentLocale } from "@/utils/getCurrentLocale";
+import { cn } from "@/common/utils/cn";
+import { getCurrentLocale } from "@/common/utils/getCurrentLocale";
 
 // Types
 import { Navigation } from "../types";

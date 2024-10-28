@@ -15,7 +15,7 @@ import {
 import { Link } from "@/config/i18n/routing";
 
 // Utils
-import { formatDate } from "@/utils/formatDate";
+import { formatDate } from "@/common/utils/formatDate";
 
 // Icons
 import { ArrowRight, Calendar } from "lucide-react";

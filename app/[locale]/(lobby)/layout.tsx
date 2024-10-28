@@ -5,7 +5,7 @@ import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/modules/navigation/ui/app-sidebar";
 
 // Styles
-import "@/styles/globals.css";
+import "@/common/styles/globals.css";
 
 // Config
 import { routing } from "@/config/i18n/routing";

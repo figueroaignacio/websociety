@@ -7,7 +7,7 @@ import { Navbar } from "@/modules/navigation/ui/navbar";
 import "@fontsource-variable/onest";
 
 // Styles
-import "@/styles/globals.css";
+import "@/common/styles/globals.css";
 
 // Config
 import { routing } from "@/config/i18n/routing";

@@ -13,7 +13,7 @@ import { resources } from "@content";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 // Metadata
-import { MetadataParams } from "@/types";
+import { MetadataParams } from "@/common/types";
 
 export async function generateMetadata({ params: { locale } }: MetadataParams) {
   const t = await getTranslations({ locale, namespace: "resourcesConfig" });

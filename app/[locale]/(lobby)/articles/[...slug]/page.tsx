@@ -12,8 +12,8 @@ import { Toc } from "@/modules/navigation/ui/toc";
 import { articles } from "@content";
 
 // Utils
-import { formatDate } from "@/utils/formatDate";
-import { calculateReadingTime } from "@/utils/readingTime";
+import { formatDate } from "@/common/utils/formatDate";
+import { calculateReadingTime } from "@/common/utils/readingTime";
 import { notFound } from "next/navigation";
 
 // Icons

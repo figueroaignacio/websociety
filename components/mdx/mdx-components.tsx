@@ -9,7 +9,7 @@ import {
 } from "../ui/accordion";
 import { Callout } from "./callout";
 
-import { cn } from "@/utils/cn";
+import { cn } from "@/common/utils/cn";
 import * as runtime from "react/jsx-runtime";
 
 const useMDXComponents = (code: string) => {

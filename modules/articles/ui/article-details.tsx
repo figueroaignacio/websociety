@@ -10,7 +10,7 @@ import { Separator } from "@/components/ui/separator";
 import { Calendar, TagIcon, Timer } from "lucide-react";
 
 // Utils
-import { formatDate } from "@/utils/formatDate";
+import { formatDate } from "@/common/utils/formatDate";
 
 interface PostDetailsProps {
   post: {

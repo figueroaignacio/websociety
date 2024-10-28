@@ -1,6 +1,6 @@
 // Utils
+import { cn } from "@/common/utils/cn";
 import { badgeVariants } from "@/components/ui/badge";
-import { cn } from "@/utils/cn";
 
 interface TagProps {
   tag: string;
