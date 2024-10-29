@@ -76,26 +76,28 @@ export default async function ResourcePage({ params }: ResourcePageProps) {
   }
 
   return (
-    <article className="max-w-5xl mx-auto py-6 sm:py-8 md:py-12">
+    <article className="max-w-3xl mx-auto mt-5">
       <div className="mb-5">
         <BackButton />
       </div>
-      <h1 className="text-4xl font-extrabold mb-4">{resources.title}</h1>
-      <p className="mb-6">{resources.description}</p>
-      <div>
-        <MDXContent code={resources.body} />
-      </div>
-      <div className="mt-7">
-        <a
-          target="_blank"
-          href={resources.pageUrl}
-          className={`flex items-center ${buttonVariants({
-            variant: "default",
-          })}`}
-        >
-          <ExternalLink className="mr-1" size={16} />
-          Visitar {resources.title}
-        </a>
+      <div className="p-8 border rounded-md shadow-md">
+        <h1 className="text-4xl font-extrabold mb-4">{resources.title}</h1>
+        <p className="mb-6">{resources.description}</p>
+        <div>
+          <MDXContent code={resources.body} />
+        </div>
+        <div className="mt-7">
+          <a
+            target="_blank"
+            href={resources.pageUrl}
+            className={`flex items-center ${buttonVariants({
+              variant: "default",
+            })}`}
+          >
+            <ExternalLink className="mr-1" size={16} />
+            Visitar {resources.title}
+          </a>
+        </div>
       </div>
     </article>
   );
