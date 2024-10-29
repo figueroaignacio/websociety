@@ -2,7 +2,6 @@
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -47,11 +46,11 @@ export default function LoadingPosts() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="flex flex-col gap-2">
+                    <div className="flex flex-col gap-2">
                       {Array.from({ length: 3 }).map((_, index) => (
                         <Skeleton className="w-full h-4" key={index} />
                       ))}
-                    </CardDescription>
+                    </div>
                   </CardContent>
                   <CardFooter className="flex-col items-start gap-4">
                     <div className="flex gap-3 items-center">
