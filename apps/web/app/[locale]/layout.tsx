@@ -22,7 +22,8 @@ import "@/common/styles/globals.css";
 // Metadata
 import { MetadataParams } from "@/common/types";
 
-export async function generateMetadata({ params: { locale } }: MetadataParams) {
+export async function generateMetadata({ params }: MetadataParams) {
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "siteConfig" });
 
   const metadataBase =
@@ -52,15 +53,13 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-interface LocaleLayoutProps {
+type LayoutProps = {
   children: React.ReactNode;
   params: { locale: string };
-}
+};
 
-export default async function LocaleLayout({
-  children,
-  params: { locale },
-}: LocaleLayoutProps) {
+export default async function LocaleLayout({ children, params }: LayoutProps) {
+  const { locale } = await params;
   const messages = await getMessages();
   setRequestLocale(locale);
 

@@ -17,14 +17,13 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-interface LandingLayoutProps {
+type LayoutProps = {
   children: React.ReactNode;
   params: { locale: string };
-}
-export default async function LandingLayout({
-  children,
-  params: { locale },
-}: LandingLayoutProps) {
+};
+
+export default async function LandingLayout({ children, params }: LayoutProps) {
+  const { locale } = await params;
   setRequestLocale(locale);
 
   return (

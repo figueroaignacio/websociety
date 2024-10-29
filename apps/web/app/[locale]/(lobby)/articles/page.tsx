@@ -15,10 +15,13 @@ import { articlesFilter } from "@/modules/articles/utils/articlesFilter";
 import { sortArticles } from "@/modules/articles/utils/sortArticles";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
-// Metadata
+const ARTICLES_PER_PAGE = 6;
+
+// Types
 import { MetadataParams } from "@/common/types";
 
-export async function generateMetadata({ params: { locale } }: MetadataParams) {
+export async function generateMetadata({ params }: MetadataParams) {
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "postsConfig" });
 
   return {
@@ -34,28 +37,22 @@ export async function generateMetadata({ params: { locale } }: MetadataParams) {
   };
 }
 
-const ARTICLES_PER_PAGE = 6;
-
 interface ArticlesPageProps {
   searchParams: {
     page?: string;
     category?: string;
   };
-  params: {
-    locale: string;
-  };
+  params: { locale: string };
 }
 
-export default function ArticlesPage({
-  searchParams,
-  params: { locale },
-}: ArticlesPageProps) {
-  setRequestLocale(locale);
+interface ArticlesPageContentProps {
+  page: number;
+  category: string | null;
+}
+
+function ArticlesPageContent({ page, category }: ArticlesPageContentProps) {
   const lang = useLocale();
   const t = useTranslations("posts");
-
-  const currentPage = Number(searchParams?.page) || 1;
-  const selectedCategory = searchParams?.category || null;
 
   const filteredArticles = articles.filter(
     (post) => post.published && post.locale === lang
@@ -68,15 +65,15 @@ export default function ArticlesPage({
   const { filteredArticles: filteredAndSortedArticles } = articlesFilter({
     categories,
     articles: filteredArticles,
-    selectedCategory,
+    selectedCategory: category,
   });
 
   const sortedArticles = sortArticles(filteredAndSortedArticles);
   const totalPages = Math.ceil(sortedArticles.length / ARTICLES_PER_PAGE);
 
   const displayArticles = sortedArticles.slice(
-    ARTICLES_PER_PAGE * (currentPage - 1),
-    ARTICLES_PER_PAGE * currentPage
+    ARTICLES_PER_PAGE * (page - 1),
+    ARTICLES_PER_PAGE * page
   );
 
   if (displayArticles.length < 1) {
@@ -91,7 +88,7 @@ export default function ArticlesPage({
         <div className="lg:col-span-4">
           <FilterByCategory
             categories={categories}
-            selectedCategory={selectedCategory}
+            selectedCategory={category}
           />
         </div>
         <div className="lg:col-span-8">
@@ -115,4 +112,19 @@ export default function ArticlesPage({
       </div>
     </section>
   );
+}
+
+export default async function ArticlesPage({
+  params,
+  searchParams,
+}: ArticlesPageProps) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
+  const { page, category } = await searchParams;
+
+  const currentPage = Number(page) || 1;
+  const selectedCategory = category || null;
+
+  return <ArticlesPageContent page={currentPage} category={selectedCategory} />;
 }

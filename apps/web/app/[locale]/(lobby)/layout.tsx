@@ -15,15 +15,13 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-interface LobbyLayoutProps {
+type LayoutProps = {
   children: React.ReactNode;
   params: { locale: string };
-}
+};
 
-export default function LocaleLayout({
-  children,
-  params: { locale },
-}: LobbyLayoutProps) {
+export default async function LocaleLayout({ children, params }: LayoutProps) {
+  const { locale } = await params;
   setRequestLocale(locale);
 
   return (
