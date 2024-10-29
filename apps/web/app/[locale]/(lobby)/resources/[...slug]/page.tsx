@@ -15,27 +15,10 @@ import { ExternalLink } from "lucide-react";
 // Metadata
 import { Metadata } from "next";
 
-interface ResourcePageProps {
-  params: {
-    slug: string[];
-    locale?: string;
-  };
-}
-
-async function getResourceFromParams(params: ResourcePageProps["params"]) {
-  const slug = params?.slug.join("/");
-  const locale = params.locale || "en";
-  const resource = resources.find(
-    (resource) => resource?.slugAsParams === slug && resource.locale === locale
-  );
-
-  return resource;
-}
-
 export async function generateMetadata({
   params,
 }: ResourcePageProps): Promise<Metadata> {
-  const { slug, locale = "en" } = params;
+  const { slug, locale = "en" } = await params;
 
   try {
     const resource = await getResourceFromParams({ slug, locale });
@@ -57,6 +40,26 @@ export async function generateMetadata({
   }
 }
 
+interface ResourcePageProps {
+  params: {
+    slug: string[];
+    locale?: string;
+  };
+}
+
+async function getResourceFromParams(params: ResourcePageProps["params"]) {
+  const { slug, locale } = await params;
+  const resourceSlug = slug.join("/");
+  const resourceLocale = locale || "en";
+  const resource = resources.find(
+    (resource) =>
+      resource?.slugAsParams === resourceSlug &&
+      resource.locale === resourceLocale
+  );
+
+  return resource;
+}
+
 export async function generateStaticParams(): Promise<
   ResourcePageProps["params"][]
 > {
@@ -73,7 +76,7 @@ export default async function ResourcePage({ params }: ResourcePageProps) {
   }
 
   return (
-    <article className="max-w-3xl mx-auto py-6 sm:py-8 md:py-12">
+    <article className="max-w-5xl mx-auto py-6 sm:py-8 md:py-12">
       <div className="mb-5">
         <BackButton />
       </div>

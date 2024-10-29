@@ -13,22 +13,23 @@ import { guides } from "@content";
 // Metadata
 import { Metadata } from "next";
 
-interface PostPageProps {
+interface CurriculumPageProps {
   params: {
     slug: string[];
   };
 }
 
-async function getPostFromParams(params: PostPageProps["params"]) {
-  const slug = params?.slug.join("/");
-  const post = guides.find((guide) => guide.slugAsParams === slug);
+async function getCurriculumFromParams(params: CurriculumPageProps["params"]) {
+  const { slug } = await params;
+  const curriculumSlug = slug.join("/");
+  const post = guides.find((guide) => guide.slugAsParams === curriculumSlug);
   return post;
 }
 
 export async function generateMetadata({
   params,
-}: PostPageProps): Promise<Metadata> {
-  const guide = await getPostFromParams(params);
+}: CurriculumPageProps): Promise<Metadata> {
+  const guide = await getCurriculumFromParams(params);
 
   if (!guide) {
     return {};
@@ -41,13 +42,13 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams(): Promise<
-  PostPageProps["params"][]
+  CurriculumPageProps["params"][]
 > {
   return guides.map((guide) => ({ slug: guide.slugAsParams.split("/") }));
 }
 
-export default async function GuidePage({ params }: PostPageProps) {
-  const guides = await getPostFromParams(params);
+export default async function CurriculumPage({ params }: CurriculumPageProps) {
+  const guides = await getCurriculumFromParams(params);
 
   if (!guides || !guides.published) {
     notFound();
@@ -63,7 +64,7 @@ export default async function GuidePage({ params }: PostPageProps) {
         <div className="flex flex-col gap-2 py-16 bg-purple-800 text-center px-12 rounded-md text-white">
           <h1 className="text-3xl font-bold">{guides.title}</h1>
           <p className="text-sm">
-            {guides.description ? <p>{guides.description}</p> : null}
+            {guides.description ? guides.description : null}
           </p>
         </div>
         <Separator className="my-10" />

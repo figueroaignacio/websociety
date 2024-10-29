@@ -22,6 +22,47 @@ import { Calendar, TagIcon } from "lucide-react";
 // Metadata
 import { Metadata } from "next";
 
+export async function generateMetadata({
+  params,
+}: ArticlePageProps): Promise<Metadata> {
+  const { slug, locale = "en" } = await params;
+
+  try {
+    const article = await getArticleFromParams({ slug, locale });
+    if (!article) return {};
+
+    const ogSearchParams = new URLSearchParams({ title: article.title });
+
+    const metadataBase =
+      locale === "en"
+        ? process.env.NEXT_PUBLIC_APP_URL_EN
+        : process.env.NEXT_PUBLIC_APP_URL_ES;
+
+    return {
+      metadataBase: new URL(metadataBase ?? "http://localhost:3000"),
+      title: article.title,
+      description: article.description,
+      openGraph: {
+        title: article.title,
+        description: article.description,
+        type: "article",
+        url: article.slug,
+        images: [
+          {
+            url: `/api/og?${ogSearchParams.toString()}`,
+            width: 1200,
+            height: 630,
+            alt: article.title,
+          },
+        ],
+      },
+    };
+  } catch (error) {
+    console.error("Error generating metadata:", error);
+    return {};
+  }
+}
+
 interface ArticlePageProps {
   params: {
     slug: string[];
@@ -31,10 +72,12 @@ interface ArticlePageProps {
 
 async function getArticleFromParams(params: ArticlePageProps["params"]) {
   try {
-    const slug = params?.slug.join("/");
-    const locale = params.locale || "en";
+    const { slug, locale } = await params;
+    const articleSlug = slug.join("/");
+    const articleLocale = locale || "en";
     const article = articles.find(
-      (article) => article.slugAsParams === slug && article.locale === locale
+      (article) =>
+        article.slugAsParams === articleSlug && article.locale === articleLocale
     );
     if (article) {
       const readingTime = calculateReadingTime(article.body);
@@ -75,47 +118,6 @@ async function getNextArticle(currentArticleSlug: string, locale: string) {
   return null;
 }
 
-export async function generateMetadata({
-  params,
-}: ArticlePageProps): Promise<Metadata> {
-  const { slug, locale = "en" } = params;
-
-  try {
-    const article = await getArticleFromParams({ slug, locale });
-    if (!article) return {};
-
-    const ogSearchParams = new URLSearchParams({ title: article.title });
-
-    const metadataBase =
-      locale === "en"
-        ? process.env.NEXT_PUBLIC_APP_URL_EN
-        : process.env.NEXT_PUBLIC_APP_URL_ES;
-
-    return {
-      metadataBase: new URL(metadataBase ?? "http://localhost:3000"),
-      title: article.title,
-      description: article.description,
-      openGraph: {
-        title: article.title,
-        description: article.description,
-        type: "article",
-        url: article.slug,
-        images: [
-          {
-            url: `/api/og?${ogSearchParams.toString()}`,
-            width: 1200,
-            height: 630,
-            alt: article.title,
-          },
-        ],
-      },
-    };
-  } catch (error) {
-    console.error("Error generating metadata:", error);
-    return {};
-  }
-}
-
 export async function generateStaticParams(): Promise<
   ArticlePageProps["params"][]
 > {
@@ -123,7 +125,7 @@ export async function generateStaticParams(): Promise<
 }
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
-  const { slug, locale = "en" } = params;
+  const { slug, locale = "en" } = await params;
   const articleSlug = slug.join("/");
 
   const article = await getArticleFromParams(params);
