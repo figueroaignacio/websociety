@@ -80,7 +80,7 @@ export default async function ResourcePage({ params }: ResourcePageProps) {
       <div className="mb-5">
         <BackButton />
       </div>
-      <div className="p-8 border rounded-md shadow-md">
+      <div className="lg:p-8 lg:border lg:rounded-md shadow-md">
         <h1 className="text-4xl font-extrabold mb-4">{resources.title}</h1>
         <p className="mb-6">{resources.description}</p>
         <div>
