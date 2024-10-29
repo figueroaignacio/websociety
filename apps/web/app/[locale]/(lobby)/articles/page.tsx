@@ -45,12 +45,12 @@ interface ArticlesPageProps {
   params: { locale: string };
 }
 
-interface ArticlesPageContentProps {
+interface ArticlesPageViewProps {
   page: number;
   category: string | null;
 }
 
-function ArticlesPageContent({ page, category }: ArticlesPageContentProps) {
+function ArticlesPageView({ page, category }: ArticlesPageViewProps) {
   const lang = useLocale();
   const t = useTranslations("posts");
 
@@ -126,5 +126,5 @@ export default async function ArticlesPage({
   const currentPage = Number(page) || 1;
   const selectedCategory = category || null;
 
-  return <ArticlesPageContent page={currentPage} category={selectedCategory} />;
+  return <ArticlesPageView page={currentPage} category={selectedCategory} />;
 }

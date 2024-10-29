@@ -15,7 +15,8 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 // Metadata
 import { MetadataParams } from "@/common/types";
 
-export async function generateMetadata({ params: { locale } }: MetadataParams) {
+export async function generateMetadata({ params }: MetadataParams) {
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "resourcesConfig" });
 
   return {
@@ -39,15 +40,13 @@ interface ResourcesPageProps {
   };
 }
 
-export default function ResourcesPage({
-  searchParams,
-  params: { locale },
-}: ResourcesPageProps) {
-  setRequestLocale(locale);
+interface ResourcesPageViewProps {
+  category: string | null;
+}
+
+function ResourcesPageView({ category }: ResourcesPageViewProps) {
   const t = useTranslations("resources");
   const lang = useLocale();
-
-  const selectedCategory = searchParams?.category || null;
 
   const filteredResources = resources.filter(
     (resource) => resource.locale === lang
@@ -60,7 +59,7 @@ export default function ResourcesPage({
   const { filteredResources: filteredAndSortedPosts } = resourcesFilter({
     categories,
     resources: filteredResources,
-    selectedCategory,
+    selectedCategory: category,
   });
 
   return (
@@ -68,10 +67,7 @@ export default function ResourcesPage({
       <h1 className="font-bold text-3xl mb-2">{t("title")}</h1>
       <p className="text-foreground">{t("description")}</p>
       <div className="grid grid-cols-1 gap-6 mt-6">
-        <FilterByCategory
-          categories={categories}
-          selectedCategory={selectedCategory}
-        />
+        <FilterByCategory categories={categories} selectedCategory={category} />
         <div className="col-span-10 md:col-span-9">
           <ul className="grid-template-cols">
             {filteredAndSortedPosts.map((resource, index) => (
@@ -91,4 +87,17 @@ export default function ResourcesPage({
       </div>
     </section>
   );
+}
+
+export default async function ResourcesPage({
+  searchParams,
+  params,
+}: ResourcesPageProps) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
+  const { category } = await searchParams;
+  const selectedCategory = category || null;
+
+  return <ResourcesPageView category={selectedCategory} />;
 }

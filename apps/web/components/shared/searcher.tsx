@@ -1,9 +1,9 @@
 "use client";
 
 // Hooks
+import { useSearch } from "@/hooks/useSearch";
 import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
-import { useSearch } from "../../hooks/useSearch";
 
 // Components
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
+  DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
@@ -46,7 +46,7 @@ export function Searcher() {
         </Button>
       </DialogTrigger>
       <DialogContent className="max-w-md sm:max-w-lg mx-auto p-4 sm:p-6 rounded-md shadow-lg">
-        <DialogDescription>{t("dialogTitle")}</DialogDescription>
+        <DialogTitle>{t("dialogTitle")}</DialogTitle>
         <Input
           type="text"
           value={query}

@@ -14,7 +14,8 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 // Metadata
 import { MetadataParams } from "@/common/types";
 
-export async function generateMetadata({ params: { locale } }: MetadataParams) {
+export async function generateMetadata({ params }: MetadataParams) {
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "guidesConfig" });
 
   return {
@@ -34,8 +35,7 @@ interface LearnPageProps {
   params: { locale: string };
 }
 
-export default function LearnPage({ params: { locale } }: LearnPageProps) {
-  setRequestLocale(locale);
+function CurriculumPageView() {
   const t = useTranslations("curriculum");
   const lang = useLocale();
 
@@ -67,4 +67,11 @@ export default function LearnPage({ params: { locale } }: LearnPageProps) {
       </section>
     </div>
   );
+}
+
+export default async function CurriculumPage({ params }: LearnPageProps) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
+  return <CurriculumPageView />;
 }

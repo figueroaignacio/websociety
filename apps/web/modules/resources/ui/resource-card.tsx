@@ -57,7 +57,7 @@ export function ResourceCard({
           )}
         </div>
         <CardTitle className="flex items-center gap-2">
-          <h2>{title}</h2>
+          {title}
           <span>
             {tags.map((tag, index) => (
               <Tag tag={tag} key={index} />
@@ -66,9 +66,7 @@ export function ResourceCard({
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <CardDescription>
-          <p>{description}</p>
-        </CardDescription>
+        <CardDescription>{description}</CardDescription>
       </CardContent>
       <CardFooter className="gap-2">
         <Link
