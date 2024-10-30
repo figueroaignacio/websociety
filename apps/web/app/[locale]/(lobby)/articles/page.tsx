@@ -82,7 +82,7 @@ function ArticlesPageView({ page, category }: ArticlesPageViewProps) {
 
   return (
     <section className="flex flex-col lg:py-12 py-4">
-      <h1 className="font-bold text-3xl mb-2">{t("title")}</h1>
+      <h1 className="font-bold text-5xl mb-2">{t("title")}</h1>
       <p className="text-foreground">{t("description")}</p>
       <div className="grid grid-cols-1 gap-6 mt-6">
         <div className="lg:col-span-4">
