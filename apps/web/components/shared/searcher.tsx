@@ -66,7 +66,7 @@ export function Searcher() {
                   >
                     <p className="underline">{item.title}</p>
                     <Badge variant={"default"}>
-                      {item.slug.startsWith("posts/")
+                      {item.slug.startsWith("articles/")
                         ? `${t("badges.post")}`
                         : `${t("badges.guide")}`}
                     </Badge>
