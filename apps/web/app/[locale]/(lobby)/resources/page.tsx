@@ -33,11 +33,13 @@ export async function generateMetadata({ params }: MetadataParams) {
 }
 
 interface ResourcesPageProps {
-  params: { locale: string };
-  searchParams: {
+  params: Promise<{
+    locale: string;
+  }>;
+  searchParams: Promise<{
     page?: string;
     category?: string;
-  };
+  }>;
 }
 
 interface ResourcesPageViewProps {

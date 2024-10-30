@@ -3,7 +3,9 @@ import { Faqs } from "@/modules/landing/ui/faqs";
 import { setRequestLocale } from "next-intl/server";
 
 interface FaqPageProps {
-  params: { locale: string };
+  params: Promise<{
+    locale: string;
+  }>;
 }
 
 export default async function FaqPage({ params }: FaqPageProps) {

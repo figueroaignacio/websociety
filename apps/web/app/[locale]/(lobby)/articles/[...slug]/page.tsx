@@ -28,7 +28,7 @@ export async function generateMetadata({
   const { slug, locale = "en" } = await params;
 
   try {
-    const article = await getArticleFromParams({ slug, locale });
+    const article = await getArticleFromParams(params);
     if (!article) return {};
 
     const ogSearchParams = new URLSearchParams({ title: article.title });
@@ -64,10 +64,10 @@ export async function generateMetadata({
 }
 
 interface ArticlePageProps {
-  params: {
+  params: Promise<{
     slug: string[];
     locale?: string;
-  };
+  }>;
 }
 
 async function getArticleFromParams(params: ArticlePageProps["params"]) {
@@ -118,9 +118,7 @@ async function getNextArticle(currentArticleSlug: string, locale: string) {
   return null;
 }
 
-export async function generateStaticParams(): Promise<
-  ArticlePageProps["params"][]
-> {
+export async function generateStaticParams(): Promise<{ slug: string[] }[]> {
   return articles.map((article) => ({ slug: article.slugAsParams.split("/") }));
 }
 

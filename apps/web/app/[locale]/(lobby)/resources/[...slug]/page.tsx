@@ -21,7 +21,7 @@ export async function generateMetadata({
   const { slug, locale = "en" } = await params;
 
   try {
-    const resource = await getResourceFromParams({ slug, locale });
+    const resource = await getResourceFromParams(params);
     if (!resource) return {};
 
     return {
@@ -41,10 +41,10 @@ export async function generateMetadata({
 }
 
 interface ResourcePageProps {
-  params: {
+  params: Promise<{
     slug: string[];
     locale?: string;
-  };
+  }>;
 }
 
 async function getResourceFromParams(params: ResourcePageProps["params"]) {
@@ -60,9 +60,7 @@ async function getResourceFromParams(params: ResourcePageProps["params"]) {
   return resource;
 }
 
-export async function generateStaticParams(): Promise<
-  ResourcePageProps["params"][]
-> {
+export async function generateStaticParams(): Promise<{ slug: string[] }[]> {
   return resources.map((resource) => ({
     slug: resource.slugAsParams.split("/"),
   }));

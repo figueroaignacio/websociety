@@ -4,7 +4,9 @@ import { Landing } from "@/modules/landing/ui/landing";
 import { setRequestLocale } from "next-intl/server";
 
 interface HomePageProps {
-  params: { locale: string };
+  params: Promise<{
+    locale: string;
+  }>;
 }
 
 export default async function HomePage({ params }: HomePageProps) {

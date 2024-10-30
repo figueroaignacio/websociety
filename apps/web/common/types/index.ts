@@ -1,7 +1,7 @@
 export type MetadataParams = {
-  params: {
+  params: Promise<{
     locale: string;
-  };
+  }>;
 };
 
 export type Locale = "es" | "en";

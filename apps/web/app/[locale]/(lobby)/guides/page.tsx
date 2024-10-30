@@ -32,7 +32,9 @@ export async function generateMetadata({ params }: MetadataParams) {
 }
 
 interface LearnPageProps {
-  params: { locale: string };
+  params: Promise<{
+    locale: string;
+  }>;
 }
 
 function CurriculumPageView() {
