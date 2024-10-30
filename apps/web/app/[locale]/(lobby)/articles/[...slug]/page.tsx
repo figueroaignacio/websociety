@@ -25,7 +25,7 @@ import { Metadata } from "next";
 export async function generateMetadata({
   params,
 }: ArticlePageProps): Promise<Metadata> {
-  const { slug, locale = "en" } = await params;
+  const { locale = "en" } = await params;
 
   try {
     const article = await getArticleFromParams(params);

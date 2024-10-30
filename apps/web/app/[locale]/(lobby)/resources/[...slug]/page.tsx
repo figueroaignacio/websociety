@@ -18,8 +18,6 @@ import { Metadata } from "next";
 export async function generateMetadata({
   params,
 }: ResourcePageProps): Promise<Metadata> {
-  const { slug, locale = "en" } = await params;
-
   try {
     const resource = await getResourceFromParams(params);
     if (!resource) return {};
