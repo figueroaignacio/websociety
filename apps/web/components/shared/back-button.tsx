@@ -4,6 +4,9 @@
 import { useRouter } from "@/config/i18n/routing";
 import { useTranslations } from "next-intl";
 
+// Components
+import { Button } from "../ui/button";
+
 // Icons
 import { ArrowLeft } from "lucide-react";
 
@@ -12,8 +15,9 @@ export function BackButton() {
   const t = useTranslations();
 
   return (
-    <button
-      className="items-center flex gap-2 relative group text-primary underline-offset-4 hover:underline"
+    <Button
+      className="items-center flex gap-2 relative group"
+      variant="default"
       onClick={() => router.back()}
     >
       <ArrowLeft
@@ -21,6 +25,6 @@ export function BackButton() {
         size=".85rem"
       />
       <span>{t("backButton.label")}</span>
-    </button>
+    </Button>
   );
 }
