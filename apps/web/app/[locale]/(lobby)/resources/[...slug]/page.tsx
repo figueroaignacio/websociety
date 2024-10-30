@@ -80,9 +80,11 @@ export default async function ResourcePage({ params }: ResourcePageProps) {
       <div className="mb-5 max-w-28">
         <BackButton />
       </div>
-      <div className="lg:p-8 lg:border lg:rounded-md shadow-md">
-        <h1 className="text-4xl font-extrabold mb-4">{resources.title}</h1>
-        <p className="mb-6">{resources.description}</p>
+      <div className="lg:border lg:rounded-md lg:p-8">
+        <div>
+          <h1 className="text-4xl font-extrabold">{resources.title}</h1>
+          <p className="mb-6">{resources.description}</p>
+        </div>
         <div>
           <MDXContent code={resources.body} />
         </div>
