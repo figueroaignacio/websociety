@@ -1,5 +1,6 @@
 // Components
 import { FramerWrapper } from "@/components/framer";
+import NextTopLoader from "nextjs-toploader";
 
 // Providers
 import { ThemeProvider } from "@/common/providers/theme-provider";
@@ -66,6 +67,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
   return (
     <html lang={locale} suppressHydrationWarning>
       <body>
+        <NextTopLoader color="#7e22ce" />
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider
             attribute="class"
