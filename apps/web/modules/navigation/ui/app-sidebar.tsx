@@ -32,7 +32,7 @@ import {
 } from "lucide-react";
 
 // Utils
-import { cn } from "@/common/utils/cn";
+import { cn } from "@/lib/utils/cn";
 
 interface NavigationItem {
   icon: keyof typeof iconMap;

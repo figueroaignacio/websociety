@@ -18,7 +18,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 const ARTICLES_PER_PAGE = 6;
 
 // Types
-import { MetadataParams } from "@/common/types";
+import { MetadataParams } from "@/lib/types";
 
 export async function generateMetadata({ params }: MetadataParams) {
   const { locale } = await params;

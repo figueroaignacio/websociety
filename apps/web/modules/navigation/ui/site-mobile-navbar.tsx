@@ -18,7 +18,7 @@ import { Link } from "@/config/i18n/routing";
 import { Menu } from "lucide-react";
 
 // Utils
-import { getCurrentLocale } from "@/common/utils/getCurrentLocale";
+import { getCurrentLocale } from "@/lib/utils/getCurrentLocale";
 
 // Types
 import { Navigation } from "../types";

@@ -8,7 +8,7 @@ import { Logo } from "@/components/shared/logo";
 import { Link } from "@/config/i18n/routing";
 
 // Utils
-import { getCurrentLocale } from "@/common/utils/getCurrentLocale";
+import { getCurrentLocale } from "@/lib/utils/getCurrentLocale";
 
 // Types
 import { Navigation } from "../types";

@@ -12,7 +12,7 @@ import { guides } from "@content";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 // Metadata
-import { MetadataParams } from "@/common/types";
+import { MetadataParams } from "@/lib/types";
 
 export async function generateMetadata({ params }: MetadataParams) {
   const { locale } = await params;

@@ -1,5 +1,5 @@
 // Utils
-import { cn } from "@/common/utils/cn";
+import { cn } from "@/lib/utils/cn";
 
 interface CalloutProps {
   children?: React.ReactNode;

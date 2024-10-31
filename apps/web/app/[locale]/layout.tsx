@@ -3,7 +3,7 @@ import { FramerWrapper } from "@/components/framer";
 import NextTopLoader from "nextjs-toploader";
 
 // Providers
-import { ThemeProvider } from "@/common/providers/theme-provider";
+import { ThemeProvider } from "@/lib/providers/theme-provider";
 import { NextIntlClientProvider } from "next-intl";
 
 // Utils
@@ -18,10 +18,10 @@ import {
 import "@fontsource-variable/onest";
 
 // Styles
-import "@/common/styles/globals.css";
+import "@/styles/globals.css";
 
 // Metadata
-import { MetadataParams } from "@/common/types";
+import { MetadataParams } from "@/lib/types";
 
 export async function generateMetadata({ params }: MetadataParams) {
   const { locale } = await params;

@@ -2,7 +2,7 @@
 import "@fontsource-variable/onest";
 
 // Styles
-import "@/common/styles/globals.css";
+import "@/styles/globals.css";
 interface RootLayoutProps {
   children: React.ReactNode;
 }

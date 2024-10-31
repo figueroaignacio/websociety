@@ -12,7 +12,7 @@ import { Languages } from "lucide-react";
 import { locales } from "@/config/i18n/routing";
 
 // Types
-import { Locale } from "@/common/types";
+import { Locale } from "@/lib/types";
 
 type Props = {
   label?: string;

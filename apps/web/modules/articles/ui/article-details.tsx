@@ -10,7 +10,7 @@ import { Separator } from "@/components/ui/separator";
 import { Calendar, TagIcon, Timer } from "lucide-react";
 
 // Utils
-import { formatDate } from "@/common/utils/formatDate";
+import { formatDate } from "@/lib/utils/formatDate";
 
 interface PostDetailsProps {
   post: {
@@ -51,9 +51,7 @@ export const ArticleDetails = ({ post, locale }: PostDetailsProps) => {
         </div>
         <div className="lg:flex items-center gap-2 flex-wrap hidden">
           <TagIcon size={16} />
-          {post.categories?.map((tag) => (
-            <Tag tag={tag} key={tag} />
-          ))}
+          {post.categories?.map((tag) => <Tag tag={tag} key={tag} />)}
         </div>
       </div>
     </aside>

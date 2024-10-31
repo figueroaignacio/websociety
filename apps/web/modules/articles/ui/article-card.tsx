@@ -15,7 +15,7 @@ import {
 import { Link } from "@/config/i18n/routing";
 
 // Utils
-import { formatDate } from "@/common/utils/formatDate";
+import { formatDate } from "@/lib/utils/formatDate";
 
 // Icons
 import { ArrowRight, Calendar } from "lucide-react";
@@ -60,9 +60,7 @@ export function ArticleCard({
           {description}
         </CardDescription>
         <div className="flex flex-wrap gap-2">
-          {categories?.map((tag) => (
-            <Tag tag={tag} key={tag} />
-          ))}
+          {categories?.map((tag) => <Tag tag={tag} key={tag} />)}
         </div>
       </CardContent>
       <CardFooter className="pt-4">
