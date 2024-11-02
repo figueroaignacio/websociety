@@ -24,7 +24,7 @@
   "sidebarNavigation": [
     {
       "title": "Blog",
-      "href": "/Blog",
+      "href": "/blog",
       "icon": "fileText"
     },
     {
