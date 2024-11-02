@@ -22,11 +22,11 @@ import { Link } from "@/config/i18n/routing";
 
 // Icons
 import {
-  BookOpen,
   Bug,
   FileText,
   Folder,
   GithubIcon,
+  GraduationCap,
   Mail,
   Settings,
 } from "lucide-react";
@@ -42,7 +42,7 @@ interface NavigationItem {
 
 const iconMap = {
   fileText: FileText,
-  bookOpen: BookOpen,
+  graduationCap: GraduationCap,
   folder: Folder,
   settings: Settings,
   bug: Bug,
