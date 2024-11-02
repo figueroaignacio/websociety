@@ -8,7 +8,7 @@ import { ArticleCard } from "@/modules/articles/ui/article-card";
 import { NoArticlesMessage } from "@/modules/articles/ui/no-articles-message";
 
 // Content
-import { articles } from "@content";
+import { blog as articles } from "@content";
 
 // Utils
 import { articlesFilter } from "@/modules/articles/utils/articlesFilter";
@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: MetadataParams) {
   };
 }
 
-interface ArticlesPageProps {
+interface BlogPageProps {
   searchParams: Promise<{
     page?: string;
     category?: string;
@@ -116,10 +116,10 @@ function ArticlesPageView({ page, category }: ArticlesPageViewProps) {
   );
 }
 
-export default async function ArticlesPage({
+export default async function BlogPage({
   params,
   searchParams,
-}: ArticlesPageProps) {
+}: BlogPageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
 

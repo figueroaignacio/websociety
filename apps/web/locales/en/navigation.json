@@ -9,8 +9,8 @@
       "href": "/faq"
     },
     {
-      "title": "Articles",
-      "href": "/articles"
+      "title": "Blog",
+      "href": "/blog"
     },
     {
       "title": "Guides",
@@ -23,8 +23,8 @@
   ],
   "sidebarNavigation": [
     {
-      "title": "Articles",
-      "href": "/articles",
+      "title": "Blog",
+      "href": "/Blog",
       "icon": "fileText"
     },
     {

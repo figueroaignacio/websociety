@@ -9,7 +9,7 @@ import { ShareArticle } from "@/modules/articles/ui/share-article";
 import { Toc } from "@/modules/navigation/ui/toc";
 
 // Content
-import { articles } from "@content";
+import { blog as articles } from "@content";
 
 // Utils
 import { formatDate } from "@/lib/utils/formatDate";

@@ -21,9 +21,9 @@ const computedFields = <T extends { slug: string; locale: string }>(
   };
 };
 
-const articles = defineCollection({
-  name: "Articles",
-  pattern: "../content/articles/**/*.mdx",
+const blog = defineCollection({
+  name: "Blog",
+  pattern: "../content/blog/**/*.mdx",
   schema: s
     .object({
       slug: s.path(),
@@ -81,7 +81,7 @@ export default defineConfig({
     name: "[name]-[hash:6].[ext]",
     clean: true,
   },
-  collections: { articles, guides, resources },
+  collections: { blog, guides, resources },
   mdx: {
     rehypePlugins: [
       rehypeSlug,

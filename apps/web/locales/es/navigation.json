@@ -9,25 +9,22 @@
       "href": "/faq"
     },
     {
-      "title": "Artículos",
-      "href": "/articles",
-      "icon": "fileText"
+      "title": "Blog",
+      "href": "/blog"
     },
     {
       "title": "Guías",
-      "href": "/guides",
-      "icon": "bookOpen"
+      "href": "/guides"
     },
     {
       "title": "Recursos",
-      "href": "/resources",
-      "icon": "folder"
+      "href": "/resources"
     }
   ],
   "sidebarNavigation": [
     {
-      "title": "Artículos",
-      "href": "/articles",
+      "title": "Blog",
+      "href": "/Blog",
       "icon": "fileText"
     },
     {

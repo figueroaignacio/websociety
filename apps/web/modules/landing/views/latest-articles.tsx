@@ -8,7 +8,7 @@ import { ArticleCard } from "@/modules/articles/ui/article-card";
 import { NoArticlesMessage } from "@/modules/articles/ui/no-articles-message";
 
 // Content
-import { articles } from "@content";
+import { blog as articles } from "@content";
 
 // Utils
 import { sortArticles } from "@/modules/articles/utils/sortArticles";

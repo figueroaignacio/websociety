@@ -1,6 +1,6 @@
 export const namespaces: string[] = [
   "hero",
-  "posts",
+  "blog",
   "spotlights",
   "localeSwitcher",
   "navigation",
