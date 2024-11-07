@@ -1,6 +1,6 @@
-import { Articles } from "@content";
+import { Blog } from "@content";
 
-export function getAllCategories(articles: Articles[]) {
+export function getAllCategories(articles: Blog[]) {
   const tags: Record<string, number> = {};
 
   articles.forEach((article) => {
