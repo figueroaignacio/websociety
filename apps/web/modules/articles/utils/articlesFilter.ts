@@ -1,8 +1,8 @@
-import { Articles } from "@content";
+import { Blog } from "@content";
 
 interface ArticleFilterProps {
   categories: string[];
-  articles: Articles[];
+  articles: Blog[];
   selectedCategory: string | null;
 }
 
