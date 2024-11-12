@@ -3,8 +3,6 @@ import { useTranslations } from "next-intl";
 
 // Components
 import { Tag } from "@/components/shared/tag";
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import { Separator } from "@/components/ui/separator";
 
 // Icons
 import { Calendar, TagIcon, Timer } from "lucide-react";
@@ -26,15 +24,15 @@ export const ArticleDetails = ({ post, locale }: PostDetailsProps) => {
 
   return (
     <aside>
-      <div className="flex flex-col gap-5">
+      {/* <div className="flex flex-col gap-5">
         <div className="flex items-center gap-1">
           <Avatar>
             <AvatarImage src="https://github.com/figueroaignacio.png" />
           </Avatar>
           <p>Ignacio Figueroa</p>
         </div>
-      </div>
-      <Separator className="my-8" />
+      </div> */}
+      {/* <Separator className="my-8" /> */}
       <div className="space-y-3 mb-8">
         <dl className="lg:flex text-xs hidden">
           <dt className="sr-only">Published at</dt>
