@@ -6,13 +6,6 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.setGlobalPrefix('/api');
-
-  const config = new DocumentBuilder()
-    .setTitle('Project Web Society')
-    .setDescription('The Web Society API')
-    .setVersion('0.1')
-    .build();
-
   app.useGlobalPipes(
     new ValidationPipe({
       transform: true,
@@ -20,6 +13,12 @@ async function bootstrap() {
       forbidNonWhitelisted: true,
     }),
   );
+
+  const config = new DocumentBuilder()
+    .setTitle('Project Web Society')
+    .setDescription('The Web Society API')
+    .setVersion('0.1')
+    .build();
 
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);

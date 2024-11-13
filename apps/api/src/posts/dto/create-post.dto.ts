@@ -5,42 +5,28 @@ import {
   IsOptional,
   IsString,
   MaxLength,
-  MinLength,
 } from 'class-validator';
 
 export class CreatePostDto {
-  @ApiProperty({
-    description: 'Title of the post',
-    minLength: 5,
-    maxLength: 100,
-  })
   @IsString()
   @IsNotEmpty()
-  @MinLength(5)
-  @MaxLength(100)
+  @ApiProperty()
   title: string;
 
-  @ApiProperty({
-    description: 'Description of the post',
-    required: false,
-  })
-  @IsOptional()
   @IsString()
+  @IsOptional()
+  @IsNotEmpty()
+  @MaxLength(300)
+  @ApiProperty({ required: false })
   description?: string;
 
-  @ApiProperty({
-    description: 'Body of the post',
-  })
   @IsString()
   @IsNotEmpty()
+  @ApiProperty()
   body: string;
 
-  @ApiProperty({
-    description: 'Whether the post is published or not',
-    required: false,
-    default: false,
-  })
-  @IsOptional()
   @IsBoolean()
+  @IsOptional()
+  @ApiProperty({ required: false, default: false })
   published?: boolean = false;
 }
