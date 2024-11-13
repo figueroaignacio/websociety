@@ -1,3 +1,4 @@
+import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
@@ -11,6 +12,14 @@ async function bootstrap() {
     .setDescription('The Web Society API')
     .setVersion('0.1')
     .build();
+
+  app.useGlobalPipes(
+    new ValidationPipe({
+      transform: true,
+      whitelist: true,
+      forbidNonWhitelisted: true,
+    }),
+  );
 
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
