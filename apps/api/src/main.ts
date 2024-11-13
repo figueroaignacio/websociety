@@ -1,14 +1,14 @@
-import { ClassSerializerInterceptor, ValidationPipe } from '@nestjs/common';
-import { HttpAdapterHost, NestFactory, Reflector } from '@nestjs/core';
+import { ValidationPipe } from '@nestjs/common';
+import { HttpAdapterHost, NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
-
+import { ExcludePasswordInterceptor } from './lib/interceptors/exclude-password.interceptor';
 import { PrismaClientExceptionFilter } from './prisma-client-exception/prisma-client-exception.filter';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.setGlobalPrefix('/api');
-  app.useGlobalInterceptors(new ClassSerializerInterceptor(app.get(Reflector)));
+  app.useGlobalInterceptors(new ExcludePasswordInterceptor());
   app.useGlobalPipes(
     new ValidationPipe({
       transform: true,
