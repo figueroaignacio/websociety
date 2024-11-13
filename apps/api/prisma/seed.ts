@@ -3,31 +3,57 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 async function main() {
-  const post1 = await prisma.post.upsert({
-    where: { id: 1 },
+  const user1 = await prisma.user.upsert({
+    where: { email: 'nacho@dev.com' },
     update: {},
     create: {
-      title: 'Prisma Adds Support for MongoDB',
-      body: 'Support for MongoDB has been one of the most requested features since the initial release of...',
+      email: 'nacho@dev.com',
+      name: 'Ignacio Figueroa',
+      password: 'password-nacho',
+    },
+  });
+
+  const user2 = await prisma.user.upsert({
+    where: { email: 'miguel@masedo.com' },
+    update: {},
+    create: {
+      email: 'miguel@masedo.com',
+      name: 'Miguel Masedo',
+      password: 'password-miguel',
+    },
+  });
+
+  const post1 = await prisma.post.upsert({
+    where: { id: 1 },
+    update: {
+      authorId: user1.id,
+    },
+    create: {
+      title: 'La receta secreta de la abuela',
+      body: 'Una receta que ha pasado de generación en generación, con ingredientes únicos...',
       description:
-        "We are excited to share that today's Prisma ORM release adds stable support for MongoDB!",
+        'Descubre la receta secreta que transforma cualquier comida en una experiencia memorable.',
       published: false,
+      authorId: user1.id,
     },
   });
 
   const post2 = await prisma.post.upsert({
     where: { id: 2 },
-    update: {},
+    update: {
+      authorId: user2.id,
+    },
     create: {
-      title: "What's new in Prisma? (Q1/22)",
-      body: 'Our engineers have been working hard, issuing new releases with many improvements...',
+      title: 'Cómo cuidar tus plantas de interior',
+      body: 'Las plantas de interior requieren cuidados específicos para prosperar y llenar tu hogar de vida...',
       description:
-        'Learn about everything in the Prisma ecosystem and community from January to March 2022.',
+        'Consejos y trucos para mantener tus plantas de interior sanas y hermosas todo el año.',
       published: true,
+      authorId: user2.id,
     },
   });
 
-  console.log({ post1, post2 });
+  console.log({ post1, post2, user1, user2 });
 }
 
 main()
