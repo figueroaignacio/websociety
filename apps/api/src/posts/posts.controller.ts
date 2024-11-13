@@ -3,6 +3,7 @@ import {
   Controller,
   Delete,
   Get,
+  NotFoundException,
   Param,
   ParseIntPipe,
   Patch,
@@ -33,8 +34,11 @@ export class PostsController {
 
   @Get(':id')
   @ApiOkResponse({ type: PostEntity, isArray: true })
-  findOne(@Param('id', ParseIntPipe) id: number) {
-    return this.postsService.findOne(id);
+  async findOne(@Param('id') id: string) {
+    const post = await this.postsService.findOne(+id);
+    if (!post) {
+      throw new NotFoundException(`Post with the ${id} does not exist.`);
+    }
   }
 
   @Get('drafts')
