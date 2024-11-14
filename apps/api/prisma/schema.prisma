@@ -8,23 +8,30 @@ datasource db {
 }
 
 model Post {
-  id          Int      @id @default(autoincrement())
-  title       String   
-  description String?
-  body        String
-  published   Boolean  @default(false)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  author      User?    @relation(fields: [authorId], references: [id])
-  authorId    Int?
+  id                 Int       @id @default(autoincrement())
+  createdAt          DateTime  @default(now())
+  slug               String    @unique
+  title              String
+  desc               String
+  img                String?
+  views              Int       @default(0)
+  catSlug            String
+  userEmail          String
+  user               User      @relation(fields: [userEmail], references: [email])
 }
 
 model User {
-  id          Int      @id @default(autoincrement())
-  name        String?
-  email       String   @unique
-  password    String
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  posts       Post[]
+  id                 Int       @id @default(autoincrement())
+  email              String    @unique
+  name               String
+  password           String
+  hashedRefreshToken String?
+  role               Role      @default(USER)
+  posts              Post[]
+}
+
+enum Role {
+  ADMIN
+  EDITOR
+  USER
 }
