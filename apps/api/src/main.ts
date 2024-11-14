@@ -2,13 +2,10 @@ import { ValidationPipe } from '@nestjs/common';
 import { HttpAdapterHost, NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
-import { ExcludePasswordInterceptor } from './lib/interceptors/exclude-password.interceptor';
-import { PrismaClientExceptionFilter } from './prisma-client-exception/prisma-client-exception.filter';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.setGlobalPrefix('/api');
-  app.useGlobalInterceptors(new ExcludePasswordInterceptor());
   app.useGlobalPipes(
     new ValidationPipe({
       transform: true,
@@ -27,7 +24,6 @@ async function bootstrap() {
   SwaggerModule.setup('api', app, document);
 
   const { httpAdapter } = app.get(HttpAdapterHost);
-  app.useGlobalFilters(new PrismaClientExceptionFilter(httpAdapter));
 
   await app.listen(process.env.PORT ?? 3001);
 }
