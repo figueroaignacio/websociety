@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function SignUpPage() {
   return (
     <div className="container mx-auto px-4 py-8 min-h-screen flex flex-col items-center text-start">
-      <div className="w-full max-w-lg border-none">
+      <div className="w-full max-w-lg">
         <div className="text-center my-5">
           <h1 className="text-3xl font-bold text-muted-foreground">
             Welcome to Web Society
@@ -19,7 +19,7 @@ export default function SignUpPage() {
           <div className="mt-6 text-center text-sm text-muted-foreground">
             Already have an account?{" "}
             <Link
-              href="&auth/signin"
+              href="/auth/signin"
               className="font-medium text-primary hover:underline"
             >
               Sign in here
