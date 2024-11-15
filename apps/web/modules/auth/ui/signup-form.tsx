@@ -65,7 +65,7 @@ export function SignUpForm() {
         <CardContent className="space-y-4">
           {state?.message && (
             <div
-              className="bg-destructive/15 border-l-4 border-destructive text-destructive p-4 rounded"
+              className="bg-destructive/15 border-l-4 border-destructive error-text p-4 rounded"
               role="alert"
             >
               <p className="font-bold">Error</p>
@@ -74,9 +74,7 @@ export function SignUpForm() {
           )}
           {inputFields.map((field) => (
             <div key={field.id} className="space-y-2">
-              <Label htmlFor={field.id} className="text-sm font-medium">
-                {field.label}
-              </Label>
+              <Label htmlFor={field.id}>{field.label}</Label>
               <div className="relative">
                 <Input
                   id={field.id}
@@ -87,20 +85,20 @@ export function SignUpForm() {
                 />
                 {state?.error && field.id in state.error ? (
                   <AlertCircle
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-destructive"
+                    className="absolute right-3 top-1/2 transform -translate-y-1/2 error-text"
                     size={18}
                   />
                 ) : null}
               </div>
               {state?.error && field.id in state.error && (
-                <p className="text-sm text-destructive flex items-center gap-1">
+                <p className="error-text flex items-center gap-1">
                   {state.error[field.id as keyof typeof state.error]?.[0]}
                 </p>
               )}
             </div>
           ))}
           {state?.error?.password && state.error.password.length > 1 && (
-            <div className="text-sm text-destructive space-y-1">
+            <div className="error-text space-y-1">
               <p className="font-semibold flex items-center gap-1">
                 <AlertCircle size={14} />
                 Password must:

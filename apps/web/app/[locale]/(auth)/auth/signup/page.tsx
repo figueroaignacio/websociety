@@ -1,3 +1,4 @@
+// Components
 import { SignUpForm } from "@/modules/auth/ui/signup-form";
 import Link from "next/link";
 
