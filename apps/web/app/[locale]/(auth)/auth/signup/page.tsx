@@ -7,8 +7,12 @@ export default function SignUpPage() {
     <div className="container mx-auto px-4 py-8 min-h-screen flex flex-col items-center text-start">
       <div className="w-full max-w-lg border-none">
         <div className="text-center my-5">
-          <h1 className="text-3xl font-bold">Welcome to Web Society</h1>
-          <p>Create an account to get started!</p>
+          <h1 className="text-3xl font-bold text-muted-foreground">
+            Welcome to Web Society
+          </h1>
+          <p className="text-muted-foreground">
+            Create an account to get started!
+          </p>
         </div>
         <div>
           <SignUpForm />
