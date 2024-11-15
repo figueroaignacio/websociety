@@ -10,11 +10,10 @@ export class UserService {
 
   async create(createUserDto: CreateUserDto) {
     const { password, ...user } = createUserDto;
-    const handlePassword = await hash(password);
-
+    const hashedPassword = await hash(password);
     return await this.prisma.user.create({
       data: {
-        password: handlePassword,
+        password: hashedPassword,
         ...user,
       },
     });
@@ -24,12 +23,20 @@ export class UserService {
     return this.prisma.user.findMany();
   }
 
-  findOne(id: number) {
-    return this.prisma.user.findUnique({ where: { id } });
+  async findOne(userId: number) {
+    return await this.prisma.user.findUnique({
+      where: {
+        id: userId,
+      },
+    });
   }
 
   async findByEmail(email: string) {
-    return this.prisma.user.findUnique({ where: { email } });
+    return await this.prisma.user.findUnique({
+      where: {
+        email,
+      },
+    });
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {

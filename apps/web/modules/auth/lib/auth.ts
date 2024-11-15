@@ -1,8 +1,8 @@
 "use server";
 
 import { redirect } from "next/navigation";
-import { BACKEND_URL } from "../constants";
-import { FormState, SignUpFormSchema } from "../types";
+import { BACKEND_URL } from "./constants";
+import { FormState, SignUpFormSchema } from "./types";
 
 export async function signUp(
   state: FormState,
@@ -28,13 +28,13 @@ export async function signUp(
     body: JSON.stringify(validationFields.data),
   });
 
-  if (!response.ok) {
+  if (response.ok) {
     redirect("/auth/signin");
   } else
     return {
       message:
         response.status === 409
-          ? "The user already exists"
+          ? "The user is already existed!"
           : response.statusText,
     };
 }
