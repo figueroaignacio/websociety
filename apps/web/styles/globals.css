@@ -114,6 +114,10 @@
     grid-template-columns: repeat(auto-fit, minmax(22.5rem, 1fr));
   }
 
+  .error-text {
+    @apply text-xs text-red-400;
+  }
+
   @keyframes gradientShift {
     0% {
       background-position: 0% 50%;
