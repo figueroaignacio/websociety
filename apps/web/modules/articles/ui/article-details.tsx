@@ -24,17 +24,8 @@ export const ArticleDetails = ({ post, locale }: PostDetailsProps) => {
 
   return (
     <aside>
-      {/* <div className="flex flex-col gap-5">
-        <div className="flex items-center gap-1">
-          <Avatar>
-            <AvatarImage src="https://github.com/figueroaignacio.png" />
-          </Avatar>
-          <p>Ignacio Figueroa</p>
-        </div>
-      </div> */}
-      {/* <Separator className="my-8" /> */}
       <div className="space-y-3 mb-8">
-        <dl className="lg:flex text-xs hidden">
+        <dl className="flex text-xs">
           <dt className="sr-only">Published at</dt>
           <dd className="flex items-center gap-2">
             <Calendar size={16} />
@@ -47,7 +38,7 @@ export const ArticleDetails = ({ post, locale }: PostDetailsProps) => {
             {post.readingTime} {t("posts.readTime")}
           </span>
         </div>
-        <div className="lg:flex items-center gap-2 flex-wrap hidden">
+        <div className="flex items-center gap-2 flex-wrap ">
           <TagIcon size={16} />
           {post.categories?.map((tag) => <Tag tag={tag} key={tag} />)}
         </div>

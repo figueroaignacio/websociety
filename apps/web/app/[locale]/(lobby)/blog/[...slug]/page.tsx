@@ -1,6 +1,5 @@
 // Components
 import { MDXContent } from "@/components/mdx/mdx-components";
-import { Tag } from "@/components/shared/tag";
 import { Separator } from "@/components/ui/separator";
 import { ArticleDetails } from "@/modules/articles/ui/article-details";
 import { ArticlePagePagination } from "@/modules/articles/ui/article-page-pagination";
@@ -12,12 +11,10 @@ import { Toc } from "@/modules/navigation/ui/toc";
 import { blog as articles } from "@content";
 
 // Utils
-import { formatDate } from "@/lib/utils/formatDate";
 import { calculateReadingTime } from "@/lib/utils/readingTime";
 import { notFound } from "next/navigation";
 
 // Icons
-import { Calendar, TagIcon } from "lucide-react";
 
 // Metadata
 import { Metadata } from "next";
@@ -139,29 +136,12 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   const nextArticle = await getNextArticle(article.slugAsParams, locale);
 
   return (
-    <article className="mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 py-6 sm:py-8 md:py-12">
-      <aside className="hidden lg:block lg:col-span-3">
-        <ArticleDetails post={article} locale={locale} />
-      </aside>
-      <div className="lg:col-span-6">
+    <article className="mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 py-6 sm:py-8 md:py-12 ">
+      <div className="lg:col-span-9">
         <div className="flex flex-col gap-2">
-          <dl className="flex text-xs lg:hidden">
-            <dt className="sr-only">Published at</dt>
-            <dd className="flex items-center gap-2">
-              <Calendar size={12} />
-              <time dateTime={article.date}>
-                {formatDate(article.date, locale)}
-              </time>
-            </dd>
-          </dl>
           <h1 className="text-3xl font-bold ">{article.title}</h1>
           <p className="mb-4">{article.description}</p>
-          <div className="flex items-center gap-2 mb-3 lg:hidden flex-wrap">
-            <TagIcon size={16} />
-            {article.categories?.map((tag, index) => (
-              <Tag tag={tag} key={tag} />
-            ))}
-          </div>
+          <ArticleDetails post={article} locale={locale} />
         </div>
         <Separator className="mb-5" />
         <div id="content">
