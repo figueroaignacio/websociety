@@ -2,6 +2,7 @@
 
 import { redirect } from "next/navigation";
 import { BACKEND_URL } from "./constants";
+import { createSession } from "./session";
 import { FormState, SignInFormSchema, SignUpFormSchema } from "./types";
 
 export async function signUp(
@@ -63,7 +64,15 @@ export async function signIn(
 
   if (response.ok) {
     const result = await response.json();
-    // TODO: Create the session for authenticated user.
+
+    await createSession({
+      user: {
+        id: result.id,
+        name: result.name,
+      },
+    });
+
+    redirect("/");
   } else {
     return {
       message:
