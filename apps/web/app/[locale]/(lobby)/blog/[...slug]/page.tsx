@@ -14,8 +14,6 @@ import { blog as articles } from "@content";
 import { calculateReadingTime } from "@/lib/utils/readingTime";
 import { notFound } from "next/navigation";
 
-// Icons
-
 // Metadata
 import { Metadata } from "next";
 
