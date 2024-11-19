@@ -15,7 +15,7 @@ export function TocPanel({ headings, activeId }: TocPanelProps) {
   const t = useTranslations("toc");
 
   return (
-    <nav className="sticky top-5 h-[calc(100vh-121px)] left-0 rounded-lg mx-auto overflow-y-auto px-4 hidden lg:block">
+    <nav className="sticky top-20 h-[calc(100vh-121px)] left-0 mx-auto overflow-y-auto px-5 hidden lg:block border-l">
       <p className="font-semibold text-xs">{t("title")}</p>
       <ul className="list-none flex flex-col gap-2 mt-5">
         {headings.map((heading) => (

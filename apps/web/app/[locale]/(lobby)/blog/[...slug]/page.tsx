@@ -134,10 +134,10 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   const nextArticle = await getNextArticle(article.slugAsParams, locale);
 
   return (
-    <article className="mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 py-6 sm:py-8 md:py-12 ">
+    <article className="mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 py-6 sm:py-8 md:py-12">
       <div className="lg:col-span-9">
         <div className="flex flex-col gap-2">
-          <h1 className="text-3xl font-bold ">{article.title}</h1>
+          <h1 className="text-3xl font-bold">{article.title}</h1>
           <p className="mb-4">{article.description}</p>
           <ArticleDetails post={article} locale={locale} />
         </div>
@@ -149,7 +149,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           previousPost={previousArticle}
           nextPost={nextArticle}
         />
-        <div className="mt-8  ">
+        <div className="mt-8">
           <ShareArticle slug={articleSlug} locale={locale} />
         </div>
         <Separator className="my-8" />
