@@ -13,7 +13,7 @@
   "author": "Ignacio Figueroa",
   "license": "ISC",
   "devDependencies": {
-    "turbo": "^2.2.3"
+    "turbo": "^2.3.1"
   },
   "dependencies": {
     "jose": "^5.9.6",
