@@ -1,22 +1,19 @@
 {
-  "name": "websociety",
+  "name": "web",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "packageManager": "pnpm@9.12.3",
+  "private": true,
+  "packageManager": "pnpm@9.0.0",
   "scripts": {
-    "dev": "turbo dev",
     "build": "turbo build",
-    "start": "turbo start"
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "engines": {
+    "node": ">=18"
   },
   "keywords": [],
-  "author": "Ignacio Figueroa",
-  "license": "ISC",
   "devDependencies": {
-    "turbo": "^2.3.1"
-  },
-  "dependencies": {
-    "jose": "^5.9.6",
-    "zod": "^3.23.8"
+    "turbo": "^2.3.3"
   }
 }
