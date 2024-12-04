@@ -2,8 +2,6 @@
 
 Welcome to **Web Society**, a cutting-edge platform designed for developers to connect, learn, and share knowledge. With a focus on modern web technologies, **Web Society** combines interactive content, challenging exercises, and a social community to foster growth in the developer ecosystem.
 
----
-
 ## **Core Technologies**
 
 - **Next.js**: A powerful React framework that enables the creation of scalable, high-performance web applications.
@@ -15,8 +13,6 @@ Welcome to **Web Society**, a cutting-edge platform designed for developers to c
 - **NestJS**: A progressive Node.js framework for building efficient and scalable server-side applications.
 - **Prisma**: A modern ORM for seamless database management, enabling efficient queries and schema handling.
 - **PostgreSQL**: A robust and reliable relational database used to store and manage platform data.
-
----
 
 ## **Platform Features**
 
@@ -40,8 +36,6 @@ Welcome to **Web Society**, a cutting-edge platform designed for developers to c
 
 - **Responsive Design**: Access the platform seamlessly on any device, from desktops to smartphones.
 - **Customizable Interface**: Personalize the platform’s appearance using Tailwind CSS utilities.
-
----
 
 ## **Get Involved**
 
