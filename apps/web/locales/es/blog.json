@@ -1,6 +1,6 @@
 {
   "posts": {
-    "title": "Reflexiones de Web Society",
+    "title": "Reflexiones de Devs",
     "description": "Perspectivas sobre Desarrollo Web",
     "button": "Leer más",
     "filter": "¿Cuales son tus temas de interés?",
@@ -11,7 +11,7 @@
   },
   "postsCta": {
     "title": "Te interesa conocer más artículos?",
-    "description": "Mirá y descubrí mas artículos de Web society.",
+    "description": "Mirá y descubrí mas artículos de Devs.",
     "link": "Explorar todas las publicaciones",
     "items": [
       {

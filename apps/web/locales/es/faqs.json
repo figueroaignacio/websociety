@@ -6,8 +6,8 @@
   "faqs": [
     {
       "value": "item-1",
-      "title": "¿De qué trata Web Society?",
-      "content": "Web Society es una plataforma creada para desarrolladores web que buscan mejorar sus habilidades y mantenerse al día con las últimas novedades en el desarrollo web."
+      "title": "¿De qué trata Devs?",
+      "content": "Devs es una plataforma creada para desarrolladores web que buscan mejorar sus habilidades y mantenerse al día con las últimas novedades en el desarrollo web."
     },
     {
       "value": "item-2",
@@ -21,33 +21,33 @@
     },
     {
       "value": "item-4",
-      "title": "¿Quién es el desarrollador detrás de Web Society?",
+      "title": "¿Quién es el desarrollador detrás de Devs?",
       "content": "Mi nombre es Ignacio Figueroa, soy un desarrollador web de Argentina enfocado principalmente en frontend. Me apasiona compartir lo que aprendo a lo largo de mi carrera."
     },
     {
       "value": "item-5",
-      "title": "¿Qué tecnologías cubre Web Society?",
-      "content": "Web Society aborda una amplia gama de tecnologías como JavaScript, TypeScript, React, Next.js, Tailwind CSS, entre otras herramientas y frameworks modernos de frontend."
+      "title": "¿Qué tecnologías cubre Devs?",
+      "content": "Devs aborda una amplia gama de tecnologías como JavaScript, TypeScript, React, Next.js, Tailwind CSS, entre otras herramientas y frameworks modernos de frontend."
     },
     {
       "value": "item-6",
-      "title": "¿Qué tipo de contenido puedo encontrar en Web Society?",
+      "title": "¿Qué tipo de contenido puedo encontrar en Devs?",
       "content": "Aquí encontrarás artículos sobre las últimas tendencias del desarrollo web, tutoriales prácticos, técnicas para mejorar tu flujo de trabajo y herramientas útiles para desarrolladores frontend."
     },
     {
       "value": "item-7",
-      "title": "¿Cómo puedo contribuir a Web Society?",
+      "title": "¿Cómo puedo contribuir a Devs?",
       "content": "Puedes contribuir sugiriendo temas, dando feedback o participando en las discusiones de la comunidad. Si te interesa colaborar en artículos o proyectos, también puedes ponerte en contacto."
     },
     {
       "value": "item-8",
       "title": "¿Con qué frecuencia se actualiza el contenido?",
-      "content": "El contenido de Web Society se actualiza regularmente para mantenerse al día con las tendencias y cambios del ecosistema del desarrollo web."
+      "content": "El contenido de Devs se actualiza regularmente para mantenerse al día con las tendencias y cambios del ecosistema del desarrollo web."
     },
     {
       "value": "item-9",
-      "title": "¿Web Society es solo para desarrolladores avanzados?",
-      "content": "No, Web Society está diseñado tanto para principiantes como para desarrolladores con experiencia. El contenido está pensado para que todos puedan aprender y mejorar sus habilidades, sin importar su nivel."
+      "title": "¿Devs es solo para desarrolladores avanzados?",
+      "content": "No, Devs está diseñado tanto para principiantes como para desarrolladores con experiencia. El contenido está pensado para que todos puedan aprender y mejorar sus habilidades, sin importar su nivel."
     }
   ]
 }

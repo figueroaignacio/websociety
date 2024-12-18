@@ -78,7 +78,7 @@ export function AppSidebar() {
       <SidebarHeader>
         <SidebarMenuButton size={"lg"} variant="none">
           <Logo />
-          <span>Web society</span>
+          <span>Devs</span>
         </SidebarMenuButton>
       </SidebarHeader>
       <SidebarContent>

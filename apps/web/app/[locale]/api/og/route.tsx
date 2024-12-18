@@ -44,7 +44,7 @@ export async function GET(req: NextRequest) {
                 <path d="M75 150 L125 50" />
               </g>
             </svg>
-            <div>Web society</div>
+            <div>Devs</div>
           </div>
           <div tw="flex flex-col flex-1 py-10">
             <div tw="flex text-xl uppercase font-bold tracking-tight text-[#f5f5f5]">
