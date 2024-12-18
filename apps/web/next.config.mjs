@@ -12,9 +12,9 @@ if (!process.env.VELITE_STARTED && (isDev || isBuild)) {
   await build({ watch: isDev, clean: !isDev });
 }
 
-/**
- * @type {import('next').NextConfig}
- */
+import { withPayload } from "@payloadcms/next/withPayload";
+
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
     formats: ["image/webp"],
@@ -26,6 +26,9 @@ const nextConfig = {
     ],
   },
   trailingSlash: false,
+  experimental: {
+    reactCompiler: false,
+  },
 };
 
-export default withNextIntl(nextConfig);
+export default withPayload(withNextIntl(nextConfig));
