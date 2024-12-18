@@ -17,9 +17,10 @@ import { notFound } from "next/navigation";
 // Metadata
 import { Metadata } from "next";
 
-export async function generateMetadata({
-  params,
-}: ArticlePageProps): Promise<Metadata> {
+export async function generateMetadata(
+  props: ArticlePageProps
+): Promise<Metadata> {
+  const params = await props.params;
   const { locale = "en" } = await params;
 
   try {
@@ -59,10 +60,10 @@ export async function generateMetadata({
 }
 
 interface ArticlePageProps {
-  params: Promise<{
+  params: {
     slug: string[];
     locale?: string;
-  }>;
+  };
 }
 
 async function getArticleFromParams(params: ArticlePageProps["params"]) {
@@ -117,7 +118,8 @@ export async function generateStaticParams(): Promise<{ slug: string[] }[]> {
   return articles.map((article) => ({ slug: article.slugAsParams.split("/") }));
 }
 
-export default async function ArticlePage({ params }: ArticlePageProps) {
+export default async function ArticlePage(props: ArticlePageProps) {
+  const params = await props.params;
   const { slug, locale = "en" } = await params;
   const articleSlug = slug.join("/");
 

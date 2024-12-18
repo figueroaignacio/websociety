@@ -14,9 +14,9 @@ import { guides } from "@content";
 import { Metadata } from "next";
 
 interface CurriculumPageProps {
-  params: Promise<{
+  params: {
     slug: string[];
-  }>;
+  };
 }
 
 async function getCurriculumFromParams(params: CurriculumPageProps["params"]) {
@@ -26,9 +26,10 @@ async function getCurriculumFromParams(params: CurriculumPageProps["params"]) {
   return post;
 }
 
-export async function generateMetadata({
-  params,
-}: CurriculumPageProps): Promise<Metadata> {
+export async function generateMetadata(
+  props: CurriculumPageProps
+): Promise<Metadata> {
+  const params = await props.params;
   const guide = await getCurriculumFromParams(params);
 
   if (!guide) {
@@ -47,7 +48,8 @@ export async function generateStaticParams(): Promise<{ slug: string[] }[]> {
   }));
 }
 
-export default async function CurriculumPage({ params }: CurriculumPageProps) {
+export default async function CurriculumPage(props: CurriculumPageProps) {
+  const params = await props.params;
   const guides = await getCurriculumFromParams(params);
 
   if (!guides || !guides.published) {

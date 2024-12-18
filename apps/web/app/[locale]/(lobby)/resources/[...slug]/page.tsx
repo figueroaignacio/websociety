@@ -15,9 +15,10 @@ import { ExternalLink } from "lucide-react";
 // Metadata
 import { Metadata } from "next";
 
-export async function generateMetadata({
-  params,
-}: ResourcePageProps): Promise<Metadata> {
+export async function generateMetadata(
+  props: ResourcePageProps
+): Promise<Metadata> {
+  const params = await props.params;
   try {
     const resource = await getResourceFromParams(params);
     if (!resource) return {};
@@ -39,10 +40,10 @@ export async function generateMetadata({
 }
 
 interface ResourcePageProps {
-  params: Promise<{
+  params: {
     slug: string[];
     locale?: string;
-  }>;
+  };
 }
 
 async function getResourceFromParams(params: ResourcePageProps["params"]) {
@@ -64,7 +65,8 @@ export async function generateStaticParams(): Promise<{ slug: string[] }[]> {
   }));
 }
 
-export default async function ResourcePage({ params }: ResourcePageProps) {
+export default async function ResourcePage(props: ResourcePageProps) {
+  const params = await props.params;
   const resources = await getResourceFromParams(params);
 
   if (!resources || !resources.published) {
