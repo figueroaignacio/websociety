@@ -1,5 +1,4 @@
 // Components
-import { FramerWrapper } from "@/components/framer";
 import NextTopLoader from "nextjs-toploader";
 
 // Providers
@@ -75,7 +74,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
             enableSystem
             disableTransitionOnChange
           >
-            <FramerWrapper>{children}</FramerWrapper>
+            {children}
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

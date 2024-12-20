@@ -38,22 +38,6 @@ const blog = defineCollection({
     .transform(computedFields),
 });
 
-const guides = defineCollection({
-  name: "Guides",
-  pattern: "../content/guides/**/*.mdx",
-  schema: s
-    .object({
-      slug: s.path(),
-      title: s.string().max(99),
-      description: s.string().max(999).optional(),
-      published: s.boolean().default(true),
-      date: s.isodate(),
-      locale: s.string(),
-      body: s.mdx(),
-    })
-    .transform(computedFields),
-});
-
 const resources = defineCollection({
   name: "Resources",
   pattern: "../content/resources/**/*.mdx",
@@ -81,7 +65,7 @@ export default defineConfig({
     name: "[name]-[hash:6].[ext]",
     clean: true,
   },
-  collections: { blog, guides, resources },
+  collections: { blog, resources },
   mdx: {
     rehypePlugins: [
       rehypeSlug,
