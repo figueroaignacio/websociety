@@ -17,15 +17,10 @@ export function Hero() {
         {t("hero.subtitle")}
       </h2>
       <div className="mt-10 gap-4 flex">
-        <Button asChild size="lg" className="w-full sm:w-auto">
+        <Button asChild className="w-full sm:w-auto">
           <Link href="/auth/register">{t("hero.ctaPrimary")}</Link>
         </Button>
-        <Button
-          asChild
-          variant="outline"
-          size="lg"
-          className="w-full sm:w-auto"
-        >
+        <Button asChild variant="outline" className="w-full sm:w-auto">
           <Link href="/blog">{t("hero.ctaSecondary")}</Link>
         </Button>
       </div>
