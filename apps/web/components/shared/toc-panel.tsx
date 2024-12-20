@@ -2,7 +2,7 @@
 import { useTranslations } from "next-intl";
 
 // Types
-import { Heading } from "../types";
+import { Heading } from "../../modules/navigation/types";
 
 interface TocPanelProps {
   headings: Heading[];

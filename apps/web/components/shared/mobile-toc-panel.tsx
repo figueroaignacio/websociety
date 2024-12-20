@@ -12,7 +12,7 @@ import {
 import { Sidebar } from "lucide-react";
 
 // Types
-import { Heading } from "../types";
+import { Heading } from "../../modules/navigation/types";
 
 interface MobileTocMobileProps {
   headings: Heading[];

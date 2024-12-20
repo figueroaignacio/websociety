@@ -95,14 +95,12 @@
 }
 
 @layer components {
-  .gradient-text {
-    @apply bg-gradient-to-r from-purple-700 via-purple-500 to-purple-400 text-transparent bg-clip-text relative;
+  .page-container {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  .gradient-background {
-    @apply bg-gradient-to-br from-purple-600 via-violet-500 to-fuchsia-500  text-white;
-    background-size: 200% 200%;
-    animation: gradientShift 15s ease infinite;
+  .gradient-text {
+    @apply bg-gradient-to-r from-purple-700 via-purple-500 to-purple-400 text-transparent bg-clip-text relative;
   }
 
   .cta-background-gradient {
@@ -112,22 +110,6 @@
   .grid-template-cols {
     @apply grid gap-4;
     grid-template-columns: repeat(auto-fit, minmax(22.5rem, 1fr));
-  }
-
-  .error-text {
-    @apply text-xs text-red-400;
-  }
-
-  @keyframes gradientShift {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
   }
 }
 

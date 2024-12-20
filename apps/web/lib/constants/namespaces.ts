@@ -1,18 +1,1 @@
-export const namespaces: string[] = [
-  "hero",
-  "blog",
-  "spotlights",
-  "localeSwitcher",
-  "navigation",
-  "guides",
-  "settings",
-  "faqs",
-  "footer",
-  "siteConfig",
-  "challenges",
-  "toc",
-  "searcher",
-  "resources",
-  "filter",
-  "notFound",
-];
+export const namespaces: string[] = ["ui", "siteConfig"];

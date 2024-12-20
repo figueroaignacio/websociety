@@ -1,0 +1,28 @@
+{
+  "navigation": [
+    {
+      "title": "About",
+      "href": "/about"
+    },
+    {
+      "title": "How it Works",
+      "href": "#how-it-works"
+    },
+    {
+      "title": "Blog",
+      "href": "/blog"
+    },
+    {
+      "title": "Resources",
+      "href": "/resources"
+    },
+    {
+      "title": "Faq",
+      "href": "#faq"
+    }
+  ],
+  "actionButtons": {
+    "register": "Register",
+    "login": "Login"
+  }
+}

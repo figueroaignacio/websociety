@@ -1,4 +1,5 @@
 // Components
+import { Header } from "@/modules/landing/components/header";
 
 // Font
 import "@fontsource-variable/onest";
@@ -25,6 +26,7 @@ export default async function LandingLayout({ children, params }: LayoutProps) {
 
   return (
     <main className="min-h-[100dvh] grid grid-rows-[auto_1fr_auto]">
+      <Header />
       {children}
     </main>
   );

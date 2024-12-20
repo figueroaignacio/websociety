@@ -1,8 +1,3 @@
-// Components
-import { Footer } from "@/components/shared/footer";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/modules/navigation/ui/app-sidebar";
-
 // Styles
 import "@/styles/globals.css";
 
@@ -24,15 +19,8 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
   setRequestLocale(locale);
 
   return (
-    <SidebarProvider>
-      <AppSidebar />
-      <main className="mx-auto">
-        <header className="pl-3 py-2 border-b sticky w-full top-0 left-0 backdrop-blur-md z-50 flex items-center">
-          <SidebarTrigger />
-        </header>
-        <div className="container">{children}</div>
-        <Footer />
-      </main>
-    </SidebarProvider>
+    <main className="mx-auto">
+      <div className="container">{children}</div>
+    </main>
   );
 }
