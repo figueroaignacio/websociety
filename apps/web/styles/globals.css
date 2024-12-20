@@ -103,6 +103,12 @@
     @apply bg-gradient-to-r from-pink-700 via-purple-500 to-violet-400 text-transparent bg-clip-text relative;
   }
 
+  .gradient-background {
+    @apply bg-gradient-to-br from-purple-600 via-violet-500 to-fuchsia-500  text-white;
+    background-size: 200% 200%;
+    animation: gradientShift 15s ease infinite;
+  }
+
   .cta-background-gradient {
     @apply bg-gradient-to-br from-purple-600 to-indigo-700;
   }

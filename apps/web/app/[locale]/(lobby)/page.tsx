@@ -1,5 +1,6 @@
 // Sections
 import { Hero } from "@/modules/landing/sections/hero";
+import { Spotlights } from "@/modules/landing/sections/spotlights";
 
 // Utils
 import { setRequestLocale } from "next-intl/server";
@@ -15,8 +16,9 @@ export default async function LandingPage({ params }: HomePageProps) {
   setRequestLocale(locale);
 
   return (
-    <main className="page-container">
+    <main className="page-container py-12">
       <Hero />
+      <Spotlights />
     </main>
   );
 }
