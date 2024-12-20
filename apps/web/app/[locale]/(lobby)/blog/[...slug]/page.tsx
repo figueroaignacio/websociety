@@ -1,5 +1,5 @@
-export default function BlogDetailsPage() {
-  return <div>Hello World</div>;
+export default function ArticlePage() {
+  return <article>Article Page</article>;
 }
 
 /*     			

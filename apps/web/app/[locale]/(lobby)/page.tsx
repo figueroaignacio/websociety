@@ -6,7 +6,7 @@ interface HomePageProps {
   }>;
 }
 
-export default async function HomePage({ params }: HomePageProps) {
+export default async function LandingPage({ params }: HomePageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
 

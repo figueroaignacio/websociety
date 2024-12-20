@@ -1,6 +1,4 @@
 // Components
-import { Footer } from "@/components/shared/footer";
-import { Navbar } from "@/modules/navigation/ui/navbar";
 
 // Font
 import "@fontsource-variable/onest";
@@ -27,9 +25,7 @@ export default async function LandingLayout({ children, params }: LayoutProps) {
 
   return (
     <main className="min-h-[100dvh] grid grid-rows-[auto_1fr_auto]">
-      <Navbar />
       {children}
-      <Footer />
     </main>
   );
 }
