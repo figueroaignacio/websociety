@@ -4,15 +4,15 @@ import { useLocale, useTranslations } from "next-intl";
 // Components
 import { FilterByCategory } from "@/components/shared/filter-by-category";
 import { QueryPagination } from "@/components/shared/query-pagination";
-import { ArticleCard } from "@/modules/articles/ui/article-card";
-import { NoArticlesMessage } from "@/modules/articles/ui/no-articles-message";
+import { ArticleCard } from "@/modules/blog/ui/article-card";
+import { NoArticlesMessage } from "@/modules/blog/ui/no-articles-message";
 
 // Content
 import { blog as articles } from "@content";
 
 // Utils
-import { articlesFilter } from "@/modules/articles/utils/articlesFilter";
-import { sortArticles } from "@/modules/articles/utils/sortArticles";
+import { articlesFilter } from "@/modules/blog/utils/articlesFilter";
+import { sortArticles } from "@/modules/blog/utils/sortArticles";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 const ARTICLES_PER_PAGE = 6;

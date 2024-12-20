@@ -1,6 +1,3 @@
-// Components
-import { Landing } from "@/modules/landing/ui/landing";
-
 import { setRequestLocale } from "next-intl/server";
 
 interface HomePageProps {
@@ -13,5 +10,5 @@ export default async function HomePage({ params }: HomePageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <Landing />;
+  return <div>Landing Page</div>;
 }
