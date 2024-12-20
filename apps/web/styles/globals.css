@@ -100,7 +100,7 @@
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-purple-700 via-purple-500 to-purple-400 text-transparent bg-clip-text relative;
+    @apply bg-gradient-to-r from-pink-700 via-purple-500 to-violet-400 text-transparent bg-clip-text relative;
   }
 
   .cta-background-gradient {

@@ -18,9 +18,5 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return (
-    <main className="mx-auto">
-      <div className="container">{children}</div>
-    </main>
-  );
+  return <>{children}</>;
 }

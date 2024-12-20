@@ -1,3 +1,7 @@
+// Sections
+import { Hero } from "@/modules/landing/sections/hero";
+
+// Utils
 import { setRequestLocale } from "next-intl/server";
 
 interface HomePageProps {
@@ -10,5 +14,9 @@ export default async function LandingPage({ params }: HomePageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <div className="page-container">Landing Page</div>;
+  return (
+    <main className="page-container">
+      <Hero />
+    </main>
+  );
 }

@@ -1,6 +1,6 @@
-# **Devs - Project in Development**
+# **devs - Project in Development**
 
-Welcome to **Devs**, a cutting-edge platform designed for developers to connect, learn, and share knowledge. With a focus on modern web technologies, **Devs** combines interactive content, challenging exercises, and a social community to foster growth in the developer ecosystem.
+Welcome to **devs**, a cutting-edge platform designed for developers to connect, learn, and share knowledge. With a focus on modern web technologies, **devs** combines interactive content, challenging exercises, and a social community to foster growth in the developer ecosystem.
 
 ## **Core Technologies**
 
@@ -39,7 +39,7 @@ Welcome to **Devs**, a cutting-edge platform designed for developers to connect,
 
 ## **Get Involved**
 
-Devs thrives on collaboration and community contributions. Whether you're interested in contributing to the project, reporting issues, or sharing ideas, we welcome your input!
+devs thrives on collaboration and community contributions. Whether you're interested in contributing to the project, reporting issues, or sharing ideas, we welcome your input!
 
 - **Email**: [ignaciofigueroadev@gmail.com](mailto:ignaciofigueroadev@gmail.com)
 - **GitHub**: [figueroaignacio](https://github.com/figueroaignacio/)

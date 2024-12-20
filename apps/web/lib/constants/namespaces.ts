@@ -1,1 +1,1 @@
-export const namespaces: string[] = ["ui", "siteConfig"];
+export const namespaces: string[] = ["ui", "siteConfig", "landing"];
