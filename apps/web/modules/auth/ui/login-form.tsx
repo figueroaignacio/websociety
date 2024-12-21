@@ -1,7 +1,7 @@
 "use client";
 
 // Hooks
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -21,10 +21,12 @@ import { Link } from "@/config/i18n/routing";
 
 // Utils
 import { zodResolver } from "@hookform/resolvers/zod";
+import { signIn } from "next-auth/react";
 import * as z from "zod";
 
 export function LoginForm() {
   const router = useRouter();
+  const currenLang = useLocale();
   const [isLoading, setIsLoading] = useState(false);
   const t = useTranslations("login");
 
@@ -46,14 +48,20 @@ export function LoginForm() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    setIsLoading(true);
+    // setIsLoading(true);
+
+    await signIn("credentials", {
+      email: values.email,
+      password: values.password,
+      redirect: false,
+    });
 
     // Here you would typically send the login request to your backend
     // For this example, we'll just simulate a delay and a successful login
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    // await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    setIsLoading(false);
-    router.push("/hub");
+    // setIsLoading(false);
+    // router.push("/hub");
   }
 
   return (
