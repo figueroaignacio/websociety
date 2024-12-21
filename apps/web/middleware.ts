@@ -1,3 +1,4 @@
+export { auth as middleware } from "@/modules/auth/lib/auth";
 import createMiddleware from "next-intl/middleware";
 
 import {
