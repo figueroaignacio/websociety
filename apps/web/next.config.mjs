@@ -1,3 +1,6 @@
+// Payload
+import { withPayload } from "@payloadcms/next/withPayload";
+
 // next-intl
 import createNextIntlPlugin from "next-intl/plugin";
 const withNextIntl = createNextIntlPlugin("./config/i18n/request.ts");
@@ -11,8 +14,6 @@ if (!process.env.VELITE_STARTED && (isDev || isBuild)) {
   const { build } = await import("velite");
   await build({ watch: isDev, clean: !isDev });
 }
-
-import { withPayload } from "@payloadcms/next/withPayload";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
