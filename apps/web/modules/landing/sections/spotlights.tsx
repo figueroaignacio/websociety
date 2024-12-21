@@ -50,12 +50,7 @@ export const Spotlights = () => {
               <SpotlightCard
                 title={spotlight.title}
                 description={spotlight.description}
-                icon={
-                  <IconComponent
-                    className="text-4xl mb-4 border p-2 rounded-full gradient-background"
-                    size={40}
-                  />
-                }
+                icon={<IconComponent size={24} />}
               />
             </li>
           );

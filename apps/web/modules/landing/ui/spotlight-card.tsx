@@ -1,3 +1,4 @@
+import { Waves } from "@/components/shared/waves";
 import {
   Card,
   CardContent,
@@ -27,6 +28,7 @@ export function SpotlightCard({
       <CardContent>
         <CardDescription>{description}</CardDescription>
       </CardContent>
+      <Waves />
     </Card>
   );
 }
