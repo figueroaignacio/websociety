@@ -58,7 +58,7 @@ type LayoutProps = {
   params: Promise<{ locale: string }>;
 };
 
-export default async function LocaleLayout({ children, params }: LayoutProps) {
+export default async function RootLayout({ children, params }: LayoutProps) {
   const { locale } = await params;
   const messages = await getMessages();
   setRequestLocale(locale);
