@@ -1,0 +1,47 @@
+{
+  "about": {
+    "title": "Acerca de devs.",
+    "mision": {
+      "title": "Mi misión",
+      "description": "Devs es una plataforma dedicada a conectar a desarrolladores de todo el mundo. Mi objetivo es crear un espacio donde los desarrolladores puedan compartir ideas, aprender y colaborar en proyectos apasionantes. Desde artículos hasta desafíos interactivos, busco ofrecer recursos útiles para mejorar las habilidades técnicas y mantenerse al día con las últimas tendencias en el mundo del desarrollo web."
+    },
+    "vision": {
+      "title": "Visión",
+      "description": "Mi visión es ser una plataforma de colaboración y aprendizaje para desarrolladores en todo el mundo. Quiero ser el lugar donde los desarrolladores de todas las edades y habilidades se encuentren, aprendan y crezcan juntos."
+    },
+    "aboutMe": {
+      "title": "Sobre mí",
+      "description": "Devs fue creada por mí, Ignacio Figueroa, desarrollador web. Siempre en busca de aprender y compartir conocimientos sobre las últimas tecnologías, creo firmemente en el poder de la comunidad para mejorar las habilidades de todos."
+    },
+    "myValues": {
+      "title": "Mis valores",
+      "items": [
+        {
+          "title": "Colaboración",
+          "description": "Fomento un ambiente donde todos pueden aportar, aprender y crecer juntos."
+        },
+        {
+          "title": "Innovación",
+          "description": "Siempre busco ofrecer recursos y herramientas innovadoras para mantener a la comunidad al día con las últimas tendencias tecnológicas."
+        },
+        {
+          "title": "Accesibilidad",
+          "description": "Mi objetivo es que todos, sin importar su experiencia, tengan acceso a las mismas oportunidades de aprender y mejorar."
+        },
+        {
+          "title": "Comunidad",
+          "description": "Creo en el poder de las conexiones y en el valor de la colaboración para mejorar como profesionales."
+        }
+      ]
+    },
+    "join": {
+      "title": "Unete a devs!",
+      "description": "Tengo muchas ganas de construir una comunidad increíble de desarrolladores! Si eres un desarrollador apasionado por aprender y compartir, te invito a unirte a la plataforma y ser parte. Regístrate hoy mismo y empieza a conectar con otros desarrolladores.",
+      "action": "¡Regístrate ahora!"
+    },
+    "contact": {
+      "title": "Contacto",
+      "description": "Si tienes alguna pregunta o sugerencia, no dudes en ponerte en contacto conmigo a través del siguiente correo electrónico:"
+    }
+  }
+}
