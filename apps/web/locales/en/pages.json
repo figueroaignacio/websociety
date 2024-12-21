@@ -43,5 +43,71 @@
       "title": "Contact",
       "description": "If you have any questions or suggestions, feel free to contact me via the following email:"
     }
+  },
+  "register": {
+    "title": "Register for devs",
+    "fields": {
+      "name": {
+        "label": "Name",
+        "description": "This is the name that will be displayed on your profile.",
+        "errors": {
+          "minCharacters": "Name must be at least 2 characters long.",
+          "maxCharacters": "Name must be at most 30 characters long.",
+          "allowedCharacters": "Name can only contain letters and spaces."
+        }
+      },
+      "email": {
+        "label": "Email",
+        "description": "Your email will never share to no one",
+        "errors": {
+          "validEmail": "Please enter a valid email address."
+        }
+      },
+      "password": {
+        "label": "Password",
+        "description": "Your password must be at least 8 characters long.",
+        "errors": {
+          "minCharacters": "Password must be at least 2 characters long.",
+          "maxCharacters": "Password must be at most 50 characters long.",
+          "shouldIncludeOneLetter": "Password must include at least one letter.",
+          "shouldIncludeOneNumber": "Password must include at least one Number."
+        }
+      }
+    },
+    "submit": "Submit",
+    "submitting": "Submitting...",
+    "haveAccount": "Already have an account?",
+    "login": "Login"
+  },
+  "login": {
+    "title": "Log in to devs",
+    "email": {
+      "label": "Email",
+      "error": {
+        "required": "Email is required",
+        "invalid": "Please enter a valid email address"
+      }
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "Enter your password",
+      "error": {
+        "required": "Password is required",
+        "min": "Password must be at least {min} characters"
+      }
+    },
+    "submit": "Log in",
+    "submitting": "Logging in...",
+    "forgotPassword": "Forgot password?",
+    "noAccount": "Don't have an account?",
+    "signUp": "Sign up",
+    "success": {
+      "title": "Login Successful",
+      "description": "Welcome back to devs!"
+    },
+    "error": {
+      "title": "Login Failed",
+      "description": "Please check your credentials and try again."
+    }
   }
 }

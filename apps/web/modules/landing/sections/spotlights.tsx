@@ -2,7 +2,7 @@
 import { useTranslations } from "next-intl";
 
 // Components
-import { SpotlightCard } from "../components/spotlight-card";
+import { SpotlightCard } from "../ui/spotlight-card";
 
 // Icons
 import {

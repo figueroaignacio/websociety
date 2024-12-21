@@ -24,5 +24,8 @@
   "actionButtons": {
     "register": "Register",
     "login": "Login"
+  },
+  "buttons": {
+    "backButton": "Back"
   }
 }

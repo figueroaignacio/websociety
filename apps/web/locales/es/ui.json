@@ -20,5 +20,8 @@
   "actionButtons": {
     "register": "Registrarse",
     "login": "Iniciar Sesión"
+  },
+  "buttons": {
+    "backButton": "Volver"
   }
 }

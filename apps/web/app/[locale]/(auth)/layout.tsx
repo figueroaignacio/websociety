@@ -1,11 +1,8 @@
-// Components
-import { Header } from "@/modules/landing/ui/header";
-
-// Font
-import "@fontsource-variable/onest";
-
 // Styles
 import "@/styles/globals.css";
+
+// Components
+import { BackButton } from "@/components/shared/back-button";
 
 // Config
 import { routing } from "@/config/i18n/routing";
@@ -20,14 +17,16 @@ type LayoutProps = {
   params: Promise<{ locale: string }>;
 };
 
-export default async function LandingLayout({ children, params }: LayoutProps) {
+export default async function AuthLayout({ children, params }: LayoutProps) {
   const { locale } = await params;
   setRequestLocale(locale);
 
   return (
-    <main className="min-h-[100dvh] grid grid-rows-[auto_1fr_auto]">
-      <Header />
+    <>
+      <div className="max-w-xs my-3">
+        <BackButton />
+      </div>
       {children}
-    </main>
+    </>
   );
 }

@@ -1,3 +1,10 @@
+// Components
+import { RegisterForm } from "@/modules/auth/ui/register-form";
+
 export default function RegisterPage() {
-  return <div>Register Page</div>;
+  return (
+    <section className="min-h-dvh flex justify-center items-center">
+      <RegisterForm />
+    </section>
+  );
 }
