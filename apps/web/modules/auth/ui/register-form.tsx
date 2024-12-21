@@ -1,13 +1,12 @@
 "use client";
 
-import { zodResolver } from "@hookform/resolvers/zod";
+// Hooks
 import { useTranslations } from "next-intl";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import * as z from "zod";
 
+// Components
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -19,6 +18,11 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { Link } from "@/config/i18n/routing";
+
+// Utils
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
 
 export function RegisterForm() {
   const t = useTranslations("register");
