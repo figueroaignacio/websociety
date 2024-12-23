@@ -3,7 +3,7 @@
 // Hooks
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 
 // Components
@@ -11,7 +11,6 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -22,18 +21,21 @@ import { Link } from "@/config/i18n/routing";
 
 // Utils
 import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 
 // Schema
-import { createRegisterSchema, RegisterFormValues } from "../lib/schemas";
+import { registerAction } from "../lib/actions";
+import { registerSchema } from "../lib/schemas";
 
 export function RegisterForm() {
   const t = useTranslations("register");
   const router = useRouter();
+  const [error, setError] = useState<string | null>(null);
+  const [isPending, startTransition] = useTransition();
+
   const [isLoading, setIsLoading] = useState(false);
 
-  const registerSchema = createRegisterSchema(t);
-
-  const form = useForm<RegisterFormValues>({
+  const form = useForm<z.infer<typeof registerSchema>>({
     resolver: zodResolver(registerSchema),
     defaultValues: {
       name: "",
@@ -42,34 +44,40 @@ export function RegisterForm() {
     },
   });
 
-  async function onSubmit(values: RegisterFormValues) {
-    setIsLoading(true);
+  async function onSubmit(values: z.infer<typeof registerSchema>) {
+    setError(null);
+    startTransition(async () => {
+      const response = await registerAction(values);
+      if (response.error) {
+        setError(response.error);
+      } else {
+        router.push("/auth/login");
+      }
+    });
+    // setIsLoading(true);
 
-    try {
-      // Here you would typically send the form data to your backend
-      // For this example, we'll just simulate a delay
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+    // try {
+    //   toast({
+    //     title: t("success.title"),
+    //     description: t("success.description"),
+    //   });
 
-      // toast({
-      //   title: t("success.title"),
-      //   description: t("success.description"),
-      // });
-
-      router.push("/login");
-    } catch (error) {
-      // toast({
-      //   title: t("error.title"),
-      //   description: t("error.description"),
-      //   variant: "destructive",
-      // });
-    } finally {
-      setIsLoading(false);
-    }
+    //   router.push("/login");
+    // } catch (error) {
+    //   toast({
+    //     title: t("error.title"),
+    //     description: t("error.description"),
+    //     variant: "destructive",
+    //   });
+    // } finally {
+    //   setIsLoading(false);
+    // }
   }
 
   return (
     <div className="container mx-auto max-w-md p-6">
       <h1 className="text-2xl font-bold mb-6">{t("title")}</h1>
+      {error && <p className="text-red-500 mb-4">{error}</p>}
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <FormField
@@ -81,9 +89,6 @@ export function RegisterForm() {
                 <FormControl>
                   <Input placeholder="John Doe" {...field} />
                 </FormControl>
-                <FormDescription>
-                  {t("fields.name.description")}
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -101,9 +106,6 @@ export function RegisterForm() {
                     {...field}
                   />
                 </FormControl>
-                <FormDescription>
-                  {t("fields.email.description")}
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -115,17 +117,14 @@ export function RegisterForm() {
               <FormItem>
                 <FormLabel>{t("fields.password.label")}</FormLabel>
                 <FormControl>
-                  <Input type="password" placeholder="***********" {...field} />
+                  <Input type="password" placeholder="********" {...field} />
                 </FormControl>
-                <FormDescription>
-                  {t("fields.password.description")}
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
           />
-          <Button type="submit" className="w-full" disabled={isLoading}>
-            {isLoading ? t("submitting") : t("submit")}
+          <Button type="submit" className="w-full">
+            {t("submit")}
           </Button>
         </form>
       </Form>

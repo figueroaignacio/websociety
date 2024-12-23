@@ -1,41 +1,29 @@
 import { z } from "zod";
 
-export const createLoginSchema = (t: (key: string, params?: any) => string) =>
-  z.object({
-    email: z.string().email({
-      message: t("email.error.invalid"),
-    }),
-    password: z.string().min(8, {
-      message: t("password.error.min", { min: 8 }),
-    }),
-  });
+export const loginSchema = z.object({
+  email: z
+    .string({ required_error: "Email is required" })
+    .min(1, "Email is required")
+    .email("Invalid email"),
+  password: z
+    .string({ required_error: "Password is required" })
+    .min(1, "Password is required")
+    .min(8, "Password must be more than 8 characters")
+    .max(32, "Password must be less than 32 characters"),
+});
 
-export type LoginFormValues = z.infer<ReturnType<typeof createLoginSchema>>;
-
-export const createRegisterSchema = (
-  t: (key: string, params?: any) => string
-) =>
-  z.object({
-    name: z
-      .string()
-      .min(2, { message: t("fields.name.errors.minCharacters") })
-      .max(30, { message: t("fields.name.errors.maxCharacters") })
-      .regex(/^[a-zA-Z\s]+$/, {
-        message: t("fields.name.errors.allowedCharacters"),
-      }),
-    email: z.string().email({ message: t("fields.email.errors.validEmail") }),
-    password: z
-      .string()
-      .min(8, { message: t("fields.password.errors.minCharacters") })
-      .max(50, { message: t("fields.password.errors.maxCharacters") })
-      .regex(/[a-zA-Z]/, {
-        message: t("fields.password.errors.shouldIncludeOneLetter"),
-      })
-      .regex(/\d/, {
-        message: t("fields.password.errors.shouldIncludeOneNumber"),
-      }),
-  });
-
-export type RegisterFormValues = z.infer<
-  ReturnType<typeof createRegisterSchema>
->;
+export const registerSchema = z.object({
+  email: z
+    .string({ required_error: "Email is required" })
+    .min(1, "Email is required")
+    .email("Invalid email"),
+  password: z
+    .string({ required_error: "Password is required" })
+    .min(1, "Password is required")
+    .min(6, "Password must be more than 6 characters")
+    .max(32, "Password must be less than 32 characters"),
+  name: z
+    .string({ required_error: "Name is required" })
+    .min(1, "Name is required")
+    .max(32, "Name must be less than 32 characters"),
+});

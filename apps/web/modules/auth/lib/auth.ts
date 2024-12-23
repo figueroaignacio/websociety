@@ -1,30 +1,78 @@
-// import PostgresAdapter from "@auth/pg-adapter";
-import { Pool } from "@neondatabase/serverless";
+import PostgresAdapter from "@auth/pg-adapter";
+import { Pool as NeonPool } from "@neondatabase/serverless";
+import bcrypt from "bcryptjs";
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
+import { loginSchema } from "./schemas";
 
-export const { handlers, auth, signIn, signOut } = NextAuth(() => {
-  const pool = new Pool({
-    connectionString: process.env.DATABASE_URL,
-  }) as unknown as import("pg").Pool;
-  return {
-    // adapter: PostgresAdapter(pool),
-    session: { strategy: "jwt" },
-    providers: [
-      Credentials({
-        authorize: async (credentials) => {
-          console.log({ credentials });
-          if (credentials.email !== "ignaciofigueroadev@gmail.com") {
-            throw new Error("Invalid credential");
+const pool = new NeonPool({
+  connectionString: process.env.DATABASE_URL,
+}) as unknown as import("pg").Pool;
+
+export const { handlers, auth, signIn, signOut } = NextAuth({
+  adapter: PostgresAdapter(pool),
+  pages: {
+    signIn: "/auth/login",
+  },
+  session: {
+    strategy: "jwt",
+  },
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) {
+        token.id = user.id;
+        token.email = user.email;
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      if (session.user) {
+        session.user.id = token.id as string;
+        session.user.email = token.email as string;
+      }
+      return session;
+    },
+  },
+  providers: [
+    Credentials({
+      name: "credentials",
+      credentials: {
+        email: { label: "Email", type: "text" },
+        password: { label: "Password", type: "password" },
+      },
+      async authorize(credentials) {
+        try {
+          const { success, data } = loginSchema.safeParse(credentials);
+          if (!success) {
+            return null;
+          }
+
+          const { email, password } = data;
+
+          const userResult = await pool.query(
+            `SELECT id, email, password FROM "users" WHERE email = $1`,
+            [email]
+          );
+
+          const user = userResult.rows[0];
+          if (!user) {
+            return null;
+          }
+
+          const isPasswordValid = await bcrypt.compare(password, user.password);
+          if (!isPasswordValid) {
+            return null;
           }
 
           return {
-            id: "1",
-            name: "Ignacio Figueroa",
-            email: "ignaciofigueroadev@gmail.com",
+            id: user.id,
+            email: user.email,
           };
-        },
-      }),
-    ],
-  };
+        } catch (error) {
+          console.error("Authorization error:", error);
+          return null;
+        }
+      },
+    }),
+  ],
 });

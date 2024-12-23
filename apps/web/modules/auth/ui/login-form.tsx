@@ -3,7 +3,7 @@
 // Hooks
 import { useLocale, useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 
 // Components
@@ -21,20 +21,21 @@ import { Link } from "@/config/i18n/routing";
 
 // Utils
 import { zodResolver } from "@hookform/resolvers/zod";
-import { signIn } from "next-auth/react";
+import { z } from "zod";
 
 // Schema
-import { createLoginSchema, LoginFormValues } from "../lib/schemas";
+import { loginAction } from "../lib/actions";
+import { loginSchema } from "../lib/schemas";
 
 export function LoginForm() {
   const router = useRouter();
   const currentLang = useLocale();
+  const [isPending, startTransition] = useTransition();
+  const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const t = useTranslations("login");
 
-  const loginSchema = createLoginSchema(t);
-
-  const form = useForm<LoginFormValues>({
+  const form = useForm<z.infer<typeof loginSchema>>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
       email: "",
@@ -42,21 +43,16 @@ export function LoginForm() {
     },
   });
 
-  async function onSubmit(values: LoginFormValues) {
-    // setIsLoading(true);
-
-    await signIn("credentials", {
-      email: values.email,
-      password: values.password,
-      redirect: false,
+  async function onSubmit(values: z.infer<typeof loginSchema>) {
+    setError(null);
+    startTransition(async () => {
+      const response = await loginAction(values);
+      if (response.error) {
+        setError(response.error);
+      } else {
+        router.push("/hub");
+      }
     });
-
-    // Here you would typically send the login request to your backend
-    // For this example, we'll just simulate a delay and a successful login
-    // await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    // setIsLoading(false);
-    // router.push("/hub");
   }
 
   return (
@@ -98,6 +94,7 @@ export function LoginForm() {
               </FormItem>
             )}
           />
+          {error && <FormMessage>{error}</FormMessage>}
           <div className="flex justify-between items-center">
             <Link
               href="/forgot-password"
