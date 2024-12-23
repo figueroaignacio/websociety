@@ -22,32 +22,27 @@ import { Link } from "@/config/i18n/routing";
 // Utils
 import { zodResolver } from "@hookform/resolvers/zod";
 import { signIn } from "next-auth/react";
-import * as z from "zod";
+
+// Schema
+import { createLoginSchema, LoginFormValues } from "../lib/schemas";
 
 export function LoginForm() {
   const router = useRouter();
-  const currenLang = useLocale();
+  const currentLang = useLocale();
   const [isLoading, setIsLoading] = useState(false);
   const t = useTranslations("login");
 
-  const formSchema = z.object({
-    email: z.string().email({
-      message: t("email.error.invalid"),
-    }),
-    password: z.string().min(8, {
-      message: t("password.error.min", { min: 8 }),
-    }),
-  });
+  const loginSchema = createLoginSchema(t);
 
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<LoginFormValues>({
+    resolver: zodResolver(loginSchema),
     defaultValues: {
       email: "",
       password: "",
     },
   });
 
-  async function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: LoginFormValues) {
     // setIsLoading(true);
 
     await signIn("credentials", {
@@ -65,7 +60,7 @@ export function LoginForm() {
   }
 
   return (
-    <div className="container mx-auto max-w-md p-6">
+    <div className="container mx-auto max-w-md">
       <h1 className="text-2xl font-bold mb-6">{t("title")}</h1>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">

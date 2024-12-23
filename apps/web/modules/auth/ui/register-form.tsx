@@ -22,36 +22,19 @@ import { Link } from "@/config/i18n/routing";
 
 // Utils
 import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
+
+// Schema
+import { createRegisterSchema, RegisterFormValues } from "../lib/schemas";
 
 export function RegisterForm() {
   const t = useTranslations("register");
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
 
-  const formSchema = z.object({
-    name: z
-      .string()
-      .min(2, { message: t("fields.name.errors.minCharacters") })
-      .max(30, { message: t("fields.name.errors.maxCharacters") })
-      .regex(/^[a-zA-Z\s]+$/, {
-        message: t("fields.name.errors.allowedCharacters"),
-      }),
-    email: z.string().email({ message: t("fields.email.errors.validEmail") }),
-    password: z
-      .string()
-      .min(8, { message: t("fields.password.errors.minCharacters") })
-      .max(50, { message: t("fields.password.errors.maxCharacters") })
-      .regex(/[a-zA-Z]/, {
-        message: t("fields.password.errors.shouldIncludeOneLetter"),
-      })
-      .regex(/\d/, {
-        message: t("fields.password.errors.shouldIncludeOneNumber"),
-      }),
-  });
+  const registerSchema = createRegisterSchema(t);
 
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<RegisterFormValues>({
+    resolver: zodResolver(registerSchema),
     defaultValues: {
       name: "",
       email: "",
@@ -59,7 +42,7 @@ export function RegisterForm() {
     },
   });
 
-  async function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: RegisterFormValues) {
     setIsLoading(true);
 
     try {

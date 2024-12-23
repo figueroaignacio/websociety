@@ -22,11 +22,11 @@ export default async function AuthLayout({ children, params }: LayoutProps) {
   setRequestLocale(locale);
 
   return (
-    <>
-      <div className="max-w-xs my-3">
+    <div className="max-w-md mx-auto">
+      <div className="my-3 flex max-w-28">
         <BackButton />
       </div>
       {children}
-    </>
+    </div>
   );
 }
