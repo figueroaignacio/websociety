@@ -100,7 +100,7 @@
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-pink-700 via-purple-500 to-violet-400 text-transparent bg-clip-text relative;
+    @apply bg-gradient-to-r from-pink-400 via-violet-700 to-pink-400 dark:from-pink-700 dark:via-violet-500 dark:to-pink-600 text-transparent bg-clip-text relative;
   }
 
   .gradient-background {
