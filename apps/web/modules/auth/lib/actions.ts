@@ -56,7 +56,21 @@ export async function registerAction(values: z.infer<typeof registerSchema>) {
       [data.email, hashedPassword, "user", data.name]
     );
 
+    // Auto login after successful registration
+    const loginResult = await signIn("credentials", {
+      email: data.email,
+      password: values.password, // Use the non-hashed password for login
+      redirect: false,
+    });
+
+    if (loginResult?.error) {
+      return {
+        error: "Registration successful but could not log in automatically",
+      };
+    }
+
     return {
+      success: true,
       user: newUserResult.rows[0],
     };
   } catch (error) {

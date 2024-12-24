@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 
-// Components
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -18,14 +17,13 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Link } from "@/config/i18n/routing";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { useToast } from "@/hooks/use-toast";
 
-// Utils
+// Hooks y Utils
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
-// Schema
+// Schema y funciones
 import { registerAction } from "../lib/actions";
 import { registerSchema } from "../lib/schemas";
 
@@ -34,6 +32,7 @@ export function RegisterForm() {
   const router = useRouter();
   const [error, setError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
+  const { toast } = useToast();
 
   const form = useForm<z.infer<typeof registerSchema>>({
     resolver: zodResolver(registerSchema),
@@ -50,31 +49,26 @@ export function RegisterForm() {
       const response = await registerAction(values);
       if (response.error) {
         setError(response.error);
-        toast.error(response.error, {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
+        toast({
+          variant: "destructive",
+          title: "Uh oh! Something went wrong.",
+          description: "There was a problem with your request.",
         });
       } else {
-        toast.success(t("success.description"), {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
+        toast({
+          title: "Registration Successful!",
+          description: "You have successfully registered. Welcome aboard!",
+          variant: "success",
+          duration: 4000,
         });
-        router.push("/auth/login");
+
+        router.push("/hub");
       }
     });
   }
 
   return (
     <div className="container mx-auto max-w-md p-6">
-      <ToastContainer />
       <h1 className="text-2xl font-bold mb-6">{t("title")}</h1>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -121,6 +115,7 @@ export function RegisterForm() {
               </FormItem>
             )}
           />
+          {error && <FormMessage>{error}</FormMessage>}
           <Button type="submit" className="w-full" disabled={isPending}>
             {isPending ? t("submitting") : t("submit")}
           </Button>

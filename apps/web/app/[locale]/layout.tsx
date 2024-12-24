@@ -1,4 +1,5 @@
 // Components
+import { Toaster } from "@/components/ui/toaster";
 import NextTopLoader from "nextjs-toploader";
 
 // Providers
@@ -20,7 +21,6 @@ import "@fontsource-variable/onest";
 import "@/styles/globals.css";
 
 // Metadata
-import { Toaster } from "@/components/ui/sonner";
 import { MetadataParams } from "@/lib/types";
 
 export async function generateMetadata({ params }: MetadataParams) {

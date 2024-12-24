@@ -1,8 +1,10 @@
 "use client";
 
 // Hooks
+import { useRouter } from "@/config/i18n/routing";
+import { useToast } from "@/hooks/use-toast";
 import { useTranslations } from "next-intl";
-import { useRouter } from "next/navigation";
+import { useTheme } from "next-themes";
 import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 
@@ -18,8 +20,6 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Link } from "@/config/i18n/routing";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 // Utils
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -30,10 +30,11 @@ import { loginAction } from "../lib/actions";
 import { loginSchema } from "../lib/schemas";
 
 export function LoginForm() {
-  const router = useRouter();
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
+  const { theme } = useTheme();
+  const { toast } = useToast();
   const t = useTranslations("login");
 
   const form = useForm<z.infer<typeof loginSchema>>({
@@ -50,23 +51,19 @@ export function LoginForm() {
       const response = await loginAction(values);
       if (response.error) {
         setError(response.error);
-        toast.error(response.error, {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
+        toast({
+          variant: "destructive",
+          title: "Login failed",
+          description: "There was an issue logging in. Please try again.",
         });
       } else {
-        toast.success(t("success.description"), {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
+        toast({
+          title: "Login Successful!",
+          description: "Welcome back! You have successfully logged in.",
+          variant: "success",
+          duration: 4000,
         });
+
         router.push("/hub");
       }
     });
@@ -74,7 +71,6 @@ export function LoginForm() {
 
   return (
     <div className="container mx-auto max-w-md">
-      <ToastContainer />
       <h1 className="text-2xl font-bold mb-6">{t("title")}</h1>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">

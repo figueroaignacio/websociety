@@ -11,28 +11,10 @@ const pool = new NeonPool({
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   adapter: PostgresAdapter(pool),
-  pages: {
-    signIn: "/auth/login",
-  },
   session: {
     strategy: "jwt",
   },
-  callbacks: {
-    async jwt({ token, user }) {
-      if (user) {
-        token.id = user.id;
-        token.email = user.email;
-      }
-      return token;
-    },
-    async session({ session, token }) {
-      if (session.user) {
-        session.user.id = token.id as string;
-        session.user.email = token.email as string;
-      }
-      return session;
-    },
-  },
+  secret: process.env.AUTH_SECRET,
   providers: [
     Credentials({
       name: "credentials",
@@ -50,7 +32,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           const { email, password } = data;
 
           const userResult = await pool.query(
-            `SELECT id, email, password FROM "users" WHERE email = $1`,
+            `SELECT id, email, password, name FROM "users" WHERE email = $1`,
             [email]
           );
 
@@ -67,6 +49,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           return {
             id: user.id,
             email: user.email,
+            name: user.name,
           };
         } catch (error) {
           console.error("Authorization error:", error);
