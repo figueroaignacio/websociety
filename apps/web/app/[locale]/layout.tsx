@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import NextTopLoader from "nextjs-toploader";
 
 // Providers
-import { ThemeProvider } from "@/lib/providers/theme-provider";
+import { ThemeProvider } from "@/hooks/providers/theme-provider";
 import { NextIntlClientProvider } from "next-intl";
 
 // Utils

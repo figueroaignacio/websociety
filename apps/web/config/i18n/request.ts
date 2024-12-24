@@ -6,7 +6,7 @@ import { notFound } from "next/navigation";
 import { routing } from "./routing";
 
 // Constants
-import { namespaces } from "@/lib/constants/namespaces";
+import { namespaces } from "@/lib/constants";
 
 export default getRequestConfig(async ({ requestLocale }) => {
   let locale = await requestLocale;
