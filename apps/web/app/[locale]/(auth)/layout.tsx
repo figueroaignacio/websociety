@@ -2,7 +2,7 @@
 import "@/styles/globals.css";
 
 // Components
-import { BackButton } from "@/components/shared/back-button";
+import { BackToHomeButton } from "@/modules/auth/ui/back-to-home-button";
 
 // Config
 import { routing } from "@/config/i18n/routing";
@@ -22,11 +22,9 @@ export default async function AuthLayout({ children, params }: LayoutProps) {
   setRequestLocale(locale);
 
   return (
-    <div className="max-w-md mx-auto">
-      <div className="my-3 flex max-w-28">
-        <BackButton />
-      </div>
+    <>
+      <BackToHomeButton />
       {children}
-    </div>
+    </>
   );
 }
