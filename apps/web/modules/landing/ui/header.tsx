@@ -1,9 +1,8 @@
 // Hooks
 import { useTranslations } from "next-intl";
 
-// Components
+// Componetns
 import { Logo } from "@/components/shared/logo";
-import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetClose,
@@ -12,6 +11,8 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Link } from "@/config/i18n/routing";
+import { LoginButton } from "@/modules/auth/ui/login-button";
+import { RegisterButton } from "@/modules/auth/ui/register-button";
 import { Menu } from "lucide-react";
 import { ThemeButton } from "./theme-button";
 
@@ -23,19 +24,6 @@ type Navigation = {
 export function Header() {
   const t = useTranslations();
   const navigation = t.raw("navigation");
-
-  const actionButtons = [
-    {
-      label: t("actionButtons.register"),
-      href: "/auth/register",
-      variant: "default" as const,
-    },
-    {
-      label: t("actionButtons.login"),
-      href: "/auth/login",
-      variant: "outline" as const,
-    },
-  ];
 
   return (
     <header className="bg-background border-b">
@@ -56,20 +44,17 @@ export function Header() {
             ))}
           </nav>
           <div className="hidden md:flex items-center space-x-2">
-            {actionButtons.map((button, index: number) => (
-              <Button variant={button.variant} asChild key={index}>
-                <Link href={button.href}>{button.label}</Link>
-              </Button>
-            ))}
+            <RegisterButton />
+            <LoginButton />
             <ThemeButton />
           </div>
           <div className="md:hidden">
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="outline" size="icon">
+                <button className="outline-button-icon">
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Abrir menú</span>
-                </Button>
+                </button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[400px]">
                 <SheetTitle>
@@ -87,13 +72,8 @@ export function Header() {
                   ))}
                 </nav>
                 <div className="flex flex-col space-y-2 mt-8">
-                  {actionButtons.map((button, index: number) => (
-                    <Button variant={button.variant} asChild key={index}>
-                      <SheetClose>
-                        <Link href={button.href}>{button.label}</Link>
-                      </SheetClose>
-                    </Button>
-                  ))}
+                  <RegisterButton />
+                  <LoginButton />
                 </div>
               </SheetContent>
             </Sheet>
