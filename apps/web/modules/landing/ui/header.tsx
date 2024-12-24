@@ -14,7 +14,6 @@ import { Link } from "@/config/i18n/routing";
 import { LoginButton } from "@/modules/auth/ui/login-button";
 import { RegisterButton } from "@/modules/auth/ui/register-button";
 import { Menu } from "lucide-react";
-import { ThemeButton } from "./theme-button";
 
 type Navigation = {
   title: string;
@@ -37,7 +36,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-muted-foreground hover:text-primary"
+                className="text-muted-foreground hover:text-primary text-sm font-semibold hover:underline"
               >
                 {link.title}
               </Link>
@@ -46,7 +45,6 @@ export function Header() {
           <div className="hidden md:flex items-center space-x-2">
             <RegisterButton />
             <LoginButton />
-            <ThemeButton />
           </div>
           <div className="md:hidden">
             <Sheet>
