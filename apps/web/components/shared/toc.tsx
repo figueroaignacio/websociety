@@ -3,10 +3,6 @@
 // Hooks
 import { useEffect, useState } from "react";
 
-// Components
-import { MobileTocPanel } from "./mobile-toc-panel";
-import { TocPanel } from "./toc-panel";
-
 interface Heading {
   id: string;
   text: string | null;
@@ -59,10 +55,5 @@ export function Toc() {
     };
   }, []);
 
-  return (
-    <>
-      <TocPanel headings={headings} activeId={activeId} />
-      <MobileTocPanel headings={headings} activeId={activeId} />
-    </>
-  );
+  return <div>Toc</div>;
 }
