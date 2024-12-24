@@ -44,6 +44,10 @@
       "description": "If you have any questions or suggestions, feel free to contact me via the following email:"
     }
   },
+  "blog": {
+    "title": "Explore Web Development",
+    "description": "Explore articles, trends, and strategies crafted to enhance your skills, streamline your workflow, and keep you at the forefront of technological innovation. Join our community of experts and elevate your impact in the development world."
+  },
   "register": {
     "title": "Register for devs",
     "fields": {

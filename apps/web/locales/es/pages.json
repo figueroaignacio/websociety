@@ -44,6 +44,10 @@
       "description": "Si tienes alguna pregunta o sugerencia, no dudes en ponerte en contacto conmigo a través del siguiente correo electrónico:"
     }
   },
+  "blog": {
+    "title": "Explora el Mundo del Desarrollo Web",
+    "description": "Descubre artículos, tendencias y estrategias diseñadas para potenciar tus habilidades, optimizar tu flujo de trabajo y mantenerte a la vanguardia de la innovación tecnológica. Únete a nuestra comunidad de expertos y eleva tu impacto en el mundo del desarrollo."
+  },
   "register": {
     "title": "Registrate en devs",
     "fields": {
