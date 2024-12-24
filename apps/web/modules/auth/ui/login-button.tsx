@@ -18,8 +18,8 @@ export function LoginButton({ href = "/auth/login" }: LoginButtonProps) {
   return (
     <Button variant="outline" asChild>
       <Link href={href}>
-        <LogIn className="h-5 w-5 mr-2" />
         {t("login")}
+        <LogIn className="h-5 w-5 ml-2" />
       </Link>
     </Button>
   );
