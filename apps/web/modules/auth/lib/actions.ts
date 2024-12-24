@@ -35,7 +35,6 @@ export async function registerAction(values: z.infer<typeof registerSchema>) {
       return { error: "Invalid data" };
     }
 
-    // Check if user exists
     const userResult = await pool.query(
       "SELECT id FROM users WHERE email = $1 LIMIT 1",
       [data.email]
@@ -45,10 +44,8 @@ export async function registerAction(values: z.infer<typeof registerSchema>) {
       return { error: "User already exists" };
     }
 
-    // Hash password
     const hashedPassword = await bcrypt.hash(data.password, 10);
 
-    // Insert new user
     const newUserResult = await pool.query(
       `INSERT INTO users (email, password, role, name) 
        VALUES ($1, $2, $3, $4) 
@@ -56,10 +53,9 @@ export async function registerAction(values: z.infer<typeof registerSchema>) {
       [data.email, hashedPassword, "user", data.name]
     );
 
-    // Auto login after successful registration
     const loginResult = await signIn("credentials", {
       email: data.email,
-      password: values.password, // Use the non-hashed password for login
+      password: values.password,
       redirect: false,
     });
 
