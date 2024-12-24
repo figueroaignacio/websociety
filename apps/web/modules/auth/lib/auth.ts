@@ -1,8 +1,13 @@
+// db
 import PostgresAdapter from "@auth/pg-adapter";
 import { Pool as NeonPool } from "@neondatabase/serverless";
+
+// Utils
 import bcrypt from "bcryptjs";
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
+
+// Schema
 import { loginSchema } from "./schemas";
 
 const pool = new NeonPool({
