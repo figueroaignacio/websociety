@@ -18,6 +18,8 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Link } from "@/config/i18n/routing";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // Utils
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -32,8 +34,6 @@ export function RegisterForm() {
   const router = useRouter();
   const [error, setError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
-
-  const [isLoading, setIsLoading] = useState(false);
 
   const form = useForm<z.infer<typeof registerSchema>>({
     resolver: zodResolver(registerSchema),
@@ -50,34 +50,32 @@ export function RegisterForm() {
       const response = await registerAction(values);
       if (response.error) {
         setError(response.error);
+        toast.error(response.error, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
       } else {
+        toast.success(t("success.description"), {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
         router.push("/auth/login");
       }
     });
-    // setIsLoading(true);
-
-    // try {
-    //   toast({
-    //     title: t("success.title"),
-    //     description: t("success.description"),
-    //   });
-
-    //   router.push("/login");
-    // } catch (error) {
-    //   toast({
-    //     title: t("error.title"),
-    //     description: t("error.description"),
-    //     variant: "destructive",
-    //   });
-    // } finally {
-    //   setIsLoading(false);
-    // }
   }
 
   return (
     <div className="container mx-auto max-w-md p-6">
+      <ToastContainer />
       <h1 className="text-2xl font-bold mb-6">{t("title")}</h1>
-      {error && <p className="text-red-500 mb-4">{error}</p>}
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <FormField
@@ -123,8 +121,8 @@ export function RegisterForm() {
               </FormItem>
             )}
           />
-          <Button type="submit" className="w-full">
-            {t("submit")}
+          <Button type="submit" className="w-full" disabled={isPending}>
+            {isPending ? t("submitting") : t("submit")}
           </Button>
         </form>
       </Form>

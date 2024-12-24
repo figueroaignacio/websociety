@@ -20,6 +20,7 @@ import "@fontsource-variable/onest";
 import "@/styles/globals.css";
 
 // Metadata
+import { Toaster } from "@/components/ui/sonner";
 import { MetadataParams } from "@/lib/types";
 
 export async function generateMetadata({ params }: MetadataParams) {
@@ -77,6 +78,7 @@ export default async function RootLayout({ children, params }: LayoutProps) {
             {children}
           </ThemeProvider>
         </NextIntlClientProvider>
+        <Toaster />
       </body>
     </html>
   );
