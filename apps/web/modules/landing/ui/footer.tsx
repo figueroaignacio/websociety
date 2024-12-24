@@ -2,6 +2,7 @@
 import { useTranslations } from "next-intl";
 
 // Components
+import { LocaleSwitcher } from "@/components/shared/locale-switcher";
 import { Link } from "@/config/i18n/routing";
 import { Logo } from "../../../components/shared/logo";
 
@@ -16,6 +17,9 @@ export function Footer() {
           <div className="space-y-4">
             <Logo />
             <p className="text-muted-foreground">{t("footer.subtitle")}</p>
+            <div className="max-w-xl">
+              <LocaleSwitcher />
+            </div>
           </div>
           <nav aria-label="Footer Navigation">
             <h2 className="text-lg font-semibold mb-4">

@@ -61,9 +61,7 @@ export function Header() {
                 <Link href={button.href}>{button.label}</Link>
               </Button>
             ))}
-            <div className="">
-              <ThemeButton />
-            </div>
+            <ThemeButton />
           </div>
           <div className="md:hidden">
             <Sheet>

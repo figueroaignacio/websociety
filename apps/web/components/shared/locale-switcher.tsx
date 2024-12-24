@@ -2,8 +2,17 @@
 
 // Hooks
 import { usePathname, useRouter } from "@/config/i18n/routing";
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 import { useTransition } from "react";
+
+// Components
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "../ui/dropdown-menu";
 
 // Icons
 import { Languages } from "lucide-react";
@@ -13,16 +22,12 @@ import { locales } from "@/config/i18n/routing";
 
 // Types
 import { Locale } from "@/lib/types";
+import { Button } from "../ui/button";
 
-type Props = {
-  label?: string;
-};
-
-export function LocaleSwitcher({ label }: Props) {
+export function LocaleSwitcher() {
   const router = useRouter();
   const [_, startTransition] = useTransition();
   const pathname = usePathname();
-  const t = useTranslations("localeSwitcher");
   const locale = useLocale();
 
   function onLocaleChange(value: string) {
@@ -33,28 +38,27 @@ export function LocaleSwitcher({ label }: Props) {
   }
 
   return (
-    <div className="space-y-2">
-      <div className="flex items-center gap-1 ">
-        <Languages size={16} className="ml-2 text-muted-foreground" />
-        <span className="ml-2 text-xl font-bold text-foreground">
-          {t("label")}
-        </span>
-      </div>
-      <div className="flex flex-col space-y-1">
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button className="flex items-center gap-2" variant="outline">
+          <Languages size={16} />
+          <span>{locale.toUpperCase()}</span>
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="w-48">
+        <DropdownMenuSeparator />
         {locales.map((localeOption) => (
-          <button
+          <DropdownMenuItem
             key={localeOption}
             onClick={() => onLocaleChange(localeOption)}
-            className={`flex justify-between items-center py-2 px-4 rounded-md dark:hover:bg-gray-600 dark:hover:bg-opacity-30 hover:bg-gray-200 hover:bg-opacity-50 duration-100  hover:text-foreground cursor-pointer ${
-              locale === localeOption
-                ? "dark:bg-gray-600 dark:bg-opacity-30 bg-gray-200 bg-opacity-50 text-foreground"
-                : ""
+            className={`flex items-center justify-between ${
+              locale === localeOption ? "text-accent-foreground" : ""
             }`}
           >
-            {t("locale", { locale: localeOption })}
-          </button>
+            {localeOption.toUpperCase()}
+          </DropdownMenuItem>
         ))}
-      </div>
-    </div>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 }
