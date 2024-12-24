@@ -6,6 +6,7 @@ import { useLocale } from "next-intl";
 import { useTransition } from "react";
 
 // Components
+import { Button } from "../ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -22,7 +23,6 @@ import { locales } from "@/config/i18n/routing";
 
 // Types
 import { Locale } from "@/lib/types";
-import { Button } from "../ui/button";
 
 export function LocaleSwitcher() {
   const router = useRouter();
