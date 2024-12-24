@@ -31,5 +31,15 @@
       "title": "Access articles, tutorials, and resources",
       "description": "Read articles, tutorials, and resources created by the community to keep up with the latest trends in development."
     }
-  ]
+  ],
+  "footer": {
+    "ariaLabel": "Footer section of Devs platform",
+    "subtitle": "A platform for developers, by developers. Stay updated with the latest trends and tools.",
+    "navigation": {
+      "title": "Navigation"
+    },
+    "aboutHeading": "About Devs",
+    "description": "Devs is a community-driven platform for developers to discover, share, and stay updated on the latest in web development. Join us to grow your skills and collaborate with fellow devs.",
+    "copyright": "© 2024 Devs. All rights reserved."
+  }
 }

@@ -1,4 +1,5 @@
 // Components
+import { Footer } from "@/modules/landing/ui/footer";
 import { Header } from "@/modules/landing/ui/header";
 
 // Font
@@ -25,9 +26,10 @@ export default async function LandingLayout({ children, params }: LayoutProps) {
   setRequestLocale(locale);
 
   return (
-    <main className="min-h-[100dvh] grid grid-rows-[auto_1fr_auto]">
+    <div className="min-h-[100dvh] grid grid-rows-[auto_1fr_auto]">
       <Header />
-      {children}
-    </main>
+      <main>{children}</main>
+      <Footer />
+    </div>
   );
 }

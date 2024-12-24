@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/sheet";
 import { Link } from "@/config/i18n/routing";
 import { Menu } from "lucide-react";
+import { ThemeButton } from "./theme-button";
 
 type Navigation = {
   title: string;
@@ -60,6 +61,9 @@ export function Header() {
                 <Link href={button.href}>{button.label}</Link>
               </Button>
             ))}
+            <div className="">
+              <ThemeButton />
+            </div>
           </div>
           <div className="md:hidden">
             <Sheet>

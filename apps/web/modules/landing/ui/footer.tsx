@@ -3,10 +3,7 @@ import { useTranslations } from "next-intl";
 
 // Components
 import { Link } from "@/config/i18n/routing";
-import { Logo } from "./logo";
-
-// Icons
-import { Copyright } from "lucide-react";
+import { Logo } from "../../../components/shared/logo";
 
 export function Footer() {
   const t = useTranslations();
@@ -48,7 +45,6 @@ export function Footer() {
         </div>
         <div className="mt-12 pt-8 text-center">
           <p className="text-sm text-muted-foreground flex items-center justify-center gap-2">
-            <Copyright className="h-4 w-4" />
             <span>{t("footer.copyright")}</span>
           </p>
         </div>

@@ -66,7 +66,7 @@ export default async function RootLayout({ children, params }: LayoutProps) {
   return (
     <html lang={locale} suppressHydrationWarning>
       <body>
-        <NextTopLoader color="#7e22ce" />
+        <NextTopLoader color="#7e22ce" showSpinner={false} />
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider
             attribute="class"

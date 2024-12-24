@@ -31,5 +31,15 @@
       "title": "Accede a artículos, tutoriales y recursos",
       "description": "Lee artículos, tutoriales y recursos creados por la comunidad para mantenerte al día con las últimas tendencias en desarrollo."
     }
-  ]
+  ],
+  "footer": {
+    "ariaLabel": "Sección de pie de página de la plataforma Devs",
+    "subtitle": "Una plataforma para desarrolladores, creada por desarrolladores. Mantente actualizado con las últimas tendencias y herramientas.",
+    "navigation": {
+      "title": "Navegación"
+    },
+    "aboutHeading": "Sobre Devs",
+    "description": "Devs es una plataforma impulsada por la comunidad de desarrolladores para descubrir, compartir y mantenerse actualizado sobre lo último en desarrollo web. Únete para mejorar tus habilidades y colaborar con otros devs.",
+    "copyright": "© 2024 Devs. Todos los derechos reservados."
+  }
 }
